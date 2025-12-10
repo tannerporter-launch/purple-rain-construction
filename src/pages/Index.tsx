@@ -5,13 +5,13 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import ServiceCard from "@/components/ui/ServiceCard";
 import TrustBadge from "@/components/ui/TrustBadge";
 import Layout from "@/components/layout/Layout";
-
+import project1After from "@/assets/decks/project-1-after.jpg";
 const Index = () => {
   return (
     <Layout>
       {/* Hero Section - Above the Fold */}
       <section className="relative min-h-[90vh] flex items-center bg-gradient-hero text-primary-foreground overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1591825729269-caeb344f6df2?q=80&w=2070')] bg-cover bg-center opacity-20" />
+        <div className="absolute inset-0 bg-cover bg-center opacity-20" style={{ backgroundImage: `url(${project1After})` }} />
         <div className="container mx-auto px-4 py-16 md:py-20 relative z-10">
           <div className="max-w-3xl">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight animate-fade-in">
@@ -88,7 +88,7 @@ const Index = () => {
               description="High-performance decks built for Central Oregon weather."
               href="/decks"
               icon={Hammer}
-              image="https://images.unsplash.com/photo-1591825729269-caeb344f6df2?q=80&w=800"
+              image={project1After}
               ctaText="Learn More → Decks"
             />
             <ServiceCard
@@ -184,8 +184,8 @@ const Index = () => {
           <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
             <div className="order-2 lg:order-1">
               <img
-                src="https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?q=80&w=800"
-                alt="Custom deck in Sunriver, Oregon with mountain views"
+                src={project1After}
+                alt="Finished composite deck by Purple Rain Construction"
                 className="rounded-2xl shadow-lg w-full"
                 loading="lazy"
               />
