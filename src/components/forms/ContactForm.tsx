@@ -25,6 +25,13 @@ const formSchema = z.object({
   serviceType: z.string().min(1, "Please select a service type"),
   message: z.string().min(10, "Please provide more details about your project").max(1000),
   source: z.string().optional(),
+  // Hidden UTM tracking fields
+  utm_source: z.string().optional(),
+  utm_medium: z.string().optional(),
+  utm_campaign: z.string().optional(),
+  utm_term: z.string().optional(),
+  utm_content: z.string().optional(),
+  landing_page: z.string().optional(),
 });
 
 type FormData = z.infer<typeof formSchema>;
@@ -34,9 +41,25 @@ interface ContactFormProps {
   className?: string;
 }
 
+// Helper to get UTM params from URL
+const getUtmParams = () => {
+  if (typeof window === 'undefined') return {};
+  const params = new URLSearchParams(window.location.search);
+  return {
+    utm_source: params.get('utm_source') || '',
+    utm_medium: params.get('utm_medium') || '',
+    utm_campaign: params.get('utm_campaign') || '',
+    utm_term: params.get('utm_term') || '',
+    utm_content: params.get('utm_content') || '',
+    landing_page: window.location.pathname,
+  };
+};
+
 const ContactForm = ({ defaultService, className = "" }: ContactFormProps) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const utmParams = getUtmParams();
 
   const {
     register,
@@ -48,16 +71,26 @@ const ContactForm = ({ defaultService, className = "" }: ContactFormProps) => {
     resolver: zodResolver(formSchema),
     defaultValues: {
       serviceType: defaultService || "",
+      ...utmParams,
     },
   });
 
   const onSubmit = async (data: FormData) => {
     setIsSubmitting(true);
     
-    // Simulate form submission - will be connected to JobTread later
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    // Prepare submission data with UTM tracking
+    const submissionData = {
+      ...data,
+      submittedAt: new Date().toISOString(),
+      userAgent: navigator.userAgent,
+    };
     
-    console.log("Form submission:", data);
+    // TODO: Connect to backend (Supabase/JobTread) when ready
+    // For now, log to console for testing
+    console.log("Form submission:", submissionData);
+    
+    // Simulate API delay
+    await new Promise((resolve) => setTimeout(resolve, 1000));
     
     setIsSubmitting(false);
     setIsSubmitted(true);

@@ -19,6 +19,7 @@ const navItems = [
   { label: "Sunriver", href: "/sunriver-deck-builder" },
   { label: "Gallery", href: "/gallery" },
   { label: "About", href: "/about" },
+  { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
 ];
 
