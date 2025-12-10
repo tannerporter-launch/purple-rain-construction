@@ -7,6 +7,7 @@ import TrustBadge from "@/components/ui/TrustBadge";
 import Layout from "@/components/layout/Layout";
 import project1After from "@/assets/decks/project-1-after.jpg";
 import elkeFrenchDoorMain from "@/assets/remodels/elke-french-doors/main.webp";
+import gilchrestFrontAfter from "@/assets/remodels/gilchrest-a-frame/3-front-after.jpg";
 
 const Index = () => {
   return (
@@ -144,8 +145,8 @@ const Index = () => {
             </div>
             <div className="relative">
               <img
-                src="https://images.unsplash.com/photo-504307651254-35680f356dfd?q=80&w=800"
-                alt="Purple Rain Construction team at work in Central Oregon"
+                src={gilchrestFrontAfter}
+                alt="Completed A-Frame renovation with black metal roof and cedar siding – Purple Rain Construction"
                 className="rounded-2xl shadow-elegant w-full"
                 loading="lazy"
               />

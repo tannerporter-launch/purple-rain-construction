@@ -3,17 +3,20 @@ import { Phone, CheckCircle, Home, Bath, ChefHat, Wrench, ArrowRight } from "luc
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import SectionHeading from "@/components/ui/SectionHeading";
-import elkeWideShot from "@/assets/remodels/elke-french-doors/wide-shot.webp";
-import elkeOpenView from "@/assets/remodels/elke-french-doors/open-view.jpeg";
 import elkeMain from "@/assets/remodels/elke-french-doors/main.webp";
-import elkeDetail from "@/assets/remodels/elke-french-doors/detail.jpeg";
+import elkeOpenView from "@/assets/remodels/elke-french-doors/open-view.jpeg";
+// Gilchrest A-Frame imports
+import gilchrestFrontAfter from "@/assets/remodels/gilchrest-a-frame/3-front-after.jpg";
+import gilchrestKitchenAfter from "@/assets/remodels/gilchrest-a-frame/5-kitchen-after.jpg";
+import gilchrestStairsAfter from "@/assets/remodels/gilchrest-a-frame/1-stairs-after.jpg";
+import gilchrestSideAfter from "@/assets/remodels/gilchrest-a-frame/2-side-exterior-after.jpg";
 
 const Remodeling = () => {
   return (
     <Layout>
       {/* Hero */}
       <section className="relative py-24 bg-gradient-hero text-primary-foreground overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center opacity-20" style={{ backgroundImage: `url(${elkeWideShot})` }} />
+        <div className="absolute inset-0 bg-cover bg-center opacity-20" style={{ backgroundImage: `url(${gilchrestFrontAfter})` }} />
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6">
@@ -130,8 +133,8 @@ const Remodeling = () => {
             </div>
             <div>
               <img
-                src={elkeOpenView}
-                alt="French doors open showing adjoining room by Purple Rain Construction"
+                src={gilchrestKitchenAfter}
+                alt="Modern kitchen with live-edge counter and exposed beams – Gilchrest A-Frame Remodel"
                 className="rounded-2xl shadow-elegant"
                 loading="lazy"
               />
@@ -176,10 +179,12 @@ const Remodeling = () => {
           />
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
+              { src: gilchrestFrontAfter, alt: "Completed A-Frame renovation with black metal roof and cedar siding – Purple Rain Construction" },
+              { src: gilchrestKitchenAfter, alt: "Modern kitchen with live-edge counter and exposed beams – Gilchrest A-Frame Remodel" },
+              { src: gilchrestStairsAfter, alt: "Modern stairwell with dark beams and metal railing – Gilchrest A-Frame" },
+              { src: gilchrestSideAfter, alt: "A-Frame side exterior with new cedar siding and black standing seam metal roof" },
               { src: elkeMain, alt: "Custom-trimmed blue French doors with clear glass panels and wood casing" },
               { src: elkeOpenView, alt: "French doors open showing adjoining room by Purple Rain Construction" },
-              { src: elkeDetail, alt: "Interior French door installation showing alignment and trim detail" },
-              { src: elkeWideShot, alt: "Wide view of completed French door remodel looking into living area" },
             ].map((img, index) => (
               <img
                 key={index}
