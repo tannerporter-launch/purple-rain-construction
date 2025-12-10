@@ -226,7 +226,7 @@ const Index = () => {
             title="What Our Customers Say"
             subtitle="Don't just take our word for it—see what homeowners say on Google."
           />
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 md:gap-8">
             {[
               {
                 quote: "Purple Rain Construction built our deck in Sunriver and it exceeded all expectations. They handled the HOA process seamlessly and kept us updated every step of the way.",
@@ -237,6 +237,11 @@ const Index = () => {
                 quote: "Nicholas and his construction crew are first-rate contractors whom I found to be conscientious, reliable, and responsive during the remodeling process of installing an interior French door, duplicating existing trim work, and narrowing a hallway entryway. I highly recommend Purple Rain Construction to anyone who wants to work with diligent and competent folks.",
                 name: "Elke H.",
                 location: "Central Oregon",
+              },
+              {
+                quote: "Purple Rain Construction completely transformed our old A-Frame into a modern showpiece. Their craftsmanship was exceptional from the first beam to the final stain coat. Every detail was handled professionally — we couldn't be happier with the result.",
+                name: "Gilchrest A-Frame Client",
+                location: "Gilchrest, Oregon",
               },
               {
                 quote: "Nicholas and his team were professional, punctual, and did exceptional work on our kitchen remodel. The communication through their project portal was a game-changer.",

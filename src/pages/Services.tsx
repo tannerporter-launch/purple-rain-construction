@@ -4,6 +4,9 @@ import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import ServiceCard from "@/components/ui/ServiceCard";
 import SectionHeading from "@/components/ui/SectionHeading";
+import project1After from "@/assets/decks/project-1-after.jpg";
+import gilchrestPatioFinished from "@/assets/remodels/gilchrest-a-frame/front-patio-finished.jpg";
+import gilchrestCeilingFan from "@/assets/remodels/gilchrest-a-frame/ceiling-detail-fan.jpg";
 
 const Services = () => {
   return (
@@ -29,21 +32,21 @@ const Services = () => {
               description="Custom decks designed and built for Central Oregon's climate. New construction, replacements, repairs, and railing upgrades. TrexPro certified for composite decking."
               href="/decks"
               icon={Hammer}
-              image="https://images.unsplash.com/photo-1591825729269-caeb344f6df2?q=80&w=800"
+              image={project1After}
             />
             <ServiceCard
               title="Home Remodeling"
               description="Kitchen, bathroom, and whole-home renovations. Quality craftsmanship, clear communication, and attention to detail from start to finish."
               href="/remodeling"
               icon={Home}
-              image="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=800"
+              image={gilchrestPatioFinished}
             />
             <ServiceCard
               title="New Construction"
               description="Custom home building and additions for Central Oregon homeowners. From ADUs to full custom homes, built to handle our unique climate."
               href="/new-construction"
               icon={Building}
-              image="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=800"
+              image={gilchrestCeilingFan}
             />
             <ServiceCard
               title="Snow Removal"
