@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Phone, Shield, Users, Hammer, Snowflake, TreePine, CheckCircle, Star, ArrowRight } from "lucide-react";
+import { Phone, Shield, Users, Hammer, Snowflake, TreePine, CheckCircle, Star, ArrowRight, FileText, Home as HomeIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SectionHeading from "@/components/ui/SectionHeading";
 import ServiceCard from "@/components/ui/ServiceCard";
@@ -9,30 +9,33 @@ import Layout from "@/components/layout/Layout";
 const Index = () => {
   return (
     <Layout>
-      {/* Hero Section */}
+      {/* Hero Section - Above the Fold */}
       <section className="relative min-h-[90vh] flex items-center bg-gradient-hero text-primary-foreground overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1591825729269-caeb344f6df2?q=80&w=2070')] bg-cover bg-center opacity-20" />
-        <div className="container mx-auto px-4 py-20 relative z-10">
+        <div className="container mx-auto px-4 py-16 md:py-20 relative z-10">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight animate-fade-in">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight animate-fade-in">
               Trusted Deck Builders & Remodeling Experts in Central Oregon
             </h1>
-            <p className="text-xl md:text-2xl text-primary-foreground/90 mb-8 animate-fade-in" style={{ animationDelay: "0.1s" }}>
-              Building high-quality decks and remodels in Sunriver, Bend, and Redmond—backed by craftsmanship, clear communication, and dependable service.
+            <p className="text-lg sm:text-xl md:text-2xl text-primary-foreground/90 mb-8 animate-fade-in" style={{ animationDelay: "0.1s" }}>
+              Building high-quality decks and remodels in Sunriver, Bend, and Redmond — backed by craftsmanship, clear communication, and dependable service.
             </p>
-            <div className="flex flex-wrap gap-4 animate-fade-in" style={{ animationDelay: "0.2s" }}>
+            <div className="flex flex-col sm:flex-row gap-4 animate-fade-in" style={{ animationDelay: "0.2s" }}>
               <Button
                 asChild
                 size="lg"
-                className="bg-background text-primary hover:bg-background/90 font-semibold text-lg px-8"
+                className="bg-background text-primary hover:bg-background/90 font-semibold text-base sm:text-lg px-6 sm:px-8 w-full sm:w-auto"
               >
-                <Link to="/contact">Request a Quote</Link>
+                <Link to="/contact">
+                  <ArrowRight className="mr-2 h-5 w-5" />
+                  Request a Quote
+                </Link>
               </Button>
               <Button
                 asChild
                 size="lg"
                 variant="outline"
-                className="border-2 border-primary-foreground text-primary-foreground bg-transparent hover:bg-primary-foreground/10 font-semibold text-lg px-8"
+                className="border-2 border-primary-foreground text-primary-foreground bg-transparent hover:bg-primary-foreground/10 font-semibold text-base sm:text-lg px-6 sm:px-8 w-full sm:w-auto"
               >
                 <a href="tel:541-408-2712">
                   <Phone className="mr-2 h-5 w-5" />
@@ -44,100 +47,104 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Trust Indicators */}
-      <section className="py-12 bg-muted border-y border-border">
+      {/* Quick Trust Indicators (Row of 3-4 Icons) */}
+      <section className="py-8 md:py-12 bg-muted border-y border-border">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
             <TrustBadge
               icon={Shield}
-              title="Licensed & Insured"
+              title="Licensed • Bonded • Insured"
               description="CCB #247140"
             />
             <TrustBadge
               icon={Users}
-              title="Family-Owned"
-              description="Local & Trusted"
+              title="Family-Owned & Local"
+              description="Central Oregon Based"
             />
             <TrustBadge
               icon={Hammer}
-              title="TrexPro Builder"
-              description="Certified Quality"
+              title="Decks, Remodels & Snow Removal"
+              description="Full Service"
             />
             <TrustBadge
-              icon={Star}
-              title="5-Star Reviews"
-              description="Customer Satisfaction"
+              icon={FileText}
+              title="Transparent Estimates"
+              description="Clear Communication"
             />
           </div>
         </div>
       </section>
 
-      {/* Core Services */}
-      <section className="py-20 bg-background">
+      {/* Featured Services Section */}
+      <section className="py-16 md:py-20 bg-background">
         <div className="container mx-auto px-4">
           <SectionHeading
             title="Our Core Services"
             subtitle="Quality craftsmanship for every project, from custom decks to complete home remodels."
           />
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-6 md:gap-8">
             <ServiceCard
-              title="Deck Building"
-              description="High-performance decks built for Central Oregon weather. Custom designs, composite and wood options, and expert installation."
+              title="Deck Building & Repairs"
+              description="High-performance decks built for Central Oregon weather."
               href="/decks"
               icon={Hammer}
               image="https://images.unsplash.com/photo-1591825729269-caeb344f6df2?q=80&w=800"
+              ctaText="Learn More → Decks"
             />
             <ServiceCard
-              title="Remodeling"
-              description="Kitchen, bath, and whole-home renovations with clear timelines, quality materials, and respectful crews."
+              title="Remodeling Services"
+              description="Kitchen, bath, whole-home, and small commercial renovations."
               href="/remodeling"
-              icon={Users}
+              icon={HomeIcon}
               image="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=800"
+              ctaText="View Remodeling Services"
             />
             <ServiceCard
-              title="Snow Removal"
-              description="Fast, reliable residential and commercial snow removal in Sunriver, Bend, and Redmond. Get on our route list."
+              title="Snow Removal (Seasonal)"
+              description="Fast, reliable residential + small commercial snow removal."
               href="/snow-removal"
               icon={Snowflake}
               image="https://images.unsplash.com/photo-1516912481808-3406841bd33c?q=80&w=800"
+              ctaText="Get On the Schedule"
             />
           </div>
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="py-20 bg-muted">
+      {/* Why Choose Purple Rain Construction */}
+      <section className="py-16 md:py-20 bg-muted">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">
                 Why Choose Purple Rain Construction?
               </h2>
-              <p className="text-lg text-muted-foreground mb-6">
-                Purple Rain Construction was built on a foundation of family values and over 30 years of construction experience. Owner Nicholas Miller grew up learning the trade from his father, a general contractor who instilled the importance of quality work and honest communication.
+              <p className="text-base sm:text-lg text-muted-foreground mb-6">
+                Purple Rain Construction was built on a foundation of family values and over 30 years of construction experience. We bring skill, dedication, and a personal touch to every project.
               </p>
               <ul className="space-y-4 mb-8">
-                {[
-                  "Quality craftsmanship from a small, dedicated crew",
-                  "Clear, honest communication from estimate to final walkthrough",
-                  "Local experience with Central Oregon weather and Sunriver HOA requirements",
-                  "Digital project portal for real-time updates on your project",
-                ].map((item, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <CheckCircle className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground">{item}</span>
-                  </li>
-                ))}
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
+                  <span className="text-foreground font-medium">Quality craftsmanship</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
+                  <span className="text-foreground font-medium">Clear, honest communication</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
+                  <span className="text-foreground font-medium">Local experience with Sunriver + Central Oregon weather</span>
+                </li>
               </ul>
-              <Button asChild size="lg" className="bg-gradient-primary hover:opacity-90">
-                <Link to="/about">Learn Our Story</Link>
+              <Button asChild size="lg" className="bg-gradient-primary hover:opacity-90 w-full sm:w-auto">
+                <Link to="/contact">Request a Quote</Link>
               </Button>
             </div>
             <div className="relative">
               <img
                 src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=800"
                 alt="Purple Rain Construction team at work in Central Oregon"
-                className="rounded-2xl shadow-elegant"
+                className="rounded-2xl shadow-elegant w-full"
                 loading="lazy"
               />
             </div>
@@ -145,15 +152,15 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Sunriver Highlight */}
-      <section className="py-20 bg-gradient-primary text-primary-foreground">
+      {/* Sunriver Deck Building Highlight Section */}
+      <section className="py-16 md:py-20 bg-gradient-primary text-primary-foreground">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
             <div className="order-2 lg:order-1">
               <img
                 src="https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?q=80&w=800"
                 alt="Custom deck in Sunriver, Oregon with mountain views"
-                className="rounded-2xl shadow-lg"
+                className="rounded-2xl shadow-lg w-full"
                 loading="lazy"
               />
             </div>
@@ -162,22 +169,19 @@ const Index = () => {
                 <TreePine className="h-6 w-6" />
                 <span className="text-lg font-medium">Sunriver Specialists</span>
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">
                 Decks Built for Sunriver Living
               </h2>
-              <p className="text-lg text-primary-foreground/90 mb-6">
-                Sunriver's unique climate demands specialized construction. We understand the heavy snow loads, freeze-thaw cycles, and HOA design guidelines that make building here different from anywhere else.
-              </p>
-              <p className="text-primary-foreground/90 mb-8">
-                Whether you're a full-time resident, vacation homeowner, or property manager, we handle everything—from SROA approval to final inspection—so you can enjoy your outdoor space year-round.
+              <p className="text-base sm:text-lg text-primary-foreground/90 mb-8">
+                For homeowners and rental properties in Sunriver, decks are one of the best upgrades you can invest in. We understand the heavy snow loads, freeze-thaw cycles, and HOA design guidelines that make building here different from anywhere else.
               </p>
               <Button
                 asChild
                 size="lg"
-                className="bg-background text-primary hover:bg-background/90 font-semibold"
+                className="bg-background text-primary hover:bg-background/90 font-semibold w-full sm:w-auto"
               >
                 <Link to="/sunriver-deck-builder">
-                  Explore Sunriver Services
+                  Explore Sunriver Deck Services
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
@@ -186,24 +190,24 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Project Transparency */}
-      <section className="py-20 bg-background">
+      {/* Project Transparency (JobTread) */}
+      <section className="py-16 md:py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">
               Project Transparency You Can Count On
             </h2>
-            <p className="text-lg text-muted-foreground mb-8">
+            <p className="text-base sm:text-lg text-muted-foreground mb-8">
               We use a digital project portal to give our customers real-time updates, timelines, material selections, and communication in one place. You always know what's happening with your project—no surprises.
             </p>
-            <div className="grid sm:grid-cols-3 gap-8">
+            <div className="grid sm:grid-cols-3 gap-6 md:gap-8">
               {[
                 { title: "Real-Time Updates", desc: "See progress photos and status changes as they happen" },
                 { title: "Clear Timelines", desc: "Know exactly when each phase of your project will complete" },
                 { title: "Direct Communication", desc: "Message our team and get quick responses in one place" },
               ].map((item, index) => (
-                <div key={index} className="text-center p-6 rounded-xl bg-muted">
-                  <h3 className="font-semibold text-lg mb-2">{item.title}</h3>
+                <div key={index} className="text-center p-4 md:p-6 rounded-xl bg-muted">
+                  <h3 className="font-semibold text-base md:text-lg mb-2">{item.title}</h3>
                   <p className="text-sm text-muted-foreground">{item.desc}</p>
                 </div>
               ))}
@@ -213,13 +217,13 @@ const Index = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 bg-muted">
+      <section className="py-16 md:py-20 bg-muted">
         <div className="container mx-auto px-4">
           <SectionHeading
             title="What Our Customers Say"
             subtitle="Don't just take our word for it—hear from homeowners across Central Oregon."
           />
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-6 md:gap-8">
             {[
               {
                 quote: "Purple Rain Construction built our deck in Sunriver and it exceeded all expectations. They handled the HOA process seamlessly and kept us updated every step of the way.",
@@ -239,14 +243,14 @@ const Index = () => {
             ].map((testimonial, index) => (
               <div
                 key={index}
-                className="bg-background p-8 rounded-2xl shadow-md border border-border"
+                className="bg-background p-6 md:p-8 rounded-2xl shadow-md border border-border"
               >
                 <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} className="h-5 w-5 fill-sunriver-gold text-sunriver-gold" />
                   ))}
                 </div>
-                <p className="text-foreground mb-6 italic">"{testimonial.quote}"</p>
+                <p className="text-foreground mb-6 italic text-sm md:text-base">"{testimonial.quote}"</p>
                 <div>
                   <p className="font-semibold text-foreground">{testimonial.name}</p>
                   <p className="text-sm text-muted-foreground">{testimonial.location}</p>
@@ -257,20 +261,20 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="py-20 bg-gradient-primary text-primary-foreground">
+      {/* Simplified Contact Strip */}
+      <section className="py-16 md:py-20 bg-gradient-primary text-primary-foreground">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">
             Ready to Start Your Project?
           </h2>
-          <p className="text-xl text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
             Whether it's a new deck, home remodel, or snow removal service, we're here to help. Request a quote today and let's build something great together.
           </p>
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Button
               asChild
               size="lg"
-              className="bg-background text-primary hover:bg-background/90 font-semibold text-lg px-8"
+              className="bg-background text-primary hover:bg-background/90 font-semibold text-base sm:text-lg px-6 sm:px-8 w-full sm:w-auto"
             >
               <Link to="/contact">Request a Quote</Link>
             </Button>
@@ -278,11 +282,11 @@ const Index = () => {
               asChild
               size="lg"
               variant="outline"
-              className="border-2 border-primary-foreground text-primary-foreground bg-transparent hover:bg-primary-foreground/10 font-semibold text-lg px-8"
+              className="border-2 border-primary-foreground text-primary-foreground bg-transparent hover:bg-primary-foreground/10 font-semibold text-base sm:text-lg px-6 sm:px-8 w-full sm:w-auto"
             >
               <a href="tel:541-408-2712">
                 <Phone className="mr-2 h-5 w-5" />
-                541-408-2712
+                (541) 408-2712
               </a>
             </Button>
           </div>

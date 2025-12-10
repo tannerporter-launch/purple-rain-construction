@@ -7,9 +7,10 @@ interface ServiceCardProps {
   href: string;
   icon: LucideIcon;
   image?: string;
+  ctaText?: string;
 }
 
-const ServiceCard = ({ title, description, href, icon: Icon, image }: ServiceCardProps) => {
+const ServiceCard = ({ title, description, href, icon: Icon, image, ctaText = "Learn More" }: ServiceCardProps) => {
   return (
     <Link
       to={href}
@@ -34,7 +35,7 @@ const ServiceCard = ({ title, description, href, icon: Icon, image }: ServiceCar
         </div>
         <p className="text-muted-foreground mb-4">{description}</p>
         <span className="inline-flex items-center gap-2 text-primary font-medium group-hover:gap-3 transition-all">
-          Learn More <ArrowRight className="h-4 w-4" />
+          {ctaText} <ArrowRight className="h-4 w-4" />
         </span>
       </div>
     </Link>
