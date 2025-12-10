@@ -3,33 +3,39 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import SectionHeading from "@/components/ui/SectionHeading";
+import project1After from "@/assets/decks/project-1-after.jpg";
+import project1Before1 from "@/assets/decks/project-1-before-1.jpg";
+import project2After from "@/assets/decks/project-2-after.jpg";
+import project2Before from "@/assets/decks/project-2-before.jpg";
 
 const categories = ["All", "Decks", "Remodels", "Sunriver", "Snow Removal"];
 
 const projects = [
   {
     id: 1,
-    title: "Composite Deck with Cable Railing",
+    title: "Elevated Deck Transformation",
     category: "Decks",
-    location: "Sunriver, OR",
-    image: "https://images.unsplash.com/photo-1591825729269-caeb344f6df2?q=80&w=800",
-    tags: ["Decks", "Sunriver"]
+    location: "Central Oregon",
+    image: project1After,
+    beforeImage: project1Before1,
+    tags: ["Decks"]
   },
   {
     id: 2,
+    title: "Composite Deck & Railing Upgrade",
+    category: "Decks",
+    location: "Central Oregon",
+    image: project2After,
+    beforeImage: project2Before,
+    tags: ["Decks"]
+  },
+  {
+    id: 3,
     title: "Modern Kitchen Remodel",
     category: "Remodels",
     location: "Bend, OR",
     image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=800",
     tags: ["Remodels"]
-  },
-  {
-    id: 3,
-    title: "Multi-Level Deck System",
-    category: "Decks",
-    location: "Bend, OR",
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800",
-    tags: ["Decks"]
   },
   {
     id: 4,
@@ -41,14 +47,6 @@ const projects = [
   },
   {
     id: 5,
-    title: "Vacation Rental Deck",
-    category: "Decks",
-    location: "Sunriver, OR",
-    image: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=800",
-    tags: ["Decks", "Sunriver"]
-  },
-  {
-    id: 6,
     title: "Whole Home Renovation",
     category: "Remodels",
     location: "Sunriver, OR",
@@ -56,20 +54,12 @@ const projects = [
     tags: ["Remodels", "Sunriver"]
   },
   {
-    id: 7,
+    id: 6,
     title: "Snow Cleared Driveway",
     category: "Snow Removal",
     location: "Sunriver, OR",
     image: "https://images.unsplash.com/photo-1516912481808-3406841bd33c?q=80&w=800",
     tags: ["Snow Removal", "Sunriver"]
-  },
-  {
-    id: 8,
-    title: "Ground-Level Deck",
-    category: "Decks",
-    location: "Bend, OR",
-    image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=800",
-    tags: ["Decks"]
   },
 ];
 

@@ -9,6 +9,10 @@ import {
 } from "@/components/ui/accordion";
 import Layout from "@/components/layout/Layout";
 import SectionHeading from "@/components/ui/SectionHeading";
+import project1After from "@/assets/decks/project-1-after.jpg";
+import project1Before1 from "@/assets/decks/project-1-before-1.jpg";
+import project2After from "@/assets/decks/project-2-after.jpg";
+import project2Before from "@/assets/decks/project-2-before.jpg";
 
 const Decks = () => {
   const deckFAQs = [
@@ -58,7 +62,7 @@ const Decks = () => {
     <Layout>
       {/* Hero */}
       <section className="relative py-24 bg-gradient-hero text-primary-foreground overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1591825729269-caeb344f6df2?q=80&w=2070')] bg-cover bg-center opacity-20" />
+        <div className="absolute inset-0 bg-cover bg-center opacity-20" style={{ backgroundImage: `url(${project1After})` }} />
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6">
@@ -120,8 +124,8 @@ const Decks = () => {
             </div>
             <div>
               <img
-                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800"
-                alt="High-quality composite deck built in Bend, Oregon"
+                src={project2After}
+                alt="Finished composite deck by Purple Rain Construction"
                 className="rounded-2xl shadow-elegant"
                 loading="lazy"
               />
@@ -272,8 +276,8 @@ const Decks = () => {
             </div>
             <div>
               <img
-                src="https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?q=80&w=800"
-                alt="Custom deck with cable railing in Sunriver, Oregon"
+                src={project1After}
+                alt="Finished composite deck by Purple Rain Construction"
                 className="rounded-2xl shadow-lg"
                 loading="lazy"
               />
@@ -337,15 +341,15 @@ const Decks = () => {
           />
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              "https://images.unsplash.com/photo-1591825729269-caeb344f6df2?q=80&w=400",
-              "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=400",
-              "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=400",
-              "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=400",
-            ].map((src, index) => (
+              { src: project1After, alt: "Finished composite deck by Purple Rain Construction" },
+              { src: project2After, alt: "Finished composite deck by Purple Rain Construction" },
+              { src: project1Before1, alt: "Before photo – deck build in Central Oregon" },
+              { src: project2Before, alt: "Before photo – deck build in Central Oregon" },
+            ].map((img, index) => (
               <img
                 key={index}
-                src={src}
-                alt={`Deck project ${index + 1} by Purple Rain Construction`}
+                src={img.src}
+                alt={img.alt}
                 className="rounded-xl aspect-square object-cover hover:scale-105 transition-transform duration-300"
                 loading="lazy"
               />

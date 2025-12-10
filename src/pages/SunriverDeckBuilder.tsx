@@ -4,13 +4,15 @@ import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import SectionHeading from "@/components/ui/SectionHeading";
 import TrustBadge from "@/components/ui/TrustBadge";
+import project1After from "@/assets/decks/project-1-after.jpg";
+import project2After from "@/assets/decks/project-2-after.jpg";
 
 const SunriverDeckBuilder = () => {
   return (
     <Layout>
       {/* Hero */}
       <section className="relative py-24 bg-gradient-hero text-primary-foreground overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?q=80&w=2070')] bg-cover bg-center opacity-20" />
+        <div className="absolute inset-0 bg-cover bg-center opacity-20" style={{ backgroundImage: `url(${project1After})` }} />
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl">
             <div className="flex items-center gap-2 mb-4">
@@ -91,8 +93,8 @@ const SunriverDeckBuilder = () => {
             </div>
             <div>
               <img
-                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800"
-                alt="Composite deck with snow load engineering in Sunriver, Oregon"
+                src={project2After}
+                alt="Finished composite deck by Purple Rain Construction"
                 className="rounded-2xl shadow-elegant"
                 loading="lazy"
               />
