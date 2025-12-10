@@ -9,6 +9,17 @@ import project2After from "@/assets/decks/project-2-after.jpg";
 import project2Before from "@/assets/decks/project-2-before.jpg";
 import elkeFrenchDoorMain from "@/assets/remodels/elke-french-doors/main.webp";
 import elkeFrenchDoorOpen from "@/assets/remodels/elke-french-doors/open-view.jpeg";
+// Gilchrest A-Frame imports
+import gilchrestFrontAfter from "@/assets/remodels/gilchrest-a-frame/3-front-after.jpg";
+import gilchrestFrontBefore from "@/assets/remodels/gilchrest-a-frame/3-front-before.jpg";
+import gilchrestSideAfter from "@/assets/remodels/gilchrest-a-frame/2-side-exterior-after.jpg";
+import gilchrestSideBefore from "@/assets/remodels/gilchrest-a-frame/2-side-exterior-before.jpg";
+import gilchrestKitchenAfter from "@/assets/remodels/gilchrest-a-frame/5-kitchen-after.jpg";
+import gilchrestKitchenBefore from "@/assets/remodels/gilchrest-a-frame/5-kitchen-before.jpg";
+import gilchrestStairsAfter from "@/assets/remodels/gilchrest-a-frame/1-stairs-after.jpg";
+import gilchrestStairsBefore from "@/assets/remodels/gilchrest-a-frame/1-stairs-before.jpg";
+import gilchrestBackAfter from "@/assets/remodels/gilchrest-a-frame/4-back-after.jpg";
+import gilchrestBackBefore from "@/assets/remodels/gilchrest-a-frame/4-back-before.jpg";
 
 const categories = ["All", "Decks", "Remodels", "Sunriver", "Snow Removal"];
 
@@ -56,6 +67,57 @@ const projects = [
     location: "Sunriver, OR",
     image: "https://images.unsplash.com/photo-1516912481808-3406841bd33c?q=80&w=800",
     tags: ["Snow Removal", "Sunriver"]
+  },
+  // Gilchrest A-Frame Remodel entries
+  {
+    id: 6,
+    title: "A-Frame Front Transformation",
+    category: "Remodels",
+    location: "Gilchrest Area, Central Oregon",
+    image: gilchrestFrontAfter,
+    beforeImage: gilchrestFrontBefore,
+    tags: ["Remodels"],
+    description: "Complete A-Frame renovation with black metal roof and covered porch"
+  },
+  {
+    id: 7,
+    title: "A-Frame Side Exterior",
+    category: "Remodels",
+    location: "Gilchrest Area, Central Oregon",
+    image: gilchrestSideAfter,
+    beforeImage: gilchrestSideBefore,
+    tags: ["Remodels"],
+    description: "New cedar siding and black standing seam metal roof"
+  },
+  {
+    id: 8,
+    title: "Modern Kitchen Build-Out",
+    category: "Remodels",
+    location: "Gilchrest Area, Central Oregon",
+    image: gilchrestKitchenAfter,
+    beforeImage: gilchrestKitchenBefore,
+    tags: ["Remodels"],
+    description: "Modern kitchen with live-edge counter and exposed beams"
+  },
+  {
+    id: 9,
+    title: "Interior Stair Transformation",
+    category: "Remodels",
+    location: "Gilchrest Area, Central Oregon",
+    image: gilchrestStairsAfter,
+    beforeImage: gilchrestStairsBefore,
+    tags: ["Remodels"],
+    description: "Modern stairwell with dark beams and metal railing"
+  },
+  {
+    id: 10,
+    title: "A-Frame Rear Elevation",
+    category: "Remodels",
+    location: "Gilchrest Area, Central Oregon",
+    image: gilchrestBackAfter,
+    beforeImage: gilchrestBackBefore,
+    tags: ["Remodels"],
+    description: "Rear view showing new windows and cedar siding"
   },
 ];
 

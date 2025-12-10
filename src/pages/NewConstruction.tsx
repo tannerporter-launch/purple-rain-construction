@@ -1,14 +1,20 @@
 import { Link } from "react-router-dom";
-import { Building, ArrowRight, Phone } from "lucide-react";
+import { Building, ArrowRight, Phone, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
+import SectionHeading from "@/components/ui/SectionHeading";
+// Gilchrest A-Frame imports
+import gilchrestFrontAfter from "@/assets/remodels/gilchrest-a-frame/3-front-after.jpg";
+import gilchrestKitchenAfter from "@/assets/remodels/gilchrest-a-frame/5-kitchen-after.jpg";
+import gilchrestStairsAfter from "@/assets/remodels/gilchrest-a-frame/1-stairs-after.jpg";
+import gilchrestSideAfter from "@/assets/remodels/gilchrest-a-frame/2-side-exterior-after.jpg";
 
 const NewConstruction = () => {
   return (
     <Layout>
       {/* Hero */}
       <section className="relative py-24 bg-gradient-hero text-primary-foreground overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070')] bg-cover bg-center opacity-20" />
+        <div className="absolute inset-0 bg-cover bg-center opacity-20" style={{ backgroundImage: `url(${gilchrestFrontAfter})` }} />
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6">
@@ -61,6 +67,7 @@ const NewConstruction = () => {
                 {[
                   "Custom home building",
                   "Home additions and expansions",
+                  "A-Frame renovations and structural remodels",
                   "Accessory dwelling units (ADUs)",
                   "Garages and outbuildings",
                   "Shop and workspace buildings",
@@ -84,6 +91,65 @@ const NewConstruction = () => {
                 </Link>
               </Button>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Project: Gilchrest A-Frame */}
+      <section className="py-20 bg-muted">
+        <div className="container mx-auto px-4">
+          <SectionHeading
+            title="Featured Whole-Home Transformation"
+            subtitle="Gilchrest A-Frame Remodel – Complete exterior and interior renovation in Central Oregon."
+          />
+          <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
+            <div>
+              <img
+                src={gilchrestFrontAfter}
+                alt="Completed A-Frame renovation with black metal roof and cedar siding – Purple Rain Construction"
+                className="rounded-2xl shadow-elegant w-full"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold mb-4">Complete A-Frame Transformation</h3>
+              <p className="text-muted-foreground mb-6">
+                This Gilchrest A-Frame received a full exterior and interior renovation including structural reinforcement, new roofing and siding, custom kitchen build-out, and modernized stairwell + loft redesign.
+              </p>
+              <ul className="space-y-3 mb-6">
+                {[
+                  "Black standing seam metal roof",
+                  "New cedar siding throughout",
+                  "Custom kitchen with live-edge counter",
+                  "Modern stairwell with metal railing",
+                  "Complete structural reinforcement",
+                ].map((item, index) => (
+                  <li key={index} className="flex items-center gap-3">
+                    <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <Button asChild variant="outline">
+                <Link to="/gallery">View Full Gallery</Link>
+              </Button>
+            </div>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              { src: gilchrestFrontAfter, alt: "Completed A-Frame front view with new roof and siding" },
+              { src: gilchrestSideAfter, alt: "A-Frame side elevation with cedar siding" },
+              { src: gilchrestKitchenAfter, alt: "Modern kitchen with live-edge counter and exposed beams" },
+              { src: gilchrestStairsAfter, alt: "Modern stairwell with dark beams and metal railing" },
+            ].map((img, index) => (
+              <img
+                key={index}
+                src={img.src}
+                alt={img.alt}
+                className="rounded-xl aspect-square object-cover hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+              />
+            ))}
           </div>
         </div>
       </section>
