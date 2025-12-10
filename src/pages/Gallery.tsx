@@ -20,6 +20,11 @@ import gilchrestStairsAfter from "@/assets/remodels/gilchrest-a-frame/1-stairs-a
 import gilchrestStairsBefore from "@/assets/remodels/gilchrest-a-frame/1-stairs-before.jpg";
 import gilchrestBackAfter from "@/assets/remodels/gilchrest-a-frame/4-back-after.jpg";
 import gilchrestBackBefore from "@/assets/remodels/gilchrest-a-frame/4-back-before.jpg";
+// Gilchrest A-Frame supplementary images
+import gilchrestPatioFinished from "@/assets/remodels/gilchrest-a-frame/front-patio-finished.jpg";
+import gilchrestDoorInstall from "@/assets/remodels/gilchrest-a-frame/process-door-install-1.jpg";
+import gilchrestExteriorWork from "@/assets/remodels/gilchrest-a-frame/process-exterior-work.jpg";
+import gilchrestCeilingFan from "@/assets/remodels/gilchrest-a-frame/ceiling-detail-fan.jpg";
 
 const categories = ["All", "Decks", "Remodels", "Sunriver", "Snow Removal"];
 
@@ -118,6 +123,43 @@ const projects = [
     beforeImage: gilchrestBackBefore,
     tags: ["Remodels"],
     description: "Rear view showing new windows and cedar siding"
+  },
+  // Gilchrest A-Frame supplementary entries
+  {
+    id: 11,
+    title: "A-Frame Front Patio Complete",
+    category: "Remodels",
+    location: "Gilchrest Area, Central Oregon",
+    image: gilchrestPatioFinished,
+    tags: ["Remodels"],
+    description: "Cedar ceiling patio with black beam detailing"
+  },
+  {
+    id: 12,
+    title: "Window & Door Installation Process",
+    category: "Remodels",
+    location: "Gilchrest Area, Central Oregon",
+    image: gilchrestDoorInstall,
+    tags: ["Remodels"],
+    description: "Team installing sliding glass doors at Gilchrest A-Frame"
+  },
+  {
+    id: 13,
+    title: "Exterior Finishing Work",
+    category: "Remodels",
+    location: "Gilchrest Area, Central Oregon",
+    image: gilchrestExteriorWork,
+    tags: ["Remodels"],
+    description: "Workers finishing exterior trim on A-Frame home"
+  },
+  {
+    id: 14,
+    title: "Vaulted Ceiling & Craftsmanship",
+    category: "Remodels",
+    location: "Gilchrest Area, Central Oregon",
+    image: gilchrestCeilingFan,
+    tags: ["Remodels"],
+    description: "Detailed view of vaulted ceiling and modern fan"
   },
 ];
 

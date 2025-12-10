@@ -10,6 +10,9 @@ import gilchrestFrontAfter from "@/assets/remodels/gilchrest-a-frame/3-front-aft
 import gilchrestKitchenAfter from "@/assets/remodels/gilchrest-a-frame/5-kitchen-after.jpg";
 import gilchrestStairsAfter from "@/assets/remodels/gilchrest-a-frame/1-stairs-after.jpg";
 import gilchrestSideAfter from "@/assets/remodels/gilchrest-a-frame/2-side-exterior-after.jpg";
+import gilchrestPatioFinished from "@/assets/remodels/gilchrest-a-frame/front-patio-finished.jpg";
+import gilchrestCeilingFan from "@/assets/remodels/gilchrest-a-frame/ceiling-detail-fan.jpg";
+import gilchrestDoorInstall from "@/assets/remodels/gilchrest-a-frame/process-door-install-1.jpg";
 
 const Remodeling = () => {
   return (
@@ -177,14 +180,16 @@ const Remodeling = () => {
             title="Recent Remodeling Projects"
             subtitle="See examples of our remodeling work across Central Oregon."
           />
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {[
               { src: gilchrestFrontAfter, alt: "Completed A-Frame renovation with black metal roof and cedar siding – Purple Rain Construction" },
+              { src: gilchrestPatioFinished, alt: "Gilchrest A-Frame front view with cedar siding and black metal roof" },
               { src: gilchrestKitchenAfter, alt: "Modern kitchen with live-edge counter and exposed beams – Gilchrest A-Frame Remodel" },
+              { src: gilchrestCeilingFan, alt: "Detailed view of vaulted ceiling and modern fan in completed A-Frame" },
               { src: gilchrestStairsAfter, alt: "Modern stairwell with dark beams and metal railing – Gilchrest A-Frame" },
               { src: gilchrestSideAfter, alt: "A-Frame side exterior with new cedar siding and black standing seam metal roof" },
+              { src: gilchrestDoorInstall, alt: "Installation of sliding glass doors at Gilchrest A-Frame renovation" },
               { src: elkeMain, alt: "Custom-trimmed blue French doors with clear glass panels and wood casing" },
-              { src: elkeOpenView, alt: "French doors open showing adjoining room by Purple Rain Construction" },
             ].map((img, index) => (
               <img
                 key={index}
