@@ -3,13 +3,17 @@ import { Phone, CheckCircle, Home, Bath, ChefHat, Wrench, ArrowRight } from "luc
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import SectionHeading from "@/components/ui/SectionHeading";
+import elkeWideShot from "@/assets/remodels/elke-french-doors/wide-shot.webp";
+import elkeOpenView from "@/assets/remodels/elke-french-doors/open-view.jpeg";
+import elkeMain from "@/assets/remodels/elke-french-doors/main.webp";
+import elkeDetail from "@/assets/remodels/elke-french-doors/detail.jpeg";
 
 const Remodeling = () => {
   return (
     <Layout>
       {/* Hero */}
       <section className="relative py-24 bg-gradient-hero text-primary-foreground overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=2070')] bg-cover bg-center opacity-20" />
+        <div className="absolute inset-0 bg-cover bg-center opacity-20" style={{ backgroundImage: `url(${elkeWideShot})` }} />
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6">
@@ -126,8 +130,8 @@ const Remodeling = () => {
             </div>
             <div>
               <img
-                src="https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=800"
-                alt="Kitchen remodel in progress in Bend, Oregon"
+                src={elkeOpenView}
+                alt="French doors open showing adjoining room by Purple Rain Construction"
                 className="rounded-2xl shadow-elegant"
                 loading="lazy"
               />
@@ -172,15 +176,15 @@ const Remodeling = () => {
           />
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=400",
-              "https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=400",
-              "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?q=80&w=400",
-              "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?q=80&w=400",
-            ].map((src, index) => (
+              { src: elkeMain, alt: "Custom-trimmed blue French doors with clear glass panels and wood casing" },
+              { src: elkeOpenView, alt: "French doors open showing adjoining room by Purple Rain Construction" },
+              { src: elkeDetail, alt: "Interior French door installation showing alignment and trim detail" },
+              { src: elkeWideShot, alt: "Wide view of completed French door remodel looking into living area" },
+            ].map((img, index) => (
               <img
                 key={index}
-                src={src}
-                alt={`Remodeling project ${index + 1} by Purple Rain Construction`}
+                src={img.src}
+                alt={img.alt}
                 className="rounded-xl aspect-square object-cover hover:scale-105 transition-transform duration-300"
                 loading="lazy"
               />
