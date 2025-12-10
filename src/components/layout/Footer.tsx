@@ -101,16 +101,16 @@ const Footer = () => {
                 </a>
               </li>
             </ul>
-            <div className="mt-6 flex gap-4">
-              {/* Trust Badges */}
-              <div className="text-xs text-background/50">
-                <p>BBB Accredited</p>
+            <div className="mt-6 flex flex-wrap gap-2">
+              {/* Trust Badges - Styled as badge elements */}
+              <div className="px-3 py-1.5 rounded-md border border-primary/40 bg-primary/10 text-xs text-background/80 font-medium">
+                BBB Accredited
               </div>
-              <div className="text-xs text-background/50">
-                <p>COBA Member</p>
+              <div className="px-3 py-1.5 rounded-md border border-primary/40 bg-primary/10 text-xs text-background/80 font-medium">
+                COBA Member
               </div>
-              <div className="text-xs text-background/50">
-                <p>TrexPro Builder</p>
+              <div className="px-3 py-1.5 rounded-md border border-primary/40 bg-primary/10 text-xs text-background/80 font-medium">
+                TrexPro® Builder
               </div>
             </div>
           </div>

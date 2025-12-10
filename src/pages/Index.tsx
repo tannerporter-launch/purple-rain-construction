@@ -120,7 +120,7 @@ const Index = () => {
                 Why Choose Purple Rain Construction?
               </h2>
               <p className="text-base sm:text-lg text-muted-foreground mb-6">
-                Purple Rain Construction was built on a foundation of family values and over 30 years of construction experience. We bring skill, dedication, and a personal touch to every project.
+                Purple Rain Construction is built on family, friends, and hands-on experience. Founded by Nicholas and inspired by his father's 30 years as a general contractor, our team brings skill, dedication, and a personal touch to every project.
               </p>
               <ul className="space-y-4 mb-8">
                 <li className="flex items-start gap-3">
@@ -142,11 +142,37 @@ const Index = () => {
             </div>
             <div className="relative">
               <img
-                src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=800"
+                src="https://images.unsplash.com/photo-504307651254-35680f356dfd?q=80&w=800"
                 alt="Purple Rain Construction team at work in Central Oregon"
                 className="rounded-2xl shadow-elegant w-full"
                 loading="lazy"
               />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Project Transparency (JobTread) - Positioned right after Why Choose Us */}
+      <section className="py-16 md:py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">
+              Project Transparency You Can Count On
+            </h2>
+            <p className="text-base sm:text-lg text-muted-foreground mb-8">
+              We use a digital project portal to give our customers real-time updates, timelines, material selections, and communication in one place. You always know what's happening with your project—no surprises.
+            </p>
+            <div className="grid sm:grid-cols-3 gap-6 md:gap-8">
+              {[
+                { title: "Real-Time Updates", desc: "See progress photos and status changes as they happen" },
+                { title: "Clear Timelines", desc: "Know exactly when each phase of your project will complete" },
+                { title: "Direct Communication", desc: "Message our team and get quick responses in one place" },
+              ].map((item, index) => (
+                <div key={index} className="text-center p-4 md:p-6 rounded-xl bg-muted">
+                  <h3 className="font-semibold text-base md:text-lg mb-2">{item.title}</h3>
+                  <p className="text-sm text-muted-foreground">{item.desc}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -190,38 +216,12 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Project Transparency (JobTread) */}
-      <section className="py-16 md:py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">
-              Project Transparency You Can Count On
-            </h2>
-            <p className="text-base sm:text-lg text-muted-foreground mb-8">
-              We use a digital project portal to give our customers real-time updates, timelines, material selections, and communication in one place. You always know what's happening with your project—no surprises.
-            </p>
-            <div className="grid sm:grid-cols-3 gap-6 md:gap-8">
-              {[
-                { title: "Real-Time Updates", desc: "See progress photos and status changes as they happen" },
-                { title: "Clear Timelines", desc: "Know exactly when each phase of your project will complete" },
-                { title: "Direct Communication", desc: "Message our team and get quick responses in one place" },
-              ].map((item, index) => (
-                <div key={index} className="text-center p-4 md:p-6 rounded-xl bg-muted">
-                  <h3 className="font-semibold text-base md:text-lg mb-2">{item.title}</h3>
-                  <p className="text-sm text-muted-foreground">{item.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Testimonials */}
       <section className="py-16 md:py-20 bg-muted">
         <div className="container mx-auto px-4">
           <SectionHeading
             title="What Our Customers Say"
-            subtitle="Don't just take our word for it—hear from homeowners across Central Oregon."
+            subtitle="Don't just take our word for it—see what homeowners say on Google."
           />
           <div className="grid md:grid-cols-3 gap-6 md:gap-8">
             {[
@@ -245,10 +245,13 @@ const Index = () => {
                 key={index}
                 className="bg-background p-6 md:p-8 rounded-2xl shadow-md border border-border"
               >
-                <div className="flex gap-1 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 fill-sunriver-gold text-sunriver-gold" />
-                  ))}
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex gap-1">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="h-5 w-5 fill-sunriver-gold text-sunriver-gold" />
+                    ))}
+                  </div>
+                  <span className="text-xs text-muted-foreground font-medium">Google Review</span>
                 </div>
                 <p className="text-foreground mb-6 italic text-sm md:text-base">"{testimonial.quote}"</p>
                 <div>
