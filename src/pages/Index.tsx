@@ -6,6 +6,8 @@ import ServiceCard from "@/components/ui/ServiceCard";
 import TrustBadge from "@/components/ui/TrustBadge";
 import Layout from "@/components/layout/Layout";
 import project1After from "@/assets/decks/project-1-after.jpg";
+import elkeFrenchDoorMain from "@/assets/remodels/elke-french-doors/main.webp";
+
 const Index = () => {
   return (
     <Layout>
@@ -96,7 +98,7 @@ const Index = () => {
               description="Kitchen, bath, whole-home, and small commercial renovations."
               href="/remodeling"
               icon={HomeIcon}
-              image="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=800"
+              image={elkeFrenchDoorMain}
               ctaText="View Remodeling Services"
             />
             <ServiceCard
@@ -223,12 +225,17 @@ const Index = () => {
             title="What Our Customers Say"
             subtitle="Don't just take our word for it—see what homeowners say on Google."
           />
-          <div className="grid md:grid-cols-3 gap-6 md:gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {[
               {
                 quote: "Purple Rain Construction built our deck in Sunriver and it exceeded all expectations. They handled the HOA process seamlessly and kept us updated every step of the way.",
                 name: "Sarah M.",
                 location: "Sunriver",
+              },
+              {
+                quote: "Nicholas and his construction crew are first-rate contractors whom I found to be conscientious, reliable, and responsive during the remodeling process of installing an interior French door, duplicating existing trim work, and narrowing a hallway entryway. I highly recommend Purple Rain Construction to anyone who wants to work with diligent and competent folks.",
+                name: "Elke H.",
+                location: "Central Oregon",
               },
               {
                 quote: "Nicholas and his team were professional, punctual, and did exceptional work on our kitchen remodel. The communication through their project portal was a game-changer.",

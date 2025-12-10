@@ -7,6 +7,8 @@ import project1After from "@/assets/decks/project-1-after.jpg";
 import project1Before1 from "@/assets/decks/project-1-before-1.jpg";
 import project2After from "@/assets/decks/project-2-after.jpg";
 import project2Before from "@/assets/decks/project-2-before.jpg";
+import elkeFrenchDoorMain from "@/assets/remodels/elke-french-doors/main.webp";
+import elkeFrenchDoorOpen from "@/assets/remodels/elke-french-doors/open-view.jpeg";
 
 const categories = ["All", "Decks", "Remodels", "Sunriver", "Snow Removal"];
 
@@ -31,30 +33,24 @@ const projects = [
   },
   {
     id: 3,
-    title: "Modern Kitchen Remodel",
+    title: "Interior French Doors Installation",
     category: "Remodels",
-    location: "Bend, OR",
-    image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=800",
-    tags: ["Remodels"]
+    location: "Central Oregon",
+    image: elkeFrenchDoorMain,
+    tags: ["Remodels"],
+    description: "Custom-painted French doors with duplicated trim work and hallway entry modification"
   },
   {
     id: 4,
-    title: "Bathroom Renovation",
+    title: "French Doors Open View",
     category: "Remodels",
-    location: "Redmond, OR",
-    image: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?q=80&w=800",
-    tags: ["Remodels"]
+    location: "Central Oregon",
+    image: elkeFrenchDoorOpen,
+    tags: ["Remodels"],
+    description: "Interior French doors showing adjoining room by Purple Rain Construction"
   },
   {
     id: 5,
-    title: "Whole Home Renovation",
-    category: "Remodels",
-    location: "Sunriver, OR",
-    image: "https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=800",
-    tags: ["Remodels", "Sunriver"]
-  },
-  {
-    id: 6,
     title: "Snow Cleared Driveway",
     category: "Snow Removal",
     location: "Sunriver, OR",
