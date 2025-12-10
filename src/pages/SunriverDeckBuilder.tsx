@@ -1,0 +1,371 @@
+import { Link } from "react-router-dom";
+import { Phone, CheckCircle, TreePine, Shield, Hammer, Wrench, Home, Snowflake, Users, Star, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import Layout from "@/components/layout/Layout";
+import SectionHeading from "@/components/ui/SectionHeading";
+import TrustBadge from "@/components/ui/TrustBadge";
+
+const SunriverDeckBuilder = () => {
+  return (
+    <Layout>
+      {/* Hero */}
+      <section className="relative py-24 bg-gradient-hero text-primary-foreground overflow-hidden">
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?q=80&w=2070')] bg-cover bg-center opacity-20" />
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-3xl">
+            <div className="flex items-center gap-2 mb-4">
+              <TreePine className="h-6 w-6" />
+              <span className="text-lg font-medium">Sunriver Specialists</span>
+            </div>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6">
+              Sunriver Deck Builder & Construction Services
+            </h1>
+            <p className="text-xl text-primary-foreground/90 mb-8">
+              High snow load decks, remodels, and seasonal snow removal for Sunriver homes, vacation rentals, and property managers.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <Button
+                asChild
+                size="lg"
+                className="bg-background text-primary hover:bg-background/90 font-semibold"
+              >
+                <Link to="/contact?service=deck&location=sunriver">Request a Sunriver Quote</Link>
+              </Button>
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="border-2 border-primary-foreground text-primary-foreground bg-transparent hover:bg-primary-foreground/10"
+              >
+                <a href="tel:541-408-2712">
+                  <Phone className="mr-2 h-5 w-5" />
+                  Call 541-408-2712
+                </a>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Trust Indicators */}
+      <section className="py-12 bg-muted border-y border-border">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <TrustBadge icon={TreePine} title="Sunriver Specialists" description="Local Expertise" />
+            <TrustBadge icon={Shield} title="Licensed & Insured" description="CCB #247140" />
+            <TrustBadge icon={Hammer} title="TrexPro Builder" description="Certified Quality" />
+            <TrustBadge icon={Star} title="HOA Compliant" description="SROA Experience" />
+          </div>
+        </div>
+      </section>
+
+      {/* Why Sunriver Needs Specialized Construction */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                Why Sunriver Needs Specialized Deck Construction
+              </h2>
+              <p className="text-lg text-muted-foreground mb-6">
+                Building in Sunriver isn't like building anywhere else. The unique combination of heavy snow loads, freeze-thaw cycles, and strict design guidelines requires contractors who understand the specific challenges.
+              </p>
+              <ul className="space-y-4 mb-8">
+                {[
+                  "Snow loads exceeding 60 lbs per square foot",
+                  "Constant freeze-thaw cycles that stress materials",
+                  "Shaded lots that stay damp and prone to moisture damage",
+                  "SROA/ARC design guidelines and approval process",
+                  "High rental traffic that demands durable construction",
+                  "HOA requirements for aesthetics and materials",
+                ].map((item, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <CheckCircle className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-foreground">{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="text-muted-foreground">
+                We've built dozens of decks in Sunriver and understand exactly what it takes to create outdoor spaces that last.
+              </p>
+            </div>
+            <div>
+              <img
+                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800"
+                alt="Composite deck with snow load engineering in Sunriver, Oregon"
+                className="rounded-2xl shadow-elegant"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Deck Services for Sunriver */}
+      <section className="py-20 bg-muted">
+        <div className="container mx-auto px-4">
+          <SectionHeading
+            title="Deck Services for Sunriver"
+            subtitle="Every deck we build is engineered for Sunriver's specific conditions."
+          />
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                icon: Hammer,
+                title: "New Deck Builds",
+                description: "Custom decks designed for snow loads, HOA compliance, and year-round outdoor living. From concept to final inspection.",
+                features: ["Snow load engineering", "SROA approval handling", "Composite & wood options"]
+              },
+              {
+                icon: Wrench,
+                title: "Deck Replacement",
+                description: "Replace your aging deck with a modern, code-compliant structure. We often can reuse existing footings to save costs.",
+                features: ["Structural assessment", "Material upgrades", "Minimal disruption"]
+              },
+              {
+                icon: Shield,
+                title: "Deck Repairs",
+                description: "Fix snow damage, rotted boards, failing railings, and structural issues. We handle repairs of any size.",
+                features: ["Storm damage repair", "Board replacement", "Railing upgrades"]
+              },
+            ].map((service, index) => (
+              <div key={index} className="bg-background p-8 rounded-2xl border border-border">
+                <div className="p-3 rounded-lg bg-primary/10 w-fit mb-4">
+                  <service.icon className="h-6 w-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
+                <p className="text-muted-foreground mb-4">{service.description}</p>
+                <ul className="space-y-2">
+                  {service.features.map((feature, i) => (
+                    <li key={i} className="flex items-center gap-2 text-sm">
+                      <CheckCircle className="h-4 w-4 text-primary" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Perfect for Remote Owners */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <Users className="h-12 w-12 text-primary mx-auto mb-4" />
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              Perfect for Sunriver Homeowners & Vacation Rentals
+            </h2>
+            <p className="text-lg text-muted-foreground mb-8">
+              Many Sunriver property owners live out of town. We make it easy to manage your project remotely with our digital project portal—real-time updates, photos, decisions, and communication all in one place.
+            </p>
+            <div className="grid sm:grid-cols-3 gap-6">
+              {[
+                { title: "Remote Project Management", desc: "Manage your project from anywhere with online updates and approvals" },
+                { title: "HOA Handling", desc: "We navigate SROA/ARC approvals so you don't have to" },
+                { title: "Property Manager Coordination", desc: "We work directly with your property manager on scheduling" },
+              ].map((item, index) => (
+                <div key={index} className="p-6 bg-muted rounded-xl">
+                  <h3 className="font-semibold mb-2">{item.title}</h3>
+                  <p className="text-sm text-muted-foreground">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Remodeling for Sunriver */}
+      <section className="py-20 bg-muted">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <img
+                src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=800"
+                alt="Modern kitchen remodel in Sunriver vacation home"
+                className="rounded-2xl shadow-elegant"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <Home className="h-10 w-10 text-primary mb-4" />
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                Remodeling Services for Sunriver
+              </h2>
+              <p className="text-lg text-muted-foreground mb-6">
+                Updating your Sunriver home? We handle kitchen and bathroom remodels, vacation rental upgrades, and whole-home renovations with the same attention to quality and communication.
+              </p>
+              <ul className="space-y-3 mb-8">
+                {[
+                  "Kitchen & bathroom updates",
+                  "Vacation rental refreshes",
+                  "Modern finishes and fixtures",
+                  "Energy-efficient upgrades",
+                  "Work scheduled around rental bookings",
+                ].map((item, index) => (
+                  <li key={index} className="flex items-center gap-3">
+                    <CheckCircle className="h-5 w-5 text-primary" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <Button asChild size="lg" className="bg-gradient-primary hover:opacity-90">
+                <Link to="/remodeling">
+                  View Remodeling Services
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Snow Removal Callout */}
+      <section className="py-20 bg-gradient-primary text-primary-foreground">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <Snowflake className="h-10 w-10 mb-4" />
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                Sunriver Snow Removal Services
+              </h2>
+              <p className="text-lg text-primary-foreground/90 mb-6">
+                Keep your Sunriver property accessible all winter. Our route-based snow removal service covers driveways, walkways, and decks with reliable, timely clearing.
+              </p>
+              <ul className="space-y-3 mb-8">
+                {[
+                  "Concentrated routes for faster response",
+                  "Automatic dispatch at 1\" or 2\" accumulation",
+                  "Deck clearing to protect your investment",
+                  "Property manager coordination available",
+                ].map((item, index) => (
+                  <li key={index} className="flex items-center gap-3 text-primary-foreground/90">
+                    <CheckCircle className="h-5 w-5" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <Button
+                asChild
+                size="lg"
+                className="bg-background text-primary hover:bg-background/90 font-semibold"
+              >
+                <Link to="/snow-removal">
+                  Learn About Snow Removal
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
+            </div>
+            <div>
+              <img
+                src="https://images.unsplash.com/photo-1516912481808-3406841bd33c?q=80&w=800"
+                alt="Snow removal services in Sunriver, Oregon"
+                className="rounded-2xl shadow-lg"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Process */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <SectionHeading
+            title="Our Sunriver Project Process"
+            subtitle="From first call to final walkthrough, here's how we work."
+          />
+          <div className="grid md:grid-cols-5 gap-6">
+            {[
+              { step: "1", title: "Consultation", desc: "We discuss your vision, assess your property, and understand your needs." },
+              { step: "2", title: "Design & Estimate", desc: "Detailed design and transparent pricing tailored to Sunriver requirements." },
+              { step: "3", title: "HOA Approval", desc: "We handle all SROA/ARC submissions and coordinate with the HOA." },
+              { step: "4", title: "Construction", desc: "Quality construction with regular updates through our project portal." },
+              { step: "5", title: "Final Walkthrough", desc: "We review everything together and ensure you're completely satisfied." },
+            ].map((item, index) => (
+              <div key={index} className="text-center">
+                <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground font-bold text-xl flex items-center justify-center mx-auto mb-4">
+                  {item.step}
+                </div>
+                <h3 className="font-semibold mb-2">{item.title}</h3>
+                <p className="text-sm text-muted-foreground">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="py-20 bg-muted">
+        <div className="container mx-auto px-4">
+          <SectionHeading
+            title="What Sunriver Homeowners Say"
+            subtitle="Real feedback from property owners in Sunriver."
+          />
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {[
+              {
+                quote: "Living in Portland, I was worried about managing a deck project in Sunriver. Purple Rain made it seamless—their project portal kept me updated on everything, and the final result exceeded expectations.",
+                name: "Jennifer K.",
+                type: "Remote Homeowner"
+              },
+              {
+                quote: "Our vacation rental needed a deck that could handle heavy use and Sunriver winters. Nicholas and team delivered exactly that. Two years later, it still looks brand new.",
+                name: "Mark & Susan T.",
+                type: "Vacation Rental Owner"
+              },
+            ].map((testimonial, index) => (
+              <div key={index} className="bg-background p-8 rounded-2xl border border-border">
+                <div className="flex gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="h-5 w-5 fill-sunriver-gold text-sunriver-gold" />
+                  ))}
+                </div>
+                <p className="text-foreground mb-6 italic">"{testimonial.quote}"</p>
+                <div>
+                  <p className="font-semibold">{testimonial.name}</p>
+                  <p className="text-sm text-muted-foreground">{testimonial.type}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="py-20 bg-gradient-primary text-primary-foreground">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            Ready to Start Your Sunriver Project?
+          </h2>
+          <p className="text-xl text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
+            Whether you need a new deck, home remodel, or reliable snow removal, we're Sunriver's trusted construction partner.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Button
+              asChild
+              size="lg"
+              className="bg-background text-primary hover:bg-background/90 font-semibold"
+            >
+              <Link to="/contact?location=sunriver">Request a Sunriver Quote</Link>
+            </Button>
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="border-2 border-primary-foreground text-primary-foreground bg-transparent hover:bg-primary-foreground/10"
+            >
+              <a href="tel:541-408-2712">
+                <Phone className="mr-2 h-5 w-5" />
+                Call 541-408-2712
+              </a>
+            </Button>
+          </div>
+        </div>
+      </section>
+    </Layout>
+  );
+};
+
+export default SunriverDeckBuilder;
