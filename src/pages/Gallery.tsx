@@ -59,6 +59,10 @@ import olivieroBackPatio from "@/assets/remodels/oliviero/back-patio-deck.jpg";
 import olivieroBarnPortrait from "@/assets/remodels/oliviero/barn-doors-portrait.jpg";
 import olivieroBarnWide from "@/assets/remodels/oliviero/barn-doors-wide.jpg";
 import olivieroFrontDoor from "@/assets/remodels/oliviero/front-door-detail.jpg";
+// Oliviero Interior & Property Expanded
+import olivieroKitchenIsland from "@/assets/remodels/oliviero/kitchen-island-view.jpg";
+import olivieroLivingStove from "@/assets/remodels/oliviero/living-room-stove-wall.jpg";
+import olivieroPropertyWide from "@/assets/remodels/oliviero/property-wide-lawn.jpg";
 
 const categories = ["All", "Decks", "Remodels", "Sunriver", "Snow Removal"];
 
@@ -436,6 +440,34 @@ const projects = [
     image: olivieroFrontDoor,
     tags: ["Remodels"],
     description: "Handcrafted entry door with knotty alder wood, glass panes, and industrial pendant fixture"
+  },
+  // Oliviero Interior & Property Expanded
+  {
+    id: 41,
+    title: "Oliviero Kitchen – Island to Dining View",
+    category: "Remodels",
+    location: "Central Oregon",
+    image: olivieroKitchenIsland,
+    tags: ["Remodels"],
+    description: "Open floor plan showcasing quartz island, mint pendant lighting, and rustic dining area with panoramic property views"
+  },
+  {
+    id: 42,
+    title: "Living Room – Stove Wall & Dining Connection",
+    category: "Remodels",
+    location: "Central Oregon",
+    image: olivieroLivingStove,
+    tags: ["Remodels"],
+    description: "Cozy farmhouse living space with cast iron stove, shiplap walls, and indoor-outdoor barn connection"
+  },
+  {
+    id: 43,
+    title: "Oliviero Property – Wide Lawn Perspective",
+    category: "Remodels",
+    location: "Central Oregon",
+    image: olivieroPropertyWide,
+    tags: ["Remodels"],
+    description: "Comprehensive property view showing complete transformation with coordinated exterior finishes and outdoor living spaces"
   },
 ];
 
