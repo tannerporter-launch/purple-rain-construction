@@ -34,6 +34,13 @@ import olivieroKitchenBefore from "@/assets/remodels/oliviero/3-kitchen-before.w
 import olivieroKitchenAfter from "@/assets/remodels/oliviero/3-kitchen-after.jpg";
 import olivieroBarWindow1 from "@/assets/remodels/oliviero/4-bar-window-1.jpg";
 import olivieroBarWindow2 from "@/assets/remodels/oliviero/4-bar-window-2.jpg";
+// Oliviero Kitchen Expanded Gallery imports
+import olivieroKitchenEntry from "@/assets/remodels/oliviero/kitchen-entry-view.jpg";
+import olivieroKitchenFull1 from "@/assets/remodels/oliviero/kitchen-full-view-1.jpg";
+import olivieroKitchenStove from "@/assets/remodels/oliviero/kitchen-stove-backsplash.jpg";
+import olivieroKitchenFarmhouseSink from "@/assets/remodels/oliviero/kitchen-farmhouse-sink.jpg";
+import olivieroBarWine from "@/assets/remodels/oliviero/bar-window-wine.jpg";
+import olivieroBarExteriorFull from "@/assets/remodels/oliviero/bar-window-exterior-full.jpg";
 
 const categories = ["All", "Decks", "Remodels", "Sunriver", "Snow Removal"];
 
@@ -218,6 +225,61 @@ const projects = [
     image: olivieroBarWindow2,
     tags: ["Remodels"],
     description: "Full bar setup with metal stools and covered patio entertainment space"
+  },
+  // Oliviero Kitchen Expanded Gallery entries
+  {
+    id: 20,
+    title: "Oliviero Kitchen – Living Entry View",
+    category: "Remodels",
+    location: "Central Oregon",
+    image: olivieroKitchenEntry,
+    tags: ["Remodels"],
+    description: "Open concept kitchen with shiplap walls and navy island visible from living room"
+  },
+  {
+    id: 21,
+    title: "Oliviero Kitchen – Full Overview",
+    category: "Remodels",
+    location: "Central Oregon",
+    image: olivieroKitchenFull1,
+    tags: ["Remodels"],
+    description: "Designer kitchen featuring quartz island, farmhouse sink, and glass pendant lighting"
+  },
+  {
+    id: 22,
+    title: "Stove & Patterned Tile Backsplash",
+    category: "Remodels",
+    location: "Central Oregon",
+    image: olivieroKitchenStove,
+    tags: ["Remodels"],
+    description: "Custom shiplap-wrapped range hood with floating wood shelves and designer tile"
+  },
+  {
+    id: 23,
+    title: "Farmhouse Sink & Counter Details",
+    category: "Remodels",
+    location: "Central Oregon",
+    image: olivieroKitchenFarmhouseSink,
+    tags: ["Remodels"],
+    description: "White farmhouse sink with industrial black faucet and marble-look quartz surfaces"
+  },
+  {
+    id: 24,
+    title: "Bar Window – Interior Wine View",
+    category: "Remodels",
+    location: "Central Oregon",
+    image: olivieroBarWine,
+    tags: ["Remodels"],
+    description: "Indoor-outdoor bar connection showcasing quartz counter and kitchen beyond"
+  },
+  {
+    id: 25,
+    title: "Bar Window – Full Exterior Frame",
+    category: "Remodels",
+    location: "Central Oregon",
+    image: olivieroBarExteriorFull,
+    tags: ["Remodels"],
+    description: "Custom fold-out bar window with mountain-scene metal art and black exterior accents"
   },
 ];
 

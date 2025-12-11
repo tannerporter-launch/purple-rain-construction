@@ -15,6 +15,10 @@ import gilchrestDoorInstall from "@/assets/remodels/gilchrest-a-frame/process-do
 // Oliviero Remodel imports
 import olivieroKitchenAfter from "@/assets/remodels/oliviero/3-kitchen-after.jpg";
 import olivieroSideAfter from "@/assets/remodels/oliviero/2-side-after.jpg";
+// Oliviero Kitchen Expanded imports
+import olivieroKitchenFull1 from "@/assets/remodels/oliviero/kitchen-full-view-1.jpg";
+import olivieroBarExteriorFull from "@/assets/remodels/oliviero/bar-window-exterior-full.jpg";
+import olivieroKitchenStove from "@/assets/remodels/oliviero/kitchen-stove-backsplash.jpg";
 
 const Remodeling = () => {
   return (
@@ -185,14 +189,16 @@ const Remodeling = () => {
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {[
               { src: gilchrestFrontAfter, alt: "Completed A-Frame renovation with black metal roof and cedar siding – Purple Rain Construction" },
+              { src: olivieroKitchenFull1, alt: "Modern farmhouse kitchen with shiplap walls, white cabinetry, and patterned backsplash" },
+              { src: olivieroBarExteriorFull, alt: "Custom fold-out bar window with mountain-scene metal art and black exterior accents" },
               { src: gilchrestPatioFinished, alt: "Gilchrest A-Frame front view with cedar siding and black metal roof" },
               { src: olivieroKitchenAfter, alt: "Modern kitchen remodel with black island, white cabinets, and patterned backsplash" },
               { src: olivieroSideAfter, alt: "Side exterior view with new back deck and modern cable railing" },
+              { src: olivieroKitchenStove, alt: "Professional range with patterned tile backsplash and wood-wrapped hood" },
               { src: gilchrestKitchenAfter, alt: "Modern kitchen with live-edge counter and exposed beams – Gilchrest A-Frame Remodel" },
               { src: gilchrestCeilingFan, alt: "Detailed view of vaulted ceiling and modern fan in completed A-Frame" },
               { src: gilchrestStairsAfter, alt: "Modern stairwell with dark beams and metal railing – Gilchrest A-Frame" },
               { src: gilchrestSideAfter, alt: "A-Frame side exterior with new cedar siding and black standing seam metal roof" },
-              { src: gilchrestDoorInstall, alt: "Installation of sliding glass doors at Gilchrest A-Frame renovation" },
               { src: elkeMain, alt: "Custom-trimmed blue French doors with clear glass panels and wood casing" },
             ].map((img, index) => (
               <img
