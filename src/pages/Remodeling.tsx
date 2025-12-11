@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import SectionHeading from "@/components/ui/SectionHeading";
 import elkeMain from "@/assets/remodels/elke-french-doors/main.webp";
-import elkeOpenView from "@/assets/remodels/elke-french-doors/open-view.jpeg";
 // Gilchrest A-Frame imports
 import gilchrestFrontAfter from "@/assets/remodels/gilchrest-a-frame/3-front-after.jpg";
 import gilchrestKitchenAfter from "@/assets/remodels/gilchrest-a-frame/5-kitchen-after.jpg";
@@ -13,6 +12,9 @@ import gilchrestSideAfter from "@/assets/remodels/gilchrest-a-frame/2-side-exter
 import gilchrestPatioFinished from "@/assets/remodels/gilchrest-a-frame/front-patio-finished.jpg";
 import gilchrestCeilingFan from "@/assets/remodels/gilchrest-a-frame/ceiling-detail-fan.jpg";
 import gilchrestDoorInstall from "@/assets/remodels/gilchrest-a-frame/process-door-install-1.jpg";
+// Oliviero Remodel imports
+import olivieroKitchenAfter from "@/assets/remodels/oliviero/3-kitchen-after.jpg";
+import olivieroSideAfter from "@/assets/remodels/oliviero/2-side-after.jpg";
 
 const Remodeling = () => {
   return (
@@ -184,6 +186,8 @@ const Remodeling = () => {
             {[
               { src: gilchrestFrontAfter, alt: "Completed A-Frame renovation with black metal roof and cedar siding – Purple Rain Construction" },
               { src: gilchrestPatioFinished, alt: "Gilchrest A-Frame front view with cedar siding and black metal roof" },
+              { src: olivieroKitchenAfter, alt: "Modern kitchen remodel with black island, white cabinets, and patterned backsplash" },
+              { src: olivieroSideAfter, alt: "Side exterior view with new back deck and modern cable railing" },
               { src: gilchrestKitchenAfter, alt: "Modern kitchen with live-edge counter and exposed beams – Gilchrest A-Frame Remodel" },
               { src: gilchrestCeilingFan, alt: "Detailed view of vaulted ceiling and modern fan in completed A-Frame" },
               { src: gilchrestStairsAfter, alt: "Modern stairwell with dark beams and metal railing – Gilchrest A-Frame" },

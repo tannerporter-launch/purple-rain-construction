@@ -5,8 +5,8 @@ import Layout from "@/components/layout/Layout";
 import ServiceCard from "@/components/ui/ServiceCard";
 import SectionHeading from "@/components/ui/SectionHeading";
 import project1After from "@/assets/decks/project-1-after.jpg";
-import gilchrestPatioFinished from "@/assets/remodels/gilchrest-a-frame/front-patio-finished.jpg";
 import gilchrestCeilingFan from "@/assets/remodels/gilchrest-a-frame/ceiling-detail-fan.jpg";
+import olivieroKitchenAfter from "@/assets/remodels/oliviero/3-kitchen-after.jpg";
 
 const Services = () => {
   return (
@@ -39,7 +39,7 @@ const Services = () => {
               description="Kitchen, bathroom, and whole-home renovations. Quality craftsmanship, clear communication, and attention to detail from start to finish."
               href="/remodeling"
               icon={Home}
-              image={gilchrestPatioFinished}
+              image={olivieroKitchenAfter}
             />
             <ServiceCard
               title="New Construction"

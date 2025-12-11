@@ -25,6 +25,15 @@ import gilchrestPatioFinished from "@/assets/remodels/gilchrest-a-frame/front-pa
 import gilchrestDoorInstall from "@/assets/remodels/gilchrest-a-frame/process-door-install-1.jpg";
 import gilchrestExteriorWork from "@/assets/remodels/gilchrest-a-frame/process-exterior-work.jpg";
 import gilchrestCeilingFan from "@/assets/remodels/gilchrest-a-frame/ceiling-detail-fan.jpg";
+// Oliviero Remodel imports
+import olivieroFrontBefore from "@/assets/remodels/oliviero/1-front-before.webp";
+import olivieroFrontAfter from "@/assets/remodels/oliviero/1-front-after.jpg";
+import olivieroSideBefore from "@/assets/remodels/oliviero/2-side-before.webp";
+import olivieroSideAfter from "@/assets/remodels/oliviero/2-side-after.jpg";
+import olivieroKitchenBefore from "@/assets/remodels/oliviero/3-kitchen-before.webp";
+import olivieroKitchenAfter from "@/assets/remodels/oliviero/3-kitchen-after.jpg";
+import olivieroBarWindow1 from "@/assets/remodels/oliviero/4-bar-window-1.jpg";
+import olivieroBarWindow2 from "@/assets/remodels/oliviero/4-bar-window-2.jpg";
 
 const categories = ["All", "Decks", "Remodels", "Sunriver", "Snow Removal"];
 
@@ -160,6 +169,55 @@ const projects = [
     image: gilchrestCeilingFan,
     tags: ["Remodels"],
     description: "Detailed view of vaulted ceiling and modern fan"
+  },
+  // Oliviero Remodel entries
+  {
+    id: 15,
+    title: "Oliviero Front Exterior Transformation",
+    category: "Remodels",
+    location: "Central Oregon",
+    image: olivieroFrontAfter,
+    beforeImage: olivieroFrontBefore,
+    tags: ["Remodels"],
+    description: "Modern farmhouse with deep charcoal board-and-batten siding and natural wood door"
+  },
+  {
+    id: 16,
+    title: "Oliviero Side Elevation & Patio",
+    category: "Remodels",
+    location: "Central Oregon",
+    image: olivieroSideAfter,
+    beforeImage: olivieroSideBefore,
+    tags: ["Remodels"],
+    description: "New back deck, sunroom windows, and modern cable railing with fire pit area"
+  },
+  {
+    id: 17,
+    title: "Modern Farmhouse Kitchen Remodel",
+    category: "Remodels",
+    location: "Central Oregon",
+    image: olivieroKitchenAfter,
+    beforeImage: olivieroKitchenBefore,
+    tags: ["Remodels"],
+    description: "Designer kitchen with shiplap walls, patterned tile backsplash, and bold navy island"
+  },
+  {
+    id: 18,
+    title: "Outdoor Bar Pass-Through Window",
+    category: "Remodels",
+    location: "Central Oregon",
+    image: olivieroBarWindow1,
+    tags: ["Remodels"],
+    description: "Custom pass-through window with mountain art and outdoor bar counter"
+  },
+  {
+    id: 19,
+    title: "Entertainment Bar Window",
+    category: "Remodels",
+    location: "Central Oregon",
+    image: olivieroBarWindow2,
+    tags: ["Remodels"],
+    description: "Full bar setup with metal stools and covered patio entertainment space"
   },
 ];
 
