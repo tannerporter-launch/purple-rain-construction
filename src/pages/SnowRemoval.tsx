@@ -4,13 +4,16 @@ import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import SectionHeading from "@/components/ui/SectionHeading";
 import TrustBadge from "@/components/ui/TrustBadge";
+import heroPlowDawn from "@/assets/snow-removal/hero-plow-dawn.jpg";
+import sunriverDriveway from "@/assets/snow-removal/sunriver-driveway-cleared.jpg";
+import plowActionShot from "@/assets/snow-removal/plow-action-shot.jpg";
 
 const SnowRemoval = () => {
   return (
     <Layout>
       {/* Hero */}
       <section className="relative py-24 bg-gradient-hero text-primary-foreground overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1516912481808-3406841bd33c?q=80&w=2070')] bg-cover bg-center opacity-20" />
+        <div className="absolute inset-0 bg-cover bg-center opacity-20" style={{ backgroundImage: `url(${heroPlowDawn})` }} />
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl">
             <div className="flex items-center gap-2 mb-4">
@@ -89,10 +92,11 @@ const SnowRemoval = () => {
             </div>
             <div>
               <img
-                src="https://images.unsplash.com/photo-1491002052546-bf38f186af56?q=80&w=800"
-                alt="Snow-covered driveway in Sunriver, Oregon"
+                src={sunriverDriveway}
+                alt="Freshly cleared driveway in Sunriver, Oregon with snow-covered pines"
                 className="rounded-2xl shadow-elegant"
                 loading="lazy"
+                decoding="async"
               />
             </div>
           </div>
@@ -221,10 +225,11 @@ const SnowRemoval = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <img
-                src="https://images.unsplash.com/photo-1457269449834-928af64c684d?q=80&w=800"
-                alt="Snow plowing service in Central Oregon"
+                src={plowActionShot}
+                alt="Snow plow truck clearing a residential driveway in Central Oregon"
                 className="rounded-2xl shadow-elegant"
                 loading="lazy"
+                decoding="async"
               />
             </div>
             <div>
