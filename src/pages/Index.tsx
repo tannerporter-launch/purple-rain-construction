@@ -8,6 +8,7 @@ import Layout from "@/components/layout/Layout";
 import project1After from "@/assets/decks/project-1-after.jpg";
 import elkeFrenchDoorMain from "@/assets/remodels/elke-french-doors/main.webp";
 import gilchrestFrontAfter from "@/assets/remodels/gilchrest-a-frame/3-front-after.jpg";
+import olivieroExteriorHero from "@/assets/remodels/oliviero/exterior-hero-wide.jpg";
 
 const Index = () => {
   return (
@@ -145,8 +146,8 @@ const Index = () => {
             </div>
             <div className="relative">
               <img
-                src={gilchrestFrontAfter}
-                alt="Completed A-Frame renovation with black metal roof and cedar siding – Purple Rain Construction"
+                src={olivieroExteriorHero}
+                alt="Oliviero modern farmhouse with black siding, deck, and renovated outbuilding – full property view"
                 className="rounded-2xl shadow-elegant w-full"
                 loading="lazy"
               />

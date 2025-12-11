@@ -45,6 +45,12 @@ import olivieroBarExteriorFull from "@/assets/remodels/oliviero/bar-window-exter
 import olivieroLivingRoom from "@/assets/remodels/oliviero/living-room-farmhouse.jpg";
 import olivieroSinkWindow from "@/assets/remodels/oliviero/kitchen-sink-window-view.jpg";
 import olivieroSinkDusk from "@/assets/remodels/oliviero/kitchen-sink-dusk.jpg";
+// Oliviero Exterior & Before/After images
+import olivieroExteriorHero from "@/assets/remodels/oliviero/exterior-hero-wide.jpg";
+import olivieroBarnAfter from "@/assets/remodels/oliviero/barn-detail-after.jpg";
+import olivieroWorkshopBefore from "@/assets/remodels/oliviero/workshop-before.webp";
+import olivieroBarnBefore from "@/assets/remodels/oliviero/barn-before.webp";
+import olivieroHayStorageBefore from "@/assets/remodels/oliviero/hay-storage-before.webp";
 
 const categories = ["All", "Decks", "Remodels", "Sunriver", "Snow Removal"];
 
@@ -312,6 +318,52 @@ const projects = [
     image: olivieroSinkDusk,
     tags: ["Remodels"],
     description: "Evening ambiance with string lights visible through windows and polished counters"
+  },
+  // Oliviero Exterior & Before/After Gallery
+  {
+    id: 29,
+    title: "Oliviero Property – Full Exterior View",
+    category: "Remodels",
+    location: "Central Oregon",
+    image: olivieroExteriorHero,
+    tags: ["Remodels"],
+    description: "Complete transformation showing main home, elevated deck, and matching barn structure"
+  },
+  {
+    id: 30,
+    title: "Renovated Barn – Rustic Door Detail",
+    category: "Remodels",
+    location: "Central Oregon",
+    image: olivieroBarnAfter,
+    tags: ["Remodels"],
+    description: "Outbuilding transformation with reclaimed wood barn doors and modern black exterior"
+  },
+  {
+    id: 31,
+    title: "Barn Before Renovation",
+    category: "Remodels",
+    location: "Central Oregon",
+    image: olivieroBarnBefore,
+    tags: ["Remodels"],
+    description: "Original barn structure with dated brown siding before transformation"
+  },
+  {
+    id: 32,
+    title: "Hay Storage Before Renovation",
+    category: "Remodels",
+    location: "Central Oregon",
+    image: olivieroHayStorageBefore,
+    tags: ["Remodels"],
+    description: "Original hay storage lean-to structure before modern updates"
+  },
+  {
+    id: 33,
+    title: "Workshop Before Renovation",
+    category: "Remodels",
+    location: "Central Oregon",
+    image: olivieroWorkshopBefore,
+    tags: ["Remodels"],
+    description: "Original workshop/shed before modern farmhouse transformation"
   },
 ];
 
