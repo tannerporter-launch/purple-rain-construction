@@ -154,15 +154,17 @@ const SunriverDeckBuilder = () => {
       {/* Perfect for Remote Owners */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <Users className="h-12 w-12 text-primary mx-auto mb-4" />
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Perfect for Sunriver Homeowners & Vacation Rentals
-            </h2>
-            <p className="text-lg text-muted-foreground mb-8">
-              Many Sunriver property owners live out of town. We make it easy to manage your project remotely with our digital project portal—real-time updates, photos, decisions, and communication all in one place.
-            </p>
-            <div className="grid sm:grid-cols-3 gap-6">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <Users className="h-12 w-12 text-primary mx-auto mb-4" />
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                Perfect for Sunriver Homeowners & Vacation Rentals
+              </h2>
+              <p className="text-lg text-muted-foreground">
+                For many Sunriver clients, we manage projects while they're out of town. Our digital project portal lets you monitor the entire process remotely—timelines, approvals, photos, and messaging all in one place.
+              </p>
+            </div>
+            <div className="grid sm:grid-cols-3 gap-6 mb-12">
               {[
                 { title: "Remote Project Management", desc: "Manage your project from anywhere with online updates and approvals" },
                 { title: "HOA Handling", desc: "We navigate SROA/ARC approvals so you don't have to" },
@@ -173,6 +175,25 @@ const SunriverDeckBuilder = () => {
                   <p className="text-sm text-muted-foreground">{item.desc}</p>
                 </div>
               ))}
+            </div>
+            <div className="bg-muted p-8 rounded-2xl border border-border">
+              <h3 className="text-xl font-semibold mb-4 text-center">Your Project Updates—One Click Away</h3>
+              <p className="text-muted-foreground text-center mb-6">
+                Out-of-town? Managing a vacation rental? No problem—your project updates are always accessible.
+              </p>
+              <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
+                {[
+                  "See your project timeline",
+                  "Approve materials remotely",
+                  "Track progress with photos",
+                  "Message our team directly",
+                ].map((item, index) => (
+                  <div key={index} className="flex items-center gap-2 text-sm">
+                    <CheckCircle className="h-4 w-4 text-primary flex-shrink-0" />
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>

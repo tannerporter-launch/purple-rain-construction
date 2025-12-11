@@ -363,6 +363,59 @@ const Decks = () => {
         </div>
       </section>
 
+      {/* JobTread Project Transparency */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                  Clear Deck-Building Timelines and Communication
+                </h2>
+                <p className="text-lg text-muted-foreground mb-6">
+                  Deck projects involve many moving parts—design, materials, permitting, and construction. With our digital project portal, you get a live schedule and updates for every step, so you're never left guessing.
+                </p>
+                <ul className="space-y-3">
+                  {[
+                    "See your project timeline",
+                    "Approve materials",
+                    "Track progress in real-time",
+                    "Message our team directly",
+                    "View photos & updates",
+                  ].map((item, index) => (
+                    <li key={index} className="flex items-center gap-3">
+                      <CheckCircle className="h-5 w-5 text-primary" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="bg-muted p-8 rounded-2xl border border-border">
+                <h3 className="text-xl font-semibold mb-4">What Happens After You Contact Us?</h3>
+                <div className="space-y-4">
+                  {[
+                    { step: "1", title: "Consultation", desc: "We visit your property and discuss your vision" },
+                    { step: "2", title: "Estimate", desc: "Detailed pricing with no hidden fees" },
+                    { step: "3", title: "Portal Access", desc: "Your project added to our digital portal" },
+                    { step: "4", title: "Real-Time Updates", desc: "Timeline, messaging, and photos in one place" },
+                  ].map((item, index) => (
+                    <div key={index} className="flex items-start gap-3">
+                      <div className="w-8 h-8 rounded-full bg-primary text-primary-foreground font-bold text-sm flex items-center justify-center flex-shrink-0">
+                        {item.step}
+                      </div>
+                      <div>
+                        <p className="font-semibold">{item.title}</p>
+                        <p className="text-sm text-muted-foreground">{item.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ Section */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">

@@ -104,13 +104,15 @@ const About = () => {
               },
               {
                 name: "Ed Julian",
-                role: "Senior Carpenter",
-                bio: "Ed brings decades of carpentry experience to every deck and remodel. His attention to detail and craftsmanship set the standard for the team."
+                role: "Superintendent",
+                bio: "Ed brings over 30 years of construction experience to Purple Rain Construction. He started framing custom homes in Bend in 1995 and has worked across residential, commercial, and property maintenance projects. Today, he serves as Superintendent, carpenter, and trainer, guiding projects alongside his son, Nicholas.",
+                philosophy: "Every project has a new challenge to learn from and better your skills."
               },
               {
                 name: "Seth McCaron",
-                role: "Carpenter",
-                bio: "Seth's skills in framing and finish work make him invaluable on complex projects. He's known for creative problem-solving on challenging sites."
+                role: "Project Supervisor",
+                bio: "Seth discovered his passion for building after helping his longtime friend, Nicholas, on early Purple Rain projects. What started part-time quickly became a career built on curiosity, craftsmanship, and teamwork. With three years on the team, Seth now supervises projects and thrives on the challenge of learning something new every day.",
+                philosophy: "Success is not final. Failure is not fatal. It is the courage to continue that counts."
               },
             ].map((member, index) => (
               <div key={index} className="text-center p-6 bg-muted rounded-2xl">
@@ -119,7 +121,10 @@ const About = () => {
                 </div>
                 <h3 className="text-xl font-semibold mb-1">{member.name}</h3>
                 <p className="text-primary font-medium text-sm mb-3">{member.role}</p>
-                <p className="text-sm text-muted-foreground">{member.bio}</p>
+                <p className="text-sm text-muted-foreground mb-3">{member.bio}</p>
+                {member.philosophy && (
+                  <p className="text-xs text-muted-foreground italic border-t border-border pt-3 mt-3">"{member.philosophy}"</p>
+                )}
               </div>
             ))}
           </div>
