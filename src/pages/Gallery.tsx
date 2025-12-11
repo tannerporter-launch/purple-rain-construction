@@ -51,6 +51,14 @@ import olivieroBarnAfter from "@/assets/remodels/oliviero/barn-detail-after.jpg"
 import olivieroWorkshopBefore from "@/assets/remodels/oliviero/workshop-before.webp";
 import olivieroBarnBefore from "@/assets/remodels/oliviero/barn-before.webp";
 import olivieroHayStorageBefore from "@/assets/remodels/oliviero/hay-storage-before.webp";
+// Oliviero Exterior Expanded Gallery
+import olivieroFrontPorch from "@/assets/remodels/oliviero/front-porch-entry.jpg";
+import olivieroPropertyFence from "@/assets/remodels/oliviero/property-fence-view.jpg";
+import olivieroSidePatio from "@/assets/remodels/oliviero/side-patio-seating.jpg";
+import olivieroBackPatio from "@/assets/remodels/oliviero/back-patio-deck.jpg";
+import olivieroBarnPortrait from "@/assets/remodels/oliviero/barn-doors-portrait.jpg";
+import olivieroBarnWide from "@/assets/remodels/oliviero/barn-doors-wide.jpg";
+import olivieroFrontDoor from "@/assets/remodels/oliviero/front-door-detail.jpg";
 
 const categories = ["All", "Decks", "Remodels", "Sunriver", "Snow Removal"];
 
@@ -364,6 +372,70 @@ const projects = [
     image: olivieroWorkshopBefore,
     tags: ["Remodels"],
     description: "Original workshop/shed before modern farmhouse transformation"
+  },
+  // Oliviero Exterior Expanded Gallery
+  {
+    id: 34,
+    title: "Oliviero Front Porch Entry",
+    category: "Remodels",
+    location: "Central Oregon",
+    image: olivieroFrontPorch,
+    tags: ["Remodels"],
+    description: "Welcoming covered porch with craftsman door, pendant lighting, and American flag"
+  },
+  {
+    id: 35,
+    title: "Property View Through Split-Rail Fence",
+    category: "Remodels",
+    location: "Central Oregon",
+    image: olivieroPropertyFence,
+    tags: ["Remodels"],
+    description: "Artistic perspective of complete property transformation with main home and outbuildings"
+  },
+  {
+    id: 36,
+    title: "Side Exterior with Patio Seating",
+    category: "Remodels",
+    location: "Central Oregon",
+    image: olivieroSidePatio,
+    tags: ["Remodels"],
+    description: "Functional outdoor living space with durable metal roofing and comfortable seating"
+  },
+  {
+    id: 37,
+    title: "Back Patio & Outdoor Living",
+    category: "Remodels",
+    location: "Central Oregon",
+    image: olivieroBackPatio,
+    tags: ["Remodels"],
+    description: "Stunning outdoor entertaining space with multi-level deck, fire pit, and spa area"
+  },
+  {
+    id: 38,
+    title: "Renovated Barn – Portrait View",
+    category: "Remodels",
+    location: "Central Oregon",
+    image: olivieroBarnPortrait,
+    tags: ["Remodels"],
+    description: "Charming barn conversion with reclaimed wood doors and intimate outdoor seating"
+  },
+  {
+    id: 39,
+    title: "Barn with Property Context",
+    category: "Remodels",
+    location: "Central Oregon",
+    image: olivieroBarnWide,
+    tags: ["Remodels"],
+    description: "Cohesive property design with matching dark siding and rustic wood accents"
+  },
+  {
+    id: 40,
+    title: "Front Door Craftsmanship Detail",
+    category: "Remodels",
+    location: "Central Oregon",
+    image: olivieroFrontDoor,
+    tags: ["Remodels"],
+    description: "Handcrafted entry door with knotty alder wood, glass panes, and industrial pendant fixture"
   },
 ];
 
