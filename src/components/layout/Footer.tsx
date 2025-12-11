@@ -13,7 +13,7 @@ const Footer = () => {
               <img
                 src={logo}
                 alt="Purple Rain Construction logo"
-                className="h-full w-auto object-contain brightness-0 invert"
+                className="h-full w-auto object-contain"
               />
             </Link>
             <p className="text-background/70 text-sm leading-relaxed">
