@@ -6,7 +6,8 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import TrustBadge from "@/components/ui/TrustBadge";
 import project1After from "@/assets/decks/project-1-after.jpg";
 import project2After from "@/assets/decks/project-2-after.jpg";
-
+import olivieroKitchenFull1 from "@/assets/remodels/oliviero/kitchen-full-view-1.jpg";
+import sunriverDrivewayClear from "@/assets/snow-removal/sunriver-driveway-cleared.jpg";
 const SunriverDeckBuilder = () => {
   return (
     <Layout>
@@ -205,10 +206,11 @@ const SunriverDeckBuilder = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <img
-                src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=800"
+                src={olivieroKitchenFull1}
                 alt="Modern kitchen remodel in Sunriver vacation home"
                 className="rounded-2xl shadow-elegant"
                 loading="lazy"
+                decoding="async"
               />
             </div>
             <div>
@@ -282,10 +284,11 @@ const SunriverDeckBuilder = () => {
             </div>
             <div>
               <img
-                src="https://images.unsplash.com/photo-1516912481808-3406841bd33c?q=80&w=800"
+                src={sunriverDrivewayClear}
                 alt="Snow removal services in Sunriver, Oregon"
                 className="rounded-2xl shadow-lg"
                 loading="lazy"
+                decoding="async"
               />
             </div>
           </div>

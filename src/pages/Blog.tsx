@@ -4,6 +4,14 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/button";
 import { Calendar, ArrowRight, Clock } from "lucide-react";
 
+// Import local blog images
+import deckMaterialsImg from "@/assets/blog/deck-materials.jpg";
+import sunriverMaintenanceImg from "@/assets/blog/sunriver-maintenance.jpg";
+import compositeVsWoodImg from "@/assets/blog/composite-vs-wood.jpg";
+import kitchenTrendsImg from "@/assets/blog/kitchen-trends.jpg";
+import snowRemovalTipsImg from "@/assets/blog/snow-removal-tips.jpg";
+import deckPermitsImg from "@/assets/blog/deck-permits.jpg";
+
 // Sample blog posts - in production, these would come from a CMS or database
 const blogPosts = [
   {
@@ -13,7 +21,7 @@ const blogPosts = [
     date: "2024-12-01",
     readTime: "5 min read",
     category: "Deck Building",
-    image: "https://images.unsplash.com/photo-1591825729269-caeb344f6df2?w=600&h=400&fit=crop",
+    image: deckMaterialsImg,
   },
   {
     slug: "sunriver-deck-maintenance-tips",
@@ -22,7 +30,7 @@ const blogPosts = [
     date: "2024-11-15",
     readTime: "4 min read",
     category: "Maintenance",
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=400&fit=crop",
+    image: sunriverMaintenanceImg,
   },
   {
     slug: "composite-vs-wood-decking",
@@ -31,7 +39,7 @@ const blogPosts = [
     date: "2024-11-01",
     readTime: "6 min read",
     category: "Deck Building",
-    image: "https://images.unsplash.com/photo-1628624747186-a941c476b7ef?w=600&h=400&fit=crop",
+    image: compositeVsWoodImg,
   },
   {
     slug: "kitchen-remodel-trends-2024",
@@ -40,7 +48,7 @@ const blogPosts = [
     date: "2024-10-20",
     readTime: "5 min read",
     category: "Remodeling",
-    image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=400&fit=crop",
+    image: kitchenTrendsImg,
   },
   {
     slug: "snow-removal-tips-sunriver",
@@ -49,7 +57,7 @@ const blogPosts = [
     date: "2024-10-01",
     readTime: "4 min read",
     category: "Snow Removal",
-    image: "https://images.unsplash.com/photo-1477601263568-180e2c6d046e?w=600&h=400&fit=crop",
+    image: snowRemovalTipsImg,
   },
   {
     slug: "deck-permit-requirements-deschutes-county",
@@ -58,7 +66,7 @@ const blogPosts = [
     date: "2024-09-15",
     readTime: "4 min read",
     category: "Permits & Planning",
-    image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&h=400&fit=crop",
+    image: deckPermitsImg,
   },
 ];
 
@@ -102,6 +110,7 @@ const Blog = () => {
                     alt={post.title}
                     className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                     loading="lazy"
+                    decoding="async"
                   />
                 </Link>
                 

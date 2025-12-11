@@ -3,6 +3,11 @@ import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Calendar, Clock, ArrowLeft, Phone, ArrowRight } from "lucide-react";
 
+// Import local blog images
+import deckMaterialsImg from "@/assets/blog/deck-materials.jpg";
+import sunriverMaintenanceImg from "@/assets/blog/sunriver-maintenance.jpg";
+import compositeVsWoodImg from "@/assets/blog/composite-vs-wood.jpg";
+
 // Sample blog posts data - in production, this would come from a CMS
 const blogPostsData: Record<string, {
   title: string;
@@ -19,7 +24,7 @@ const blogPostsData: Record<string, {
     date: "2024-12-01",
     readTime: "5 min read",
     category: "Deck Building",
-    image: "https://images.unsplash.com/photo-1591825729269-caeb344f6df2?w=1200&h=600&fit=crop",
+    image: deckMaterialsImg,
     content: `
 ## Why Material Selection Matters in Central Oregon
 
@@ -70,7 +75,7 @@ For most Central Oregon homeowners, we recommend **Trex composite decking** for 
     date: "2024-11-15",
     readTime: "4 min read",
     category: "Maintenance",
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&h=600&fit=crop",
+    image: sunriverMaintenanceImg,
     content: `
 ## Protecting Your Sunriver Investment
 
@@ -129,7 +134,7 @@ Contact us if you notice:
     date: "2024-11-01",
     readTime: "6 min read",
     category: "Deck Building",
-    image: "https://images.unsplash.com/photo-1628624747186-a941c476b7ef?w=1200&h=600&fit=crop",
+    image: compositeVsWoodImg,
     content: `
 ## Making the Right Choice for Your Home
 
