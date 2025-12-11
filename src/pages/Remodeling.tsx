@@ -22,6 +22,7 @@ import olivieroKitchenStove from "@/assets/remodels/oliviero/kitchen-stove-backs
 import olivieroLivingRoom from "@/assets/remodels/oliviero/living-room-farmhouse.jpg";
 import olivieroExteriorHero from "@/assets/remodels/oliviero/exterior-hero-wide.jpg";
 import olivieroBarnAfter from "@/assets/remodels/oliviero/barn-detail-after.jpg";
+import olivieroBackPatio from "@/assets/remodels/oliviero/back-patio-deck.jpg";
 
 const Remodeling = () => {
   return (
@@ -192,6 +193,7 @@ const Remodeling = () => {
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {[
               { src: olivieroExteriorHero, alt: "Oliviero modern farmhouse with black siding, deck, and renovated outbuilding – full property view" },
+              { src: olivieroBackPatio, alt: "Oliviero back patio with orange Adirondack chairs, fire pit, upper balcony, and hot tub" },
               { src: gilchrestFrontAfter, alt: "Completed A-Frame renovation with black metal roof and cedar siding – Purple Rain Construction" },
               { src: olivieroKitchenFull1, alt: "Modern farmhouse kitchen with shiplap walls, white cabinetry, and patterned backsplash" },
               { src: olivieroBarnAfter, alt: "Renovated barn with rustic sliding doors, black siding, and outdoor seating platform" },
