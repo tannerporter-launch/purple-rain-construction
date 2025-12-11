@@ -9,6 +9,7 @@ import project1After from "@/assets/decks/project-1-after.jpg";
 import elkeFrenchDoorMain from "@/assets/remodels/elke-french-doors/main.webp";
 import gilchrestFrontAfter from "@/assets/remodels/gilchrest-a-frame/3-front-after.jpg";
 import olivieroExteriorHero from "@/assets/remodels/oliviero/exterior-hero-wide.jpg";
+import iconMonogramGradient from "@/assets/brand/icons/icon-monogram-gradient.png";
 
 const Index = () => {
   return (
@@ -262,9 +263,16 @@ const Index = () => {
             ].map((testimonial, index) => (
               <div
                 key={index}
-                className="bg-background p-6 md:p-8 rounded-2xl shadow-md border border-border"
+                className="bg-background p-6 md:p-8 rounded-2xl shadow-md border border-border relative overflow-hidden"
               >
-                <div className="flex items-center justify-between mb-4">
+                {/* Subtle brand accent */}
+                <img 
+                  src={iconMonogramGradient} 
+                  alt="" 
+                  aria-hidden="true"
+                  className="absolute -bottom-4 -right-4 w-20 h-20 opacity-[0.07] pointer-events-none"
+                />
+                <div className="flex items-center justify-between mb-4 relative z-10">
                   <div className="flex gap-1">
                     {[...Array(5)].map((_, i) => (
                       <Star key={i} className="h-5 w-5 fill-sunriver-gold text-sunriver-gold" />
@@ -272,8 +280,8 @@ const Index = () => {
                   </div>
                   <span className="text-xs text-muted-foreground font-medium">Google Review</span>
                 </div>
-                <p className="text-foreground mb-6 italic text-sm md:text-base">"{testimonial.quote}"</p>
-                <div>
+                <p className="text-foreground mb-6 italic text-sm md:text-base relative z-10">"{testimonial.quote}"</p>
+                <div className="relative z-10">
                   <p className="font-semibold text-foreground">{testimonial.name}</p>
                   <p className="text-sm text-muted-foreground">{testimonial.location}</p>
                 </div>
