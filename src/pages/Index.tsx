@@ -11,7 +11,7 @@ import gilchrestFrontAfter from "@/assets/remodels/gilchrest-a-frame/3-front-aft
 import olivieroExteriorHero from "@/assets/remodels/oliviero/exterior-hero-wide.jpg";
 import iconMonogramGradient from "@/assets/brand/icons/icon-monogram-gradient.png";
 import teamNicholasEd from "@/assets/brand/team-nicholas-ed.png";
-import teamActionSaw from "@/assets/brand/team-action-saw.jpg";
+import heroPlowDawn from "@/assets/snow-removal/hero-plow-dawn.jpg";
 
 const Index = () => {
   return (
@@ -111,7 +111,7 @@ const Index = () => {
               description="Fast, reliable residential + small commercial snow removal."
               href="/snow-removal"
               icon={Snowflake}
-              image={teamActionSaw}
+              image={heroPlowDawn}
               ctaText="Get On the Schedule"
             />
           </div>
@@ -231,7 +231,7 @@ const Index = () => {
             title="What Our Customers Say"
             subtitle="Don't just take our word for it—see what homeowners say on Google."
           />
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6 md:gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {[
               {
                 quote: "Purple Rain Construction built our deck in Sunriver and it exceeded all expectations. They handled the HOA process seamlessly and kept us updated every step of the way.",
