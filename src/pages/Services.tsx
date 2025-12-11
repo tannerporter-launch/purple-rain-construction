@@ -7,6 +7,7 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import project1After from "@/assets/decks/project-1-after.jpg";
 import gilchrestCeilingFan from "@/assets/remodels/gilchrest-a-frame/ceiling-detail-fan.jpg";
 import olivieroKitchenAfter from "@/assets/remodels/oliviero/3-kitchen-after.jpg";
+import heroPlowDawn from "@/assets/snow-removal/hero-plow-dawn.jpg";
 
 const Services = () => {
   return (
@@ -53,7 +54,7 @@ const Services = () => {
               description="Reliable, route-based snow plowing for Sunriver, Bend, and Redmond. Residential driveways, walkways, and small commercial properties."
               href="/snow-removal"
               icon={Snowflake}
-              image="https://images.unsplash.com/photo-1516912481808-3406841bd33c?q=80&w=800"
+              image={heroPlowDawn}
             />
           </div>
         </div>
