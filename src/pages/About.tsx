@@ -3,7 +3,7 @@ import { CheckCircle, Shield, Users, Heart, Star, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import SectionHeading from "@/components/ui/SectionHeading";
-import teamPhoto from "@/assets/team-photo.jpg";
+import teamActionShot from "@/assets/brand/team-action-saw.jpg";
 
 const About = () => {
   return (
@@ -40,9 +40,11 @@ const About = () => {
             </div>
             <div>
               <img
-                src={teamPhoto}
-                alt="Nicholas Miller, owner of Purple Rain Construction, at work"
-                className="rounded-2xl shadow-elegant"
+                src={teamActionShot}
+                alt="Purple Rain Construction team member using circular saw with sawdust flying – hands-on craftsmanship"
+                className="rounded-2xl shadow-elegant object-cover"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>

@@ -63,6 +63,8 @@ import olivieroFrontDoor from "@/assets/remodels/oliviero/front-door-detail.jpg"
 import olivieroKitchenIsland from "@/assets/remodels/oliviero/kitchen-island-view.jpg";
 import olivieroLivingStove from "@/assets/remodels/oliviero/living-room-stove-wall.jpg";
 import olivieroPropertyWide from "@/assets/remodels/oliviero/property-wide-lawn.jpg";
+// Oliviero Exterior - Front Lawn View
+import olivieroExteriorFrontLawn from "@/assets/remodels/oliviero/exterior-front-lawn.jpg";
 
 const categories = ["All", "Decks", "Remodels", "Sunriver", "Snow Removal"];
 
@@ -468,6 +470,15 @@ const projects = [
     image: olivieroPropertyWide,
     tags: ["Remodels"],
     description: "Comprehensive property view showing complete transformation with coordinated exterior finishes and outdoor living spaces"
+  },
+  {
+    id: 44,
+    title: "Oliviero Exterior – Front Lawn View",
+    category: "Remodels",
+    location: "Central Oregon",
+    image: olivieroExteriorFrontLawn,
+    tags: ["Remodels"],
+    description: "Front approach view showing dark board and batten siding, welcoming covered porch, and integrated outdoor structures"
   },
 ];
 
