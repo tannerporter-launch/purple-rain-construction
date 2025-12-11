@@ -1,4 +1,4 @@
-import { useState, useRef, useCallback } from "react";
+import { useState, useRef, useCallback, forwardRef } from "react";
 
 interface BeforeAfterSliderProps {
   beforeImage: string;
@@ -8,13 +8,13 @@ interface BeforeAfterSliderProps {
   className?: string;
 }
 
-const BeforeAfterSlider = ({
+const BeforeAfterSlider = forwardRef<HTMLDivElement, BeforeAfterSliderProps>(({
   beforeImage,
   afterImage,
   beforeAlt = "Before renovation",
   afterAlt = "After renovation",
   className = "",
-}: BeforeAfterSliderProps) => {
+}, ref) => {
   const [sliderPosition, setSliderPosition] = useState(50);
   const [isDragging, setIsDragging] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -128,6 +128,8 @@ const BeforeAfterSlider = ({
       </div>
     </div>
   );
-};
+});
+
+BeforeAfterSlider.displayName = "BeforeAfterSlider";
 
 export default BeforeAfterSlider;
