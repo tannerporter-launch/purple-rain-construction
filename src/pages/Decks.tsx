@@ -9,6 +9,8 @@ import {
 } from "@/components/ui/accordion";
 import Layout from "@/components/layout/Layout";
 import SectionHeading from "@/components/ui/SectionHeading";
+import ServiceSchema from "@/components/seo/ServiceSchema";
+import FAQSchema from "@/components/seo/FAQSchema";
 import project1After from "@/assets/decks/project-1-after.jpg";
 import project1Before1 from "@/assets/decks/project-1-before-1.jpg";
 import project2After from "@/assets/decks/project-2-after.jpg";
@@ -60,6 +62,13 @@ const Decks = () => {
 
   return (
     <Layout>
+      <ServiceSchema 
+        name="Deck Building & Repairs"
+        description="Custom decks built for Central Oregon's climate. New construction, replacements, repairs, and railing upgrades. TrexPro certified for composite decking."
+        serviceType="Deck Construction"
+        priceRange="$18,000 - $55,000+"
+      />
+      <FAQSchema faqs={deckFAQs} />
       {/* Hero */}
       <section className="relative py-24 bg-gradient-hero text-primary-foreground overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-center opacity-20" style={{ backgroundImage: `url(${project1After})` }} />

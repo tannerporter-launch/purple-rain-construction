@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import ServiceCard from "@/components/ui/ServiceCard";
 import SectionHeading from "@/components/ui/SectionHeading";
+import LocalBusinessSchema from "@/components/seo/LocalBusinessSchema";
 import project1After from "@/assets/decks/project-1-after.jpg";
 import gilchrestCeilingFan from "@/assets/remodels/gilchrest-a-frame/ceiling-detail-fan.jpg";
 import olivieroKitchenAfter from "@/assets/remodels/oliviero/3-kitchen-after.jpg";
@@ -12,6 +13,7 @@ import heroPlowDawn from "@/assets/snow-removal/hero-plow-dawn.jpg";
 const Services = () => {
   return (
     <Layout>
+      <LocalBusinessSchema />
       {/* Hero */}
       <section className="py-16 bg-gradient-primary text-primary-foreground">
         <div className="container mx-auto px-4">
