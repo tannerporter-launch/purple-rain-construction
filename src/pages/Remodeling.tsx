@@ -19,6 +19,7 @@ import olivieroSideAfter from "@/assets/remodels/oliviero/2-side-after.jpg";
 import olivieroKitchenFull1 from "@/assets/remodels/oliviero/kitchen-full-view-1.jpg";
 import olivieroBarExteriorFull from "@/assets/remodels/oliviero/bar-window-exterior-full.jpg";
 import olivieroKitchenStove from "@/assets/remodels/oliviero/kitchen-stove-backsplash.jpg";
+import olivieroLivingRoom from "@/assets/remodels/oliviero/living-room-farmhouse.jpg";
 
 const Remodeling = () => {
   return (
@@ -191,6 +192,7 @@ const Remodeling = () => {
               { src: gilchrestFrontAfter, alt: "Completed A-Frame renovation with black metal roof and cedar siding – Purple Rain Construction" },
               { src: olivieroKitchenFull1, alt: "Modern farmhouse kitchen with shiplap walls, white cabinetry, and patterned backsplash" },
               { src: olivieroBarExteriorFull, alt: "Custom fold-out bar window with mountain-scene metal art and black exterior accents" },
+              { src: olivieroLivingRoom, alt: "Modern farmhouse living room with leather furniture, wood stove, and ceiling fan" },
               { src: gilchrestPatioFinished, alt: "Gilchrest A-Frame front view with cedar siding and black metal roof" },
               { src: olivieroKitchenAfter, alt: "Modern kitchen remodel with black island, white cabinets, and patterned backsplash" },
               { src: olivieroSideAfter, alt: "Side exterior view with new back deck and modern cable railing" },
@@ -198,7 +200,6 @@ const Remodeling = () => {
               { src: gilchrestKitchenAfter, alt: "Modern kitchen with live-edge counter and exposed beams – Gilchrest A-Frame Remodel" },
               { src: gilchrestCeilingFan, alt: "Detailed view of vaulted ceiling and modern fan in completed A-Frame" },
               { src: gilchrestStairsAfter, alt: "Modern stairwell with dark beams and metal railing – Gilchrest A-Frame" },
-              { src: gilchrestSideAfter, alt: "A-Frame side exterior with new cedar siding and black standing seam metal roof" },
               { src: elkeMain, alt: "Custom-trimmed blue French doors with clear glass panels and wood casing" },
             ].map((img, index) => (
               <img

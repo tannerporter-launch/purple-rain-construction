@@ -41,6 +41,10 @@ import olivieroKitchenStove from "@/assets/remodels/oliviero/kitchen-stove-backs
 import olivieroKitchenFarmhouseSink from "@/assets/remodels/oliviero/kitchen-farmhouse-sink.jpg";
 import olivieroBarWine from "@/assets/remodels/oliviero/bar-window-wine.jpg";
 import olivieroBarExteriorFull from "@/assets/remodels/oliviero/bar-window-exterior-full.jpg";
+// Oliviero Living Room & Additional Details
+import olivieroLivingRoom from "@/assets/remodels/oliviero/living-room-farmhouse.jpg";
+import olivieroSinkWindow from "@/assets/remodels/oliviero/kitchen-sink-window-view.jpg";
+import olivieroSinkDusk from "@/assets/remodels/oliviero/kitchen-sink-dusk.jpg";
 
 const categories = ["All", "Decks", "Remodels", "Sunriver", "Snow Removal"];
 
@@ -280,6 +284,34 @@ const projects = [
     image: olivieroBarExteriorFull,
     tags: ["Remodels"],
     description: "Custom fold-out bar window with mountain-scene metal art and black exterior accents"
+  },
+  // Oliviero Living Room & Additional Details
+  {
+    id: 26,
+    title: "Oliviero Living Room – Farmhouse Style",
+    category: "Remodels",
+    location: "Central Oregon",
+    image: olivieroLivingRoom,
+    tags: ["Remodels"],
+    description: "Open concept living area with shiplap walls, natural wood door, and cast iron stove"
+  },
+  {
+    id: 27,
+    title: "Kitchen Sink Window Detail",
+    category: "Remodels",
+    location: "Central Oregon",
+    image: olivieroSinkWindow,
+    tags: ["Remodels"],
+    description: "Counter-level perspective showcasing quartz surfaces and window garden view"
+  },
+  {
+    id: 28,
+    title: "Kitchen at Dusk – Sink Reflection",
+    category: "Remodels",
+    location: "Central Oregon",
+    image: olivieroSinkDusk,
+    tags: ["Remodels"],
+    description: "Evening ambiance with string lights visible through windows and polished counters"
   },
 ];
 
