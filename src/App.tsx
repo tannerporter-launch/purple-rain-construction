@@ -9,6 +9,8 @@ import Decks from "./pages/Decks";
 import SunriverDeckBuilder from "./pages/SunriverDeckBuilder";
 import SnowRemoval from "./pages/SnowRemoval";
 import Remodeling from "./pages/Remodeling";
+import KitchenRemodels from "./pages/KitchenRemodels";
+import BathroomRemodels from "./pages/BathroomRemodels";
 import NewConstruction from "./pages/NewConstruction";
 import Services from "./pages/Services";
 import About from "./pages/About";
@@ -40,6 +42,8 @@ const App = () => (
           <Route path="/services/snow-removal" element={<SnowRemoval />} />
           <Route path="/remodeling" element={<Remodeling />} />
           <Route path="/services/remodeling" element={<Remodeling />} />
+          <Route path="/kitchen-remodels" element={<KitchenRemodels />} />
+          <Route path="/bathroom-remodels" element={<BathroomRemodels />} />
           <Route path="/new-construction" element={<NewConstruction />} />
           <Route path="/services/new-construction" element={<NewConstruction />} />
           <Route path="/services" element={<Services />} />

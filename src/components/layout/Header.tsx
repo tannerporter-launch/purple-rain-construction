@@ -12,8 +12,8 @@ const navItems = [
     children: [
       { label: "Decks", href: "/decks" },
       { label: "Remodeling", href: "/remodeling" },
-      { label: "Kitchen Remodels", href: "/remodeling#kitchen" },
-      { label: "Bathroom Remodels", href: "/remodeling#bathroom" },
+      { label: "Kitchen Remodels", href: "/kitchen-remodels" },
+      { label: "Bathroom Remodels", href: "/bathroom-remodels" },
       { label: "New Construction", href: "/new-construction" },
       { label: "Snow Removal", href: "/snow-removal" },
     ],
