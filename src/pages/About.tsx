@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import SectionHeading from "@/components/ui/SectionHeading";
 import teamActionShot from "@/assets/brand/team-action-saw.jpg";
-
+import teamNicholasEd from "@/assets/brand/team-nicholas-ed.png";
 const About = () => {
   return (
     <Layout>
@@ -95,6 +95,19 @@ const About = () => {
             title="Meet the Team"
             subtitle="The people behind Purple Rain Construction."
           />
+          
+          {/* Team Photo - Nicholas & Ed Working Together */}
+          <div className="max-w-3xl mx-auto mb-12">
+            <img
+              src={teamNicholasEd}
+              alt="Nicholas and Ed Julian milling a beam together – Purple Rain Construction family team in Central Oregon"
+              className="rounded-2xl shadow-elegant w-full object-cover"
+              loading="lazy"
+              decoding="async"
+            />
+            <p className="text-center text-sm text-muted-foreground mt-4">Nicholas and Ed working together on site – family-driven craftsmanship in action.</p>
+          </div>
+          
           <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             {[
               {

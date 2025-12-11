@@ -25,6 +25,7 @@ import gilchrestPatioFinished from "@/assets/remodels/gilchrest-a-frame/front-pa
 import gilchrestDoorInstall from "@/assets/remodels/gilchrest-a-frame/process-door-install-1.jpg";
 import gilchrestExteriorWork from "@/assets/remodels/gilchrest-a-frame/process-exterior-work.jpg";
 import gilchrestCeilingFan from "@/assets/remodels/gilchrest-a-frame/ceiling-detail-fan.jpg";
+import gilchrestFrontSymmetrical from "@/assets/remodels/gilchrest-a-frame/front-symmetrical.png";
 // Oliviero Remodel imports
 import olivieroFrontBefore from "@/assets/remodels/oliviero/1-front-before.webp";
 import olivieroFrontAfter from "@/assets/remodels/oliviero/1-front-after.jpg";
@@ -119,10 +120,19 @@ const projects = [
     title: "A-Frame Front Transformation",
     category: "Remodels",
     location: "Gilchrest Area, Central Oregon",
-    image: gilchrestFrontAfter,
+    image: gilchrestFrontSymmetrical,
     beforeImage: gilchrestFrontBefore,
     tags: ["Remodels"],
-    description: "Complete A-Frame renovation with black metal roof and covered porch"
+    description: "Complete A-Frame renovation with black metal roof and covered porch – symmetrical front view"
+  },
+  {
+    id: 100,
+    title: "A-Frame Front – Angle View",
+    category: "Remodels",
+    location: "Gilchrest Area, Central Oregon",
+    image: gilchrestFrontAfter,
+    tags: ["Remodels"],
+    description: "Complete A-Frame renovation with black metal roof and cedar siding – angled perspective"
   },
   {
     id: 7,

@@ -8,13 +8,14 @@ import gilchrestFrontAfter from "@/assets/remodels/gilchrest-a-frame/3-front-aft
 import gilchrestKitchenAfter from "@/assets/remodels/gilchrest-a-frame/5-kitchen-after.jpg";
 import gilchrestStairsAfter from "@/assets/remodels/gilchrest-a-frame/1-stairs-after.jpg";
 import gilchrestSideAfter from "@/assets/remodels/gilchrest-a-frame/2-side-exterior-after.jpg";
+import gilchrestFrontSymmetrical from "@/assets/remodels/gilchrest-a-frame/front-symmetrical.png";
 
 const NewConstruction = () => {
   return (
     <Layout>
       {/* Hero */}
       <section className="relative py-24 bg-gradient-hero text-primary-foreground overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center opacity-20" style={{ backgroundImage: `url(${gilchrestFrontAfter})` }} />
+        <div className="absolute inset-0 bg-cover bg-center opacity-25" style={{ backgroundImage: `url(${gilchrestFrontSymmetrical})` }} />
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6">
@@ -105,10 +106,11 @@ const NewConstruction = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
             <div>
               <img
-                src={gilchrestFrontAfter}
-                alt="Completed A-Frame renovation with black metal roof and cedar siding – Purple Rain Construction"
-                className="rounded-2xl shadow-elegant w-full"
+                src={gilchrestFrontSymmetrical}
+                alt="Gilchrest A-Frame front exterior with cedar siding and black metal roof – completed renovation by Purple Rain Construction"
+                className="rounded-2xl shadow-elegant w-full object-cover"
                 loading="lazy"
+                decoding="async"
               />
             </div>
             <div>
@@ -135,8 +137,9 @@ const NewConstruction = () => {
               </Button>
             </div>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
             {[
+              { src: gilchrestFrontSymmetrical, alt: "Gilchrest A-Frame front exterior symmetrical view" },
               { src: gilchrestFrontAfter, alt: "Completed A-Frame front view with new roof and siding" },
               { src: gilchrestSideAfter, alt: "A-Frame side elevation with cedar siding" },
               { src: gilchrestKitchenAfter, alt: "Modern kitchen with live-edge counter and exposed beams" },
