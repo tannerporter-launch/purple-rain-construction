@@ -11,6 +11,7 @@ import gilchrestFrontAfter from "@/assets/remodels/gilchrest-a-frame/3-front-aft
 import olivieroExteriorHero from "@/assets/remodels/oliviero/exterior-hero-wide.jpg";
 import iconMonogramGradient from "@/assets/brand/icons/icon-monogram-gradient.png";
 import teamNicholasEd from "@/assets/brand/team-nicholas-ed.png";
+import teamActionSaw from "@/assets/brand/team-action-saw.jpg";
 
 const Index = () => {
   return (
@@ -110,7 +111,7 @@ const Index = () => {
               description="Fast, reliable residential + small commercial snow removal."
               href="/snow-removal"
               icon={Snowflake}
-              image="https://images.unsplash.com/photo-1516912481808-3406841bd33c?q=80&w=800"
+              image={teamActionSaw}
               ctaText="Get On the Schedule"
             />
           </div>

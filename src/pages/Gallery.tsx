@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import SectionHeading from "@/components/ui/SectionHeading";
+import ImageLightbox from "@/components/ui/ImageLightbox";
 import project1After from "@/assets/decks/project-1-after.jpg";
 import project1Before1 from "@/assets/decks/project-1-before-1.jpg";
 import project2After from "@/assets/decks/project-2-after.jpg";
@@ -66,6 +67,7 @@ import olivieroLivingStove from "@/assets/remodels/oliviero/living-room-stove-wa
 import olivieroPropertyWide from "@/assets/remodels/oliviero/property-wide-lawn.jpg";
 // Oliviero Exterior - Front Lawn View
 import olivieroExteriorFrontLawn from "@/assets/remodels/oliviero/exterior-front-lawn.jpg";
+import teamActionSaw from "@/assets/brand/team-action-saw.jpg";
 
 const categories = ["All", "Decks", "Remodels", "Sunriver", "Snow Removal"];
 
@@ -108,11 +110,12 @@ const projects = [
   },
   {
     id: 5,
-    title: "Snow Cleared Driveway",
+    title: "Snow Removal Service",
     category: "Snow Removal",
     location: "Sunriver, OR",
-    image: "https://images.unsplash.com/photo-1516912481808-3406841bd33c?q=80&w=800",
-    tags: ["Snow Removal", "Sunriver"]
+    image: teamActionSaw,
+    tags: ["Snow Removal", "Sunriver"],
+    description: "Purple Rain Construction team providing reliable snow removal services in Sunriver"
   },
   // Gilchrest A-Frame Remodel entries
   {
@@ -494,10 +497,27 @@ const projects = [
 
 const Gallery = () => {
   const [activeCategory, setActiveCategory] = useState("All");
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
 
   const filteredProjects = activeCategory === "All"
     ? projects
     : projects.filter(p => p.tags.includes(activeCategory));
+
+  // Prepare images for lightbox
+  const lightboxImages = useMemo(() => 
+    filteredProjects.map((project) => ({
+      src: project.image,
+      alt: `${project.title} by Purple Rain Construction in ${project.location}`,
+      title: project.title,
+    })),
+    [filteredProjects]
+  );
+
+  const openLightbox = (index: number) => {
+    setLightboxIndex(index);
+    setLightboxOpen(true);
+  };
 
   return (
     <Layout>
@@ -532,10 +552,15 @@ const Gallery = () => {
 
           {/* Gallery Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredProjects.map((project) => (
+            {filteredProjects.map((project, index) => (
               <div
                 key={project.id}
-                className="group relative overflow-hidden rounded-2xl bg-card border border-border shadow-md hover:shadow-elegant transition-all duration-300"
+                className="group relative overflow-hidden rounded-2xl bg-card border border-border shadow-md hover:shadow-elegant transition-all duration-300 cursor-pointer"
+                onClick={() => openLightbox(index)}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => e.key === "Enter" && openLightbox(index)}
+                aria-label={`View ${project.title} in fullscreen`}
               >
                 <div className="aspect-[4/3] overflow-hidden">
                   <img
@@ -543,6 +568,7 @@ const Gallery = () => {
                     alt={`${project.title} by Purple Rain Construction in ${project.location}`}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 <div className="p-6">
@@ -583,6 +609,14 @@ const Gallery = () => {
           </Button>
         </div>
       </section>
+
+      {/* Lightbox */}
+      <ImageLightbox
+        images={lightboxImages}
+        initialIndex={lightboxIndex}
+        isOpen={lightboxOpen}
+        onClose={() => setLightboxOpen(false)}
+      />
     </Layout>
   );
 };
