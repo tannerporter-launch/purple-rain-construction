@@ -10,6 +10,7 @@ import elkeFrenchDoorMain from "@/assets/remodels/elke-french-doors/main.webp";
 import gilchrestFrontAfter from "@/assets/remodels/gilchrest-a-frame/3-front-after.jpg";
 import olivieroExteriorHero from "@/assets/remodels/oliviero/exterior-hero-wide.jpg";
 import iconMonogramGradient from "@/assets/brand/icons/icon-monogram-gradient.png";
+import teamNicholasEd from "@/assets/brand/team-nicholas-ed.png";
 
 const Index = () => {
   return (
@@ -147,10 +148,11 @@ const Index = () => {
             </div>
             <div className="relative">
               <img
-                src={olivieroExteriorHero}
-                alt="Oliviero modern farmhouse with black siding, deck, and renovated outbuilding – full property view"
-                className="rounded-2xl shadow-elegant w-full"
+                src={teamNicholasEd}
+                alt="Nicholas and Ed Julian milling a beam together – Purple Rain Construction family team in Central Oregon"
+                className="rounded-2xl shadow-elegant w-full object-cover"
                 loading="lazy"
+                decoding="async"
               />
             </div>
           </div>
