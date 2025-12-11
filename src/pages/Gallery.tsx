@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import SectionHeading from "@/components/ui/SectionHeading";
 import ImageLightbox from "@/components/ui/ImageLightbox";
+import BeforeAfterSlider from "@/components/ui/BeforeAfterSlider";
 import project1After from "@/assets/decks/project-1-after.jpg";
 import project1Before1 from "@/assets/decks/project-1-before-1.jpg";
 import project2After from "@/assets/decks/project-2-after.jpg";
@@ -530,6 +531,38 @@ const Gallery = () => {
           <p className="text-xl text-primary-foreground/90 max-w-2xl">
             Browse recent decks, remodels, and Sunriver projects completed by Purple Rain Construction.
           </p>
+        </div>
+      </section>
+
+      {/* Before & After Showcase */}
+      <section className="py-16 bg-muted">
+        <div className="container mx-auto px-4">
+          <SectionHeading
+            title="Before & After Transformations"
+            subtitle="Drag the slider to see our project transformations."
+          />
+          <div className="grid md:grid-cols-2 gap-8">
+            <div>
+              <h3 className="text-lg font-semibold mb-3">Gilchrest A-Frame Front</h3>
+              <BeforeAfterSlider
+                beforeImage={gilchrestFrontBefore}
+                afterImage={gilchrestFrontAfter}
+                beforeAlt="Gilchrest A-Frame before renovation"
+                afterAlt="Gilchrest A-Frame after renovation"
+                className="aspect-[4/3]"
+              />
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-3">Oliviero Exterior</h3>
+              <BeforeAfterSlider
+                beforeImage={olivieroFrontBefore}
+                afterImage={olivieroFrontAfter}
+                beforeAlt="Oliviero home before renovation"
+                afterAlt="Oliviero home after renovation"
+                className="aspect-[4/3]"
+              />
+            </div>
+          </div>
         </div>
       </section>
 

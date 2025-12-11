@@ -2,10 +2,12 @@ import { Phone, MapPin, Clock, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import ContactForm from "@/components/forms/ContactForm";
+import LocalBusinessSchema from "@/components/seo/LocalBusinessSchema";
 
 const Contact = () => {
   return (
     <Layout>
+      <LocalBusinessSchema />
       {/* Hero */}
       <section className="py-16 bg-gradient-primary text-primary-foreground">
         <div className="container mx-auto px-4">

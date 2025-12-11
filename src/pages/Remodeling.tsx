@@ -3,6 +3,7 @@ import { Phone, CheckCircle, Home, Bath, ChefHat, Wrench, ArrowRight } from "luc
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import SectionHeading from "@/components/ui/SectionHeading";
+import ServiceSchema from "@/components/seo/ServiceSchema";
 import elkeMain from "@/assets/remodels/elke-french-doors/main.webp";
 // Gilchrest A-Frame imports
 import gilchrestFrontAfter from "@/assets/remodels/gilchrest-a-frame/3-front-after.jpg";
@@ -28,6 +29,11 @@ import olivieroPropertyWide from "@/assets/remodels/oliviero/property-wide-lawn.
 const Remodeling = () => {
   return (
     <Layout>
+      <ServiceSchema 
+        name="Home Remodeling"
+        description="Kitchen, bathroom, and whole-home renovations in Central Oregon. Quality craftsmanship, clear communication, and attention to detail from start to finish."
+        serviceType="Home Remodeling"
+      />
       {/* Hero */}
       <section className="relative py-24 bg-gradient-hero text-primary-foreground overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-center opacity-20" style={{ backgroundImage: `url(${gilchrestFrontAfter})` }} />

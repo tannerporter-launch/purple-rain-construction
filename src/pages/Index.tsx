@@ -5,6 +5,7 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import ServiceCard from "@/components/ui/ServiceCard";
 import TrustBadge from "@/components/ui/TrustBadge";
 import Layout from "@/components/layout/Layout";
+import LocalBusinessSchema from "@/components/seo/LocalBusinessSchema";
 import project1After from "@/assets/decks/project-1-after.jpg";
 import elkeFrenchDoorMain from "@/assets/remodels/elke-french-doors/main.webp";
 import gilchrestFrontAfter from "@/assets/remodels/gilchrest-a-frame/3-front-after.jpg";
@@ -16,6 +17,7 @@ import heroPlowDawn from "@/assets/snow-removal/hero-plow-dawn.jpg";
 const Index = () => {
   return (
     <Layout>
+      <LocalBusinessSchema />
       {/* Hero Section - Above the Fold */}
       <section className="relative min-h-[90vh] flex items-center bg-gradient-hero text-primary-foreground overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-center opacity-20" style={{ backgroundImage: `url(${project1After})` }} />

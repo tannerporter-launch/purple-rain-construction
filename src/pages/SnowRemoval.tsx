@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import SectionHeading from "@/components/ui/SectionHeading";
 import TrustBadge from "@/components/ui/TrustBadge";
+import ServiceSchema from "@/components/seo/ServiceSchema";
 import heroPlowDawn from "@/assets/snow-removal/hero-plow-dawn.jpg";
 import sunriverDriveway from "@/assets/snow-removal/sunriver-driveway-cleared.jpg";
 import plowActionShot from "@/assets/snow-removal/plow-action-shot.jpg";
@@ -11,6 +12,11 @@ import plowActionShot from "@/assets/snow-removal/plow-action-shot.jpg";
 const SnowRemoval = () => {
   return (
     <Layout>
+      <ServiceSchema 
+        name="Snow Removal"
+        description="Reliable, route-based snow plowing and ice management for residential communities, HOAs, and small businesses in Sunriver, Bend, and Redmond."
+        serviceType="Snow Removal Service"
+      />
       {/* Hero */}
       <section className="relative py-24 bg-gradient-hero text-primary-foreground overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-center opacity-20" style={{ backgroundImage: `url(${heroPlowDawn})` }} />
