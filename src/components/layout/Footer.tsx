@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin, Instagram, Facebook } from "lucide-react";
 import logo from "@/assets/logo.png";
 
 const Footer = () => {
@@ -22,6 +22,27 @@ const Footer = () => {
             <p className="text-background/60 text-sm">
               CCB #247140 | Licensed, Bonded & Insured
             </p>
+            {/* Social Media Links */}
+            <div className="flex gap-4 pt-2">
+              <a
+                href="https://www.instagram.com/purplerainconstruction"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 rounded-lg bg-background/10 hover:bg-primary transition-colors"
+                aria-label="Follow us on Instagram"
+              >
+                <Instagram className="h-5 w-5 text-background" />
+              </a>
+              <a
+                href="https://www.facebook.com/profile.php?id=61561896246653"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 rounded-lg bg-background/10 hover:bg-primary transition-colors"
+                aria-label="Follow us on Facebook"
+              >
+                <Facebook className="h-5 w-5 text-background" />
+              </a>
+            </div>
           </div>
 
           {/* Quick Links */}

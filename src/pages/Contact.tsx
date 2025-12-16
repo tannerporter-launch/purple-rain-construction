@@ -1,4 +1,4 @@
-import { Phone, MapPin, Clock, CheckCircle } from "lucide-react";
+import { Phone, MapPin, Clock, CheckCircle, Mail, Instagram, Facebook } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import ContactForm from "@/components/forms/ContactForm";
@@ -52,6 +52,18 @@ const Contact = () => {
                       <p className="text-sm text-muted-foreground">Call or text anytime</p>
                     </div>
                   </a>
+                  <a
+                    href="mailto:admin@purpleraincs.com"
+                    className="flex items-center gap-3 text-foreground hover:text-primary transition-colors"
+                  >
+                    <div className="p-2 rounded-lg bg-primary/10">
+                      <Mail className="h-5 w-5 text-primary" />
+                    </div>
+                    <div>
+                      <p className="font-semibold">admin@purpleraincs.com</p>
+                      <p className="text-sm text-muted-foreground">Email us anytime</p>
+                    </div>
+                  </a>
                   <div className="flex items-center gap-3">
                     <div className="p-2 rounded-lg bg-primary/10">
                       <MapPin className="h-5 w-5 text-primary" />
@@ -69,6 +81,33 @@ const Contact = () => {
                       <p className="font-semibold">Response Time</p>
                       <p className="text-sm text-muted-foreground">Within 24 hours</p>
                     </div>
+                  </div>
+                </div>
+                
+                {/* Social Media Links */}
+                <div className="mt-6 pt-6 border-t border-border">
+                  <p className="font-semibold mb-3">Follow Us</p>
+                  <div className="flex gap-3">
+                    <a
+                      href="https://www.instagram.com/purplerainconstruction"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-4 py-2 rounded-lg bg-primary/10 hover:bg-primary hover:text-primary-foreground transition-colors"
+                      aria-label="Follow us on Instagram"
+                    >
+                      <Instagram className="h-5 w-5" />
+                      <span className="text-sm font-medium">Instagram</span>
+                    </a>
+                    <a
+                      href="https://www.facebook.com/profile.php?id=61561896246653"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-4 py-2 rounded-lg bg-primary/10 hover:bg-primary hover:text-primary-foreground transition-colors"
+                      aria-label="Follow us on Facebook"
+                    >
+                      <Facebook className="h-5 w-5" />
+                      <span className="text-sm font-medium">Facebook</span>
+                    </a>
                   </div>
                 </div>
               </div>
