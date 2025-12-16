@@ -36,7 +36,7 @@ const Decks = () => {
     },
     {
       question: "How long does it take to build a deck?",
-      answer: "Most deck projects take 2-4 weeks from start to finish, depending on size and complexity. Permitting can add 2-4 weeks beforehand. We'll provide a detailed timeline during your estimate."
+      answer: "Most deck projects take 1-2 weeks for simple decks and 2-4+ weeks for larger or elevated projects, depending on size and complexity. Permitting can add 2-4 weeks beforehand. We'll provide a detailed timeline during your estimate."
     },
     {
       question: "Do I need a permit for my deck?",
@@ -56,7 +56,7 @@ const Decks = () => {
     },
     {
       question: "How do I get started?",
-      answer: "Simply request a quote through our website or call us at 541-408-2712. We'll schedule a consultation to discuss your project, assess your property, and provide a detailed estimate."
+      answer: "Simply request a quote through our website or call us at (541) 408-0925. We'll schedule a consultation to discuss your project, assess your property, and provide a detailed estimate."
     }
   ];
 
@@ -94,9 +94,9 @@ const Decks = () => {
                 variant="outline"
                 className="border-2 border-primary-foreground text-primary-foreground bg-transparent hover:bg-primary-foreground/10"
               >
-                <a href="tel:541-408-2712">
+              <a href="tel:541-408-0925">
                   <Phone className="mr-2 h-5 w-5" />
-                  Call 541-408-2712
+                  Call (541) 408-0925
                 </a>
               </Button>
             </div>
@@ -453,7 +453,7 @@ const Decks = () => {
       <section className="py-20 bg-gradient-primary text-primary-foreground">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Ready to Talk About Your Deck?
+            Ready to Build Your Deck?
           </h2>
           <p className="text-xl text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
             Get a detailed estimate for your deck project. We'll discuss design, materials, timeline, and answer all your questions.
@@ -472,9 +472,9 @@ const Decks = () => {
               variant="outline"
               className="border-2 border-primary-foreground text-primary-foreground bg-transparent hover:bg-primary-foreground/10"
             >
-              <a href="tel:541-408-2712">
+              <a href="tel:541-408-0925">
                 <Phone className="mr-2 h-5 w-5" />
-                Call 541-408-2712
+                Call (541) 408-0925
               </a>
             </Button>
           </div>

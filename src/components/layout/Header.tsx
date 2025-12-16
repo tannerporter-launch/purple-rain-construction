@@ -95,11 +95,11 @@ const Header = () => {
           {/* Desktop CTAs */}
           <div className="hidden lg:flex items-center gap-3">
             <a
-              href="tel:541-408-2712"
+              href="tel:541-408-0925"
               className="flex items-center gap-2 text-sm font-semibold text-primary-foreground"
             >
               <Phone className="h-4 w-4" />
-              541-408-2712
+              (541) 408-0925
             </a>
             <Button
               asChild
@@ -161,11 +161,11 @@ const Header = () => {
             )}
             <div className="pt-4 space-y-3">
               <a
-                href="tel:541-408-2712"
+                href="tel:541-408-0925"
                 className="flex items-center justify-center gap-2 text-primary-foreground font-semibold"
               >
                 <Phone className="h-5 w-5" />
-                541-408-2712
+                (541) 408-0925
               </a>
               <Button
                 asChild

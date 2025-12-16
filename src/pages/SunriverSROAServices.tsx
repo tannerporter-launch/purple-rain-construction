@@ -69,9 +69,9 @@ const SunriverSROAServices = () => {
                 variant="outline"
                 className="border-2 border-primary-foreground text-primary-foreground bg-transparent hover:bg-primary-foreground/10"
               >
-                <a href="tel:541-408-2712">
+              <a href="tel:541-408-0925">
                   <Phone className="mr-2 h-5 w-5" />
-                  Call 541-408-2712
+                  Call (541) 408-0925
                 </a>
               </Button>
             </div>
@@ -433,9 +433,9 @@ const SunriverSROAServices = () => {
               variant="outline"
               className="border-2 border-primary-foreground text-primary-foreground bg-transparent hover:bg-primary-foreground/10"
             >
-              <a href="tel:541-408-2712">
+              <a href="tel:541-408-0925">
                 <Phone className="mr-2 h-5 w-5" />
-                Call 541-408-2712
+                Call (541) 408-0925
               </a>
             </Button>
           </div>

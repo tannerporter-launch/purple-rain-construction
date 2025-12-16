@@ -46,7 +46,7 @@ const Index = () => {
                 variant="outline"
                 className="border-2 border-primary-foreground text-primary-foreground bg-transparent hover:bg-primary-foreground/10 font-semibold text-base sm:text-lg px-6 sm:px-8 w-full sm:w-auto"
               >
-                <a href="tel:541-408-2712">
+                <a href="tel:541-408-0925">
                   <Phone className="mr-2 h-5 w-5" />
                   Call Now
                 </a>
@@ -319,9 +319,9 @@ const Index = () => {
               variant="outline"
               className="border-2 border-primary-foreground text-primary-foreground bg-transparent hover:bg-primary-foreground/10 font-semibold text-base sm:text-lg px-6 sm:px-8 w-full sm:w-auto"
             >
-              <a href="tel:541-408-2712">
+              <a href="tel:541-408-0925">
                 <Phone className="mr-2 h-5 w-5" />
-                (541) 408-2712
+                (541) 408-0925
               </a>
             </Button>
           </div>
