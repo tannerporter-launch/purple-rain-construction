@@ -82,13 +82,15 @@ const Blog = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="py-16 md:py-24 bg-muted">
-        <div className="container">
-          <div className="max-w-3xl mx-auto text-center">
-            <SectionHeading
-              title="Construction Insights & Tips"
-              subtitle="Expert advice on deck building, remodeling, and home improvement for Central Oregon homeowners."
-            />
+      <section className="py-20 bg-gradient-primary text-primary-foreground">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6">
+              Construction Insights & Tips
+            </h1>
+            <p className="text-xl text-primary-foreground/90">
+              Expert advice on deck building, remodeling, and home improvement for Central Oregon homeowners.
+            </p>
           </div>
         </div>
       </section>
