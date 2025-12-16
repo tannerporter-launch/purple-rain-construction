@@ -53,7 +53,7 @@ const SunriverSROAServices = () => {
               Sunriver SROA Approval Experts – Design, Submittals, and Compliance Made Simple
             </h1>
             <p className="text-xl text-primary-foreground/90 mb-8 leading-relaxed">
-              Purple Rain Construction specializes in SROA-compliant design, documentation, and approval support for homeowners in Sunriver, Oregon. Whether you're planning a deck replacement, exterior upgrade, or full remodel, we handle the full SROA submission process — including Form E, compliant renderings, design documentation, and coordination with the SROA Design Committee. With years of experience working in Sunriver, we understand the rules, standards, and expectations needed for smooth approval.
+              As a trusted Sunriver contractor, Purple Rain Construction specializes in SROA-compliant design, documentation, and approval support for homeowners in Sunriver, Oregon. Whether you're planning a deck replacement, exterior upgrade, or full remodel, we handle the full SROA submission process — including SROA Form E submission, compliant renderings, design documentation, and coordination with the SROA Design Committee. As your experienced Sunriver deck contractor and Sunriver remodel contractor, we understand the rules, standards, and expectations needed for smooth approval through the SROA approval process.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button
@@ -96,7 +96,7 @@ const SunriverSROAServices = () => {
         <div className="container mx-auto px-4">
           <SectionHeading
             title="Complete SROA Design & Approval Services"
-            subtitle="We handle every step of the SROA approval process for your Sunriver project."
+            subtitle="As your Sunriver exterior remodel contractor, we handle every step of the SROA design review and project approval for your Sunriver project, meeting all Sunriver HOA requirements."
           />
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {[
@@ -157,7 +157,7 @@ const SunriverSROAServices = () => {
                 SROA Approval vs. Deschutes County Permits
               </h2>
               <p className="text-lg text-muted-foreground mb-6">
-                Many Sunriver homeowners are confused about the difference between SROA approval and building permits. Here's what you need to know:
+                Many Sunriver homeowners are confused about the difference between SROA approval vs building permit requirements. Understanding Sunriver engineering requirements and the Sunriver remodel permit process is essential. Here's what you need to know:
               </p>
               
               <div className="space-y-6 mb-8">
@@ -177,6 +177,7 @@ const SunriverSROAServices = () => {
                     Deschutes County Building Permit
                   </h3>
                   <p className="text-muted-foreground">
+
                     Deschutes County handles building code, structural requirements, and legal permitting. This ensures your project meets safety standards and structural integrity requirements.
                   </p>
                 </div>
@@ -214,7 +215,7 @@ const SunriverSROAServices = () => {
         <div className="container mx-auto px-4">
           <SectionHeading
             title="Typical SROA Project Timeline"
-            subtitle="Here's what to expect when you work with Purple Rain Construction on your Sunriver project."
+            subtitle="Here's what to expect during the SROA approval timeline and Sunriver project design process. We guide you through each Sunriver HOA approval step."
           />
           <div className="max-w-4xl mx-auto">
             <div className="space-y-6">
@@ -283,13 +284,13 @@ const SunriverSROAServices = () => {
                 Flat-Fee SROA Design & Submission Package
               </h2>
               <p className="text-lg text-muted-foreground">
-                Clear pricing with no surprises—know exactly what to expect before we start.
+                Our Sunriver SROA design package offers clear pricing with no surprises—know exactly what to expect before we start with our flat fee SROA submission service.
               </p>
             </div>
             
             <div className="bg-background p-8 rounded-2xl border border-border">
               <p className="text-lg text-foreground mb-6 leading-relaxed">
-                Although every Sunriver project is unique, we offer a flat-fee SROA design & submittal service. This covers the initial site visit, SROA-compliant renderings, Form E preparation, and all communication with the SROA through final approval.
+                Although every Sunriver project is unique, we offer a flat-fee SROA design & submittal service. Our SROA Form E design service covers the initial site visit, SROA-compliant renderings, Form E preparation, and all communication with the SROA through final approval.
               </p>
               <p className="text-muted-foreground mb-8">
                 Larger remodels or highly detailed projects may require additional design hours, but we provide a clear, upfront flat fee based on project scope so homeowners know exactly what to expect.
@@ -343,10 +344,10 @@ const SunriverSROAServices = () => {
                 Trusted, Experienced Sunriver Contractor
               </h2>
               <p className="text-lg text-muted-foreground mb-6">
-                Our team has worked in Sunriver for years and is registered with SROA Community Development. We've completed multiple SROA-approved projects across decks, remodels, and exterior upgrades.
+                Our team has worked in Sunriver for years and is registered with SROA Community Development. As a trusted Sunriver construction company, we've completed multiple SROA-approved projects across decks, remodels, and exterior upgrades.
               </p>
               <p className="text-muted-foreground mb-8">
-                We ensure your design meets SROA standards and that the permitting and engineering process with Deschutes County is handled efficiently and correctly.
+                We ensure your design meets SROA standards and that the permitting and engineering process with Deschutes County is handled efficiently and correctly. When you need an experienced Sunriver contractor, Purple Rain Construction delivers.
               </p>
               <ul className="space-y-4 mb-8">
                 {[
