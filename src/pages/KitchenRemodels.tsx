@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Phone, Shield, ChefHat, Wrench, Users, CheckCircle, ArrowRight } from "lucide-react";
+import { Phone, Shield, ChefHat, Wrench, CheckCircle, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Accordion,
@@ -16,6 +16,7 @@ import olivieroKitchenAfter from "@/assets/remodels/oliviero/3-kitchen-after.jpg
 import gilchrestKitchenAfter from "@/assets/remodels/gilchrest-a-frame/5-kitchen-after.jpg";
 import olivieroKitchenIsland from "@/assets/remodels/oliviero/kitchen-island-view.jpg";
 import olivieroKitchenSink from "@/assets/remodels/oliviero/kitchen-farmhouse-sink.jpg";
+import olivieroKitchenPendant from "@/assets/remodels/oliviero/kitchen-pendant-sink.jpg";
 
 const KitchenRemodels = () => {
   const kitchenFAQs = [
@@ -65,15 +66,16 @@ const KitchenRemodels = () => {
 
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="relative py-24 md:py-32 bg-gradient-hero text-primary-foreground overflow-hidden">
+      {/* Hero Section - More visible background image */}
+      <section className="relative py-24 md:py-32 overflow-hidden">
         <div 
-          className="absolute inset-0 bg-cover bg-center opacity-25" 
-          style={{ backgroundImage: `url(${olivieroKitchenFull1})` }} 
+          className="absolute inset-0 bg-cover bg-center" 
+          style={{ backgroundImage: `url(${olivieroKitchenPendant})` }} 
         />
+        <div className="absolute inset-0 bg-primary/60" />
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 text-primary-foreground">
               Kitchen Remodels in Central Oregon
             </h1>
             <h2 className="text-xl md:text-2xl text-primary-foreground/90 mb-8 font-medium">
@@ -105,15 +107,25 @@ const KitchenRemodels = () => {
         </div>
       </section>
 
-      {/* Expert Kitchen Remodeling Section */}
-      <section className="py-20 bg-background">
+      {/* Full-Width Kitchen Image Break - After Intro */}
+      <section className="relative h-64 md:h-80 lg:h-96">
+        <img
+          src={olivieroKitchenFull1}
+          alt="Modern kitchen with pendant lights and farmhouse styling"
+          className="w-full h-full object-cover"
+          loading="lazy"
+        />
+      </section>
+
+      {/* Expert Kitchen Remodeling Section - Purple Background */}
+      <section className="py-20 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
                 Expert Kitchen Remodeling in Bend, Redmond, and Sunriver
               </h2>
-              <p className="text-lg text-muted-foreground leading-relaxed">
+              <p className="text-lg text-primary-foreground/90 leading-relaxed">
                 As a premier kitchen remodeling company in Bend OR, we specialize in turning your vision into reality. 
                 From concept to completion, we handle every detail, ensuring your new kitchen is designed for beauty, 
                 comfort, and lasting value. Serving Redmond, Sunriver, and Central Oregon, our team brings experience, 
@@ -132,12 +144,18 @@ const KitchenRemodels = () => {
         </div>
       </section>
 
-      {/* Our Kitchen Remodel Services */}
-      <section className="py-20 bg-muted">
-        <div className="container mx-auto px-4">
+      {/* Our Kitchen Remodel Services - Purple Background with Image */}
+      <section className="relative py-20 overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center" 
+          style={{ backgroundImage: `url(${olivieroKitchenAfter})` }} 
+        />
+        <div className="absolute inset-0 bg-primary/80" />
+        <div className="container mx-auto px-4 relative z-10">
           <SectionHeading
             title="Our Kitchen Remodel Services"
             subtitle="Professional kitchen remodeling services across Central Oregon"
+            light
           />
           <div className="grid md:grid-cols-3 gap-8">
             {serviceCards.map((service, index) => (
@@ -145,6 +163,11 @@ const KitchenRemodels = () => {
                 key={index} 
                 className="bg-background rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
               >
+                {/* Title ABOVE image */}
+                <div className="p-6 pb-4">
+                  <h3 className="text-xl font-semibold text-foreground">{service.title}</h3>
+                </div>
+                {/* Image in middle */}
                 <div className="aspect-[4/3] overflow-hidden">
                   <img
                     src={service.image}
@@ -153,8 +176,8 @@ const KitchenRemodels = () => {
                     loading="lazy"
                   />
                 </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
+                {/* Description and CTA at bottom */}
+                <div className="p-6 pt-4">
                   <p className="text-muted-foreground mb-4">{service.description}</p>
                   <Button asChild variant="link" className="p-0 text-primary">
                     <Link to="/contact?service=kitchen">
@@ -176,24 +199,18 @@ const KitchenRemodels = () => {
             subtitle="Trusted craftsmanship for your kitchen remodel"
           />
           
-          {/* Icon Row */}
-          <div className="grid grid-cols-3 gap-8 max-w-3xl mx-auto mb-12">
+          {/* Large Outline Icons Row */}
+          <div className="grid grid-cols-3 gap-4 md:gap-8 max-w-4xl mx-auto mb-12">
             <div className="text-center">
-              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                <Shield className="h-8 w-8 text-primary" />
-              </div>
+              <Shield className="h-16 w-16 md:h-20 md:w-20 text-primary mx-auto mb-4" strokeWidth={1.5} />
               <h3 className="font-semibold text-sm md:text-base">Licensed & Insured</h3>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                <ChefHat className="h-8 w-8 text-primary" />
-              </div>
+              <ChefHat className="h-16 w-16 md:h-20 md:w-20 text-primary mx-auto mb-4" strokeWidth={1.5} />
               <h3 className="font-semibold text-sm md:text-base">Kitchen Experience</h3>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                <Wrench className="h-8 w-8 text-primary" />
-              </div>
+              <Wrench className="h-16 w-16 md:h-20 md:w-20 text-primary mx-auto mb-4" strokeWidth={1.5} />
               <h3 className="font-semibold text-sm md:text-base">Quality Craftsmanship</h3>
             </div>
           </div>
@@ -220,8 +237,8 @@ const KitchenRemodels = () => {
       {/* Full-Width Image Break */}
       <section className="relative h-64 md:h-80 lg:h-96">
         <img
-          src={olivieroKitchenAfter}
-          alt="Beautiful kitchen remodel with modern island and pendant lighting"
+          src={olivieroKitchenSink}
+          alt="Beautiful kitchen remodel with farmhouse sink and window view"
           className="w-full h-full object-cover"
           loading="lazy"
         />
