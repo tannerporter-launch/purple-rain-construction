@@ -7,7 +7,7 @@ const LocalBusinessSchema = () => {
     "name": "Purple Rain Construction",
     "description": "Trusted deck builders and remodeling experts in Central Oregon. Building high-quality decks and remodels in Sunriver, Bend, and Redmond.",
     "url": "https://purplerainconstruction.com",
-    "telephone": "+1-541-408-2712",
+    "telephone": "+1-541-408-0925",
     "priceRange": "$$-$$$",
     "address": {
       "@type": "PostalAddress",

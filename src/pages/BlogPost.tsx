@@ -274,9 +274,9 @@ const BlogPost = () => {
                   </Link>
                 </Button>
                 <div className="mt-4 text-center">
-                  <a href="tel:541-408-2712" className="text-sm flex items-center justify-center gap-2 hover:underline">
+                  <a href="tel:541-408-0925" className="text-sm flex items-center justify-center gap-2 hover:underline">
                     <Phone className="h-4 w-4" />
-                    (541) 408-2712
+                    (541) 408-0925
                   </a>
                 </div>
               </div>

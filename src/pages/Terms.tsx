@@ -17,7 +17,7 @@ const Terms = () => (
         <h2 className="text-2xl font-bold mt-8 mb-4">Licensing</h2>
         <p className="text-muted-foreground mb-4">Purple Rain Construction is licensed (CCB #247140), bonded, and insured in the State of Oregon.</p>
         <h2 className="text-2xl font-bold mt-8 mb-4">Contact</h2>
-        <p className="text-muted-foreground">Questions? Call us at 541-408-2712.</p>
+        <p className="text-muted-foreground">Questions? Call us at (541) 408-0925.</p>
       </div>
     </section>
   </Layout>

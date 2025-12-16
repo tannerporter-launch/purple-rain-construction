@@ -41,14 +41,14 @@ const Contact = () => {
                 <h3 className="text-xl font-semibold mb-6">Contact Information</h3>
                 <div className="space-y-4">
                   <a
-                    href="tel:541-408-2712"
+                    href="tel:541-408-0925"
                     className="flex items-center gap-3 text-foreground hover:text-primary transition-colors"
                   >
                     <div className="p-2 rounded-lg bg-primary/10">
                       <Phone className="h-5 w-5 text-primary" />
                     </div>
                     <div>
-                      <p className="font-semibold">541-408-2712</p>
+                      <p className="font-semibold">(541) 408-0925</p>
                       <p className="text-sm text-muted-foreground">Call or text anytime</p>
                     </div>
                   </a>
@@ -139,9 +139,9 @@ const Contact = () => {
         <div className="container mx-auto px-4 text-center">
           <p className="text-lg mb-4">Prefer to talk? Give us a call:</p>
           <Button asChild size="lg" className="bg-gradient-primary hover:opacity-90">
-            <a href="tel:541-408-2712">
+            <a href="tel:541-408-0925">
               <Phone className="mr-2 h-5 w-5" />
-              541-408-2712
+              (541) 408-0925
             </a>
           </Button>
         </div>

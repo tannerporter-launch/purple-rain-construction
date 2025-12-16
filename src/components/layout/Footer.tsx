@@ -84,20 +84,20 @@ const Footer = () => {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="tel:541-408-2712"
+                  href="tel:541-408-0925"
                   className="flex items-center gap-3 text-background/70 hover:text-background transition-colors"
                 >
                   <Phone className="h-5 w-5 text-primary" />
-                  <span>541-408-2712</span>
+                  <span>(541) 408-0925</span>
                 </a>
               </li>
               <li>
                 <a
-                  href="mailto:info@purplerainconstruction.com"
+                  href="mailto:admin@purpleraincs.com"
                   className="flex items-center gap-3 text-background/70 hover:text-background transition-colors"
                 >
                   <Mail className="h-5 w-5 text-primary" />
-                  <span className="text-sm">info@purplerainconstruction.com</span>
+                  <span className="text-sm">admin@purpleraincs.com</span>
                 </a>
               </li>
             </ul>

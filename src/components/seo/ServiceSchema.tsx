@@ -24,7 +24,7 @@ const ServiceSchema = ({
     "provider": {
       "@type": "HomeAndConstructionBusiness",
       "name": "Purple Rain Construction",
-      "telephone": "+1-541-408-2712",
+      "telephone": "+1-541-408-0925",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Bend",

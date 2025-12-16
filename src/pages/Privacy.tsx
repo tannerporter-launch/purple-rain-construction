@@ -17,7 +17,7 @@ const Privacy = () => (
         <h2 className="text-2xl font-bold mt-8 mb-4">Information Sharing</h2>
         <p className="text-muted-foreground mb-4">We do not sell or share your personal information with third parties except as necessary to provide our services.</p>
         <h2 className="text-2xl font-bold mt-8 mb-4">Contact</h2>
-        <p className="text-muted-foreground">Questions? Call us at 541-408-2712 or email info@purplerainconstruction.com.</p>
+        <p className="text-muted-foreground">Questions? Call us at (541) 408-0925 or email admin@purpleraincs.com.</p>
       </div>
     </section>
   </Layout>
