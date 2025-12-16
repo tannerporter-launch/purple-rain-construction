@@ -190,6 +190,36 @@
   .card-hover {
     @apply transition-all duration-300 hover:shadow-lg hover:border-primary/20;
   }
+  
+  /* Image hover zoom effect for gallery */
+  .image-hover-zoom {
+    @apply overflow-hidden;
+  }
+  
+  .image-hover-zoom img {
+    @apply transition-transform duration-500 ease-out;
+  }
+  
+  .image-hover-zoom:hover img {
+    @apply scale-105;
+  }
+  
+  /* Fade in animation */
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+    opacity: 0;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }
 
 html {
