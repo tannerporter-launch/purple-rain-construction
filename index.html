@@ -33,6 +33,15 @@
     <!-- Geo Tags for Local SEO -->
     <meta name="geo.region" content="US-OR" />
     <meta name="geo.placename" content="Sunriver, Oregon" />
+
+    <!-- Google Analytics (GA4) - Replace G-XXXXXXXXXX with your Measurement ID -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
     
     <!-- Structured Data - LocalBusiness -->
     <script type="application/ld+json">
@@ -57,7 +66,10 @@
       ],
       "priceRange": "$$",
       "openingHours": "Mo-Fr 08:00-17:00",
-      "sameAs": [],
+      "sameAs": [
+        "https://www.instagram.com/purplerainconstruction",
+        "https://www.facebook.com/profile.php?id=61561896246653"
+      ],
       "hasCredential": [
         {
           "@type": "EducationalOccupationalCredential",

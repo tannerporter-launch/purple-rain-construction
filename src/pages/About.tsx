@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
-import { CheckCircle, Shield, Users, Heart, Star, Phone } from "lucide-react";
+import { CheckCircle, Shield, Users, Heart, Phone, Instagram, Facebook } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import SectionHeading from "@/components/ui/SectionHeading";
 import teamActionShot from "@/assets/brand/team-action-saw.jpg";
 import teamNicholasEd from "@/assets/brand/team-nicholas-ed.png";
+
 const About = () => {
   return (
     <Layout>
@@ -192,7 +193,7 @@ const About = () => {
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
             We'd love to hear about your project. Let's talk about how we can help bring your vision to life.
           </p>
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-4 mb-8">
             <Button asChild size="lg" className="bg-gradient-primary hover:opacity-90">
               <Link to="/contact">Request a Quote</Link>
             </Button>
@@ -202,6 +203,30 @@ const About = () => {
                 Call (541) 408-0925
               </a>
             </Button>
+          </div>
+          
+          {/* Social Media Links */}
+          <div className="flex justify-center gap-4">
+            <a
+              href="https://www.instagram.com/purplerainconstruction"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-muted hover:bg-primary hover:text-primary-foreground transition-colors"
+              aria-label="Follow us on Instagram"
+            >
+              <Instagram className="h-5 w-5" />
+              <span className="font-medium">Instagram</span>
+            </a>
+            <a
+              href="https://www.facebook.com/profile.php?id=61561896246653"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-muted hover:bg-primary hover:text-primary-foreground transition-colors"
+              aria-label="Follow us on Facebook"
+            >
+              <Facebook className="h-5 w-5" />
+              <span className="font-medium">Facebook</span>
+            </a>
           </div>
         </div>
       </section>
