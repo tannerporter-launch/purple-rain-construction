@@ -14,7 +14,8 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { toast } from "sonner";
-import { Loader2, CheckCircle } from "lucide-react";
+import { Loader2 } from "lucide-react";
+import AnimatedCheckmark from "@/components/ui/AnimatedCheckmark";
 
 const formSchema = z.object({
   firstName: z.string().min(1, "First name is required").max(50),
@@ -101,12 +102,19 @@ const ContactForm = ({ defaultService, className = "" }: ContactFormProps) => {
   if (isSubmitted) {
     return (
       <div className={`text-center py-12 ${className}`}>
-        <CheckCircle className="h-16 w-16 text-primary mx-auto mb-4" />
-        <h3 className="text-2xl font-bold mb-2">Thank You!</h3>
-        <p className="text-muted-foreground mb-6">
+        <div className="flex justify-center mb-6">
+          <AnimatedCheckmark size={80} />
+        </div>
+        <h3 className="text-2xl font-bold mb-2 animate-fade-in">Thank You!</h3>
+        <p className="text-muted-foreground mb-6 animate-fade-in" style={{ animationDelay: "0.2s" }}>
           We've received your request and will contact you within 24 hours.
         </p>
-        <Button onClick={() => setIsSubmitted(false)} variant="outline">
+        <Button 
+          onClick={() => setIsSubmitted(false)} 
+          variant="outline"
+          className="animate-fade-in"
+          style={{ animationDelay: "0.4s" }}
+        >
           Submit Another Request
         </Button>
       </div>
