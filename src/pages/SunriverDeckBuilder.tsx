@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Phone, CheckCircle, TreePine, Shield, Hammer, Wrench, Home, Snowflake, Users, Star, ArrowRight } from "lucide-react";
+import { Phone, CheckCircle, TreePine, Shield, Hammer, Wrench, Home, Snowflake, Users, Star, ArrowRight, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import SectionHeading from "@/components/ui/SectionHeading";
@@ -318,6 +318,33 @@ const SunriverDeckBuilder = () => {
                 <p className="text-sm text-muted-foreground">{item.desc}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SROA Approval Callout */}
+      <section className="py-16 bg-primary/5 border-y border-primary/20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-8">
+            <div className="flex-shrink-0">
+              <div className="p-4 rounded-2xl bg-primary/10">
+                <FileText className="h-12 w-12 text-primary" />
+              </div>
+            </div>
+            <div className="flex-1 text-center md:text-left">
+              <h3 className="text-2xl font-bold mb-2">Need Help with SROA Approval?</h3>
+              <p className="text-muted-foreground mb-4">
+                We handle the entire SROA submission process—Form E, compliant renderings, Design Committee coordination, and final inspections. Learn about our flat-fee SROA design & approval services.
+              </p>
+            </div>
+            <div className="flex-shrink-0">
+              <Button asChild size="lg" className="bg-gradient-primary hover:opacity-90">
+                <Link to="/sunriver-sroa-services">
+                  SROA Services
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
+            </div>
           </div>
         </div>
       </section>

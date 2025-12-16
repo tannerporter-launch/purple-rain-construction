@@ -8,6 +8,7 @@ import ScrollToTop from "@/components/layout/ScrollToTop";
 import Index from "./pages/Index";
 import Decks from "./pages/Decks";
 import SunriverDeckBuilder from "./pages/SunriverDeckBuilder";
+import SunriverSROAServices from "./pages/SunriverSROAServices";
 import SnowRemoval from "./pages/SnowRemoval";
 import Remodeling from "./pages/Remodeling";
 import KitchenRemodels from "./pages/KitchenRemodels";
@@ -40,6 +41,7 @@ const App = () => (
             <Route path="/decks" element={<Decks />} />
             <Route path="/services/decks" element={<Decks />} />
             <Route path="/sunriver-deck-builder" element={<SunriverDeckBuilder />} />
+            <Route path="/sunriver-sroa-services" element={<SunriverSROAServices />} />
             <Route path="/snow-removal" element={<SnowRemoval />} />
             <Route path="/services/snow-removal" element={<SnowRemoval />} />
             <Route path="/remodeling" element={<Remodeling />} />
