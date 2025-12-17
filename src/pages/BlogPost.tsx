@@ -1,4 +1,5 @@
 import { useParams, Link, Navigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Calendar, Clock, ArrowLeft, Phone, ArrowRight } from "lucide-react";
@@ -7,6 +8,9 @@ import { Calendar, Clock, ArrowLeft, Phone, ArrowRight } from "lucide-react";
 import deckMaterialsImg from "@/assets/blog/deck-materials.jpg";
 import sunriverMaintenanceImg from "@/assets/blog/sunriver-maintenance.jpg";
 import compositeVsWoodImg from "@/assets/blog/composite-vs-wood.jpg";
+import kitchenTrendsImg from "@/assets/blog/kitchen-trends.jpg";
+import snowRemovalTipsImg from "@/assets/blog/snow-removal-tips.jpg";
+import deckPermitsImg from "@/assets/blog/deck-permits.jpg";
 
 // Sample blog posts data - in production, this would come from a CMS
 const blogPostsData: Record<string, {
@@ -21,7 +25,7 @@ const blogPostsData: Record<string, {
   "choosing-right-deck-material-central-oregon": {
     title: "Choosing the Right Deck Material for Central Oregon's Climate",
     excerpt: "Learn how to select decking materials that withstand our unique freeze-thaw cycles, heavy snow loads, and intense UV exposure.",
-    date: "2024-12-01",
+    date: "2025-01-15",
     readTime: "5 min read",
     category: "Deck Building",
     image: deckMaterialsImg,
@@ -72,7 +76,7 @@ For most Central Oregon homeowners, we recommend **Trex composite decking** for 
   "sunriver-deck-maintenance-tips": {
     title: "Sunriver Deck Maintenance: Preparing for Winter",
     excerpt: "Essential tips for protecting your Sunriver deck from snow damage and ensuring it lasts for decades.",
-    date: "2024-11-15",
+    date: "2025-01-08",
     readTime: "4 min read",
     category: "Maintenance",
     image: sunriverMaintenanceImg,
@@ -131,7 +135,7 @@ Contact us if you notice:
   "composite-vs-wood-decking": {
     title: "Composite vs. Wood Decking: Which Is Right for You?",
     excerpt: "A comprehensive comparison of Trex composite decking and natural wood options for Central Oregon homes.",
-    date: "2024-11-01",
+    date: "2025-01-01",
     readTime: "6 min read",
     category: "Deck Building",
     image: compositeVsWoodImg,
@@ -188,6 +192,244 @@ For Central Oregon's climate, we typically recommend composite decking. The extr
 *Want to see samples of both options? Contact us to schedule a consultation.*
     `,
   },
+  "kitchen-remodel-trends-2024": {
+    title: "Kitchen Remodel Trends for 2024: What Central Oregon Homeowners Want",
+    excerpt: "Discover the most popular kitchen renovation features and designs our clients are requesting this year.",
+    date: "2024-12-20",
+    readTime: "5 min read",
+    category: "Remodeling",
+    image: kitchenTrendsImg,
+    content: `
+## What Central Oregon Homeowners Are Asking For
+
+Kitchen remodeling trends evolve each year, but certain features have proven particularly popular among our Central Oregon clients. Here's what we're seeing in 2024.
+
+### Open Concept Living
+
+The demand for open floor plans continues strong. Homeowners want:
+- Kitchen islands that serve as gathering spaces
+- Seamless transitions between cooking and living areas
+- Clear sightlines to outdoor views (especially mountain vistas)
+- Multi-functional spaces for cooking, dining, and entertaining
+
+### Mountain-Modern Aesthetics
+
+Central Oregon homeowners are embracing a distinctive style that blends:
+
+**Natural Elements:**
+- Reclaimed wood accents and beams
+- Stone countertops and backsplashes
+- Large windows framing outdoor views
+- Earthy, warm color palettes
+
+**Modern Touches:**
+- Clean-lined cabinetry
+- Integrated appliances
+- Minimalist hardware
+- Smart home technology
+
+### Functional Upgrades That Matter
+
+Beyond aesthetics, practical improvements are top priorities:
+
+**Storage Solutions:**
+- Pull-out pantry systems
+- Deep drawers for pots and pans
+- Appliance garages for countertop clutter
+- Custom cabinet organizers
+
+**Appliance Upgrades:**
+- Professional-grade ranges
+- Built-in refrigeration
+- Induction cooktops
+- Steam ovens and speed ovens
+
+### Outdoor Connection
+
+Given our beautiful Central Oregon setting, connecting indoor and outdoor spaces is essential:
+- Pass-through windows to outdoor entertaining areas
+- Indoor-outdoor bars and serving counters
+- Views of the Cascades from kitchen workspaces
+- Easy access to deck dining areas
+
+### Sustainable Choices
+
+Eco-conscious options are increasingly popular:
+- Energy-efficient appliances
+- Low-VOC finishes and paints
+- Recycled or sustainably sourced materials
+- LED lighting throughout
+
+*Planning a kitchen remodel? We'd love to help you create a space that works for your lifestyle and showcases Central Oregon's beauty.*
+    `,
+  },
+  "snow-removal-tips-sunriver": {
+    title: "Snow Removal Best Practices for Sunriver Property Owners",
+    excerpt: "How to keep your driveway and walkways safe during Central Oregon's snowy winters.",
+    date: "2024-12-10",
+    readTime: "4 min read",
+    category: "Snow Removal",
+    image: snowRemovalTipsImg,
+    content: `
+## Staying Safe and Accessible All Winter
+
+Sunriver's snowy winters require consistent attention to keep properties safe and accessible. Whether you manage your own snow removal or hire professionals, here's what you need to know.
+
+### Understanding Sunriver's Snow Patterns
+
+Our area typically experiences:
+- Average annual snowfall of 30-40 inches
+- Multiple smaller storms rather than single large dumps
+- Quick temperature swings that create ice
+- Wind-driven snow that accumulates in drifts
+
+### DIY Snow Removal Tips
+
+**Equipment Essentials:**
+- Quality snow blower (two-stage recommended)
+- Plastic shovels for detail work
+- Ice melt products safe for concrete
+- Sand or traction grit for icy areas
+
+**Timing Matters:**
+- Clear snow before it compacts
+- Remove snow before temperatures drop (prevents ice)
+- Don't wait for the storm to end—work in stages
+- Early morning clearing prevents daytime compaction
+
+**Technique Tips:**
+- Blow snow downwind when possible
+- Create clear paths to all exits
+- Clear around heat pumps and vents
+- Keep storm drains accessible
+
+### When to Hire Professionals
+
+Consider professional snow removal if you:
+- Own a vacation rental that needs consistent access
+- Have a long or steep driveway
+- Cannot physically manage snow removal
+- Want peace of mind during storm season
+- Live out of the area and need reliable service
+
+### Our Professional Snow Removal Services
+
+Purple Rain Construction offers reliable snow removal for Sunriver properties:
+
+**What We Provide:**
+- Priority response for contracted clients
+- Driveway and walkway clearing
+- Roof snow removal when needed
+- Ice management and treatment
+- Real-time updates via our project portal
+
+**Service Area:**
+We primarily serve Sunriver, with limited availability in Bend and Redmond for existing clients.
+
+### Protecting Your Property
+
+Beyond clearing snow, protect your investment:
+- Ensure proper drainage away from foundation
+- Check gutters before winter arrives
+- Trim branches that could break under snow load
+- Mark driveway edges to prevent plow damage
+
+*Need reliable snow removal this winter? Contact us to discuss service options for your Sunriver property.*
+    `,
+  },
+  "deck-permit-requirements-deschutes-county": {
+    title: "Understanding Deck Permit Requirements in Deschutes County",
+    excerpt: "Navigate the permitting process with ease. Here's what you need to know before building your deck.",
+    date: "2024-12-01",
+    readTime: "4 min read",
+    category: "Permits & Planning",
+    image: deckPermitsImg,
+    content: `
+## Navigating Deschutes County Deck Permits
+
+Building a deck in Central Oregon requires proper permits. Understanding the process upfront saves time, money, and headaches. Here's what every homeowner should know.
+
+### When Do You Need a Permit?
+
+**Permits Required For:**
+- Any attached deck (connected to your home)
+- Decks over 30 inches above grade
+- Decks over 200 square feet
+- Any deck with a roof or cover
+- Hot tub or spa installations on decks
+
+**May Not Require Permits:**
+- Freestanding decks under 30 inches and 200 sq ft
+- Simple platform decks at grade level
+- Replacement of existing deck boards (no structural changes)
+
+*Always verify with Deschutes County—requirements can change.*
+
+### The Permit Process
+
+**Step 1: Site Plan**
+You'll need a plot plan showing:
+- Property boundaries and setbacks
+- Existing structures
+- Proposed deck location and dimensions
+- Distance to property lines
+
+**Step 2: Construction Drawings**
+Plans must include:
+- Framing details (joists, beams, posts)
+- Foundation specifications
+- Ledger board attachment details
+- Railing design and heights
+- Materials specifications
+
+**Step 3: Submit Application**
+- Apply online or at the Deschutes County Community Development office
+- Pay applicable fees (varies by project size)
+- Allow 2-4 weeks for plan review
+
+**Step 4: Inspections**
+Typical inspection points:
+- Footing/foundation inspection
+- Framing inspection
+- Final inspection
+
+### Sunriver-Specific Requirements
+
+Building in Sunriver? You'll need **both**:
+
+1. **SROA Approval** (Sunriver Owners Association)
+   - Design review for aesthetics
+   - Form E submission required
+   - 2-3 week review process
+   - Focus on community standards
+
+2. **Deschutes County Permit**
+   - Building code compliance
+   - Structural requirements
+   - Safety standards
+
+*SROA approval and county permits are separate processes with different requirements.*
+
+### Common Permit Mistakes to Avoid
+
+**Don't:**
+- Start construction before permits are approved
+- Assume your contractor handles everything (verify!)
+- Ignore setback requirements
+- Skip required inspections
+- Build different from approved plans
+
+### How We Help
+
+As experienced Central Oregon deck builders, we handle the permit process for our clients:
+- Prepare all required documentation
+- Submit applications on your behalf
+- Coordinate with inspectors
+- Ensure code compliance throughout
+
+*Ready to start your deck project? We'll guide you through every step of the permit process.*
+    `,
+  },
 };
 
 const formatDate = (dateString: string) => {
@@ -206,8 +448,53 @@ const BlogPost = () => {
     return <Navigate to="/blog" replace />;
   }
 
+  const canonicalUrl = `https://purpleraincs.com/blog/${slug}`;
+
   return (
     <Layout>
+      <Helmet>
+        <title>{post.title} | Purple Rain Construction Blog</title>
+        <meta name="description" content={post.excerpt} />
+        <link rel="canonical" href={canonicalUrl} />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content={post.title} />
+        <meta property="og:description" content={post.excerpt} />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:image" content={post.image} />
+        <meta property="article:published_time" content={post.date} />
+        <meta property="article:section" content={post.category} />
+        
+        {/* Article Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": post.title,
+            "description": post.excerpt,
+            "image": post.image,
+            "datePublished": post.date,
+            "author": {
+              "@type": "Organization",
+              "name": "Purple Rain Construction"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Purple Rain Construction",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://purpleraincs.com/logo.png"
+              }
+            },
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": canonicalUrl
+            }
+          })}
+        </script>
+      </Helmet>
+
       {/* Hero Section */}
       <section className="relative py-16 md:py-24">
         <div 
@@ -217,7 +504,7 @@ const BlogPost = () => {
           <div className="absolute inset-0 bg-charcoal/70" />
         </div>
         <div className="container relative z-10">
-          <div className="max-w-3xl">
+          <div className="max-w-3xl animate-fade-in">
             <Link 
               to="/blog" 
               className="inline-flex items-center text-primary-foreground/80 hover:text-primary-foreground mb-6 transition-colors"
@@ -253,7 +540,7 @@ const BlogPost = () => {
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             {/* Main Content */}
-            <article className="lg:col-span-2 prose prose-lg max-w-none">
+            <article className="lg:col-span-2 prose prose-lg max-w-none animate-fade-in">
               <div 
                 className="[&>h2]:text-2xl [&>h2]:font-bold [&>h2]:mt-8 [&>h2]:mb-4 [&>h3]:text-xl [&>h3]:font-semibold [&>h3]:mt-6 [&>h3]:mb-3 [&>p]:text-muted-foreground [&>p]:mb-4 [&>ul]:list-disc [&>ul]:pl-6 [&>ul]:mb-4 [&>ul>li]:text-muted-foreground [&>ul>li]:mb-2 [&>strong]:text-foreground [&>em]:text-primary"
                 dangerouslySetInnerHTML={{ __html: post.content.replace(/\n/g, '<br/>').replace(/##\s(.+)/g, '<h2>$1</h2>').replace(/###\s(.+)/g, '<h3>$1</h3>').replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>').replace(/\*(.+?)\*/g, '<em>$1</em>') }}
@@ -263,12 +550,12 @@ const BlogPost = () => {
             {/* Sidebar */}
             <aside className="space-y-8">
               {/* CTA Card */}
-              <div className="bg-gradient-primary text-primary-foreground rounded-lg p-6">
+              <div className="bg-gradient-primary text-primary-foreground rounded-lg p-6 animate-fade-in" style={{ animationDelay: "100ms" }}>
                 <h3 className="text-xl font-bold mb-3">Ready to Get Started?</h3>
                 <p className="text-sm opacity-90 mb-4">
                   Contact us today for a free estimate on your deck or remodeling project.
                 </p>
-                <Button asChild variant="secondary" className="w-full">
+                <Button asChild variant="secondary" className="w-full btn-glow">
                   <Link to="/contact">
                     Request a Quote
                   </Link>
@@ -282,29 +569,29 @@ const BlogPost = () => {
               </div>
 
               {/* Quick Links */}
-              <div className="bg-card border rounded-lg p-6">
+              <div className="bg-card border rounded-lg p-6 animate-fade-in" style={{ animationDelay: "200ms" }}>
                 <h3 className="font-bold mb-4">Our Services</h3>
                 <ul className="space-y-3">
                   <li>
-                    <Link to="/decks" className="text-muted-foreground hover:text-primary flex items-center gap-2">
+                    <Link to="/decks" className="text-muted-foreground hover:text-primary flex items-center gap-2 transition-colors">
                       <ArrowRight className="h-4 w-4" />
                       Deck Building
                     </Link>
                   </li>
                   <li>
-                    <Link to="/sunriver-deck-builder" className="text-muted-foreground hover:text-primary flex items-center gap-2">
+                    <Link to="/sunriver-deck-builder" className="text-muted-foreground hover:text-primary flex items-center gap-2 transition-colors">
                       <ArrowRight className="h-4 w-4" />
                       Sunriver Decks
                     </Link>
                   </li>
                   <li>
-                    <Link to="/remodeling" className="text-muted-foreground hover:text-primary flex items-center gap-2">
+                    <Link to="/remodeling" className="text-muted-foreground hover:text-primary flex items-center gap-2 transition-colors">
                       <ArrowRight className="h-4 w-4" />
                       Remodeling
                     </Link>
                   </li>
                   <li>
-                    <Link to="/snow-removal" className="text-muted-foreground hover:text-primary flex items-center gap-2">
+                    <Link to="/snow-removal" className="text-muted-foreground hover:text-primary flex items-center gap-2 transition-colors">
                       <ArrowRight className="h-4 w-4" />
                       Snow Removal
                     </Link>
@@ -321,7 +608,7 @@ const BlogPost = () => {
         <div className="container">
           <div className="text-center">
             <h2 className="text-2xl font-bold mb-4">More From Our Blog</h2>
-            <Button asChild variant="outline">
+            <Button asChild variant="outline" className="btn-glow">
               <Link to="/blog">
                 <ArrowLeft className="mr-2 h-4 w-4" />
                 View All Posts
