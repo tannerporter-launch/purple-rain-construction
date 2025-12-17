@@ -39,7 +39,7 @@ const SnowRemoval = () => {
               <Button
                 asChild
                 size="lg"
-                className="bg-background text-primary hover:bg-background/90 font-semibold"
+                className="bg-background text-primary hover:bg-background/90 font-semibold btn-glow"
               >
                 <Link to="/contact?service=snow-removal">Join the Snow Route List</Link>
               </Button>
@@ -338,7 +338,7 @@ const SnowRemoval = () => {
             <Button
               asChild
               size="lg"
-              className="bg-background text-primary hover:bg-background/90 font-semibold"
+              className="bg-background text-primary hover:bg-background/90 font-semibold btn-glow"
             >
               <Link to="/contact?service=snow-removal">Request a Snow Removal Estimate</Link>
             </Button>

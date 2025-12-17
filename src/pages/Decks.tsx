@@ -135,7 +135,7 @@ const Decks = () => {
               <img
                 src={project2After}
                 alt="Finished composite deck by Purple Rain Construction"
-                className="rounded-2xl shadow-elegant"
+                className="rounded-2xl shadow-elegant timber-accent"
                 loading="lazy"
               />
             </div>
@@ -334,7 +334,7 @@ const Decks = () => {
             <p className="text-muted-foreground mb-4">
               Final pricing depends on size, materials, height, railing style, and site conditions.
             </p>
-            <Button asChild size="lg" className="bg-gradient-primary hover:opacity-90">
+            <Button asChild size="lg" variant="cta">
               <Link to="/contact?service=deck">Request Your Exact Estimate</Link>
             </Button>
           </div>

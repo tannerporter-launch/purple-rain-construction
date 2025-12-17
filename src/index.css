@@ -204,6 +204,43 @@
     @apply scale-105;
   }
   
+  /* Timber Brown accent for deck-related imagery */
+  .timber-accent {
+    border: 2px solid hsl(var(--timber));
+    box-shadow: 0 4px 20px -4px hsl(var(--timber) / 0.3);
+  }
+  
+  .timber-accent-subtle {
+    border-left: 4px solid hsl(var(--timber));
+  }
+  
+  /* Sunriver Gold accent for section headers */
+  .sunriver-gold-underline {
+    position: relative;
+  }
+  
+  .sunriver-gold-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, hsl(var(--sunriver-gold)), hsl(var(--sunriver-gold) / 0.3));
+    border-radius: 2px;
+  }
+  
+  /* Purple glow for CTA buttons */
+  .btn-glow {
+    box-shadow: 0 4px 20px -4px hsl(var(--primary) / 0.5);
+    transition: all 0.3s ease;
+  }
+  
+  .btn-glow:hover {
+    box-shadow: 0 8px 30px -4px hsl(var(--primary) / 0.6);
+    transform: translateY(-2px);
+  }
+  
   /* Fade in animation */
   .animate-fade-in {
     animation: fadeIn 0.5s ease-out forwards;
