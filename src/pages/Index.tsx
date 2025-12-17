@@ -33,7 +33,7 @@ const Index = () => {
               <Button
                 asChild
                 size="lg"
-                className="bg-background text-primary hover:bg-background/90 font-semibold text-base sm:text-lg px-6 sm:px-8 w-full sm:w-auto"
+                className="bg-background text-primary hover:bg-background/90 font-semibold text-base sm:text-lg px-6 sm:px-8 w-full sm:w-auto btn-glow"
               >
                 <Link to="/contact">
                   <ArrowRight className="mr-2 h-5 w-5" />
@@ -145,7 +145,7 @@ const Index = () => {
                   <span className="text-foreground font-medium">Local experience with Sunriver + Central Oregon weather</span>
                 </li>
               </ul>
-              <Button asChild size="lg" className="bg-gradient-primary hover:opacity-90 w-full sm:w-auto">
+              <Button asChild size="lg" variant="cta" className="w-full sm:w-auto">
                 <Link to="/contact">Request a Quote</Link>
               </Button>
             </div>
@@ -309,7 +309,7 @@ const Index = () => {
             <Button
               asChild
               size="lg"
-              className="bg-background text-primary hover:bg-background/90 font-semibold text-base sm:text-lg px-6 sm:px-8 w-full sm:w-auto"
+              className="bg-background text-primary hover:bg-background/90 font-semibold text-base sm:text-lg px-6 sm:px-8 w-full sm:w-auto btn-glow"
             >
               <Link to="/contact">Request a Quote</Link>
             </Button>

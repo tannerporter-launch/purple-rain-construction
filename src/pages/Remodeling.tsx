@@ -267,7 +267,7 @@ const Remodeling = () => {
             Let's discuss your remodeling project. We'll help you create a space you'll love for years to come.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Button asChild size="lg" className="bg-gradient-primary hover:opacity-90">
+            <Button asChild size="lg" variant="cta">
               <Link to="/contact?service=remodel">Schedule a Consultation</Link>
             </Button>
             <Button asChild size="lg" variant="outline">

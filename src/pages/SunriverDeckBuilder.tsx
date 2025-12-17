@@ -67,7 +67,7 @@ const SunriverDeckBuilder = () => {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 sunriver-gold-underline inline-block">
                 Why Sunriver Needs Specialized Deck Construction
               </h2>
               <p className="text-lg text-muted-foreground mb-6">
@@ -158,7 +158,7 @@ const SunriverDeckBuilder = () => {
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
               <Users className="h-12 w-12 text-primary mx-auto mb-4" />
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 sunriver-gold-underline inline-block">
                 Perfect for Sunriver Homeowners & Vacation Rentals
               </h2>
               <p className="text-lg text-muted-foreground">
@@ -235,7 +235,7 @@ const SunriverDeckBuilder = () => {
                   </li>
                 ))}
               </ul>
-              <Button asChild size="lg" className="bg-gradient-primary hover:opacity-90">
+              <Button asChild size="lg" variant="cta">
                 <Link to="/remodeling">
                   View Remodeling Services
                   <ArrowRight className="ml-2 h-5 w-5" />
@@ -338,7 +338,7 @@ const SunriverDeckBuilder = () => {
               </p>
             </div>
             <div className="flex-shrink-0">
-              <Button asChild size="lg" className="bg-gradient-primary hover:opacity-90">
+              <Button asChild size="lg" variant="cta">
                 <Link to="/sunriver-sroa-services">
                   SROA Services
                   <ArrowRight className="ml-2 h-5 w-5" />

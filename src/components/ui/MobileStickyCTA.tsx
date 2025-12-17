@@ -9,7 +9,8 @@ const MobileStickyCTA = forwardRef<HTMLDivElement>((_, ref) => {
       <Link to="/contact">
         <Button 
           size="lg" 
-          className="w-full bg-gradient-primary hover:opacity-90 text-primary-foreground font-semibold shadow-lg"
+          variant="cta"
+          className="w-full btn-glow"
         >
           <FileText className="mr-2 h-5 w-5" />
           Request a Quote
