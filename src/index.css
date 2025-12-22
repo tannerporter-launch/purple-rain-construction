@@ -282,3 +282,182 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   @apply bg-primary/70;
 }
+
+/* ==========================================
+   ARTICLE / BLOG POST STYLING
+   ========================================== */
+
+/* Article Content Container */
+.article-content {
+  @apply space-y-1;
+  font-size: 1.0625rem;
+  line-height: 1.8;
+}
+
+/* Main Headings (H2) */
+.article-h2 {
+  @apply text-2xl md:text-3xl font-bold text-foreground mt-10 mb-5 pb-3;
+  border-bottom: 3px solid hsl(var(--primary) / 0.3);
+  position: relative;
+}
+
+.article-h2::before {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--primary) / 0.5));
+}
+
+/* Subheadings (H3) */
+.article-h3 {
+  @apply text-xl md:text-2xl font-semibold text-foreground mt-8 mb-4;
+  padding-left: 1rem;
+  border-left: 4px solid hsl(var(--timber));
+}
+
+/* Paragraphs */
+.article-paragraph {
+  @apply text-muted-foreground mb-5 leading-relaxed;
+}
+
+/* Bold subheadings like "**What to look for:**" */
+.article-subheading {
+  @apply font-bold text-foreground mt-6 mb-3 text-lg;
+}
+
+/* Inline formatting */
+.article-bold {
+  @apply font-semibold text-foreground;
+}
+
+.article-italic {
+  @apply italic text-primary;
+}
+
+.article-code {
+  @apply bg-muted px-2 py-0.5 rounded text-sm font-mono;
+}
+
+/* Unordered Lists */
+.article-list {
+  @apply my-5 space-y-2.5 pl-0;
+  list-style: none;
+}
+
+.article-list .article-list-item {
+  @apply text-muted-foreground pl-7 relative;
+}
+
+.article-list .article-list-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 8px;
+  height: 8px;
+  background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+  border-radius: 50%;
+}
+
+/* Ordered Lists */
+.article-ordered-list {
+  @apply my-5 space-y-2.5 pl-0;
+  list-style: none;
+  counter-reset: article-counter;
+}
+
+.article-ordered-list .article-list-item {
+  @apply text-muted-foreground pl-10 relative;
+  counter-increment: article-counter;
+}
+
+.article-ordered-list .article-list-item::before {
+  content: counter(article-counter);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 26px;
+  height: 26px;
+  background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+  color: hsl(var(--primary-foreground));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+/* Blockquotes */
+.article-blockquote {
+  @apply my-6 py-4 px-6 bg-primary/5 border-l-4 border-primary rounded-r-lg;
+  font-style: italic;
+}
+
+/* Tables */
+.article-table-wrapper {
+  @apply my-8 overflow-x-auto rounded-lg border border-border;
+}
+
+.article-table {
+  @apply w-full min-w-[400px];
+  border-collapse: collapse;
+}
+
+.article-table-header {
+  @apply px-4 py-3 text-left text-sm font-bold text-primary-foreground;
+  background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+}
+
+.article-table-row:nth-child(even) {
+  @apply bg-muted/50;
+}
+
+.article-table-cell {
+  @apply px-4 py-3 text-sm text-muted-foreground border-b border-border/50;
+}
+
+/* First row styling */
+.article-table tbody tr:first-child .article-table-cell {
+  @apply pt-4;
+}
+
+/* Dark mode adjustments */
+.dark .article-h2::before {
+  background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--primary) / 0.3));
+}
+
+.dark .article-blockquote {
+  @apply bg-primary/10;
+}
+
+/* Responsive typography */
+@media (max-width: 768px) {
+  .article-content {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+  
+  .article-h2 {
+    @apply text-xl mt-8 mb-4;
+  }
+  
+  .article-h3 {
+    @apply text-lg mt-6 mb-3;
+    padding-left: 0.75rem;
+  }
+  
+  .article-list .article-list-item,
+  .article-ordered-list .article-list-item {
+    @apply pl-6;
+  }
+  
+  .article-ordered-list .article-list-item::before {
+    width: 22px;
+    height: 22px;
+    font-size: 0.7rem;
+  }
+}

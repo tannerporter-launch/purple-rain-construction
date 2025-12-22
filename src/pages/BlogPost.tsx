@@ -2,7 +2,102 @@ import { useParams, Link, Navigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
-import { Calendar, Clock, ArrowLeft, Phone, ArrowRight } from "lucide-react";
+import { Calendar, Clock, ArrowLeft, Phone, ArrowRight, CheckCircle2 } from "lucide-react";
+
+// Comprehensive markdown parser for blog content
+const parseMarkdown = (content: string): string => {
+  let html = content.trim();
+  
+  // Parse tables first (before other replacements can interfere)
+  html = html.replace(/\|(.+)\|\n\|[-|\s]+\|\n((?:\|.+\|\n?)+)/g, (match, header, rows) => {
+    const headerCells = header.split('|').filter((cell: string) => cell.trim()).map((cell: string) => 
+      `<th class="article-table-header">${cell.trim()}</th>`
+    ).join('');
+    
+    const bodyRows = rows.trim().split('\n').map((row: string) => {
+      const cells = row.split('|').filter((cell: string) => cell.trim()).map((cell: string) => 
+        `<td class="article-table-cell">${cell.trim()}</td>`
+      ).join('');
+      return `<tr class="article-table-row">${cells}</tr>`;
+    }).join('');
+    
+    return `<div class="article-table-wrapper"><table class="article-table"><thead><tr>${headerCells}</tr></thead><tbody>${bodyRows}</tbody></table></div>`;
+  });
+  
+  // Split into paragraphs/sections
+  const blocks = html.split(/\n\n+/);
+  
+  const processedBlocks = blocks.map(block => {
+    const trimmedBlock = block.trim();
+    if (!trimmedBlock) return '';
+    
+    // Headers - process ### before ## (order matters!)
+    if (trimmedBlock.startsWith('### ')) {
+      const text = trimmedBlock.replace(/^### /, '');
+      return `<h3 class="article-h3">${processInlineFormatting(text)}</h3>`;
+    }
+    
+    if (trimmedBlock.startsWith('## ')) {
+      const text = trimmedBlock.replace(/^## /, '');
+      return `<h2 class="article-h2">${processInlineFormatting(text)}</h2>`;
+    }
+    
+    // Blockquotes
+    if (trimmedBlock.startsWith('>')) {
+      const text = trimmedBlock.replace(/^>\s*/gm, '');
+      return `<blockquote class="article-blockquote">${processInlineFormatting(text)}</blockquote>`;
+    }
+    
+    // Unordered lists
+    if (trimmedBlock.match(/^[-*]\s/m)) {
+      const items = trimmedBlock.split('\n')
+        .filter(line => line.match(/^[-*]\s/))
+        .map(line => {
+          const text = line.replace(/^[-*]\s+/, '');
+          return `<li class="article-list-item">${processInlineFormatting(text)}</li>`;
+        })
+        .join('');
+      return `<ul class="article-list">${items}</ul>`;
+    }
+    
+    // Ordered lists
+    if (trimmedBlock.match(/^\d+\.\s/m)) {
+      const items = trimmedBlock.split('\n')
+        .filter(line => line.match(/^\d+\.\s/))
+        .map(line => {
+          const text = line.replace(/^\d+\.\s+/, '');
+          return `<li class="article-list-item">${processInlineFormatting(text)}</li>`;
+        })
+        .join('');
+      return `<ol class="article-ordered-list">${items}</ol>`;
+    }
+    
+    // Table already processed
+    if (trimmedBlock.includes('article-table')) {
+      return trimmedBlock;
+    }
+    
+    // Bold headings that appear on their own line (like "**What to look for:**")
+    if (trimmedBlock.match(/^\*\*[^*]+:\*\*$/)) {
+      const text = trimmedBlock.replace(/\*\*/g, '');
+      return `<p class="article-subheading">${text}</p>`;
+    }
+    
+    // Regular paragraphs
+    const lines = trimmedBlock.split('\n').map(line => processInlineFormatting(line)).join('<br/>');
+    return `<p class="article-paragraph">${lines}</p>`;
+  });
+  
+  return processedBlocks.filter(b => b).join('\n');
+};
+
+// Process inline formatting (bold, italic, etc.)
+const processInlineFormatting = (text: string): string => {
+  return text
+    .replace(/\*\*([^*]+)\*\*/g, '<strong class="article-bold">$1</strong>')
+    .replace(/\*([^*]+)\*/g, '<em class="article-italic">$1</em>')
+    .replace(/`([^`]+)`/g, '<code class="article-code">$1</code>');
+};
 
 // Import local blog images
 import deckMaterialsImg from "@/assets/blog/deck-materials.jpg";
@@ -536,15 +631,16 @@ const BlogPost = () => {
       </section>
 
       {/* Content */}
-      <section className="py-12 md:py-16">
+      <section className="py-12 md:py-20">
         <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
             {/* Main Content */}
-            <article className="lg:col-span-2 prose prose-lg max-w-none animate-fade-in">
-              <div 
-                className="[&>h2]:text-2xl [&>h2]:font-bold [&>h2]:mt-8 [&>h2]:mb-4 [&>h3]:text-xl [&>h3]:font-semibold [&>h3]:mt-6 [&>h3]:mb-3 [&>p]:text-muted-foreground [&>p]:mb-4 [&>ul]:list-disc [&>ul]:pl-6 [&>ul]:mb-4 [&>ul>li]:text-muted-foreground [&>ul>li]:mb-2 [&>strong]:text-foreground [&>em]:text-primary"
-                dangerouslySetInnerHTML={{ __html: post.content.replace(/\n/g, '<br/>').replace(/##\s(.+)/g, '<h2>$1</h2>').replace(/###\s(.+)/g, '<h3>$1</h3>').replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>').replace(/\*(.+?)\*/g, '<em>$1</em>') }}
-              />
+            <article className="lg:col-span-2 animate-fade-in">
+              <div className="article-content bg-card rounded-xl border border-border/50 p-6 md:p-10 shadow-sm">
+                <div 
+                  dangerouslySetInnerHTML={{ __html: parseMarkdown(post.content) }}
+                />
+              </div>
             </article>
 
             {/* Sidebar */}
