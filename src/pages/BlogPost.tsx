@@ -1,8 +1,11 @@
 import { useParams, Link, Navigate } from "react-router-dom";
+import { useRef } from "react";
 import { Helmet } from "react-helmet-async";
 import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Calendar, Clock, ArrowLeft, Phone, ArrowRight, CheckCircle2 } from "lucide-react";
+import ReadingProgress from "@/components/blog/ReadingProgress";
+import TableOfContents from "@/components/blog/TableOfContents";
 
 // Comprehensive markdown parser for blog content
 const parseMarkdown = (content: string): string => {
@@ -31,15 +34,17 @@ const parseMarkdown = (content: string): string => {
     const trimmedBlock = block.trim();
     if (!trimmedBlock) return '';
     
-    // Headers - process ### before ## (order matters!)
+    // Headers - process ### before ## (order matters!) - Add IDs for TOC linking
     if (trimmedBlock.startsWith('### ')) {
       const text = trimmedBlock.replace(/^### /, '');
-      return `<h3 class="article-h3">${processInlineFormatting(text)}</h3>`;
+      const id = text.toLowerCase().replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-').substring(0, 50);
+      return `<h3 id="${id}" class="article-h3">${processInlineFormatting(text)}</h3>`;
     }
     
     if (trimmedBlock.startsWith('## ')) {
       const text = trimmedBlock.replace(/^## /, '');
-      return `<h2 class="article-h2">${processInlineFormatting(text)}</h2>`;
+      const id = text.toLowerCase().replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-').substring(0, 50);
+      return `<h2 id="${id}" class="article-h2">${processInlineFormatting(text)}</h2>`;
     }
     
     // Blockquotes
@@ -97,6 +102,15 @@ const processInlineFormatting = (text: string): string => {
     .replace(/\*\*([^*]+)\*\*/g, '<strong class="article-bold">$1</strong>')
     .replace(/\*([^*]+)\*/g, '<em class="article-italic">$1</em>')
     .replace(/`([^`]+)`/g, '<code class="article-code">$1</code>');
+};
+
+// Calculate reading time based on word count (~200 words per minute)
+const calculateReadingTime = (content: string): string => {
+  const wordsPerMinute = 200;
+  const textContent = content.replace(/[#*`>\-|]/g, ' ').replace(/\s+/g, ' ').trim();
+  const wordCount = textContent.split(' ').filter(word => word.length > 0).length;
+  const minutes = Math.ceil(wordCount / wordsPerMinute);
+  return `${minutes} min read`;
 };
 
 // Import local blog images
@@ -524,15 +538,18 @@ const formatDate = (dateString: string) => {
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
   const post = slug ? blogPostsData[slug] : null;
+  const articleRef = useRef<HTMLElement>(null);
 
   if (!post) {
     return <Navigate to="/blog" replace />;
   }
 
   const canonicalUrl = `https://purpleraincs.com/blog/${slug}`;
+  const readingTime = calculateReadingTime(post.content);
 
   return (
     <Layout>
+      <ReadingProgress targetRef={articleRef} />
       <Helmet>
         <title>{post.title} | Purple Rain Construction Blog</title>
         <meta name="description" content={post.excerpt} />
@@ -609,7 +626,7 @@ const BlogPost = () => {
               </div>
               <div className="flex items-center gap-2">
                 <Clock className="h-4 w-4" />
-                <span>{post.readTime}</span>
+                <span>{readingTime}</span>
               </div>
             </div>
           </div>
@@ -621,7 +638,7 @@ const BlogPost = () => {
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
             {/* Main Content */}
-            <article className="lg:col-span-2 animate-fade-in">
+            <article ref={articleRef} className="lg:col-span-2 animate-fade-in">
               <div className="article-content bg-card rounded-xl border border-border/50 p-6 md:p-10 shadow-sm">
                 <div 
                   dangerouslySetInnerHTML={{ __html: parseMarkdown(post.content) }}
@@ -630,7 +647,12 @@ const BlogPost = () => {
             </article>
 
             {/* Sidebar */}
-            <aside className="space-y-8">
+            <aside className="space-y-6">
+              {/* Table of Contents - Desktop only */}
+              <div className="hidden lg:block">
+                <TableOfContents content={post.content} contentRef={articleRef} />
+              </div>
+
               {/* CTA Card */}
               <div className="bg-gradient-primary text-primary-foreground rounded-lg p-6 animate-fade-in" style={{ animationDelay: "100ms" }}>
                 <h3 className="text-xl font-bold mb-3">Ready to Get Started?</h3>
