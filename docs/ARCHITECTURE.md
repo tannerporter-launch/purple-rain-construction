@@ -36,6 +36,7 @@ src/
 │   └── snow-removal/      # Snow removal service images
 ├── components/
 │   ├── blog/              # Blog-specific components
+│   │   ├── BlogSearch.tsx       # Search with category/date filters
 │   │   ├── ReadingProgress.tsx   # Reading progress bar
 │   │   ├── RelatedPosts.tsx      # Related articles section
 │   │   ├── SocialShare.tsx       # Social sharing buttons
@@ -63,7 +64,7 @@ src/
 ├── pages/                 # Route pages
 │   ├── Index.tsx         # Homepage
 │   ├── About.tsx
-│   ├── Blog.tsx          # Blog listing
+│   ├── Blog.tsx          # Blog listing with search
 │   ├── BlogPost.tsx      # Individual blog posts
 │   ├── Contact.tsx
 │   ├── Decks.tsx
@@ -114,10 +115,37 @@ BlogPost.tsx
 
 | Component | Purpose |
 |-----------|---------|
+| `BlogSearch.tsx` | Search input with category dropdown, date range filter, active filter badges, results count |
 | `ReadingProgress.tsx` | Fixed progress bar showing scroll position through article |
 | `TableOfContents.tsx` | Extracts h2/h3 headings, highlights current section with IntersectionObserver |
 | `SocialShare.tsx` | Share buttons with native Web Share API fallback |
 | `RelatedPosts.tsx` | Shows 3 related posts, prioritizes same category |
+
+### Blog Search Feature
+
+The `BlogSearch` component provides full-text search and filtering:
+
+```tsx
+interface BlogSearchProps {
+  posts: BlogPost[];
+  onFilteredPosts: (posts: BlogPost[]) => void;
+}
+
+// Features:
+// - Text search across title and excerpt
+// - Category filter dropdown (extracted from posts)
+// - Date range filter (All Time, Last Week, Last Month, Last 3 Months, This Year)
+// - Active filter badges with individual remove buttons
+// - Results count display
+// - Clear all filters button
+// - Empty state for no results
+```
+
+**Filter Logic:**
+1. Text search uses `toLowerCase().includes()` on title + excerpt
+2. Category filter matches exact category string
+3. Date range calculates cutoff date and filters by `post.date >= cutoffDate`
+4. All filters are combined with AND logic
 
 ### SEO Components
 
@@ -143,7 +171,7 @@ BlogPost.tsx
 | `/snow-removal` | SnowRemoval | Winter services |
 | `/sunriver-sroa-services` | SunriverSROAServices | SROA compliance |
 | `/gallery` | Gallery | Project portfolio |
-| `/blog` | Blog | Blog listing |
+| `/blog` | Blog | Blog listing with search/filter |
 | `/blog/:slug` | BlogPost | Individual articles |
 | `/contact` | Contact | Contact form |
 | `/faq` | FAQ | Frequently asked questions |
@@ -304,6 +332,7 @@ Each page includes:
 | Reading progress stuck | Ensure articleRef is attached to article element |
 | Build fails | Clear node_modules, reinstall dependencies |
 | Styles not applying | Check Tailwind class names, verify index.css loaded |
+| Blog search not filtering | Verify BlogSearch receives posts array, check console |
 
 ### Debug Checklist
 
@@ -327,7 +356,7 @@ Each page includes:
 2. **Blog Architecture**
    - Use a CMS or headless CMS from day one for content
    - Build markdown parser before writing content
-   - Include TOC, reading time, and social sharing from start
+   - Include TOC, reading time, social sharing, and **search** from start
 
 3. **SEO Foundation**
    - Create reusable schema components early
@@ -344,10 +373,16 @@ Each page includes:
    - Build SectionHeading for uniform styling
    - Use composition over configuration
 
+6. **Search & Filter Early**
+   - Implement blog search from the start
+   - Export blogPosts data as typed array for reuse
+   - Use useCallback for filter handlers to prevent re-renders
+
 ### Code Organization
 
 ```tsx
 // Good: Focused, single-purpose components
+<BlogSearch posts={posts} onFilteredPosts={setFiltered} />
 <SocialShare url={url} title={title} />
 <RelatedPosts currentSlug={slug} allPosts={posts} />
 
@@ -361,16 +396,20 @@ Each page includes:
 - Use `{ passive: true }` for all scroll listeners
 - Implement scroll-based animations with IntersectionObserver
 - Avoid `window.addEventListener` in render cycle
+- Use useMemo for filtered arrays, useCallback for handlers
 
 ---
 
 ## Future Enhancements
 
 ### Planned Features
+- [x] Blog search functionality ✅ (Implemented Jan 2025)
+- [x] Related posts section ✅
+- [x] Social sharing buttons ✅
+- [x] Reading progress bar ✅
+- [x] Table of contents with scrollspy ✅
 - [ ] CMS integration (Sanity, Contentful, or Strapi)
 - [ ] Contact form backend (Supabase or Netlify Forms)
-- [ ] Project gallery lightbox with swipe
-- [ ] Blog search functionality
 - [ ] Newsletter signup integration
 - [ ] Google Analytics / Plausible
 - [ ] Sitemap.xml generation
@@ -382,6 +421,32 @@ Each page includes:
 - [ ] Consolidate animation classes
 - [ ] Add unit tests for markdown parser
 - [ ] Implement error boundaries
+
+---
+
+## Site Status (January 2025)
+
+### ✅ Fully Complete & Functional
+
+| Feature | Status |
+|---------|--------|
+| Homepage | ✅ Complete |
+| All Service Pages | ✅ Complete |
+| Blog with Search/Filter | ✅ Complete |
+| Blog Posts with TOC, Social Share, Related | ✅ Complete |
+| Gallery with Before/After | ✅ Complete |
+| Contact Form (frontend) | ✅ Complete |
+| Responsive Design | ✅ Complete |
+| SEO & Structured Data | ✅ Complete |
+
+### ⚠️ Optional Enhancements (Not Blocking Launch)
+
+| Feature | Status |
+|---------|--------|
+| Contact Form Backend | Console.log only |
+| Google Analytics | Not configured |
+| Sitemap.xml | Not generated |
+| Newsletter Signup | Not built |
 
 ---
 
