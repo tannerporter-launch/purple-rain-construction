@@ -621,7 +621,7 @@ const BlogPost = () => {
               {post.title}
             </h1>
             
-            <div className="flex items-center gap-6 text-primary-foreground/80">
+            <div className="flex flex-wrap items-center gap-4 md:gap-6 text-primary-foreground/80">
               <div className="flex items-center gap-2">
                 <Calendar className="h-4 w-4" />
                 <span>{formatDate(post.date)}</span>
@@ -629,6 +629,14 @@ const BlogPost = () => {
               <div className="flex items-center gap-2">
                 <Clock className="h-4 w-4" />
                 <span>{readingTime}</span>
+              </div>
+              <div className="hidden md:block h-4 w-px bg-primary-foreground/30" />
+              <div className="hidden md:flex items-center gap-2">
+                <SocialShare 
+                  url={canonicalUrl} 
+                  title={post.title} 
+                  excerpt={post.excerpt} 
+                />
               </div>
             </div>
           </div>
@@ -653,6 +661,15 @@ const BlogPost = () => {
               {/* Table of Contents - Desktop only */}
               <div className="hidden lg:block">
                 <TableOfContents content={post.content} contentRef={articleRef} />
+              </div>
+
+              {/* Social Share - Sidebar */}
+              <div className="bg-card border border-border/50 rounded-lg p-6 animate-fade-in">
+                <SocialShare 
+                  url={canonicalUrl} 
+                  title={post.title} 
+                  excerpt={post.excerpt} 
+                />
               </div>
 
               {/* CTA Card */}
@@ -709,20 +726,12 @@ const BlogPost = () => {
         </div>
       </section>
 
-      {/* Related CTA */}
-      <section className="py-12 bg-muted">
-        <div className="container">
-          <div className="text-center">
-            <h2 className="text-2xl font-bold mb-4">More From Our Blog</h2>
-            <Button asChild variant="outline" className="btn-glow">
-              <Link to="/blog">
-                <ArrowLeft className="mr-2 h-4 w-4" />
-                View All Posts
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+      {/* Related Posts */}
+      <RelatedPosts
+        currentSlug={slug || ""}
+        currentCategory={post.category}
+        allPosts={blogPostsData}
+      />
     </Layout>
   );
 };
