@@ -1,8 +1,10 @@
+import { useState, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
-import { Calendar, ArrowRight, Clock } from "lucide-react";
+import { Calendar, ArrowRight, Clock, FileSearch } from "lucide-react";
+import BlogSearch, { BlogPost } from "@/components/blog/BlogSearch";
 
 // Import local blog images
 import deckMaterialsImg from "@/assets/blog/deck-materials.jpg";
@@ -13,7 +15,7 @@ import snowRemovalTipsImg from "@/assets/blog/snow-removal-tips.jpg";
 import deckPermitsImg from "@/assets/blog/deck-permits.jpg";
 
 // Blog posts data
-const blogPosts = [
+const blogPosts: BlogPost[] = [
   {
     slug: "choosing-right-deck-material-central-oregon",
     title: "Choosing the Right Deck Material for Central Oregon's Climate",
@@ -79,6 +81,12 @@ const formatDate = (dateString: string) => {
 };
 
 const Blog = () => {
+  const [filteredPosts, setFilteredPosts] = useState<BlogPost[]>(blogPosts);
+
+  const handleFilteredPosts = useCallback((posts: BlogPost[]) => {
+    setFilteredPosts(posts);
+  }, []);
+
   return (
     <Layout>
       <Helmet>
@@ -129,61 +137,84 @@ const Blog = () => {
         </div>
       </section>
 
-      {/* Blog Posts Grid */}
-      <section className="py-16 md:py-24">
+      {/* Search & Filters */}
+      <section className="py-8 md:py-12">
         <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {blogPosts.map((post, index) => (
-              <article 
-                key={post.slug}
-                className="group bg-card border rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 flex flex-col h-full animate-fade-in"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                {/* Image */}
-                <Link to={`/blog/${post.slug}`} className="block overflow-hidden">
-                  <img
-                    src={post.image}
-                    alt={post.title}
-                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </Link>
-                
-                {/* Content */}
-                <div className="p-6 flex flex-col flex-grow">
-                  {/* Category Badge */}
-                  <span className="inline-block px-3 py-1 text-xs font-semibold text-primary bg-primary/10 rounded-full mb-3 w-fit">
-                    {post.category}
-                  </span>
-                  
-                  {/* Title */}
-                  <Link to={`/blog/${post.slug}`}>
-                    <h2 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors line-clamp-2">
-                      {post.title}
-                    </h2>
+          <BlogSearch posts={blogPosts} onFilteredPosts={handleFilteredPosts} />
+        </div>
+      </section>
+
+      {/* Blog Posts Grid */}
+      <section className="pb-16 md:pb-24">
+        <div className="container">
+          {filteredPosts.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {filteredPosts.map((post, index) => (
+                <article 
+                  key={post.slug}
+                  className="group bg-card border rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 flex flex-col h-full animate-fade-in"
+                  style={{ animationDelay: `${index * 100}ms` }}
+                >
+                  {/* Image */}
+                  <Link to={`/blog/${post.slug}`} className="block overflow-hidden">
+                    <img
+                      src={post.image}
+                      alt={post.title}
+                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                      loading="lazy"
+                      decoding="async"
+                    />
                   </Link>
                   
-                  {/* Excerpt */}
-                  <p className="text-muted-foreground text-sm mb-4 line-clamp-3 flex-grow">
-                    {post.excerpt}
-                  </p>
-                  
-                  {/* Meta */}
-                  <div className="flex items-center justify-between text-xs text-muted-foreground mt-auto pt-4 border-t">
-                    <div className="flex items-center gap-1">
-                      <Calendar className="h-3 w-3" />
-                      <span>{formatDate(post.date)}</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <Clock className="h-3 w-3" />
-                      <span>{post.readTime}</span>
+                  {/* Content */}
+                  <div className="p-6 flex flex-col flex-grow">
+                    {/* Category Badge */}
+                    <span className="inline-block px-3 py-1 text-xs font-semibold text-primary bg-primary/10 rounded-full mb-3 w-fit">
+                      {post.category}
+                    </span>
+                    
+                    {/* Title */}
+                    <Link to={`/blog/${post.slug}`}>
+                      <h2 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors line-clamp-2">
+                        {post.title}
+                      </h2>
+                    </Link>
+                    
+                    {/* Excerpt */}
+                    <p className="text-muted-foreground text-sm mb-4 line-clamp-3 flex-grow">
+                      {post.excerpt}
+                    </p>
+                    
+                    {/* Meta */}
+                    <div className="flex items-center justify-between text-xs text-muted-foreground mt-auto pt-4 border-t">
+                      <div className="flex items-center gap-1">
+                        <Calendar className="h-3 w-3" />
+                        <span>{formatDate(post.date)}</span>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <Clock className="h-3 w-3" />
+                        <span>{post.readTime}</span>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </article>
-            ))}
-          </div>
+                </article>
+              ))}
+            </div>
+          ) : (
+            /* Empty State */
+            <div className="text-center py-16 animate-fade-in">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-muted mb-4">
+                <FileSearch className="h-8 w-8 text-muted-foreground" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">No articles found</h3>
+              <p className="text-muted-foreground mb-6 max-w-md mx-auto">
+                Try adjusting your search terms or filters to find what you're looking for.
+              </p>
+              <Button variant="outline" onClick={() => window.location.reload()}>
+                Clear All Filters
+              </Button>
+            </div>
+          )}
         </div>
       </section>
 
