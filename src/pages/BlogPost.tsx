@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Calendar, Clock, ArrowLeft, Phone, ArrowRight, CheckCircle2 } from "lucide-react";
 import ReadingProgress from "@/components/blog/ReadingProgress";
 import TableOfContents from "@/components/blog/TableOfContents";
+import SocialShare from "@/components/blog/SocialShare";
+import RelatedPosts from "@/components/blog/RelatedPosts";
 
 // Comprehensive markdown parser for blog content
 const parseMarkdown = (content: string): string => {
@@ -121,8 +123,8 @@ import kitchenTrendsImg from "@/assets/blog/kitchen-trends.jpg";
 import snowRemovalTipsImg from "@/assets/blog/snow-removal-tips.jpg";
 import deckPermitsImg from "@/assets/blog/deck-permits.jpg";
 
-// Sample blog posts data - in production, this would come from a CMS
-const blogPostsData: Record<string, {
+// Sample blog posts data - exported for RelatedPosts component
+export const blogPostsData: Record<string, {
   title: string;
   excerpt: string;
   date: string;
