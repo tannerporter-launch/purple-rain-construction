@@ -450,6 +450,84 @@ Each page includes:
 
 ---
 
+## UI Design System & Visual Architecture
+
+### Design Tokens (index.css)
+
+| Token | Value | Usage |
+|-------|-------|-------|
+| `--primary` | 280 100% 32% | Brand purple, CTAs, links |
+| `--primary-foreground` | 0 0% 100% | Text on primary surfaces |
+| `--background` | 0 0% 100% | Page backgrounds |
+| `--foreground` | 222.2 84% 4.9% | Body text |
+| `--muted` | 210 40% 96.1% | Secondary backgrounds |
+| `--card` | 0 0% 100% | Card surfaces |
+| `--border` | 214.3 31.8% 91.4% | Borders |
+
+### Typography Scale
+
+| Element | Size | Weight | Line Height |
+|---------|------|--------|-------------|
+| H1 | 3rem-3.75rem | 800 | 1.1 |
+| H2 | 1.875rem-2.25rem | 700 | 1.2 |
+| H3 | 1.25rem | 600 | 1.3 |
+| Body | 1rem | 400 | 1.6 |
+| Small | 0.875rem | 400 | 1.5 |
+
+### Spacing System
+
+| Context | Mobile | Desktop |
+|---------|--------|---------|
+| Section padding | py-16 | py-20 |
+| Container | px-4 | container mx-auto |
+| Card padding | p-6 | p-8 |
+| Component gap | gap-4 | gap-6/gap-8 |
+
+### Image Handling Rules
+
+| Context | Aspect Ratio | Object Fit | Treatment |
+|---------|--------------|------------|-----------|
+| Hero | 16:9 | cover | Overlay gradient |
+| Card | 16:9 | cover | rounded-lg/xl |
+| Gallery | 4:3 | cover | rounded-xl, shadow |
+| Avatar | 1:1 | cover | rounded-full |
+
+### Accessibility Visual Standards
+
+- **Contrast**: 4.5:1 minimum for body text, 3:1 for large text
+- **Focus rings**: 2px offset, primary color
+- **Tap targets**: 44x44px minimum on mobile
+- **Reduced motion**: Respects `prefers-reduced-motion`
+
+---
+
+## Next Build Defaults
+
+### Visual QA Gates (Non-Negotiable)
+
+1. Screenshot every page at 360px, 768px, 1280px, 1920px before launch
+2. Test all interactive states: hover, focus, active, disabled
+3. Validate image loading and cropping at all breakpoints
+4. Check contrast with browser dev tools
+
+### Day One Standards
+
+- Define all color tokens in index.css before first component
+- Create button variants (primary, secondary, outline, ghost) immediately
+- Set typography scale with semantic classes
+- Establish image aspect ratio rules per context
+- Build mobile-first, then enhance for desktop
+
+### Common Pitfalls to Avoid
+
+- Don't use hardcoded colors (text-white, bg-purple-600) - use tokens
+- Don't forget mobile TOC for long-form content
+- Don't rely on default button contrast in hero sections
+- Always test social share icons on gradient backgrounds
+- Verify all image imports resolve before deployment
+
+---
+
 ## Contact & Support
 
 **Company**: Purple Rain Construction  
