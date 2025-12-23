@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Calendar, Clock, ArrowLeft, Phone, ArrowRight, CheckCircle2 } from "lucide-react";
 import ReadingProgress from "@/components/blog/ReadingProgress";
 import TableOfContents from "@/components/blog/TableOfContents";
+import MobileTableOfContents from "@/components/blog/MobileTableOfContents";
 import SocialShare from "@/components/blog/SocialShare";
 import RelatedPosts from "@/components/blog/RelatedPosts";
 
@@ -635,7 +636,8 @@ const BlogPost = () => {
                 <SocialShare 
                   url={canonicalUrl} 
                   title={post.title} 
-                  excerpt={post.excerpt} 
+                  excerpt={post.excerpt}
+                  variant="hero"
                 />
               </div>
             </div>
@@ -649,6 +651,9 @@ const BlogPost = () => {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
             {/* Main Content */}
             <article ref={articleRef} className="lg:col-span-2 animate-fade-in">
+              {/* Mobile Table of Contents */}
+              <MobileTableOfContents content={post.content} />
+              
               <div className="article-content bg-card rounded-xl border border-border/50 p-6 md:p-10 shadow-sm">
                 <div 
                   dangerouslySetInnerHTML={{ __html: parseMarkdown(post.content) }}
