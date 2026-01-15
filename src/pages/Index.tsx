@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Phone, Shield, Users, Hammer, Snowflake, TreePine, CheckCircle, Star, ArrowRight, FileText, Home as HomeIcon } from "lucide-react";
+import { Phone, Shield, Users, Hammer, Snowflake, TreePine, CheckCircle, Star, ArrowRight, FileText, Home as HomeIcon, MessageSquare, Calendar, Camera, ClipboardList } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SectionHeading from "@/components/ui/SectionHeading";
 import ServiceCard from "@/components/ui/ServiceCard";
@@ -8,13 +8,36 @@ import Layout from "@/components/layout/Layout";
 import LocalBusinessSchema from "@/components/seo/LocalBusinessSchema";
 import project1After from "@/assets/decks/project-1-after.jpg";
 import elkeFrenchDoorMain from "@/assets/remodels/elke-french-doors/main.webp";
-import gilchrestFrontAfter from "@/assets/remodels/gilchrest-a-frame/3-front-after.jpg";
-import olivieroExteriorHero from "@/assets/remodels/oliviero/exterior-hero-wide.jpg";
 import iconMonogramGradient from "@/assets/brand/icons/icon-monogram-gradient.png";
 import teamNicholasEd from "@/assets/brand/team-nicholas-ed.png";
 import heroPlowDawn from "@/assets/snow-removal/hero-plow-dawn.jpg";
+import deckTwinLakes from "@/assets/stock/deck-twin-lakes.jpeg";
+// JobTread portal images
+import jobtreadCommunications from "@/assets/jobtread/communications.png";
+import jobtreadDailyLogs from "@/assets/jobtread/daily-logs.png";
+import jobtreadScheduling from "@/assets/jobtread/scheduling.png";
+import jobtreadProgressPhotos from "@/assets/jobtread/progress-photos.png";
 
 const Index = () => {
+  // Real Google Reviews only
+  const testimonials = [
+    {
+      quote: "The quality of the work, on time performance, meeting the budget, and communication skills were outstanding.",
+      name: "Arthur Diamond",
+      location: "Google Review",
+    },
+    {
+      quote: "Their communication during the project was outstanding. We received daily recaps and pictures.",
+      name: "D K",
+      location: "Google Review",
+    },
+    {
+      quote: "Projects always came in within budget, were completed on time, and the worksite was spotless.",
+      name: "Cindy Kunz",
+      location: "Google Review",
+    },
+  ];
+
   return (
     <Layout>
       <LocalBusinessSchema />
@@ -102,7 +125,7 @@ const Index = () => {
             />
             <ServiceCard
               title="Remodeling Services"
-              description="Kitchen, bath, whole-home, and small commercial renovations."
+              description="Bathroom and kitchen remodels, full home renovations, and select commercial projects."
               href="/remodeling"
               icon={HomeIcon}
               image={elkeFrenchDoorMain}
@@ -138,11 +161,11 @@ const Index = () => {
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
-                  <span className="text-foreground font-medium">Clear, honest communication</span>
+                  <span className="text-foreground font-medium">Clear, transparent communication</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
-                  <span className="text-foreground font-medium">Local experience with Sunriver + Central Oregon weather</span>
+                  <span className="text-foreground font-medium">Proudly local—serving Central Oregon with care and integrity</span>
                 </li>
               </ul>
               <Button asChild size="lg" variant="cta" className="w-full sm:w-auto">
@@ -162,27 +185,84 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Project Transparency (JobTread) - Positioned right after Why Choose Us */}
+      {/* Project Transparency (JobTread) - Redesigned with Portal Screenshots */}
       <section className="py-16 md:py-20 bg-background">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">
-              Project Transparency You Can Count On
-            </h2>
-            <p className="text-base sm:text-lg text-muted-foreground mb-8">
-              We use a digital project portal to give our customers real-time updates, timelines, material selections, and communication in one place. You always know what's happening with your project—no surprises.
-            </p>
-            <div className="grid sm:grid-cols-3 gap-6 md:gap-8">
-              {[
-                { title: "Real-Time Updates", desc: "See progress photos and status changes as they happen" },
-                { title: "Clear Timelines", desc: "Know exactly when each phase of your project will complete" },
-                { title: "Direct Communication", desc: "Message our team and get quick responses in one place" },
-              ].map((item, index) => (
-                <div key={index} className="text-center p-4 md:p-6 rounded-xl bg-muted">
-                  <h3 className="font-semibold text-base md:text-lg mb-2">{item.title}</h3>
-                  <p className="text-sm text-muted-foreground">{item.desc}</p>
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">
+                Project Transparency You Can Count On
+              </h2>
+              <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto">
+                We use a secure digital project portal to give our clients real-time updates, clear timelines, and direct communication—all in one place. From day one through completion, you'll always know what's happening with your project. No surprises, no guessing.
+              </p>
+            </div>
+            
+            {/* JobTread Portal Screenshots Grid */}
+            <div className="grid sm:grid-cols-2 gap-6 md:gap-8">
+              <div className="bg-muted rounded-2xl overflow-hidden border border-border">
+                <img 
+                  src={jobtreadCommunications} 
+                  alt="JobTread project portal communications view" 
+                  className="w-full h-48 object-cover object-top"
+                  loading="lazy"
+                />
+                <div className="p-4 md:p-6">
+                  <div className="flex items-center gap-2 mb-2">
+                    <MessageSquare className="h-5 w-5 text-primary" />
+                    <h3 className="font-semibold text-lg">Direct Communication</h3>
+                  </div>
+                  <p className="text-sm text-muted-foreground">Message our team directly and get quick responses—all conversations in one place.</p>
                 </div>
-              ))}
+              </div>
+
+              <div className="bg-muted rounded-2xl overflow-hidden border border-border">
+                <img 
+                  src={jobtreadDailyLogs} 
+                  alt="JobTread project portal daily logs view" 
+                  className="w-full h-48 object-cover object-top"
+                  loading="lazy"
+                />
+                <div className="p-4 md:p-6">
+                  <div className="flex items-center gap-2 mb-2">
+                    <ClipboardList className="h-5 w-5 text-primary" />
+                    <h3 className="font-semibold text-lg">Daily Logs</h3>
+                  </div>
+                  <p className="text-sm text-muted-foreground">See detailed daily updates on what was completed, materials used, and next steps.</p>
+                </div>
+              </div>
+
+              <div className="bg-muted rounded-2xl overflow-hidden border border-border">
+                <img 
+                  src={jobtreadScheduling} 
+                  alt="JobTread project portal scheduling view" 
+                  className="w-full h-48 object-cover object-top"
+                  loading="lazy"
+                />
+                <div className="p-4 md:p-6">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Calendar className="h-5 w-5 text-primary" />
+                    <h3 className="font-semibold text-lg">Clear Timelines</h3>
+                  </div>
+                  <p className="text-sm text-muted-foreground">Know exactly when each phase of your project will complete with live scheduling.</p>
+                </div>
+              </div>
+
+              <div className="bg-muted rounded-2xl overflow-hidden border border-border">
+                <img 
+                  src={jobtreadProgressPhotos} 
+                  alt="JobTread project portal progress photos view" 
+                  className="w-full h-48 object-cover object-top"
+                  loading="lazy"
+                />
+                <div className="p-4 md:p-6">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Camera className="h-5 w-5 text-primary" />
+                    <h3 className="font-semibold text-lg">Progress Photos</h3>
+                  </div>
+                  <p className="text-sm text-muted-foreground">See progress photos and status changes as they happen—perfect for remote owners.</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -194,8 +274,8 @@ const Index = () => {
           <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
             <div className="order-2 lg:order-1">
               <img
-                src={project1After}
-                alt="Finished composite deck by Purple Rain Construction"
+                src={deckTwinLakes}
+                alt="Composite deck with mountain views - built for Sunriver living"
                 className="rounded-2xl shadow-lg w-full"
                 loading="lazy"
               />
@@ -209,7 +289,7 @@ const Index = () => {
                 Decks Built for Sunriver Living
               </h2>
               <p className="text-base sm:text-lg text-primary-foreground/90 mb-8">
-                For homeowners and rental properties in Sunriver, decks are one of the best upgrades you can invest in. We understand the heavy snow loads, freeze-thaw cycles, and HOA design guidelines that make building here different from anywhere else.
+                For homeowners and rental properties in Sunriver, decks are one of the best upgrades you can invest in. We understand the heavy snow loads, freeze-thaw cycles, and SROA design guidelines that make building here different from anywhere else.
               </p>
               <Button
                 asChild
@@ -226,46 +306,15 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Testimonials */}
+      {/* Testimonials - Real Google Reviews Only */}
       <section className="py-16 md:py-20 bg-muted">
         <div className="container mx-auto px-4">
           <SectionHeading
             title="What Our Customers Say"
             subtitle="Don't just take our word for it—see what homeowners say on Google."
           />
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {[
-              {
-                quote: "Purple Rain Construction built our deck in Sunriver and it exceeded all expectations. They handled the HOA process seamlessly and kept us updated every step of the way.",
-                name: "Sarah M.",
-                location: "Sunriver",
-              },
-              {
-                quote: "Nicholas and his construction crew are first-rate contractors whom I found to be conscientious, reliable, and responsive during the remodeling process of installing an interior French door, duplicating existing trim work, and narrowing a hallway entryway. I highly recommend Purple Rain Construction to anyone who wants to work with diligent and competent folks.",
-                name: "Elke H.",
-                location: "Central Oregon",
-              },
-              {
-                quote: "Purple Rain Construction completely transformed our old A-Frame into a modern showpiece. Their craftsmanship was exceptional from the first beam to the final stain coat. Every detail was handled professionally — we couldn't be happier with the result.",
-                name: "Gilchrest A-Frame Client",
-                location: "Gilchrest, Oregon",
-              },
-              {
-                quote: "The Purple Rain team exceeded all expectations. They turned our dated home into a modern masterpiece inside and out. The new kitchen, the outdoor bar window, and the entire exterior look absolutely stunning. Their craftsmanship and design vision made this remodel something truly special.",
-                name: "Oliviero Family",
-                location: "Central Oregon",
-              },
-              {
-                quote: "Nicholas and his team were professional, punctual, and did exceptional work on our kitchen remodel. The communication through their project portal was a game-changer.",
-                name: "David & Linda R.",
-                location: "Bend",
-              },
-              {
-                quote: "Best snow removal service we've had in 10 years of owning our Sunriver property. Reliable, thorough, and always on time after a storm.",
-                name: "Michael T.",
-                location: "Sunriver",
-              },
-            ].map((testimonial, index) => (
+          <div className="grid md:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto">
+            {testimonials.map((testimonial, index) => (
               <div
                 key={index}
                 className="bg-background p-6 md:p-8 rounded-2xl shadow-md border border-border relative overflow-hidden"

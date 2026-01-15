@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Phone, CheckCircle, Hammer, TreePine, Shield, Wrench, ArrowRight } from "lucide-react";
+import { Phone, CheckCircle, Hammer, TreePine, Shield, Wrench, ArrowRight, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Accordion,
@@ -12,51 +12,54 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import ServiceSchema from "@/components/seo/ServiceSchema";
 import FAQSchema from "@/components/seo/FAQSchema";
 import project1After from "@/assets/decks/project-1-after.jpg";
-import project1Before1 from "@/assets/decks/project-1-before-1.jpg";
 import project2After from "@/assets/decks/project-2-after.jpg";
-import project2Before from "@/assets/decks/project-2-before.jpg";
+import deckTwinLakes from "@/assets/stock/deck-twin-lakes.jpeg";
+import deckPebbleGrey from "@/assets/stock/deck-pebble-grey.jpeg";
 
 const Decks = () => {
+  // Updated FAQs - removed 3 as specified, reordered
   const deckFAQs = [
     {
       question: "What does the average deck cost in Central Oregon?",
-      answer: "Most decks in Central Oregon range from $18,000 to $45,000 depending on size, materials, height, railing style, and site conditions. The final price depends on your specific design and property requirements."
+      answer: "Deck costs in Central Oregon vary by size, materials, height, and site conditions. Custom, elevated, or multi-level decks cost more than basic ground-level builds, which is why pricing ranges apply."
     },
     {
       question: "Why do Sunriver decks cost more?",
-      answer: "Sunriver decks typically range from $30,000 to $55,000 or more due to heavier snow load requirements, specialized framing, premium materials suited for the climate, and HOA/SROA design guidelines that must be followed."
+      answer: "Sunriver decks often require SROA design approval, engineering for heavy snow loads, and premium materials. Elevated construction and longer approval timelines also contribute to higher overall costs compared to other Central Oregon locations."
     },
     {
       question: "Is composite decking worth the investment?",
-      answer: "For Central Oregon's climate, composite decking is often the better long-term investment. It handles snow, moisture, UV exposure, and freeze-thaw cycles better than wood, requires less maintenance, and is ideal for rental properties where durability matters."
-    },
-    {
-      question: "Can you build decks year-round in Central Oregon?",
-      answer: "Yes, we build decks year-round. While spring through fall is ideal, we can work through winter months depending on weather conditions. We'll discuss timing during your consultation."
+      answer: "Yes for many homeowners. Composite decking offers long-term durability, low maintenance, and strong performance in Central Oregon's climate, handling snow, moisture, and seasonal temperature changes better than traditional wood."
     },
     {
       question: "How long does it take to build a deck?",
-      answer: "Most deck projects take 1-2 weeks for simple decks and 2-4+ weeks for larger or elevated projects, depending on size and complexity. Permitting can add 2-4 weeks beforehand. We'll provide a detailed timeline during your estimate."
+      answer: "Most decks take several weeks from start to finish, including design coordination, permitting or HOA approval, and construction. Simpler decks move faster, while larger or elevated projects take longer. Sunriver projects typically require additional review time."
     },
     {
       question: "Do I need a permit for my deck?",
-      answer: "Most deck projects in Central Oregon require permits. We handle all permitting as part of our service, including Sunriver's specific SROA/ARC approval process."
+      answer: "Most deck projects in Central Oregon require permits, especially for elevated or attached decks. We handle permitting and inspections as part of our service, including coordinating Sunriver's SROA / ARC approval process when required."
     },
     {
       question: "Can you rebuild on my existing deck footprint?",
       answer: "Often yes! Reusing existing footings can save money if they meet current code requirements. We'll assess your current structure during the consultation."
     },
     {
-      question: "Do you offer design help?",
-      answer: "Absolutely. We work with you to design a deck that fits your lifestyle, matches your home's style, and meets all local requirements. We can provide 3D renderings for larger projects."
-    },
-    {
-      question: "Are your decks good for rental properties?",
-      answer: "Yes, we specialize in decks for vacation rentals in Sunriver. We use durable, low-maintenance materials that can handle high traffic and require minimal upkeep between guests."
-    },
-    {
       question: "How do I get started?",
       answer: "Simply request a quote through our website or call us at (541) 408-0925. We'll schedule a consultation to discuss your project, assess your property, and provide a detailed estimate."
+    }
+  ];
+
+  // Real Google Reviews for Deck Clients
+  const deckTestimonials = [
+    {
+      quote: "With a hot tub arriving early, Purple Rain Construction completed our deck in under a week. The craftsmanship was excellent, and the finished deck turned out even better than we envisioned.",
+      name: "David S.",
+      source: "Google Review"
+    },
+    {
+      quote: "Purple Rain clearly explained our options, communicated throughout the project, and delivered exactly as promised — on time and with excellent craftsmanship.",
+      name: "Patrick B.",
+      source: "Google Review"
     }
   ];
 
@@ -68,10 +71,11 @@ const Decks = () => {
         serviceType="Deck Construction"
         priceRange="$18,000 - $55,000+"
       />
-      <FAQSchema faqs={deckFAQs} />
+      <FAQSchema faqs={deckFAQs.slice(0, 5)} />
+      
       {/* Hero */}
       <section className="relative py-24 bg-gradient-hero text-primary-foreground overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center opacity-20" style={{ backgroundImage: `url(${project1After})` }} />
+        <div className="absolute inset-0 bg-cover bg-center opacity-20" style={{ backgroundImage: `url(${deckPebbleGrey})` }} />
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6">
@@ -170,7 +174,7 @@ const Decks = () => {
               {
                 icon: TreePine,
                 title: "Railing Upgrades",
-                description: "Add cable railings, glass panels, or upgrade to composite systems for improved views and durability."
+                description: "Metal Railing, Cable Railing, or upgrade to glass panels for improved views and durability."
               },
               {
                 icon: Hammer,
@@ -195,12 +199,12 @@ const Decks = () => {
         </div>
       </section>
 
-      {/* Materials Section */}
+      {/* Materials Section - Updated */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <SectionHeading
             title="Deck Materials: Composite vs. Wood"
-            subtitle="We offer both options, but here's why we often recommend composite for Central Oregon."
+            subtitle="We offer both options. Here's how they compare for Central Oregon conditions."
           />
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-primary/5 p-8 rounded-2xl border-2 border-primary">
@@ -209,52 +213,55 @@ const Decks = () => {
                   Recommended
                 </span>
               </div>
-              <h3 className="text-2xl font-bold mb-4">Composite Decking</h3>
+              <h3 className="text-2xl font-bold mb-2">Composite Decking</h3>
+              <p className="text-sm text-muted-foreground mb-4">Recommended for durability, rentals, and low maintenance</p>
               <ul className="space-y-3 mb-6">
                 {[
-                  "Handles snow, moisture, and UV exposure",
                   "No annual staining or sealing required",
+                  "Heavy wear layers — ideal for pets and rental properties",
+                  "25–50 year manufacturer warranties (varies by product line)",
+                  "Easier snow removal; safe for approved ice-melt products",
+                  "Handles moisture, snow, and UV exposure",
                   "Won't crack, warp, or splinter",
-                  "25+ year manufacturer warranties",
-                  "Ideal for rental properties",
-                  "TrexPro certified installation",
+                  "Trex® and TimberTech® Pro–Certified install available",
+                  "Select PVC decking lines offer Class A fire ratings and stay cooler in summer",
                 ].map((item, index) => (
                   <li key={index} className="flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-primary" />
-                    <span>{item}</span>
+                    <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
+                    <span className="text-sm">{item}</span>
                   </li>
                 ))}
               </ul>
-              <p className="text-sm text-muted-foreground">
-                Higher upfront cost, lower long-term maintenance
+              <p className="text-sm text-muted-foreground border-t border-border pt-4">
+                Higher upfront cost with significantly lower long-term maintenance
               </p>
             </div>
             <div className="bg-muted p-8 rounded-2xl border border-border">
-              <h3 className="text-2xl font-bold mb-4">Wood Decking</h3>
+              <h3 className="text-2xl font-bold mb-2">Wood Decking</h3>
+              <p className="text-sm text-muted-foreground mb-4">A traditional option with a natural appearance</p>
               <ul className="space-y-3 mb-6">
                 {[
-                  "Natural aesthetic many homeowners prefer",
-                  "Lower initial material cost",
+                  "Can have a lower initial material cost depending on species and design",
                   "Cedar and redwood options available",
-                  "Can be refinished to change appearance",
-                  "Traditional look that ages naturally",
-                  "Good option for covered areas",
+                  "Can be refinished to refresh or change appearance over time",
+                  "Classic look that ages naturally",
+                  "Stays noticeably cooler than most composite decking during hot summer months",
                 ].map((item, index) => (
                   <li key={index} className="flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-muted-foreground" />
-                    <span>{item}</span>
+                    <CheckCircle className="h-5 w-5 text-muted-foreground flex-shrink-0" />
+                    <span className="text-sm">{item}</span>
                   </li>
                 ))}
               </ul>
-              <p className="text-sm text-muted-foreground">
-                Requires annual maintenance and more frequent repairs
+              <p className="text-sm text-muted-foreground border-t border-border pt-4">
+                Requires regular maintenance and more frequent refinishing in Central Oregon climates
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Sunriver Focus */}
+      {/* Sunriver Focus - Updated */}
       <section className="py-20 bg-gradient-primary text-primary-foreground">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -263,9 +270,12 @@ const Decks = () => {
                 <TreePine className="h-6 w-6" />
                 <span className="font-medium">Sunriver Specialists</span>
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
                 Decks Designed for Sunriver Weather Conditions
               </h2>
+              <p className="text-primary-foreground/90 mb-6 font-medium">
+                Material choice matters — but in Sunriver, proper design and construction matter even more.
+              </p>
               <p className="text-lg text-primary-foreground/90 mb-6">
                 Sunriver decks face unique challenges: heavy snow loads that can exceed 60 lbs per square foot, constant moisture from snow and rain, freeze-thaw cycles that stress materials, and shaded lots that stay damp.
               </p>
@@ -285,8 +295,8 @@ const Decks = () => {
             </div>
             <div>
               <img
-                src={project1After}
-                alt="Finished composite deck by Purple Rain Construction"
+                src={deckTwinLakes}
+                alt="Composite deck built for Sunriver conditions"
                 className="rounded-2xl shadow-lg"
                 loading="lazy"
               />
@@ -295,44 +305,47 @@ const Decks = () => {
         </div>
       </section>
 
-      {/* Pricing Section */}
+      {/* Pricing Section - Updated for SEO */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
-          <SectionHeading
-            title="Deck Pricing Guide"
-            subtitle="Transparent pricing to help you plan your project."
-          />
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Deck Pricing Guide</h2>
+            <p className="text-xl text-primary font-semibold mb-2">Average Deck Cost in Central Oregon & Sunriver</p>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Transparent deck pricing to help you plan your project and understand what impacts cost.
+            </p>
+          </div>
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <div className="bg-muted p-8 rounded-2xl">
-              <h3 className="text-2xl font-bold mb-2">Central Oregon Decks</h3>
-              <p className="text-4xl font-extrabold text-primary mb-4">$18,000 – $45,000</p>
+              <h3 className="text-2xl font-bold mb-2">Central Oregon Deck Cost</h3>
+              <p className="text-4xl font-extrabold text-primary mb-4">$18,000 – $45,000+</p>
               <p className="text-muted-foreground mb-4">
-                Typical range for most deck projects in Bend and Redmond.
+                Typical price range for most deck builds in Bend, Redmond, and surrounding Central Oregon communities.
               </p>
               <ul className="space-y-2 text-sm">
-                <li>• Size: 200–500 sq ft</li>
-                <li>• Materials: Composite or premium wood</li>
+                <li>• Typical size: 200–500 sq ft</li>
+                <li>• Materials: Composite decking or premium wood options</li>
                 <li>• Standard railings included</li>
-                <li>• Permitting handled by us</li>
+                <li>• Permitting and inspections handled by our team</li>
               </ul>
             </div>
             <div className="bg-primary/5 p-8 rounded-2xl border-2 border-primary">
-              <h3 className="text-2xl font-bold mb-2">Sunriver Decks</h3>
+              <h3 className="text-2xl font-bold mb-2">Sunriver Deck Cost</h3>
               <p className="text-4xl font-extrabold text-primary mb-4">$30,000 – $55,000+</p>
               <p className="text-muted-foreground mb-4">
-                Higher-spec builds for Sunriver's unique requirements.
+                Higher-spec deck builds designed to meet Sunriver HOA (SROA) and Central Oregon snow-load requirements.
               </p>
               <ul className="space-y-2 text-sm">
-                <li>• Heavy snow load engineering</li>
-                <li>• SROA/ARC compliance included</li>
-                <li>• Premium composite materials</li>
-                <li>• Hot tub and outdoor kitchen ready</li>
+                <li>• Engineered for heavy snow loads</li>
+                <li>• SROA / ARC design review and compliance included</li>
+                <li>• Premium composite decking materials</li>
+                <li>• Structural support for hot tubs, spas, and outdoor kitchens</li>
               </ul>
             </div>
           </div>
           <div className="text-center mt-8">
-            <p className="text-muted-foreground mb-4">
-              Final pricing depends on size, materials, height, railing style, and site conditions.
+            <p className="text-muted-foreground mb-4 max-w-3xl mx-auto">
+              Final deck pricing depends on size, materials, height, railing style, engineering requirements, HOA approvals, and site conditions. Every project is custom quoted after a site evaluation.
             </p>
             <Button asChild size="lg" variant="cta">
               <Link to="/contact?service=deck">Request Your Exact Estimate</Link>
@@ -341,27 +354,46 @@ const Decks = () => {
         </div>
       </section>
 
-      {/* Gallery Preview */}
+      {/* Gallery Preview - Final photos only with captions */}
       <section className="py-20 bg-muted">
         <div className="container mx-auto px-4">
           <SectionHeading
             title="Recent Deck Projects"
             subtitle="See examples of our work across Central Oregon."
           />
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { src: project1After, alt: "Finished composite deck by Purple Rain Construction" },
-              { src: project2After, alt: "Finished composite deck by Purple Rain Construction" },
-              { src: project1Before1, alt: "Before photo – deck build in Central Oregon" },
-              { src: project2Before, alt: "Before photo – deck build in Central Oregon" },
+              { 
+                src: project1After, 
+                alt: "Upper balcony deck rebuild in Central Oregon",
+                caption: "Upper Balcony Deck Rebuild",
+                description: "County-permitted rebuild with accented handrails, integrated into a larger remodel."
+              },
+              { 
+                src: project2After, 
+                alt: "Structural repair and deck refresh",
+                caption: "Structural Repair & Deck Refresh",
+                description: "Replaced deteriorated columns, repaired framing, refinished decking with new handrails."
+              },
+              { 
+                src: deckTwinLakes, 
+                alt: "Sunriver deck rebuild engineered and permitted",
+                caption: "Sunriver Deck Rebuild — Engineered & Permitted",
+                description: "Full demolition due to dry rot, followed by an engineered, county- and SROA-approved rebuild."
+              },
             ].map((img, index) => (
-              <img
-                key={index}
-                src={img.src}
-                alt={img.alt}
-                className="rounded-xl aspect-square object-cover hover:scale-105 transition-transform duration-300"
-                loading="lazy"
-              />
+              <div key={index} className="bg-background rounded-2xl overflow-hidden border border-border">
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  className="w-full aspect-[4/3] object-cover"
+                  loading="lazy"
+                />
+                <div className="p-4">
+                  <h3 className="font-semibold text-foreground mb-1">{img.caption}</h3>
+                  <p className="text-sm text-muted-foreground">{img.description}</p>
+                </div>
+              </div>
             ))}
           </div>
           <div className="text-center mt-8">
@@ -372,8 +404,34 @@ const Decks = () => {
         </div>
       </section>
 
-      {/* JobTread Project Transparency */}
+      {/* NEW: What Our Deck Clients Say - Real Reviews */}
       <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <SectionHeading
+            title="What Our Deck Clients Say"
+            subtitle="Real feedback from homeowners who trusted us with their deck projects."
+          />
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {deckTestimonials.map((testimonial, index) => (
+              <div key={index} className="bg-muted p-8 rounded-2xl border border-border">
+                <div className="flex gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="h-5 w-5 fill-sunriver-gold text-sunriver-gold" />
+                  ))}
+                </div>
+                <p className="text-foreground mb-6 italic">"{testimonial.quote}"</p>
+                <div>
+                  <p className="font-semibold">{testimonial.name}</p>
+                  <p className="text-sm text-muted-foreground">{testimonial.source}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* JobTread Project Transparency */}
+      <section className="py-20 bg-muted">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -399,7 +457,7 @@ const Decks = () => {
                   ))}
                 </ul>
               </div>
-              <div className="bg-muted p-8 rounded-2xl border border-border">
+              <div className="bg-background p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-semibold mb-4">What Happens After You Contact Us?</h3>
                 <div className="space-y-4">
                   {[

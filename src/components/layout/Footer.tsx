@@ -124,7 +124,7 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
               </li>
             </ul>
             <div className="mt-6 flex flex-wrap gap-2">
-              {/* Trust Badges - Styled as badge elements */}
+              {/* Trust Badges - Updated with new credentials */}
               <div className="px-3 py-1.5 rounded-md border border-primary/40 bg-primary/10 text-xs text-background/80 font-medium">
                 BBB Accredited
               </div>
@@ -133,6 +133,12 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
               </div>
               <div className="px-3 py-1.5 rounded-md border border-primary/40 bg-primary/10 text-xs text-background/80 font-medium">
                 TrexPro® Builder
+              </div>
+              <div className="px-3 py-1.5 rounded-md border border-primary/40 bg-primary/10 text-xs text-background/80 font-medium">
+                TimberTech Pro
+              </div>
+              <div className="px-3 py-1.5 rounded-md border border-primary/40 bg-primary/10 text-xs text-background/80 font-medium">
+                Bend Chamber
               </div>
             </div>
           </div>
