@@ -69,6 +69,11 @@ import olivieroPropertyWide from "@/assets/remodels/oliviero/property-wide-lawn.
 // Oliviero Exterior - Front Lawn View
 import olivieroExteriorFrontLawn from "@/assets/remodels/oliviero/exterior-front-lawn.jpg";
 import teamActionSaw from "@/assets/brand/team-action-saw.jpg";
+// New deck project images
+import upperBalconyRebuild from "@/assets/decks/upper-balcony-rebuild-after.jpg";
+import deckSurfaceCableRailing from "@/assets/decks/deck-surface-cable-railing.jpg";
+import sunriverDeckRebuild from "@/assets/decks/sunriver-deck-rebuild.jpg";
+import deckAdditionHotTub from "@/assets/decks/deck-addition-hot-tub.jpg";
 
 const categories = ["All", "Decks", "Remodels", "Sunriver"];
 
@@ -90,6 +95,42 @@ const projects = [
     image: project2After,
     beforeImage: project2Before,
     tags: ["Decks"]
+  },
+  {
+    id: 50,
+    title: "Upper Balcony Deck Rebuild",
+    category: "Decks",
+    location: "Central Oregon",
+    image: upperBalconyRebuild,
+    tags: ["Decks"],
+    description: "County-permitted rebuild with accented handrails, integrated into a larger remodel that added an outdoor bar and patio living space below."
+  },
+  {
+    id: 51,
+    title: "Deck Refinish & Railing Upgrade",
+    category: "Decks",
+    location: "Central Oregon",
+    image: deckSurfaceCableRailing,
+    tags: ["Decks"],
+    description: "Refinished and stained existing deck boards with selective replacements, paired with new modern handrails for a clean, updated look."
+  },
+  {
+    id: 52,
+    title: "Sunriver Deck Rebuild — Engineered & Permitted",
+    category: "Sunriver",
+    location: "Sunriver, Oregon",
+    image: sunriverDeckRebuild,
+    tags: ["Decks", "Sunriver"],
+    description: "Full demolition due to extensive dry rot, followed by an engineered, county- and SROA-approved rebuild. Planned as a phased project to help manage costs over time."
+  },
+  {
+    id: 53,
+    title: "Deck Addition & Accessibility Upgrade",
+    category: "Decks",
+    location: "Central Oregon",
+    image: deckAdditionHotTub,
+    tags: ["Decks"],
+    description: "Small deck addition connected to the existing structure to support a hot tub, with a built-in bench, hose access, and a simple privacy wall."
   },
   {
     id: 3,

@@ -12,6 +12,7 @@ import iconMonogramGradient from "@/assets/brand/icons/icon-monogram-gradient.pn
 import teamNicholasEd from "@/assets/brand/team-nicholas-ed.png";
 import heroPlowDawn from "@/assets/snow-removal/hero-plow-dawn.jpg";
 import deckTwinLakes from "@/assets/stock/deck-twin-lakes.jpeg";
+import olivieroFullHomeDeck from "@/assets/decks/oliviero-full-home-deck.jpg";
 // JobTread portal images
 import jobtreadCommunications from "@/assets/jobtread/communications.png";
 import jobtreadDailyLogs from "@/assets/jobtread/daily-logs.png";
@@ -120,7 +121,7 @@ const Index = () => {
               description="High-performance decks built for Central Oregon weather."
               href="/decks"
               icon={Hammer}
-              image={project1After}
+              image={olivieroFullHomeDeck}
               ctaText="Learn More → Decks"
             />
             <ServiceCard
