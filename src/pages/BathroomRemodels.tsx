@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Phone, Shield, Bath, Wrench, CheckCircle, ArrowRight } from "lucide-react";
+import { Phone, CheckCircle, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Accordion,
@@ -20,92 +20,100 @@ const BathroomRemodels = () => {
   const bathroomFAQs = [
     {
       question: "How long does a bathroom remodel take?",
-      answer: "Most bathroom remodels take 2-4 weeks depending on scope. A simple update with new fixtures and paint may take 1-2 weeks, while a full renovation with tile work and layout changes typically takes 3-5 weeks. We'll provide a detailed timeline during your consultation."
+      answer: "Most bathroom remodels take 2–4 weeks once construction begins, depending on scope. A simple update with new fixtures and paint may take 1–2 weeks, while a full renovation with tile work or layout changes typically takes 3–5 weeks. We provide a detailed project timeline during your consultation, including inspections and material scheduling."
     },
     {
       question: "What's the average cost of a bathroom remodel?",
-      answer: "Bathroom remodels in Central Oregon typically range from $15,000 for basic updates to $45,000+ for full renovations. Factors include tile work, fixture quality, vanity selection, and whether you're changing the layout. We provide detailed estimates before work begins."
+      answer: "Bathroom remodels in Central Oregon typically range from $15,000 for basic updates to $45,000+ for full renovations. Costs vary based on tile selection, fixture quality, vanity choices, waterproofing requirements, and whether layout changes are involved. We provide detailed, transparent estimates before work begins."
     },
     {
       question: "Can you make my bathroom more accessible?",
-      answer: "Yes, we specialize in accessibility features including grab bars, walk-in showers, comfort-height toilets, and wider doorways. We can help you plan a bathroom that works for aging in place or current mobility needs."
+      answer: "Yes. We specialize in accessibility upgrades such as grab bars, walk-in or curbless showers, comfort-height toilets, and wider clearances. We'll help you plan a bathroom that supports aging in place, mobility needs, and long-term comfort."
     },
     {
       question: "Do you handle all the plumbing work?",
-      answer: "We coordinate all plumbing through licensed professionals. Our team handles the carpentry, tile work, and finish installation while ensuring seamless coordination with plumbing and electrical trades."
+      answer: "We coordinate all plumbing through licensed professionals. As a general contractor, we oversee and coordinate all trades—including plumbing, electrical, tile, and finish work—to ensure quality, scheduling, and code compliance throughout the project."
     },
     {
       question: "What tile options do you recommend?",
-      answer: "We commonly install ceramic, porcelain, and natural stone tile. Porcelain is our most popular choice for durability and water resistance. We'll discuss the pros and cons of each during your consultation."
+      answer: "We commonly work with ceramic, porcelain, and natural stone tile. Porcelain is our most popular option due to its durability and water resistance. We'll review material options, maintenance considerations, and waterproofing requirements during your consultation."
     },
     {
       question: "Can I use my bathroom during the remodel?",
-      answer: "For homes with multiple bathrooms, you'll typically have access to another bathroom during the project. For single-bathroom homes, we work efficiently to minimize downtime and can discuss strategies during planning."
+      answer: "If your home has multiple bathrooms, you'll typically have access to another bathroom during the project. For single-bathroom homes, there will be periods when the space is unavailable. We plan the work carefully to minimize downtime and discuss logistics during the planning phase."
     },
   ];
 
   const serviceCards = [
     {
-      title: "Custom Tile Work in Bend",
-      description: "Expert tile installation for showers, floors, and accent walls with proper waterproofing for lasting results.",
-      image: gilchrestStairsAfter,
+      title: "Full Bathroom Remodels",
+      description: "Complete remodels including layout changes, vanities, lighting, fixtures, and finishes—managed from demolition through final inspection.",
+      features: ["Layout changes & reconfiguration", "Fixture, lighting, and finish upgrades", "Primary and guest bathrooms"],
     },
     {
-      title: "Bathroom Renovation in Redmond",
-      description: "Transform outdated bathrooms into spa-like retreats with modern fixtures, vanities, and finishes.",
-      image: olivieroLivingRoom,
+      title: "Walk-In Showers & Tub-to-Shower Conversions",
+      description: "Walk-in showers and tub-to-shower conversions designed for improved accessibility, comfort, and everyday usability.",
+      features: ["Curbless & low-threshold showers", "Tub removal & shower conversions", "Waterproofing & ventilation upgrades"],
     },
     {
-      title: "Full Remodels & Updates",
-      description: "From accessibility upgrades to complete gut renovations, we manage all aspects of your bathroom project.",
-      image: gilchrestKitchenAfter,
+      title: "Vanities, Storage & Bathroom Upgrades",
+      description: "Custom vanities, storage solutions, and targeted bathroom upgrades that improve function, efficiency, and long-term comfort.",
+      features: ["Custom vanities & storage", "Water-saving fixtures & eco-friendly upgrades", "Accessibility modifications"],
     },
+  ];
+
+  // Gallery images with captions (placeholders for now - pending actual bathroom photos)
+  const galleryImages = [
+    { src: gilchrestStairsAfter, alt: "Modern stairwell with dark beams and metal railing – Gilchrest A-Frame Remodel", caption: "Full Bathroom Remodel - Walk-In Shower" },
+    { src: gilchrestFrontAfter, alt: "A-Frame home exterior after complete renovation", caption: "Patterned Tile Shower" },
+    { src: gilchrestKitchenAfter, alt: "Modern kitchen with live-edge counter and exposed beams – Gilchrest A-Frame Remodel", caption: "Double Vanity Bathroom Remodel" },
+    { src: olivieroKitchenFull1, alt: "Modern farmhouse kitchen with shiplap walls, white cabinetry, and patterned backsplash", caption: "Full Bathroom Remodel" },
+    { src: olivieroLivingRoom, alt: "Farmhouse living room with wood stove and rustic charm", caption: "Custom vanity with quartz countertop" },
+    { src: olivieroKitchenSink, alt: "Farmhouse sink with window view in modern kitchen", caption: "Modern plumbing fixtures" },
   ];
 
   return (
     <Layout>
-      {/* Hero Section - More visible background image */}
+      {/* Hero Section - Left-aligned like Decks page */}
       <section className="relative py-24 md:py-32 overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center" 
           style={{ backgroundImage: `url(${gilchrestFrontAfter})` }} 
         />
-        <div className="absolute inset-0 bg-primary/60" />
+        <div className="absolute inset-0 bg-primary/70" />
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-3xl mx-auto text-center">
+          <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 text-primary-foreground">
               Bathroom Remodels in Central Oregon
             </h1>
-            <h2 className="text-xl md:text-2xl text-primary-foreground/90 mb-8 font-medium">
-              Spa-like bathrooms designed for comfort and lasting value
-            </h2>
-            <div className="flex flex-wrap justify-center gap-4">
+            <p className="text-xl md:text-2xl text-primary-foreground/90 mb-8 font-medium">
+              Spa-like bathroom remodels built for everyday comfort and lasting performance
+            </p>
+            <div className="flex flex-wrap gap-4">
               <Button
                 asChild
                 size="lg"
                 className="bg-background text-primary hover:bg-background/90 font-semibold"
               >
-                <Link to="/contact?service=bathroom">Start Your Bathroom Remodel Today</Link>
+                <Link to="/contact?service=bathroom">Request a Bathroom Remodel Quote</Link>
+              </Button>
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="border-2 border-primary-foreground text-primary-foreground bg-transparent hover:bg-primary-foreground/10"
+              >
+                <a href="tel:541-408-0925">
+                  <Phone className="mr-2 h-5 w-5" />
+                  Call (541) 408-0925
+                </a>
               </Button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Introduction Section - Purple Background */}
-      <section className="py-16 bg-primary text-primary-foreground">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <p className="text-lg md:text-xl leading-relaxed">
-              Transform your bathroom with Purple Rain Construction, your trusted bathroom remodel contractor in Bend OR. 
-              Whether you want a modern update, a full renovation, or accessibility improvements, our team brings experience, 
-              attention to detail, and quality craftsmanship to every project.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Full-Width Image Break - After Intro */}
+      {/* Full-Width Image Break - After Hero */}
       <section className="relative h-64 md:h-80 lg:h-96">
         <img
           src={olivieroKitchenFull1}
@@ -115,15 +123,15 @@ const BathroomRemodels = () => {
         />
       </section>
 
-      {/* Expert Bathroom Remodeling Section - Purple Background */}
-      <section className="py-20 bg-primary text-primary-foreground">
+      {/* Expert Bathroom Remodeling Section */}
+      <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
                 Expert Bathroom Remodeling in Bend, Redmond, and Sunriver
               </h2>
-              <p className="text-lg text-primary-foreground/90 leading-relaxed">
+              <p className="text-lg text-muted-foreground leading-relaxed">
                 As a premier bathroom remodeling company in Bend OR, we specialize in turning your vision into reality. 
                 From concept to completion, we handle every detail, ensuring your new bathroom is designed for beauty, 
                 comfort, and lasting value. Serving Redmond, Sunriver, and Central Oregon, our team brings experience, 
@@ -142,54 +150,42 @@ const BathroomRemodels = () => {
         </div>
       </section>
 
-      {/* Our Bathroom Remodel Services - Purple Background with Image */}
-      <section className="relative py-20 overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center" 
-          style={{ backgroundImage: `url(${olivieroLivingRoom})` }} 
-        />
-        <div className="absolute inset-0 bg-primary/80" />
-        <div className="container mx-auto px-4 relative z-10">
+      {/* Bathroom Remodel Services - Text-based cards without images */}
+      <section className="py-20 bg-muted">
+        <div className="container mx-auto px-4">
           <SectionHeading
             title="Our Bathroom Remodel Services"
             subtitle="Professional bathroom remodeling services across Central Oregon"
-            light
           />
           <div className="grid md:grid-cols-3 gap-8">
             {serviceCards.map((service, index) => (
               <div 
                 key={index} 
-                className="bg-background rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
+                className="bg-background rounded-2xl p-8 border border-border shadow-sm hover:shadow-md transition-shadow duration-300"
               >
-                {/* Title ABOVE image */}
-                <div className="p-6 pb-4">
-                  <h3 className="text-xl font-semibold text-foreground">{service.title}</h3>
-                </div>
-                {/* Image in middle */}
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                    loading="lazy"
-                  />
-                </div>
-                {/* Description and CTA at bottom */}
-                <div className="p-6 pt-4">
-                  <p className="text-muted-foreground mb-4">{service.description}</p>
-                  <Button asChild variant="link" className="p-0 text-primary">
-                    <Link to="/contact?service=bathroom">
-                      Learn More <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
-                  </Button>
-                </div>
+                <h3 className="text-xl font-semibold text-foreground mb-4">{service.title}</h3>
+                <p className="text-muted-foreground mb-6">{service.description}</p>
+                <ul className="space-y-2 mb-6">
+                  {service.features.map((feature, i) => (
+                    <li key={i} className="flex items-center gap-2 text-sm">
+                      <CheckCircle className="h-4 w-4 text-primary flex-shrink-0" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                <Button asChild variant="outline" className="w-full">
+                  <Link to="/contact?service=bathroom">
+                    Learn More
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Why Choose Purple Rain Construction */}
+      {/* Why Choose Purple Rain Construction - Checkmarks Only */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <SectionHeading
@@ -197,30 +193,13 @@ const BathroomRemodels = () => {
             subtitle="Trusted craftsmanship for your bathroom remodel"
           />
           
-          {/* Large Outline Icons Row */}
-          <div className="grid grid-cols-3 gap-4 md:gap-8 max-w-4xl mx-auto mb-12">
-            <div className="text-center">
-              <Shield className="h-16 w-16 md:h-20 md:w-20 text-primary mx-auto mb-4" strokeWidth={1.5} />
-              <h3 className="font-semibold text-sm md:text-base">Licensed & Insured</h3>
-            </div>
-            <div className="text-center">
-              <Bath className="h-16 w-16 md:h-20 md:w-20 text-primary mx-auto mb-4" strokeWidth={1.5} />
-              <h3 className="font-semibold text-sm md:text-base">Bathroom Experts</h3>
-            </div>
-            <div className="text-center">
-              <Wrench className="h-16 w-16 md:h-20 md:w-20 text-primary mx-auto mb-4" strokeWidth={1.5} />
-              <h3 className="font-semibold text-sm md:text-base">Quality Craftsmanship</h3>
-            </div>
-          </div>
-
-          {/* Bullet Points */}
           <div className="max-w-2xl mx-auto">
             <ul className="space-y-4">
               {[
                 "Licensed, bonded, and insured (CCB 247140)",
-                "Expert tile installation and waterproofing",
+                "Proven waterproofing standards and quality oversight",
                 "Family-driven craftsmanship with a focus on quality and detail",
-                "Coordination with plumbers and electricians",
+                "Coordination with trusted plumbing and electrical trade partners",
                 "Clean, respectful jobsites—we protect your home",
               ].map((item, index) => (
                 <li key={index} className="flex items-start gap-3">
@@ -244,29 +223,27 @@ const BathroomRemodels = () => {
         <div className="absolute inset-0 bg-primary/30" />
       </section>
 
-      {/* Gallery */}
+      {/* Gallery with Captions */}
       <section className="py-20 bg-muted">
         <div className="container mx-auto px-4">
+          <p className="text-center text-muted-foreground mb-4">
+            See examples of our remodeling work—bathroom photos coming soon.
+          </p>
           <SectionHeading
             title="Bathroom & Remodel Gallery"
-            subtitle="See examples of our remodeling work in Central Oregon"
+            subtitle="Quality craftsmanship in Central Oregon"
           />
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            {[
-              { src: gilchrestStairsAfter, alt: "Modern stairwell with dark beams and metal railing – Gilchrest A-Frame Remodel" },
-              { src: gilchrestFrontAfter, alt: "A-Frame home exterior after complete renovation" },
-              { src: gilchrestKitchenAfter, alt: "Modern kitchen with live-edge counter and exposed beams – Gilchrest A-Frame Remodel" },
-              { src: olivieroKitchenFull1, alt: "Modern farmhouse kitchen with shiplap walls, white cabinetry, and patterned backsplash" },
-              { src: olivieroLivingRoom, alt: "Farmhouse living room with wood stove and rustic charm" },
-              { src: olivieroKitchenSink, alt: "Farmhouse sink with window view in modern kitchen" },
-            ].map((img, index) => (
-              <img
-                key={index}
-                src={img.src}
-                alt={img.alt}
-                className="rounded-xl aspect-video object-cover hover:scale-105 transition-transform duration-300"
-                loading="lazy"
-              />
+            {galleryImages.map((img, index) => (
+              <div key={index} className="group">
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  className="rounded-xl aspect-video object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+                <p className="text-sm text-muted-foreground mt-2 text-center">{img.caption}</p>
+              </div>
             ))}
           </div>
           <div className="text-center mt-8">
@@ -322,7 +299,7 @@ const BathroomRemodels = () => {
               size="lg"
               className="bg-background text-primary hover:bg-background/90 font-semibold"
             >
-              <Link to="/contact?service=bathroom">Start Your Bathroom Remodel Today</Link>
+              <Link to="/contact?service=bathroom">Request a Bathroom Remodel Quote</Link>
             </Button>
             <Button
               asChild

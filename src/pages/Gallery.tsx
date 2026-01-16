@@ -70,7 +70,7 @@ import olivieroPropertyWide from "@/assets/remodels/oliviero/property-wide-lawn.
 import olivieroExteriorFrontLawn from "@/assets/remodels/oliviero/exterior-front-lawn.jpg";
 import teamActionSaw from "@/assets/brand/team-action-saw.jpg";
 
-const categories = ["All", "Decks", "Remodels", "Sunriver", "Snow Removal"];
+const categories = ["All", "Decks", "Remodels", "Sunriver"];
 
 const projects = [
   {
@@ -108,15 +108,6 @@ const projects = [
     image: elkeFrenchDoorOpen,
     tags: ["Remodels"],
     description: "Interior French doors showing adjoining room by Purple Rain Construction"
-  },
-  {
-    id: 5,
-    title: "Snow Removal Service",
-    category: "Snow Removal",
-    location: "Sunriver, OR",
-    image: teamActionSaw,
-    tags: ["Snow Removal", "Sunriver"],
-    description: "Purple Rain Construction team providing reliable snow removal services in Sunriver"
   },
   // Gilchrest A-Frame Remodel entries
   {
