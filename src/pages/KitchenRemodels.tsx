@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Phone, Shield, ChefHat, Wrench, CheckCircle, ArrowRight } from "lucide-react";
+import { Phone, CheckCircle, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Accordion,
@@ -22,66 +22,65 @@ const KitchenRemodels = () => {
   const kitchenFAQs = [
     {
       question: "How long does a kitchen remodel take?",
-      answer: "Most kitchen remodels take 4-8 weeks depending on scope. A simple refresh with new counters and paint may take 2-3 weeks, while a full gut renovation with layout changes typically takes 6-10 weeks. We'll provide a detailed timeline during your consultation."
+      answer: "Most kitchen remodels take 4–10 weeks, depending on scope. Simple updates (like countertops and paint) may take 2–3 weeks. Full renovations with layout changes typically take 6–10 weeks. We'll include a clear timeline with your proposal."
     },
     {
-      question: "What's the average cost of a kitchen remodel in Central Oregon?",
-      answer: "Kitchen remodels typically range from $25,000 for minor updates to $75,000+ for full renovations. Factors include cabinet quality, countertop materials, appliance upgrades, and whether you're changing the layout. We provide detailed estimates before work begins."
+      question: "What affects the cost of a kitchen remodel in Central Oregon?",
+      answer: "Most kitchen remodels range from $25,000 for smaller updates to $75,000+ for full renovations. Cost depends on cabinetry, countertops, appliances, and whether the layout or utilities change. We provide a detailed estimate before work begins."
     },
     {
       question: "Can I stay in my home during a kitchen remodel?",
-      answer: "Yes, most homeowners stay in their home during kitchen remodels. We'll set up a temporary kitchen area and work to minimize disruption. For major renovations, we can discuss strategies to keep your daily routine as normal as possible."
+      answer: "In many cases, yes. Some homeowners stay in their home during the remodel. We use temporary walls to contain the work area and air scrubbers to reduce dust and odors. For larger projects, we'll help you plan for noise and disruption."
     },
     {
       question: "Do you help with kitchen design?",
-      answer: "Absolutely. We help you plan your layout, select materials, choose finishes, and coordinate colors. For complex projects, we can recommend design partners who specialize in kitchen planning."
+      answer: "Yes. We help with layout planning, finish selections, and overall function and flow. For more complex projects, we can coordinate with trusted design partners."
     },
     {
       question: "What countertop materials do you recommend?",
-      answer: "We commonly install quartz, granite, butcher block, and solid surface countertops. Quartz is our most popular choice for durability and low maintenance. We'll discuss the pros and cons of each during your consultation."
-    },
-    {
-      question: "Can you work around my rental schedule in Sunriver?",
-      answer: "Yes. For vacation rental properties, we coordinate work schedules around your bookings to minimize lost rental income. Our project portal keeps you updated even when you're not on-site."
+      answer: "We commonly install quartz, granite, butcher block, and solid-surface countertops. Quartz is popular for durability and low maintenance. We'll review options during your consultation."
     },
   ];
 
   const serviceCards = [
     {
-      title: "Custom Kitchen Design in Bend",
-      description: "Collaborate with our experts to create a kitchen that fits your style, storage needs, and workflow.",
-      image: olivieroKitchenIsland,
+      title: "Custom Kitchen Design",
+      description: "Work with our team to design a kitchen that fits your style, storage needs, and everyday workflow.",
+      cta: "Start Your Kitchen Design",
     },
     {
-      title: "Kitchen Renovation in Redmond",
+      title: "Kitchen Renovations",
       description: "Upgrade outdated spaces with modern finishes, functional layouts, and high-quality materials.",
-      image: gilchrestKitchenAfter,
+      cta: "Request a Renovation Quote",
     },
     {
       title: "Full Remodels & Updates",
       description: "From cabinetry and countertops to lighting and flooring, we manage all aspects of your project.",
-      image: olivieroKitchenStove,
+      cta: "Get a Kitchen Remodel Estimate",
     },
   ];
 
   return (
     <Layout>
-      {/* Hero Section - More visible background image */}
+      {/* Hero Section - Left-aligned like Decks page */}
       <section className="relative py-24 md:py-32 overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center" 
           style={{ backgroundImage: `url(${olivieroKitchenPendant})` }} 
         />
-        <div className="absolute inset-0 bg-primary/60" />
+        <div className="absolute inset-0 bg-primary/70" />
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-3xl mx-auto text-center">
+          <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 text-primary-foreground">
-              Kitchen Remodels in Central Oregon
+              Central Oregon Kitchen Remodelers You Can Trust
             </h1>
-            <h2 className="text-xl md:text-2xl text-primary-foreground/90 mb-8 font-medium">
-              Functional, beautiful kitchens designed for your lifestyle
-            </h2>
-            <div className="flex flex-wrap justify-center gap-4">
+            <p className="text-xl md:text-2xl text-primary-foreground/90 mb-4 font-medium">
+              Custom kitchen remodels designed for function, flow, and everyday living in Bend, Redmond, and Sunriver
+            </p>
+            <p className="text-lg text-primary-foreground/80 mb-8">
+              Purple Rain Construction is a trusted kitchen remodel contractor serving Bend, Redmond, and Sunriver. From modern updates to full renovations and custom kitchen designs, our team delivers quality craftsmanship, attention to detail, and personalized service on every project.
+            </p>
+            <div className="flex flex-wrap gap-4">
               <Button
                 asChild
                 size="lg"
@@ -89,25 +88,23 @@ const KitchenRemodels = () => {
               >
                 <Link to="/contact?service=kitchen">Start Your Kitchen Remodel Today</Link>
               </Button>
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="border-2 border-primary-foreground text-primary-foreground bg-transparent hover:bg-primary-foreground/10"
+              >
+                <a href="tel:541-408-0925">
+                  <Phone className="mr-2 h-5 w-5" />
+                  Call (541) 408-0925
+                </a>
+              </Button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Introduction Section - Purple Background */}
-      <section className="py-16 bg-primary text-primary-foreground">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <p className="text-lg md:text-xl leading-relaxed">
-              Upgrade your kitchen with Purple Rain Construction, your trusted kitchen remodel contractor in Bend OR. 
-              Whether you want a modern update, a full renovation, or a custom kitchen design, our team brings experience, 
-              attention to detail, and quality craftsmanship to every project.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Full-Width Kitchen Image Break - After Intro */}
+      {/* Full-Width Kitchen Image Break - After Hero */}
       <section className="relative h-64 md:h-80 lg:h-96">
         <img
           src={olivieroKitchenFull1}
@@ -117,19 +114,16 @@ const KitchenRemodels = () => {
         />
       </section>
 
-      {/* Expert Kitchen Remodeling Section - Purple Background */}
-      <section className="py-20 bg-primary text-primary-foreground">
+      {/* Expert Kitchen Remodeling Section */}
+      <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Expert Kitchen Remodeling in Bend, Redmond, and Sunriver
+                Expert Kitchen Remodeling Across Central Oregon
               </h2>
-              <p className="text-lg text-primary-foreground/90 leading-relaxed">
-                As a premier kitchen remodeling company in Bend OR, we specialize in turning your vision into reality. 
-                From concept to completion, we handle every detail, ensuring your new kitchen is designed for beauty, 
-                comfort, and lasting value. Serving Redmond, Sunriver, and Central Oregon, our team brings experience, 
-                skill, and a personal touch to every project.
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                From concept to completion, we handle every aspect of your kitchen remodel. Our team manages design coordination, material selection, and construction to ensure your kitchen is built for everyday use, long-term durability, and lasting value. Serving Bend, Redmond, and Sunriver, we bring hands-on experience and personalized service to every project.
               </p>
             </div>
             <div>
@@ -144,54 +138,34 @@ const KitchenRemodels = () => {
         </div>
       </section>
 
-      {/* Our Kitchen Remodel Services - Purple Background with Image */}
-      <section className="relative py-20 overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center" 
-          style={{ backgroundImage: `url(${olivieroKitchenAfter})` }} 
-        />
-        <div className="absolute inset-0 bg-primary/80" />
-        <div className="container mx-auto px-4 relative z-10">
+      {/* Kitchen Remodeling Services Section */}
+      <section className="py-20 bg-muted">
+        <div className="container mx-auto px-4">
           <SectionHeading
-            title="Our Kitchen Remodel Services"
-            subtitle="Professional kitchen remodeling services across Central Oregon"
-            light
+            title="Kitchen Remodeling Services Across Central Oregon"
+            subtitle="Custom design, renovations, and full kitchen remodels tailored to your home"
           />
           <div className="grid md:grid-cols-3 gap-8">
             {serviceCards.map((service, index) => (
               <div 
                 key={index} 
-                className="bg-background rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
+                className="bg-background rounded-2xl p-8 border border-border shadow-sm hover:shadow-md transition-shadow duration-300"
               >
-                {/* Title ABOVE image */}
-                <div className="p-6 pb-4">
-                  <h3 className="text-xl font-semibold text-foreground">{service.title}</h3>
-                </div>
-                {/* Image in middle */}
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                    loading="lazy"
-                  />
-                </div>
-                {/* Description and CTA at bottom */}
-                <div className="p-6 pt-4">
-                  <p className="text-muted-foreground mb-4">{service.description}</p>
-                  <Button asChild variant="link" className="p-0 text-primary">
-                    <Link to="/contact?service=kitchen">
-                      Learn More <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
-                  </Button>
-                </div>
+                <h3 className="text-xl font-semibold text-foreground mb-4">{service.title}</h3>
+                <p className="text-muted-foreground mb-6">{service.description}</p>
+                <Button asChild variant="outline" className="w-full">
+                  <Link to="/contact?service=kitchen">
+                    {service.cta}
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Why Choose Purple Rain Construction */}
+      {/* Why Choose Purple Rain Construction - Checkmarks Only */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <SectionHeading
@@ -199,30 +173,13 @@ const KitchenRemodels = () => {
             subtitle="Trusted craftsmanship for your kitchen remodel"
           />
           
-          {/* Large Outline Icons Row */}
-          <div className="grid grid-cols-3 gap-4 md:gap-8 max-w-4xl mx-auto mb-12">
-            <div className="text-center">
-              <Shield className="h-16 w-16 md:h-20 md:w-20 text-primary mx-auto mb-4" strokeWidth={1.5} />
-              <h3 className="font-semibold text-sm md:text-base">Licensed & Insured</h3>
-            </div>
-            <div className="text-center">
-              <ChefHat className="h-16 w-16 md:h-20 md:w-20 text-primary mx-auto mb-4" strokeWidth={1.5} />
-              <h3 className="font-semibold text-sm md:text-base">Kitchen Experience</h3>
-            </div>
-            <div className="text-center">
-              <Wrench className="h-16 w-16 md:h-20 md:w-20 text-primary mx-auto mb-4" strokeWidth={1.5} />
-              <h3 className="font-semibold text-sm md:text-base">Quality Craftsmanship</h3>
-            </div>
-          </div>
-
-          {/* Bullet Points */}
           <div className="max-w-2xl mx-auto">
             <ul className="space-y-4">
               {[
                 "Licensed, bonded, and insured (CCB 247140)",
-                "Experienced in kitchens across Bend, Redmond, and Sunriver",
+                "Experienced in kitchen remodels across Bend, Redmond, and Sunriver",
                 "Family-driven craftsmanship with a focus on quality and detail",
-                "Personalized service from design to final installation",
+                "Personalized service from design through final installation",
               ].map((item, index) => (
                 <li key={index} className="flex items-start gap-3">
                   <CheckCircle className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
@@ -248,9 +205,12 @@ const KitchenRemodels = () => {
       {/* Gallery */}
       <section className="py-20 bg-muted">
         <div className="container mx-auto px-4">
+          <p className="text-center text-muted-foreground mb-4">
+            See the quality and craftsmanship we bring to every kitchen project.
+          </p>
           <SectionHeading
             title="Kitchen Project Gallery"
-            subtitle="See examples of our kitchen remodeling work in Central Oregon"
+            subtitle="Examples of our kitchen remodeling work in Central Oregon"
           />
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {[
@@ -274,6 +234,20 @@ const KitchenRemodels = () => {
             <Button asChild variant="outline" size="lg">
               <Link to="/gallery">View Full Gallery</Link>
             </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Cost & Timeline Section */}
+      <section className="py-16 bg-primary/5 border-y border-primary/20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">
+              Kitchen Remodel Cost & Timeline in Central Oregon
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Kitchen remodels in Central Oregon vary based on scope, finishes, and layout changes. Timelines depend on whether the project is a refresh or a full renovation, as well as permitting and material availability. During your consultation, we'll review budget considerations and provide a clear project timeline tailored to your home.
+            </p>
           </div>
         </div>
       </section>

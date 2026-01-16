@@ -158,8 +158,10 @@ const Contact = () => {
                   {[
                     "CCB #247140 - Licensed & Insured",
                     "TrexPro Certified Deck Builder",
+                    "TimberTech Pro Certified Installer",
                     "BBB Accredited Business",
                     "COBA Member",
+                    "Bend Chamber of Commerce Member",
                   ].map((item, index) => (
                     <li key={index} className="flex items-center gap-2">
                       <CheckCircle className="h-5 w-5 text-primary" />

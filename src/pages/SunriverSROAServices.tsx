@@ -157,7 +157,7 @@ const SunriverSROAServices = () => {
                 SROA Approval vs. Deschutes County Permits
               </h2>
               <p className="text-lg text-muted-foreground mb-6">
-                Many Sunriver homeowners are confused about the difference between SROA approval vs building permit requirements. Understanding Sunriver engineering requirements and the Sunriver remodel permit process is essential. Here's what you need to know:
+                Many Sunriver homeowners are confused about the difference between SROA (Sunriver Owner Association) approval vs building permit requirements. Understanding SROA design requirements and the Deschutes County building permit process is essential. Here's what you need to know:
               </p>
               
               <div className="space-y-6 mb-8">
@@ -167,7 +167,7 @@ const SunriverSROAServices = () => {
                     SROA Design Review
                   </h3>
                   <p className="text-muted-foreground">
-                    SROA focuses on design aesthetics, materials, exterior appearance, and community compliance. This ensures your project fits within Sunriver's architectural standards and HOA requirements.
+                    Sunriver Owner Association focuses on design aesthetics, materials, exterior appearance, and community compliance. This ensures your project fits within Sunriver's architectural standards and SROA requirements.
                   </p>
                 </div>
                 
@@ -215,7 +215,7 @@ const SunriverSROAServices = () => {
         <div className="container mx-auto px-4">
           <SectionHeading
             title="Typical SROA Project Timeline"
-            subtitle="Here's what to expect during the SROA approval timeline and Sunriver project design process. We guide you through each Sunriver HOA approval step."
+            subtitle="Here's what to expect during the SROA approval and Sunriver project design process. We guide you through each step so there are no surprises."
           />
           <div className="max-w-4xl mx-auto">
             <div className="space-y-6">
@@ -228,27 +228,45 @@ const SunriverSROAServices = () => {
                 },
                 {
                   step: "2",
-                  title: "Design, Renderings, & Form E Packet",
-                  timeline: "5–7 business days",
-                  description: "We create SROA-compliant design concepts, professional 2D/3D renderings, and prepare your complete Form E submission packet. Timeline varies depending on project size and complexity."
+                  title: "Engineering (if required)",
+                  timeline: "2–6 weeks",
+                  description: "When needed, we coordinate with an engineer to arrange a site visit and provide a structural review and stamped drawings. Once engineering is complete, we continue with the approval process."
                 },
                 {
                   step: "3",
-                  title: "SROA Design Committee Review",
-                  timeline: "2–3 weeks (variable)",
-                  description: "We submit your application to the SROA Design Committee. Review time depends on the committee schedule. We monitor progress and handle any revisions if requested."
+                  title: "Design, Renderings & Proposal",
+                  timeline: "1–3 weeks",
+                  description: "We prepare SROA-compliant designs and renderings, then once approved, a detailed proposal that includes your project estimate and preliminary timeline."
                 },
                 {
                   step: "4",
-                  title: "After SROA Approval",
-                  timeline: "Permit windows",
-                  description: "Once approved, the homeowner (or PRC on their behalf) has 12 months to pull the Deschutes County building permit. Once issued, the building permit is valid for 6 months of inactivity. We can request 3-month permit extensions as needed, depending on project timeline."
+                  title: "Tentative Scheduling",
+                  timeline: "Upon approval",
+                  description: "Once the design and proposal are approved, we schedule a tentative construction start date based on approvals and permitting timelines."
                 },
                 {
                   step: "5",
-                  title: "Final Inspection",
-                  timeline: "Upon completion",
-                  description: "We coordinate and schedule the final SROA inspections once construction is complete, ensuring your project is fully closed out and compliant."
+                  title: "SROA Design Committee Submission",
+                  timeline: "1–2 weeks, variable",
+                  description: "We submit the completed Form E and design package to the SROA Design Committee and coordinate any revisions if requested."
+                },
+                {
+                  step: "6",
+                  title: "Deschutes County Permitting",
+                  timeline: "6–10 weeks, variable",
+                  description: "We submit required plans and documentation to Deschutes County for building permits. Review timelines depend on project scope and county workloads."
+                },
+                {
+                  step: "7",
+                  title: "Final Scheduling & Construction Start",
+                  timeline: "Upon permit issuance",
+                  description: "Once permits are issued, we confirm your construction start date and begin work."
+                },
+                {
+                  step: "8",
+                  title: "Inspections & Project Closeout",
+                  timeline: "Throughout & at completion",
+                  description: "Deschutes County performs required inspections throughout construction and a final inspection upon completion. SROA conducts a final inspection once work is complete to ensure compliance with approved plans."
                 },
               ].map((item, index) => (
                 <div key={index} className="flex gap-6 items-start">
@@ -270,6 +288,9 @@ const SunriverSROAServices = () => {
                 </div>
               ))}
             </div>
+            <p className="text-center text-muted-foreground text-sm mt-8 italic">
+              All timelines are estimates and may vary based on project complexity, review schedules, and revision requests.
+            </p>
           </div>
         </div>
       </section>
@@ -344,7 +365,7 @@ const SunriverSROAServices = () => {
                 Trusted, Experienced Sunriver Contractor
               </h2>
               <p className="text-lg text-muted-foreground mb-6">
-                Our team has worked in Sunriver for years and is registered with SROA Community Development. As a trusted Sunriver construction company, we've completed multiple SROA-approved projects across decks, remodels, and exterior upgrades.
+                Our team has worked in Sunriver for a combined 42 years and is registered with SROA Community Development. As a trusted Sunriver construction company, we've completed multiple SROA-approved projects across decks, remodels, and exterior upgrades.
               </p>
               <p className="text-muted-foreground mb-8">
                 We ensure your design meets SROA standards and that the permitting and engineering process with Deschutes County is handled efficiently and correctly. When you need an experienced Sunriver contractor, Purple Rain Construction delivers.
@@ -370,6 +391,53 @@ const SunriverSROAServices = () => {
                 </Link>
               </Button>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SROA FAQ Section */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <SectionHeading
+            title="Frequently Asked Questions"
+            subtitle="Common questions about SROA approvals and Sunriver construction"
+          />
+          <div className="max-w-3xl mx-auto space-y-6">
+            {[
+              {
+                question: "Does every deck in Sunriver require engineering?",
+                answer: "No — not every deck requires engineering. Engineering is typically required when a deck exceeds certain height thresholds, includes complex structural elements, supports heavy loads (such as hot tubs or roof structures), or when required by Deschutes County building officials. We'll review your specific project and confirm whether engineering is needed before moving forward."
+              },
+              {
+                question: "If engineering is required, who provides it?",
+                answer: "When engineering is needed, we coordinate with a trusted local licensed engineering firm. Engineering services are provided directly by the engineer and are a separate cost from SROA design approval and permitting fees."
+              },
+              {
+                question: "Are SROA approval, engineering, and permits separate fees?",
+                answer: "Yes. These are separate components, and costs can vary depending on your project: SROA design & approval fee covers drawings, forms, and submission; Engineering fee (if required) is provided by a licensed engineer; Permit fees are set by Deschutes County. We clearly outline which items apply to your project before moving forward."
+              },
+              {
+                question: "Can you tell me upfront if my project needs engineering?",
+                answer: "In most cases, yes. During the design phase, we can usually determine whether engineering is required based on deck height, size and layout, site conditions, and county requirements. If engineering is needed, we'll explain why and outline next steps before proceeding."
+              },
+              {
+                question: "What does Deschutes County permitting typically involve?",
+                answer: "When required, Deschutes County permitting may include submitting construction plans and permit applications, providing material certifications and jobsite documentation, coordinating any required structural or mechanical permits, responding to plan review comments, and scheduling inspections. Permit requirements vary by project, and we'll guide you through what applies to yours."
+              },
+              {
+                question: "Do you handle the entire process for me?",
+                answer: "Yes. From initial design through SROA approval, permitting, and construction, we manage the process and coordinate with all required parties so you don't have to navigate it alone."
+              },
+              {
+                question: "What's the typical timeline for SROA approval?",
+                answer: "SROA review timelines vary depending on project complexity, submission completeness, and review cycles. We'll provide realistic timing expectations upfront and keep you informed throughout the approval process."
+              },
+            ].map((faq, index) => (
+              <div key={index} className="bg-muted p-6 rounded-xl border border-border">
+                <h3 className="text-lg font-semibold mb-3">{faq.question}</h3>
+                <p className="text-muted-foreground">{faq.answer}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

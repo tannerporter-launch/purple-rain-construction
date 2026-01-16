@@ -54,10 +54,10 @@ const SunriverDeckBuilder = () => {
       <section className="py-12 bg-muted border-y border-border">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <TrustBadge icon={TreePine} title="Sunriver Specialists" description="Local Expertise" />
             <TrustBadge icon={Shield} title="Licensed & Insured" description="CCB #247140" />
-            <TrustBadge icon={Hammer} title="TrexPro Builder" description="Certified Quality" />
-            <TrustBadge icon={Star} title="HOA Compliant" description="SROA Experience" />
+            <TrustBadge icon={Hammer} title="Trex Pro Builder" description="Certified" />
+            <TrustBadge icon={Star} title="TimberTech Pro" description="Certified" />
+            <TrustBadge icon={TreePine} title="SROA Compliance" description="Approval Experienced" />
           </div>
         </div>
       </section>
@@ -75,12 +75,12 @@ const SunriverDeckBuilder = () => {
               </p>
               <ul className="space-y-4 mb-8">
                 {[
-                  "Snow loads exceeding 60 lbs per square foot",
+                  "Engineering to accommodate Heavy Snow loads",
                   "Constant freeze-thaw cycles that stress materials",
-                  "Shaded lots that stay damp and prone to moisture damage",
-                  "SROA/ARC design guidelines and approval process",
+                  "Shaded areas that stay damp and prone to moisture damage",
+                  "SROA design guidelines and approval process",
+                  "Deschutes County (Structural) Permitting",
                   "High rental traffic that demands durable construction",
-                  "HOA requirements for aesthetics and materials",
                 ].map((item, index) => (
                   <li key={index} className="flex items-start gap-3">
                     <CheckCircle className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
@@ -116,7 +116,7 @@ const SunriverDeckBuilder = () => {
               {
                 icon: Hammer,
                 title: "New Deck Builds",
-                description: "Custom decks designed for snow loads, HOA compliance, and year-round outdoor living. From concept to final inspection.",
+                description: "Custom decks designed for snow loads, SROA compliance, and year-round outdoor living. From concept to final inspection.",
                 features: ["Snow load engineering", "SROA approval handling", "Composite & wood options"]
               },
               {
@@ -168,7 +168,7 @@ const SunriverDeckBuilder = () => {
             <div className="grid sm:grid-cols-3 gap-6 mb-12">
               {[
                 { title: "Remote Project Management", desc: "Manage your project from anywhere with online updates and approvals" },
-                { title: "HOA Handling", desc: "We navigate SROA/ARC approvals so you don't have to" },
+                { title: "SROA Handling", desc: "We navigate SROA approvals so you don't have to" },
                 { title: "Property Manager Coordination", desc: "We work directly with your property manager on scheduling" },
               ].map((item, index) => (
                 <div key={index} className="p-6 bg-muted rounded-xl">
@@ -306,7 +306,7 @@ const SunriverDeckBuilder = () => {
             {[
               { step: "1", title: "Consultation", desc: "We discuss your vision, assess your property, and understand your needs." },
               { step: "2", title: "Design & Estimate", desc: "Detailed design and transparent pricing tailored to Sunriver requirements." },
-              { step: "3", title: "HOA Approval", desc: "We handle all SROA/ARC submissions and coordinate with the HOA." },
+              { step: "3", title: "SROA Approval", desc: "We handle all SROA submissions and coordinate with the design committee." },
               { step: "4", title: "Construction", desc: "Quality construction with regular updates through our project portal." },
               { step: "5", title: "Final Walkthrough", desc: "We review everything together and ensure you're completely satisfied." },
             ].map((item, index) => (
@@ -359,14 +359,14 @@ const SunriverDeckBuilder = () => {
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {[
               {
-                quote: "Living in Portland, I was worried about managing a deck project in Sunriver. Purple Rain made it seamless—their project portal kept me updated on everything, and the final result exceeded expectations.",
-                name: "Jennifer K.",
-                type: "Remote Homeowner"
+                quote: "As a part-time resident, it was critical to find a contractor we could trust while we weren't in town. Purple Rain went above and beyond — delivering quality work, staying on budget, and providing outstanding communication with daily updates and photos. We highly recommend them.",
+                name: "D K",
+                type: "Google Review"
               },
               {
-                quote: "Our vacation rental needed a deck that could handle heavy use and Sunriver winters. Nicholas and team delivered exactly that. Two years later, it still looks brand new.",
-                name: "Mark & Susan T.",
-                type: "Vacation Rental Owner"
+                quote: "Purple Rain Construction completed a full home remodel and exterior deck while we were living out of state. The workmanship was excellent, communication was outstanding, and the project stayed on schedule and within budget. We recommend them without reservation.",
+                name: "Arthur D.",
+                type: "Google Review"
               },
             ].map((testimonial, index) => (
               <div key={index} className="bg-background p-8 rounded-2xl border border-border">
