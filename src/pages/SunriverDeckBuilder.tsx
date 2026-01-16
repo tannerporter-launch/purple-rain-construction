@@ -8,6 +8,7 @@ import project1After from "@/assets/decks/project-1-after.jpg";
 import project2After from "@/assets/decks/project-2-after.jpg";
 import olivieroKitchenFull1 from "@/assets/remodels/oliviero/kitchen-full-view-1.jpg";
 import sunriverDrivewayClear from "@/assets/snow-removal/sunriver-driveway-cleared.jpg";
+import sunriverDeckRebuild from "@/assets/decks/sunriver-deck-rebuild.jpg";
 const SunriverDeckBuilder = () => {
   return (
     <Layout>
@@ -94,8 +95,8 @@ const SunriverDeckBuilder = () => {
             </div>
             <div>
               <img
-                src={project2After}
-                alt="Finished composite deck by Purple Rain Construction"
+                src={sunriverDeckRebuild}
+                alt="Elevated Sunriver deck rebuild with engineered structural support"
                 className="rounded-2xl shadow-elegant"
                 loading="lazy"
               />
