@@ -6,7 +6,7 @@ import ServiceCard from "@/components/ui/ServiceCard";
 import TrustBadge from "@/components/ui/TrustBadge";
 import Layout from "@/components/layout/Layout";
 import LocalBusinessSchema from "@/components/seo/LocalBusinessSchema";
-import project1After from "@/assets/decks/project-1-after.jpg";
+import homepageHero from "@/assets/homepage-hero-old-mill.jpeg";
 import iconMonogramGradient from "@/assets/brand/icons/icon-monogram-gradient.png";
 import teamNicholasEd from "@/assets/brand/team-nicholas-ed.png";
 import heroPlowDawn from "@/assets/snow-removal/hero-plow-dawn.jpg";
@@ -42,8 +42,9 @@ const Index = () => {
     <Layout>
       <LocalBusinessSchema />
       {/* Hero Section - Above the Fold */}
-      <section className="relative min-h-[90vh] flex items-center bg-gradient-hero text-primary-foreground overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center opacity-20" style={{ backgroundImage: `url(${project1After})` }} />
+      <section className="relative min-h-[90vh] flex items-center text-white overflow-hidden">
+        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${homepageHero})` }} />
+        <div className="absolute inset-0 bg-black/30" />
         <div className="container mx-auto px-4 py-16 md:py-20 relative z-10">
           <div className="max-w-3xl">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight animate-fade-in">
