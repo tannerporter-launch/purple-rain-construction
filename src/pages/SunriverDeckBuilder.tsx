@@ -4,17 +4,18 @@ import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import SectionHeading from "@/components/ui/SectionHeading";
 import TrustBadge from "@/components/ui/TrustBadge";
-import project1After from "@/assets/decks/project-1-after.jpg";
 import project2After from "@/assets/decks/project-2-after.jpg";
 import olivieroKitchenFull1 from "@/assets/remodels/oliviero/kitchen-full-view-1.jpg";
 import sunriverDrivewayClear from "@/assets/snow-removal/sunriver-driveway-cleared.jpg";
 import sunriverDeckRebuild from "@/assets/decks/sunriver-deck-rebuild.jpg";
+import sunriverHeroHeader from "@/assets/decks/sunriver-hero-header.jpg";
+import sunriverSection2 from "@/assets/decks/sunriver-section-2.jpg";
 const SunriverDeckBuilder = () => {
   return (
     <Layout>
       {/* Hero */}
       <section className="relative py-24 bg-gradient-hero text-primary-foreground overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center opacity-20" style={{ backgroundImage: `url(${project1After})` }} />
+        <div className="absolute inset-0 bg-cover bg-center opacity-20" style={{ backgroundImage: `url(${sunriverHeroHeader})` }} />
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl">
             <div className="flex items-center gap-2 mb-4">
@@ -95,8 +96,8 @@ const SunriverDeckBuilder = () => {
             </div>
             <div>
               <img
-                src={sunriverDeckRebuild}
-                alt="Elevated Sunriver deck rebuild with engineered structural support"
+                src={sunriverSection2}
+                alt="Sunriver cabin with elevated deck among tall pines"
                 className="rounded-2xl shadow-elegant"
                 loading="lazy"
               />
