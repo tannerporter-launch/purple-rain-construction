@@ -401,7 +401,7 @@ const Decks = () => {
               },
               { 
                 src: deckAdditionAccessibility, 
-                alt: "Modern home with elevated deck, cable railings, and hot tub in Central Oregon",
+                alt: "Deck addition with hot tub support in Central Oregon",
                 caption: "Deck Addition & Accessibility Upgrade (Budget-Conscious)",
                 description: "Small deck addition connected to the existing structure to support a hot tub, with a built-in bench, hose access, and a simple privacy wall. Existing decking was sanded and repainted for a cohesive finish."
               },
