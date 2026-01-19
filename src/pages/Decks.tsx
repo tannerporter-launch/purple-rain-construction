@@ -27,7 +27,7 @@ const Decks = () => {
   const deckFAQs = [
     {
       question: "What does the average deck cost in Central Oregon?",
-      answer: "Deck costs in Central Oregon vary by size, materials, height, and site conditions. Custom, elevated, or multi-level decks cost more than basic ground-level builds, which is why pricing ranges apply."
+      answer: "Most decks in Central Oregon typically range from $18,000 to $45,000, depending on size, materials, height, railing style, and site conditions. Custom, elevated, or multi-level decks can exceed this range—particularly when engineering, complex stairs, specialty railings, or premium materials are involved."
     },
     {
       question: "Why do Sunriver decks cost more?",
@@ -283,10 +283,10 @@ const Decks = () => {
                 Material choice matters — but in Sunriver, proper design and construction matter even more.
               </p>
               <p className="text-lg text-primary-foreground/90 mb-6">
-                Sunriver decks face unique challenges: heavy snow loads that can exceed 60 lbs per square foot, constant moisture from snow and rain, freeze-thaw cycles that stress materials, and shaded lots that stay damp.
+                Sunriver decks face unique challenges: heavy snow loads that can exceed 60 lbs per square foot, constant moisture from snow and rain, freeze-thaw cycles that stress materials, and shaded lots that stay damp longer than other areas in Central Oregon.
               </p>
               <p className="text-primary-foreground/90 mb-8">
-                We design specifically for these conditions, following SROA guidelines while creating beautiful outdoor spaces that last. Whether your deck supports a hot tub, outdoor kitchen, or just needs to handle rental traffic—we build it right.
+                We account for these factors in every Sunriver project, designing decks that meet SROA guidelines while prioritizing long-term performance and safety. To learn more about Sunriver-specific requirements, approvals, and construction considerations, visit our <Link to="/sunriver-deck-builder" className="underline hover:text-background transition-colors">Sunriver Deck Builder</Link> page. Whether your deck needs to support a hot tub, outdoor kitchen, or regular rental traffic, our team builds with durability and longevity in mind.
               </p>
               <Button
                 asChild
