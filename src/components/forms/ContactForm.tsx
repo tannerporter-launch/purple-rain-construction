@@ -16,6 +16,7 @@ import {
 import { toast } from "sonner";
 import { Loader2 } from "lucide-react";
 import AnimatedCheckmark from "@/components/ui/AnimatedCheckmark";
+import { supabase } from "@/integrations/supabase/client";
 
 const formSchema = z.object({
   firstName: z.string().min(1, "First name is required").max(50),
@@ -79,19 +80,29 @@ const ContactForm = ({ defaultService, className = "" }: ContactFormProps) => {
   const onSubmit = async (data: FormData) => {
     setIsSubmitting(true);
     
-    // Prepare submission data with UTM tracking
-    const submissionData = {
-      ...data,
-      submittedAt: new Date().toISOString(),
-      userAgent: navigator.userAgent,
-    };
-    
-    // TODO: Connect to backend (Supabase/JobTread) when ready
-    // For now, log to console for testing
-    console.log("Form submission:", submissionData);
-    
-    // Simulate API delay
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    const { error } = await supabase.from('contact_submissions').insert({
+      first_name: data.firstName,
+      last_name: data.lastName,
+      email: data.email,
+      phone: data.phone,
+      city: data.city,
+      service_type: data.serviceType,
+      message: data.message,
+      source: data.source || null,
+      utm_source: data.utm_source || null,
+      utm_medium: data.utm_medium || null,
+      utm_campaign: data.utm_campaign || null,
+      utm_term: data.utm_term || null,
+      utm_content: data.utm_content || null,
+      landing_page: data.landing_page || null,
+      user_agent: navigator.userAgent,
+    });
+
+    if (error) {
+      toast.error("Something went wrong. Please try again or call us directly.");
+      setIsSubmitting(false);
+      return;
+    }
     
     setIsSubmitting(false);
     setIsSubmitted(true);

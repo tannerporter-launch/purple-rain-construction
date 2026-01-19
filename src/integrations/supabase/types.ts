@@ -14,7 +14,66 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      contact_submissions: {
+        Row: {
+          city: string
+          created_at: string
+          email: string
+          first_name: string
+          id: string
+          landing_page: string | null
+          last_name: string
+          message: string
+          phone: string
+          service_type: string
+          source: string | null
+          user_agent: string | null
+          utm_campaign: string | null
+          utm_content: string | null
+          utm_medium: string | null
+          utm_source: string | null
+          utm_term: string | null
+        }
+        Insert: {
+          city: string
+          created_at?: string
+          email: string
+          first_name: string
+          id?: string
+          landing_page?: string | null
+          last_name: string
+          message: string
+          phone: string
+          service_type: string
+          source?: string | null
+          user_agent?: string | null
+          utm_campaign?: string | null
+          utm_content?: string | null
+          utm_medium?: string | null
+          utm_source?: string | null
+          utm_term?: string | null
+        }
+        Update: {
+          city?: string
+          created_at?: string
+          email?: string
+          first_name?: string
+          id?: string
+          landing_page?: string | null
+          last_name?: string
+          message?: string
+          phone?: string
+          service_type?: string
+          source?: string | null
+          user_agent?: string | null
+          utm_campaign?: string | null
+          utm_content?: string | null
+          utm_medium?: string | null
+          utm_source?: string | null
+          utm_term?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
