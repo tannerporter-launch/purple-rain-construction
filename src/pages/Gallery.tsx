@@ -455,7 +455,7 @@ const projects = [
   },
   {
     id: 37,
-    title: "Back Patio & Outdoor Living",
+    title: "Full Home Remodel - Back Patio",
     category: "Remodels",
     location: "Central Oregon",
     image: olivieroBackPatio,
@@ -464,7 +464,7 @@ const projects = [
   },
   {
     id: 38,
-    title: "Renovated Barn – Portrait View",
+    title: "Full Home Remodel - Barn Portrait",
     category: "Remodels",
     location: "Central Oregon",
     image: olivieroBarnPortrait,
@@ -473,7 +473,7 @@ const projects = [
   },
   {
     id: 39,
-    title: "Barn with Property Context",
+    title: "Full Home Remodel - Barn Wide",
     category: "Remodels",
     location: "Central Oregon",
     image: olivieroBarnWide,
@@ -482,7 +482,7 @@ const projects = [
   },
   {
     id: 40,
-    title: "Front Door Craftsmanship Detail",
+    title: "Full Home Remodel - Front Door Detail",
     category: "Remodels",
     location: "Central Oregon",
     image: olivieroFrontDoor,
