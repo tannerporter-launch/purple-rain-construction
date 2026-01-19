@@ -14,8 +14,8 @@ import FAQSchema from "@/components/seo/FAQSchema";
 import project1After from "@/assets/decks/project-1-after.jpg";
 import project2After from "@/assets/decks/project-2-after.jpg";
 import deckTwinLakes from "@/assets/stock/deck-twin-lakes.jpeg";
-import deckPebbleGrey from "@/assets/stock/deck-pebble-grey.jpeg";
 // New deck project images
+import decksHeroHeader from "@/assets/decks/decks-hero-header.jpg";
 import upperBalconyRebuild from "@/assets/decks/upper-balcony-rebuild-after.jpg";
 import deckSurfaceCableRailing from "@/assets/decks/deck-surface-cable-railing.jpg";
 import sunriverDeckRebuild from "@/assets/decks/sunriver-deck-rebuild.jpg";
@@ -87,7 +87,7 @@ const Decks = () => {
       
       {/* Hero */}
       <section className="relative py-24 bg-gradient-hero text-primary-foreground overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center opacity-20" style={{ backgroundImage: `url(${deckPebbleGrey})` }} />
+        <div className="absolute inset-0 bg-cover bg-center opacity-20" style={{ backgroundImage: `url(${decksHeroHeader})` }} />
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6">
