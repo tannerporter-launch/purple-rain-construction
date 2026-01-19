@@ -24,6 +24,9 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import TrustBadge from "@/components/ui/TrustBadge";
 import project1After from "@/assets/decks/project-1-after.jpg";
 import project2After from "@/assets/decks/project-2-after.jpg";
+import sroaHeroHeader from "@/assets/sroa/sroa-hero-header.jpg";
+import sroaSection4 from "@/assets/sroa/sroa-section4.jpg";
+import sunriverRebuildEngineered from "@/assets/decks/sunriver-rebuild-engineered.jpg";
 
 const SunriverSROAServices = () => {
   return (
@@ -42,7 +45,7 @@ const SunriverSROAServices = () => {
 
       {/* Hero Section */}
       <section className="relative py-24 bg-gradient-hero text-primary-foreground overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center opacity-20" style={{ backgroundImage: `url(${project1After})` }} />
+        <div className="absolute inset-0 bg-cover bg-center opacity-20" style={{ backgroundImage: `url(${sroaHeroHeader})` }} />
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl">
             <div className="flex items-center gap-2 mb-4">
@@ -199,7 +202,7 @@ const SunriverSROAServices = () => {
             </div>
             <div>
               <img
-                src={project2After}
+                src={sroaSection4}
                 alt="SROA-approved deck project in Sunriver Oregon"
                 className="rounded-2xl shadow-elegant"
                 loading="lazy"
@@ -352,7 +355,7 @@ const SunriverSROAServices = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <img
-                src={project1After}
+                src={sunriverRebuildEngineered}
                 alt="Purple Rain Construction SROA-approved deck in Sunriver"
                 className="rounded-2xl shadow-elegant"
                 loading="lazy"
