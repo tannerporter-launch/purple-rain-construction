@@ -153,7 +153,7 @@ const projects = [
   // Gilchrest A-Frame Remodel entries
   {
     id: 6,
-    title: "A-Frame Front Transformation",
+    title: "A-Frame Remodel",
     category: "Remodels",
     location: "Gilchrest Area, Central Oregon",
     image: gilchrestFrontSymmetrical,

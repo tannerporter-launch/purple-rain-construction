@@ -135,7 +135,7 @@ const Decks = () => {
                 {[
                   "Built to handle Central Oregon's freeze-thaw cycles",
                   "High-strength framing and fasteners for heavy snow loads",
-                  "Composite decking options as a certified TrexPro builder",
+                  "Composite decking options as a certified TimberTech and TrexPro builder",
                   "Code-compliant and weather-tested designs",
                   "Premium flashing and waterproofing techniques",
                   "Proper ventilation to prevent moisture damage",
