@@ -10,7 +10,7 @@ import homepageHero from "@/assets/homepage-hero-old-mill.jpeg";
 import iconMonogramGradient from "@/assets/brand/icons/icon-monogram-gradient.png";
 import teamNicholasEd from "@/assets/brand/team-nicholas-ed.png";
 import heroPlowDawn from "@/assets/snow-removal/hero-plow-dawn.jpg";
-import deckStockPhoto from "@/assets/stock/deck-twin-lakes-2.jpeg";
+import deckStockPhoto from "@/assets/stock/timbertech-deck-forest.jpeg";
 import remodelExterior from "@/assets/stock/exterior-final-front.jpeg";
 // JobTread portal images
 import jobtreadCommunications from "@/assets/jobtread/communications.png";
