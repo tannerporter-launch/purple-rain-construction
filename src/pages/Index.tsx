@@ -7,12 +7,11 @@ import TrustBadge from "@/components/ui/TrustBadge";
 import Layout from "@/components/layout/Layout";
 import LocalBusinessSchema from "@/components/seo/LocalBusinessSchema";
 import project1After from "@/assets/decks/project-1-after.jpg";
-import elkeFrenchDoorMain from "@/assets/remodels/elke-french-doors/main.webp";
 import iconMonogramGradient from "@/assets/brand/icons/icon-monogram-gradient.png";
 import teamNicholasEd from "@/assets/brand/team-nicholas-ed.png";
 import heroPlowDawn from "@/assets/snow-removal/hero-plow-dawn.jpg";
-import deckTwinLakes from "@/assets/stock/deck-twin-lakes.jpeg";
-import olivieroFullHomeDeck from "@/assets/decks/oliviero-full-home-deck.jpg";
+import deckStockPhoto from "@/assets/stock/deck-twin-lakes-2.jpeg";
+import remodelExterior from "@/assets/stock/exterior-final-front.jpeg";
 // JobTread portal images
 import jobtreadCommunications from "@/assets/jobtread/communications.png";
 import jobtreadDailyLogs from "@/assets/jobtread/daily-logs.png";
@@ -121,7 +120,7 @@ const Index = () => {
               description="High-performance decks built for Central Oregon weather."
               href="/decks"
               icon={Hammer}
-              image={olivieroFullHomeDeck}
+              image={deckStockPhoto}
               ctaText="Learn More → Decks"
             />
             <ServiceCard
@@ -129,7 +128,7 @@ const Index = () => {
               description="Bathroom and kitchen remodels, full home renovations, and select commercial projects."
               href="/remodeling"
               icon={HomeIcon}
-              image={elkeFrenchDoorMain}
+              image={remodelExterior}
               ctaText="View Remodeling Services"
             />
             <ServiceCard
@@ -275,7 +274,7 @@ const Index = () => {
           <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
             <div className="order-2 lg:order-1">
               <img
-                src={deckTwinLakes}
+                src={deckStockPhoto}
                 alt="Composite deck with mountain views - built for Sunriver living"
                 className="rounded-2xl shadow-lg w-full"
                 loading="lazy"
