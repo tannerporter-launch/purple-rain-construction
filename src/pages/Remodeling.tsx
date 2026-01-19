@@ -4,9 +4,11 @@ import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import SectionHeading from "@/components/ui/SectionHeading";
 import ServiceSchema from "@/components/seo/ServiceSchema";
+import BeforeAfterSlider from "@/components/ui/BeforeAfterSlider";
 import elkeMain from "@/assets/remodels/elke-french-doors/main.webp";
 // Gilchrest A-Frame imports
 import gilchrestFrontAfter from "@/assets/remodels/gilchrest-a-frame/3-front-after.jpg";
+import gilchrestFrontBefore from "@/assets/remodels/gilchrest-a-frame/3-front-before.jpg";
 import gilchrestKitchenAfter from "@/assets/remodels/gilchrest-a-frame/5-kitchen-after.jpg";
 import gilchrestStairsAfter from "@/assets/remodels/gilchrest-a-frame/1-stairs-after.jpg";
 import gilchrestSideAfter from "@/assets/remodels/gilchrest-a-frame/2-side-exterior-after.jpg";
@@ -152,11 +154,12 @@ const Remodeling = () => {
               </ul>
             </div>
             <div>
-              <img
-                src={gilchrestKitchenAfter}
-                alt="Modern kitchen with live-edge counter and exposed beams – Gilchrest A-Frame Remodel"
-                className="rounded-2xl shadow-elegant"
-                loading="lazy"
+              <BeforeAfterSlider
+                beforeImage={gilchrestFrontBefore}
+                afterImage={gilchrestFrontAfter}
+                beforeAlt="A-Frame home before renovation"
+                afterAlt="A-Frame home after complete renovation by Purple Rain Construction"
+                className="aspect-[4/3]"
               />
             </div>
           </div>

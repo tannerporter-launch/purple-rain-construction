@@ -247,10 +247,10 @@ const projects = [
     tags: ["Remodels"],
     description: "Detailed view of vaulted ceiling and modern fan"
   },
-  // Oliviero Remodel entries
+  // Full Home Remodel (Oliviero) entries
   {
     id: 15,
-    title: "Oliviero Front Exterior Transformation",
+    title: "Full Home Remodel - Front Exterior",
     category: "Remodels",
     location: "Central Oregon",
     image: olivieroFrontAfter,
@@ -260,7 +260,7 @@ const projects = [
   },
   {
     id: 16,
-    title: "Oliviero Side Elevation & Patio",
+    title: "Full Home Remodel - Side & Patio",
     category: "Remodels",
     location: "Central Oregon",
     image: olivieroSideAfter,
@@ -270,7 +270,7 @@ const projects = [
   },
   {
     id: 17,
-    title: "Modern Farmhouse Kitchen Remodel",
+    title: "Full Home Remodel - Kitchen",
     category: "Remodels",
     location: "Central Oregon",
     image: olivieroKitchenAfter,
@@ -296,10 +296,10 @@ const projects = [
     tags: ["Remodels"],
     description: "Full bar setup with metal stools and covered patio entertainment space"
   },
-  // Oliviero Kitchen Expanded Gallery entries
+  // Full Home Remodel - Kitchen Expanded Gallery entries
   {
     id: 20,
-    title: "Oliviero Kitchen – Living Entry View",
+    title: "Full Home Remodel - Kitchen Entry View",
     category: "Remodels",
     location: "Central Oregon",
     image: olivieroKitchenEntry,
@@ -308,7 +308,7 @@ const projects = [
   },
   {
     id: 21,
-    title: "Oliviero Kitchen – Full Overview",
+    title: "Full Home Remodel - Kitchen Overview",
     category: "Remodels",
     location: "Central Oregon",
     image: olivieroKitchenFull1,
@@ -351,10 +351,10 @@ const projects = [
     tags: ["Remodels"],
     description: "Custom fold-out bar window with mountain-scene metal art and black exterior accents"
   },
-  // Oliviero Living Room & Additional Details
+  // Full Home Remodel - Living Room & Additional Details
   {
     id: 26,
-    title: "Oliviero Living Room – Farmhouse Style",
+    title: "Full Home Remodel - Living Room",
     category: "Remodels",
     location: "Central Oregon",
     image: olivieroLivingRoom,
@@ -379,10 +379,10 @@ const projects = [
     tags: ["Remodels"],
     description: "Evening ambiance with string lights visible through windows and polished counters"
   },
-  // Oliviero Exterior & Before/After Gallery
+  // Full Home Remodel - Exterior & Before/After Gallery
   {
     id: 29,
-    title: "Oliviero Property – Full Exterior View",
+    title: "Full Home Remodel - Property View",
     category: "Remodels",
     location: "Central Oregon",
     image: olivieroExteriorHero,
@@ -425,10 +425,10 @@ const projects = [
     tags: ["Remodels"],
     description: "Original workshop/shed before modern farmhouse transformation"
   },
-  // Oliviero Exterior Expanded Gallery
+  // Full Home Remodel - Exterior Expanded Gallery
   {
     id: 34,
-    title: "Oliviero Front Porch Entry",
+    title: "Full Home Remodel - Front Porch",
     category: "Remodels",
     location: "Central Oregon",
     image: olivieroFrontPorch,
@@ -489,10 +489,10 @@ const projects = [
     tags: ["Remodels"],
     description: "Handcrafted entry door with knotty alder wood, glass panes, and industrial pendant fixture"
   },
-  // Oliviero Interior & Property Expanded
+  // Full Home Remodel - Interior & Property Expanded
   {
     id: 41,
-    title: "Oliviero Kitchen – Island to Dining View",
+    title: "Full Home Remodel - Kitchen Island View",
     category: "Remodels",
     location: "Central Oregon",
     image: olivieroKitchenIsland,
@@ -501,7 +501,7 @@ const projects = [
   },
   {
     id: 42,
-    title: "Living Room – Stove Wall & Dining Connection",
+    title: "Full Home Remodel - Stove Wall",
     category: "Remodels",
     location: "Central Oregon",
     image: olivieroLivingStove,
@@ -510,7 +510,7 @@ const projects = [
   },
   {
     id: 43,
-    title: "Oliviero Property – Wide Lawn Perspective",
+    title: "Full Home Remodel - Property Wide View",
     category: "Remodels",
     location: "Central Oregon",
     image: olivieroPropertyWide,
@@ -519,7 +519,7 @@ const projects = [
   },
   {
     id: 44,
-    title: "Oliviero Exterior – Front Lawn View",
+    title: "Full Home Remodel - Front Lawn",
     category: "Remodels",
     location: "Central Oregon",
     image: olivieroExteriorFrontLawn,
