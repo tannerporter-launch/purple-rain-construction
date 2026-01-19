@@ -15,6 +15,11 @@ import gilchrestKitchenAfter from "@/assets/remodels/gilchrest-a-frame/5-kitchen
 import olivieroKitchenFull1 from "@/assets/remodels/oliviero/kitchen-full-view-1.jpg";
 import olivieroKitchenSink from "@/assets/remodels/oliviero/kitchen-farmhouse-sink.jpg";
 import olivieroLivingRoom from "@/assets/remodels/oliviero/living-room-farmhouse.jpg";
+// New bathroom images
+import walkInShower from "@/assets/remodels/bathroom/walk-in-shower.jpg";
+import patternedTileShower from "@/assets/remodels/bathroom/patterned-tile-shower.jpg";
+import doubleVanity from "@/assets/remodels/bathroom/double-vanity.jpg";
+import freestandingTub from "@/assets/remodels/bathroom/freestanding-tub.jpg";
 
 const BathroomRemodels = () => {
   const bathroomFAQs = [
@@ -62,14 +67,12 @@ const BathroomRemodels = () => {
     },
   ];
 
-  // Gallery images with captions (placeholders for now - pending actual bathroom photos)
+  // Gallery images with captions - actual bathroom photos
   const galleryImages = [
-    { src: gilchrestStairsAfter, alt: "Modern stairwell with dark beams and metal railing – Gilchrest A-Frame Remodel", caption: "Full Bathroom Remodel - Walk-In Shower" },
-    { src: gilchrestFrontAfter, alt: "A-Frame home exterior after complete renovation", caption: "Patterned Tile Shower" },
-    { src: gilchrestKitchenAfter, alt: "Modern kitchen with live-edge counter and exposed beams – Gilchrest A-Frame Remodel", caption: "Double Vanity Bathroom Remodel" },
-    { src: olivieroKitchenFull1, alt: "Modern farmhouse kitchen with shiplap walls, white cabinetry, and patterned backsplash", caption: "Full Bathroom Remodel" },
-    { src: olivieroLivingRoom, alt: "Farmhouse living room with wood stove and rustic charm", caption: "Custom vanity with quartz countertop" },
-    { src: olivieroKitchenSink, alt: "Farmhouse sink with window view in modern kitchen", caption: "Modern plumbing fixtures" },
+    { src: walkInShower, alt: "Full bathroom remodel with custom walk-in shower", caption: "Full Bathroom Remodel - Walk-In Shower", description: "Complete bathroom demolition and remodel featuring a custom walk-in shower, full-height tile installation, and modern fixtures." },
+    { src: patternedTileShower, alt: "Custom tile shower with patterned accent tile", caption: "Patterned Tile Shower", description: "Custom tile shower featuring patterned accent tile and professional waterproofing systems." },
+    { src: doubleVanity, alt: "Double vanity bathroom remodel with quartz countertop", caption: "Double Vanity Bathroom Remodel", description: "Double vanity bathroom remodel with custom storage, quartz countertop, and modern plumbing fixtures." },
+    { src: freestandingTub, alt: "Full bathroom remodel with freestanding tub", caption: "Full Bathroom Remodel", description: "Full bathroom remodel featuring a freestanding tub with wall-mounted shower, custom vanity, patterned tile flooring, and modern fixtures." },
   ];
 
   return (
@@ -78,7 +81,7 @@ const BathroomRemodels = () => {
       <section className="relative py-24 md:py-32 overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center" 
-          style={{ backgroundImage: `url(${gilchrestFrontAfter})` }} 
+          style={{ backgroundImage: `url(${walkInShower})` }} 
         />
         <div className="absolute inset-0 bg-primary/70" />
         <div className="container mx-auto px-4 relative z-10">
@@ -116,8 +119,8 @@ const BathroomRemodels = () => {
       {/* Full-Width Image Break - After Hero */}
       <section className="relative h-64 md:h-80 lg:h-96">
         <img
-          src={olivieroKitchenFull1}
-          alt="Modern home remodel with quality craftsmanship"
+          src={patternedTileShower}
+          alt="Custom patterned tile shower installation"
           className="w-full h-full object-cover"
           loading="lazy"
         />
@@ -140,8 +143,8 @@ const BathroomRemodels = () => {
             </div>
             <div>
               <img
-                src={gilchrestStairsAfter}
-                alt="Modern stairwell remodel showcasing quality craftsmanship in Central Oregon"
+                src={doubleVanity}
+                alt="Double vanity bathroom remodel showcasing quality craftsmanship in Central Oregon"
                 className="rounded-2xl shadow-elegant w-full"
                 loading="lazy"
               />
@@ -226,23 +229,23 @@ const BathroomRemodels = () => {
       {/* Gallery with Captions */}
       <section className="py-20 bg-muted">
         <div className="container mx-auto px-4">
-          <p className="text-center text-muted-foreground mb-4">
-            See examples of our remodeling work—bathroom photos coming soon.
-          </p>
           <SectionHeading
-            title="Bathroom & Remodel Gallery"
+            title="Bathroom Remodel Gallery"
             subtitle="Quality craftsmanship in Central Oregon"
           />
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {galleryImages.map((img, index) => (
-              <div key={index} className="group">
+              <div key={index} className="bg-background rounded-2xl overflow-hidden border border-border">
                 <img
                   src={img.src}
                   alt={img.alt}
-                  className="rounded-xl aspect-video object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-full aspect-[4/3] object-cover"
                   loading="lazy"
                 />
-                <p className="text-sm text-muted-foreground mt-2 text-center">{img.caption}</p>
+                <div className="p-4">
+                  <h3 className="font-semibold text-foreground mb-1">{img.caption}</h3>
+                  <p className="text-sm text-muted-foreground">{img.description}</p>
+                </div>
               </div>
             ))}
           </div>

@@ -306,10 +306,10 @@ const SunriverDeckBuilder = () => {
           <div className="grid md:grid-cols-5 gap-6">
             {[
               { step: "1", title: "Consultation", desc: "We discuss your vision, assess your property, and understand your needs." },
-              { step: "2", title: "Design & Estimate", desc: "Detailed design and transparent pricing tailored to Sunriver requirements." },
-              { step: "3", title: "SROA Approval", desc: "We handle all SROA submissions and coordinate with the design committee." },
-              { step: "4", title: "Construction", desc: "Quality construction with regular updates through our project portal." },
-              { step: "5", title: "Final Walkthrough", desc: "We review everything together and ensure you're completely satisfied." },
+              { step: "2", title: "Design & Engineering", desc: "We create a detailed design tailored to your home and any Sunriver or HOA requirements. When needed, we coordinate with a trusted local engineering partner to ensure code compliance." },
+              { step: "3", title: "HOA & Permits", desc: "We manage SROA approvals and submit required plans and documents to Deschutes County for permitting." },
+              { step: "4", title: "Construction", desc: "Quality construction with regular updates to scheduling, change orders and daily logs through our project portal." },
+              { step: "5", title: "Final Walk Through", desc: "We walk the job together to ensure all work has been completed and you are highly satisfied with the project." },
             ].map((item, index) => (
               <div key={index} className="text-center">
                 <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground font-bold text-xl flex items-center justify-center mx-auto mb-4">

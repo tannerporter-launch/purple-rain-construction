@@ -21,6 +21,12 @@ import deckSurfaceCableRailing from "@/assets/decks/deck-surface-cable-railing.j
 import sunriverDeckRebuild from "@/assets/decks/sunriver-deck-rebuild.jpg";
 import deckAdditionHotTub from "@/assets/decks/deck-addition-hot-tub.jpg";
 import timbertechEnglishWalnut from "@/assets/decks/timbertech-english-walnut.jpg";
+// New downloaded images
+import sunriverSectionDeck from "@/assets/decks/sunriver-section-deck.jpg";
+import structuralRepairRefresh from "@/assets/decks/structural-repair-refresh.jpg";
+import deckRefinishRailing from "@/assets/decks/deck-refinish-railing.jpg";
+import sunriverRebuildEngineered from "@/assets/decks/sunriver-rebuild-engineered.jpg";
+import deckAdditionAccessibility from "@/assets/decks/deck-addition-accessibility.jpg";
 
 const Decks = () => {
   // Updated FAQs - removed 3 as specified, reordered
@@ -301,7 +307,7 @@ const Decks = () => {
             </div>
             <div>
               <img
-                src={deckTwinLakes}
+                src={sunriverSectionDeck}
                 alt="Composite deck built for Sunriver conditions"
                 className="rounded-2xl shadow-lg"
                 loading="lazy"
@@ -367,7 +373,7 @@ const Decks = () => {
             title="Recent Deck Projects"
             subtitle="See examples of our work across Central Oregon."
           />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
             {[
               { 
                 src: upperBalconyRebuild, 
@@ -376,22 +382,28 @@ const Decks = () => {
                 description: "County-permitted rebuild with accented handrails, integrated into a larger remodel that added an outdoor bar and patio living space below."
               },
               { 
-                src: deckSurfaceCableRailing, 
+                src: structuralRepairRefresh, 
+                alt: "Structural repair and deck refresh in Central Oregon",
+                caption: "Structural Repair & Deck Refresh (Price-Conscious Solution)",
+                description: "Replaced deteriorated log columns, repaired framing as needed, refinished decking with select board replacement, and installed new handrails."
+              },
+              { 
+                src: deckRefinishRailing, 
                 alt: "Deck refinish and railing upgrade in Central Oregon",
                 caption: "Deck Refinish & Railing Upgrade",
                 description: "Refinished and stained existing deck boards with selective replacements, paired with new modern handrails for a clean, updated look."
               },
               { 
-                src: sunriverDeckRebuild, 
+                src: sunriverRebuildEngineered, 
                 alt: "Sunriver deck rebuild engineered and permitted",
                 caption: "Sunriver Deck Rebuild — Engineered & Permitted",
                 description: "Full demolition due to extensive dry rot, followed by an engineered, county- and SROA-approved rebuild. Planned as a phased project to help manage costs over time."
               },
               { 
-                src: deckAdditionHotTub, 
+                src: deckAdditionAccessibility, 
                 alt: "Deck addition with hot tub support in Central Oregon",
-                caption: "Deck Addition & Accessibility Upgrade",
-                description: "Small deck addition connected to the existing structure to support a hot tub, with a built-in bench, hose access, and a simple privacy wall."
+                caption: "Deck Addition & Accessibility Upgrade (Budget-Conscious)",
+                description: "Small deck addition connected to the existing structure to support a hot tub, with a built-in bench, hose access, and a simple privacy wall. Existing decking was sanded and repainted for a cohesive finish."
               },
             ].map((img, index) => (
               <div key={index} className="bg-background rounded-2xl overflow-hidden border border-border">
