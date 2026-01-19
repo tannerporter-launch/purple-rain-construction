@@ -5,7 +5,7 @@ import Layout from "@/components/layout/Layout";
 import ServiceCard from "@/components/ui/ServiceCard";
 import SectionHeading from "@/components/ui/SectionHeading";
 import LocalBusinessSchema from "@/components/seo/LocalBusinessSchema";
-import project1After from "@/assets/decks/project-1-after.jpg";
+import sunriverSectionDeck from "@/assets/decks/sunriver-section-deck.jpg";
 import gilchrestCeilingFan from "@/assets/remodels/gilchrest-a-frame/ceiling-detail-fan.jpg";
 import olivieroKitchenAfter from "@/assets/remodels/oliviero/3-kitchen-after.jpg";
 import heroPlowDawn from "@/assets/snow-removal/hero-plow-dawn.jpg";
@@ -35,7 +35,7 @@ const Services = () => {
               description="Custom decks designed and built for Central Oregon's climate. New construction, replacements, repairs, and railing upgrades. TrexPro certified for composite decking."
               href="/decks"
               icon={Hammer}
-              image={project1After}
+              image={sunriverSectionDeck}
             />
             <ServiceCard
               title="Home Remodeling"
