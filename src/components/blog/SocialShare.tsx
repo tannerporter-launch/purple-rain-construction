@@ -27,8 +27,8 @@ const SocialShare = ({ url, title, excerpt, variant = "default" }: SocialSharePr
           text: excerpt,
           url,
         });
-      } catch (err) {
-        console.log("Share cancelled");
+      } catch {
+        // Share cancelled - silent fail is acceptable
       }
     }
   };
