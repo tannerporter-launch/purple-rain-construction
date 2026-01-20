@@ -1,6 +1,7 @@
 import { useParams, Link, Navigate } from "react-router-dom";
-import { useRef } from "react";
+import { useRef, useMemo } from "react";
 import { Helmet } from "react-helmet-async";
+import DOMPurify from "dompurify";
 import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Calendar, Clock, ArrowLeft, Phone, ArrowRight, CheckCircle2 } from "lucide-react";
@@ -9,7 +10,6 @@ import TableOfContents from "@/components/blog/TableOfContents";
 import MobileTableOfContents from "@/components/blog/MobileTableOfContents";
 import SocialShare from "@/components/blog/SocialShare";
 import RelatedPosts from "@/components/blog/RelatedPosts";
-
 // Comprehensive markdown parser for blog content
 const parseMarkdown = (content: string): string => {
   let html = content.trim();
@@ -656,7 +656,12 @@ const BlogPost = () => {
               
               <div className="article-content bg-card rounded-xl border border-border/50 p-6 md:p-10 shadow-sm">
                 <div 
-                  dangerouslySetInnerHTML={{ __html: parseMarkdown(post.content) }}
+                  dangerouslySetInnerHTML={{ 
+                    __html: DOMPurify.sanitize(parseMarkdown(post.content), {
+                      ALLOWED_TAGS: ['h2', 'h3', 'p', 'ul', 'ol', 'li', 'strong', 'em', 'code', 'blockquote', 'br', 'table', 'thead', 'tbody', 'tr', 'th', 'td', 'div', 'span'],
+                      ALLOWED_ATTR: ['class', 'id'],
+                    })
+                  }}
                 />
               </div>
             </article>
