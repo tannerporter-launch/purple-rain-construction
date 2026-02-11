@@ -1,32 +1,35 @@
 
 
-# Add Bend Chamber of Commerce Member Badge
+## Replace Section 5 Sunriver Photo on Homepage
 
-## What Changes
+### What Changes
 
-Add "Bend Chamber of Commerce Member" as a trust credential on the homepage, consistent with how CCB, BBB, and COBA are already displayed.
+Replace the current Sunriver deck image (Section 5: "Decks Built for Sunriver Living") on the homepage with the new image provided: `Decks_Built_for_Sunriver_Living.jpg`
 
-## Implementation
+### Implementation Steps
 
-### File: `src/pages/Index.tsx`
+**Step 1: Copy the image to the project**
+- Copy `user-uploads://Decks_Built_for_Sunriver_Living.jpg` to `src/assets/decks/sunriver-section-5.jpg`
+- This follows the existing naming convention (sunriver-section-*.jpg) and preserves the asset organization
 
-**Update the Trust Badges row (Section: Quick Trust Indicators, lines 83-109)**
+**Step 2: Update Index.tsx**
+- Add new import at line 14 (after the existing stock photo imports):
+  ```typescript
+  import sunriverSection5 from "@/assets/decks/sunriver-section-5.jpg";
+  ```
+- Update line 278 in the Sunriver section to use the new image:
+  - Change: `src={deckStockPhoto}`
+  - To: `src={sunriverSection5}`
+- Update the alt text to be more descriptive of the new image content:
+  - Current: `"Composite deck with mountain views - built for Sunriver living"`
+  - New: `"Modern elevated deck with composite decking, mountain forest views, and glass railing - custom-built for Sunriver living"`
 
-Add "Bend Chamber of Commerce Member" to one of the existing trust badges. The most logical placement is to update the "Family-Owned & Local" badge description from "Central Oregon Based" to "Central Oregon Based | Bend Chamber Member", or add a 5th badge.
+### What Stays Unchanged
+- All other homepage sections (Hero, Trust Badges, Services, JobTread, Testimonials, etc.)
+- Section 5 layout, styling, text content, and buttons
+- Image styling (rounded-2xl shadow, lazy loading, responsive sizing)
+- All existing imports for other images
 
-Since the current grid is `grid-cols-2 md:grid-cols-4` with exactly 4 items, the cleanest approach is to append the Bend Chamber mention to the existing "Family-Owned & Local" badge description:
-
-- Change the `description` prop of the second TrustBadge from `"Central Oregon Based"` to `"Central Oregon Based · Bend Chamber Member"`
-
-This keeps the 4-column grid intact, adds the credential prominently, and requires a single line change.
-
-### What stays unchanged
-- All other TrustBadge items (Licensed/Bonded/Insured, Decks/Remodels/Snow, Transparent Estimates)
-- Grid layout, spacing, styling, and responsiveness
-- All other homepage sections
-- Footer credentials display
-
-## Waiting on You (Separate from This Plan)
-
-Once you upload the 3 replacement photos (Deck service card, Remodel service card, Sunriver section), I will swap them in immediately — no other changes needed, just image source replacements.
+### Image Quality Notes
+The new image is a professional photograph of a composite deck with modern styling, mountain forest backdrop, and seating areas — perfect for the "Decks Built for Sunriver Living" section. It shows premium deck craftsmanship in a Sunriver setting.
 
