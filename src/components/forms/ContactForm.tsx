@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -18,6 +18,8 @@ import { Loader2 } from "lucide-react";
 import AnimatedCheckmark from "@/components/ui/AnimatedCheckmark";
 import { supabase } from "@/integrations/supabase/client";
 
+const RECAPTCHA_SITE_KEY = "6LeyLOIrAAAAAO5mcC_IVQiEBRO1tUhmhuitZzaY";
+
 const formSchema = z.object({
   firstName: z.string().min(1, "First name is required").max(50),
   lastName: z.string().min(1, "Last name is required").max(50),
@@ -27,7 +29,6 @@ const formSchema = z.object({
   serviceType: z.string().min(1, "Please select a service type"),
   message: z.string().min(10, "Please provide more details about your project").max(1000),
   source: z.string().optional(),
-  // Hidden UTM tracking fields
   utm_source: z.string().optional(),
   utm_medium: z.string().optional(),
   utm_campaign: z.string().optional(),
@@ -43,23 +44,34 @@ interface ContactFormProps {
   className?: string;
 }
 
-// Helper to get UTM params from URL
 const getUtmParams = () => {
-  if (typeof window === 'undefined') return {};
+  if (typeof window === "undefined") return {};
   const params = new URLSearchParams(window.location.search);
   return {
-    utm_source: params.get('utm_source') || '',
-    utm_medium: params.get('utm_medium') || '',
-    utm_campaign: params.get('utm_campaign') || '',
-    utm_term: params.get('utm_term') || '',
-    utm_content: params.get('utm_content') || '',
+    utm_source: params.get("utm_source") || "",
+    utm_medium: params.get("utm_medium") || "",
+    utm_campaign: params.get("utm_campaign") || "",
+    utm_term: params.get("utm_term") || "",
+    utm_content: params.get("utm_content") || "",
     landing_page: window.location.pathname,
   };
 };
 
+// Declare grecaptcha on window for TypeScript
+declare global {
+  interface Window {
+    grecaptcha: {
+      ready: (cb: () => void) => void;
+      execute: (siteKey: string, options: { action: string }) => Promise<string>;
+      render: (container: string | HTMLElement, params: Record<string, unknown>) => number;
+    };
+  }
+}
+
 const ContactForm = ({ defaultService, className = "" }: ContactFormProps) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const recaptchaLoaded = useRef(false);
 
   const utmParams = getUtmParams();
 
@@ -77,10 +89,69 @@ const ContactForm = ({ defaultService, className = "" }: ContactFormProps) => {
     },
   });
 
+  // Load reCAPTCHA script on mount (functional cookie, always loads)
+  useEffect(() => {
+    if (recaptchaLoaded.current) return;
+    if (document.querySelector(`script[src*="recaptcha/api.js"]`)) {
+      recaptchaLoaded.current = true;
+      return;
+    }
+    const script = document.createElement("script");
+    script.src = `https://www.google.com/recaptcha/api.js?render=${RECAPTCHA_SITE_KEY}`;
+    script.async = true;
+    script.defer = true;
+    document.head.appendChild(script);
+    recaptchaLoaded.current = true;
+  }, []);
+
+  const executeRecaptcha = useCallback((): Promise<string> => {
+    return new Promise((resolve, reject) => {
+      if (!window.grecaptcha) {
+        reject(new Error("reCAPTCHA not loaded"));
+        return;
+      }
+      window.grecaptcha.ready(() => {
+        window.grecaptcha
+          .execute(RECAPTCHA_SITE_KEY, { action: "submit_contact" })
+          .then(resolve)
+          .catch(reject);
+      });
+    });
+  }, []);
+
   const onSubmit = async (data: FormData) => {
     setIsSubmitting(true);
-    
-    const { error } = await supabase.from('contact_submissions').insert({
+
+    // Step 1: Execute reCAPTCHA challenge
+    let recaptchaToken: string;
+    try {
+      recaptchaToken = await executeRecaptcha();
+    } catch {
+      toast.error("Security verification failed. Please try again.");
+      setIsSubmitting(false);
+      return;
+    }
+
+    // Step 2: Verify token with backend
+    try {
+      const { data: verifyResult, error: verifyError } = await supabase.functions.invoke(
+        "verify-recaptcha",
+        { body: { token: recaptchaToken } }
+      );
+
+      if (verifyError || !verifyResult?.success) {
+        toast.error("Security verification failed. Please try again.");
+        setIsSubmitting(false);
+        return;
+      }
+    } catch {
+      toast.error("Security verification failed. Please try again.");
+      setIsSubmitting(false);
+      return;
+    }
+
+    // Step 3: Submit to database
+    const { error } = await supabase.from("contact_submissions").insert({
       first_name: data.firstName,
       last_name: data.lastName,
       email: data.email,
@@ -96,6 +167,7 @@ const ContactForm = ({ defaultService, className = "" }: ContactFormProps) => {
       utm_content: data.utm_content || null,
       landing_page: data.landing_page || null,
       user_agent: navigator.userAgent,
+      recaptcha_token: recaptchaToken,
     });
 
     if (error) {
@@ -103,7 +175,7 @@ const ContactForm = ({ defaultService, className = "" }: ContactFormProps) => {
       setIsSubmitting(false);
       return;
     }
-    
+
     setIsSubmitting(false);
     setIsSubmitted(true);
     toast.success("Thank you! We'll be in touch within 24 hours.");
@@ -120,8 +192,8 @@ const ContactForm = ({ defaultService, className = "" }: ContactFormProps) => {
         <p className="text-muted-foreground mb-6 animate-fade-in" style={{ animationDelay: "0.2s" }}>
           We've received your request and will contact you within 24 hours.
         </p>
-        <Button 
-          onClick={() => setIsSubmitted(false)} 
+        <Button
+          onClick={() => setIsSubmitted(false)}
           variant="outline"
           className="animate-fade-in"
           style={{ animationDelay: "0.4s" }}

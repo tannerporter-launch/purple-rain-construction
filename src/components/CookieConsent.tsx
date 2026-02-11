@@ -21,15 +21,40 @@ const getStoredConsent = (): ConsentState | null => {
   }
 };
 
+// Track whether GA4 has already been injected this session
+let ga4Injected = false;
+
+const injectGA4 = () => {
+  if (typeof window === "undefined" || ga4Injected) return;
+  ga4Injected = true;
+
+  const script1 = document.createElement("script");
+  script1.src = "https://www.googletagmanager.com/gtag/js?id=G-P6MM594ZGJ";
+  script1.async = true;
+  document.head.appendChild(script1);
+
+  const script2 = document.createElement("script");
+  script2.textContent = `
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-P6MM594ZGJ');
+  `;
+  document.head.appendChild(script2);
+};
+
+export { CONSENT_KEY, getStoredConsent, injectGA4 };
+
 const CookieConsent = () => {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     const consent = getStoredConsent();
     if (!consent) {
-      // Show banner after short delay
       const timer = setTimeout(() => setVisible(true), 1500);
       return () => clearTimeout(timer);
+    } else if (consent.analytics) {
+      injectGA4();
     }
   }, []);
 
@@ -41,6 +66,11 @@ const CookieConsent = () => {
       timestamp: Date.now(),
     };
     localStorage.setItem(CONSENT_KEY, JSON.stringify(consent));
+
+    if (analytics) {
+      injectGA4();
+    }
+
     setVisible(false);
   };
 

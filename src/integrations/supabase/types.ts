@@ -25,6 +25,7 @@ export type Database = {
           last_name: string
           message: string
           phone: string
+          recaptcha_token: string | null
           service_type: string
           source: string | null
           user_agent: string | null
@@ -44,6 +45,7 @@ export type Database = {
           last_name: string
           message: string
           phone: string
+          recaptcha_token?: string | null
           service_type: string
           source?: string | null
           user_agent?: string | null
@@ -63,6 +65,7 @@ export type Database = {
           last_name?: string
           message?: string
           phone?: string
+          recaptcha_token?: string | null
           service_type?: string
           source?: string | null
           user_agent?: string | null
