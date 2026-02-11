@@ -13,7 +13,7 @@ import olivieroFrontBefore from "@/assets/remodels/oliviero/1-front-before.webp"
 import olivieroFrontAfter from "@/assets/remodels/oliviero/1-front-after.jpg";
 
 // A-Frame Cabin Remodel — Exterior
-import aframeFrontExterior from "@/assets/remodels/gilchrest-a-frame/front-symmetrical.png";
+import aframeFrontExterior from "@/assets/remodels/gilchrest-a-frame/front-symmetrical-new.png";
 import aframeFrontPatio from "@/assets/remodels/gilchrest-a-frame/front-patio-angle-new.jpg";
 import aframeCeiling from "@/assets/remodels/gilchrest-a-frame/ceiling-detail-fan-new.jpg";
 import aframeSideExterior from "@/assets/remodels/gilchrest-a-frame/side-roof-angle-new.jpg";
@@ -25,15 +25,15 @@ import aframeBathroom from "@/assets/remodels/bathroom/walk-in-shower-new.jpg";
 
 // Full Home Remodel — Exterior
 import fullHomeExterior from "@/assets/stock/remodel-exterior-new.jpg";
-import fullHomeSideYard from "@/assets/remodels/oliviero/side-patio-seating.jpg";
+import fullHomeSideYard from "@/assets/remodels/oliviero/side-yard-barn-new.jpg";
 
 // Full Home Remodel — Deck
-import fullHomeDeck from "@/assets/decks/upper-balcony-rebuild-after.jpg";
+import fullHomeDeck from "@/assets/decks/upper-balcony-gallery-new.jpg";
 
 // Full Home Remodel — Kitchen
-import fullHomeKitchenCustom from "@/assets/remodels/oliviero/kitchen-full-new.jpg";
+import fullHomeKitchenCustom from "@/assets/remodels/oliviero/kitchen-custom-gallery-new.jpg";
 import fullHomeKitchenBacksplash from "@/assets/remodels/oliviero/kitchen-stove-backsplash.jpg";
-import fullHomeFarmhouseSink from "@/assets/remodels/oliviero/kitchen-farmhouse-sink.jpg";
+import fullHomeFarmhouseSink from "@/assets/remodels/oliviero/farmhouse-sink-detail-new.jpg";
 import fullHomeKitchenLayout from "@/assets/remodels/oliviero/kitchen-layout-new.jpg";
 
 // Full Home Remodel — Living / Feature
