@@ -92,7 +92,7 @@ const Index = () => {
             <TrustBadge
               icon={Users}
               title="Family-Owned & Local"
-              description="Central Oregon Based"
+              description="Central Oregon Based · Bend Chamber Member"
             />
             <TrustBadge
               icon={Hammer}
