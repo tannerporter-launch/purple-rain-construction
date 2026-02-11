@@ -200,32 +200,25 @@ const Remodeling = () => {
             title="Recent Remodeling Projects"
             subtitle="See examples of our remodeling work across Central Oregon."
           />
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
-              { src: olivieroExteriorHero, alt: "Oliviero modern farmhouse with black siding, deck, and renovated outbuilding – full property view" },
-              { src: olivieroPropertyWide, alt: "Oliviero modern farmhouse with dark siding, upper deck with wood railing, renovated outbuilding, hot tub, and manicured lawn" },
-              { src: olivieroBackPatio, alt: "Oliviero back patio with orange Adirondack chairs, fire pit, upper balcony, and hot tub" },
-              { src: gilchrestFrontAfter, alt: "Completed A-Frame renovation with black metal roof and cedar siding – Purple Rain Construction" },
-              { src: olivieroKitchenFull1, alt: "Modern farmhouse kitchen with shiplap walls, white cabinetry, and patterned backsplash" },
-              { src: olivieroBarnAfter, alt: "Renovated barn with rustic sliding doors, black siding, and outdoor seating platform" },
-              { src: olivieroBarExteriorFull, alt: "Custom fold-out bar window with mountain-scene metal art and black exterior accents" },
-              { src: olivieroLivingRoom, alt: "Modern farmhouse living room with leather furniture, wood stove, and ceiling fan" },
-              { src: gilchrestPatioFinished, alt: "Gilchrest A-Frame front view with cedar siding and black metal roof" },
-              { src: olivieroKitchenAfter, alt: "Modern kitchen remodel with black island, white cabinets, and patterned backsplash" },
-              { src: olivieroSideAfter, alt: "Side exterior view with new back deck and modern cable railing" },
-              { src: olivieroKitchenStove, alt: "Professional range with patterned tile backsplash and wood-wrapped hood" },
-              { src: gilchrestKitchenAfter, alt: "Modern kitchen with live-edge counter and exposed beams – Gilchrest A-Frame Remodel" },
-              { src: gilchrestCeilingFan, alt: "Detailed view of vaulted ceiling and modern fan in completed A-Frame" },
-              { src: gilchrestStairsAfter, alt: "Modern stairwell with dark beams and metal railing – Gilchrest A-Frame" },
-              { src: elkeMain, alt: "Custom-trimmed blue French doors with clear glass panels and wood casing" },
+              { src: olivieroExteriorHero, alt: "Full home remodel exterior transformation", caption: "Full Home Remodel (Exterior Transformation)", description: "Complete exterior renovation with modern farmhouse styling, new siding, roofing, and renovated outbuilding." },
+              { src: olivieroBackPatio, alt: "Integrated remodel and outdoor living space", caption: "Integrated Remodel & Outdoor Living", description: "Back patio with outdoor seating, fire pit, upper balcony, and hot tub — seamless indoor-outdoor living." },
+              { src: olivieroLivingRoom, alt: "Main living area remodel with farmhouse styling", caption: "Main Living Area Remodel", description: "Modern farmhouse living room with leather furniture, wood stove, and ceiling fan — warm and functional." },
+              { src: gilchrestStairsAfter, alt: "Structural and finish carpentry upgrade", caption: "Structural & Finish Carpentry Upgrade", description: "Modern stairwell with dark beams and metal railing — detailed structural and finish carpentry work." },
             ].map((img, index) => (
-              <img
-                key={index}
-                src={img.src}
-                alt={img.alt}
-                className="rounded-xl aspect-square object-cover hover:scale-105 transition-transform duration-300"
-                loading="lazy"
-              />
+              <div key={index} className="bg-background rounded-2xl overflow-hidden border border-border">
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  className="w-full aspect-[4/3] object-cover"
+                  loading="lazy"
+                />
+                <div className="p-4">
+                  <h3 className="font-semibold text-foreground mb-1">{img.caption}</h3>
+                  <p className="text-sm text-muted-foreground">{img.description}</p>
+                </div>
+              </div>
             ))}
           </div>
           <div className="text-center mt-8">

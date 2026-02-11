@@ -225,7 +225,7 @@ const Decks = () => {
                   Recommended
                 </span>
               </div>
-              <h3 className="text-2xl font-bold mb-2">Composite Decking</h3>
+              <h3 className="text-2xl font-bold mb-2">PVC & Composite Decking</h3>
               <p className="text-sm text-muted-foreground mb-4">Recommended for durability, rentals, and low maintenance</p>
               <ul className="space-y-3 mb-6">
                 {[
@@ -373,7 +373,7 @@ const Decks = () => {
             title="Recent Deck Projects"
             subtitle="See examples of our work across Central Oregon."
           />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
               { 
                 src: upperBalconyRebuild, 
@@ -386,12 +386,6 @@ const Decks = () => {
                 alt: "Structural repair and deck refresh in Central Oregon",
                 caption: "Structural Repair & Deck Refresh (Price-Conscious Solution)",
                 description: "Replaced deteriorated log columns, repaired framing as needed, refinished decking with select board replacement, and installed new handrails."
-              },
-              { 
-                src: deckRefinishRailing, 
-                alt: "Deck refinish and railing upgrade in Central Oregon",
-                caption: "Deck Refinish & Railing Upgrade",
-                description: "Refinished and stained existing deck boards with selective replacements, paired with new modern handrails for a clean, updated look."
               },
               { 
                 src: sunriverRebuildEngineered, 
@@ -422,7 +416,7 @@ const Decks = () => {
           </div>
           <div className="text-center mt-8">
             <Button asChild variant="outline" size="lg">
-              <Link to="/gallery">View Full Gallery</Link>
+              <Link to="/gallery">View Full Deck Gallery</Link>
             </Button>
           </div>
         </div>

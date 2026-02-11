@@ -116,16 +116,6 @@ const BathroomRemodels = () => {
         </div>
       </section>
 
-      {/* Full-Width Image Break - After Hero */}
-      <section className="relative h-64 md:h-80 lg:h-96">
-        <img
-          src={patternedTileShower}
-          alt="Custom patterned tile shower installation"
-          className="w-full h-full object-cover"
-          loading="lazy"
-        />
-      </section>
-
       {/* Expert Bathroom Remodeling Section */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
@@ -213,17 +203,6 @@ const BathroomRemodels = () => {
             </ul>
           </div>
         </div>
-      </section>
-
-      {/* Full-Width Image Break */}
-      <section className="relative h-64 md:h-80 lg:h-96">
-        <img
-          src={olivieroKitchenSink}
-          alt="Beautiful remodel with farmhouse sink and window view"
-          className="w-full h-full object-cover"
-          loading="lazy"
-        />
-        <div className="absolute inset-0 bg-primary/30" />
       </section>
 
       {/* Gallery with Captions */}

@@ -19,6 +19,12 @@ import {
   Users
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import Layout from "@/components/layout/Layout";
 import SectionHeading from "@/components/ui/SectionHeading";
 import TrustBadge from "@/components/ui/TrustBadge";
@@ -405,42 +411,48 @@ const SunriverSROAServices = () => {
             title="Frequently Asked Questions"
             subtitle="Common questions about SROA approvals and Sunriver construction"
           />
-          <div className="max-w-3xl mx-auto space-y-6">
-            {[
-              {
-                question: "Does every deck in Sunriver require engineering?",
-                answer: "No — not every deck requires engineering. Engineering is typically required when a deck exceeds certain height thresholds, includes complex structural elements, supports heavy loads (such as hot tubs or roof structures), or when required by Deschutes County building officials. We'll review your specific project and confirm whether engineering is needed before moving forward."
-              },
-              {
-                question: "If engineering is required, who provides it?",
-                answer: "When engineering is needed, we coordinate with a trusted local licensed engineering firm. Engineering services are provided directly by the engineer and are a separate cost from SROA design approval and permitting fees."
-              },
-              {
-                question: "Are SROA approval, engineering, and permits separate fees?",
-                answer: "Yes. These are separate components, and costs can vary depending on your project: SROA design & approval fee covers drawings, forms, and submission; Engineering fee (if required) is provided by a licensed engineer; Permit fees are set by Deschutes County. We clearly outline which items apply to your project before moving forward."
-              },
-              {
-                question: "Can you tell me upfront if my project needs engineering?",
-                answer: "In most cases, yes. During the design phase, we can usually determine whether engineering is required based on deck height, size and layout, site conditions, and county requirements. If engineering is needed, we'll explain why and outline next steps before proceeding."
-              },
-              {
-                question: "What does Deschutes County permitting typically involve?",
-                answer: "When required, Deschutes County permitting may include submitting construction plans and permit applications, providing material certifications and jobsite documentation, coordinating any required structural or mechanical permits, responding to plan review comments, and scheduling inspections. Permit requirements vary by project, and we'll guide you through what applies to yours."
-              },
-              {
-                question: "Do you handle the entire process for me?",
-                answer: "Yes. From initial design through SROA approval, permitting, and construction, we manage the process and coordinate with all required parties so you don't have to navigate it alone."
-              },
-              {
-                question: "What's the typical timeline for SROA approval?",
-                answer: "SROA review timelines vary depending on project complexity, submission completeness, and review cycles. We'll provide realistic timing expectations upfront and keep you informed throughout the approval process."
-              },
-            ].map((faq, index) => (
-              <div key={index} className="bg-muted p-6 rounded-xl border border-border">
-                <h3 className="text-lg font-semibold mb-3">{faq.question}</h3>
-                <p className="text-muted-foreground">{faq.answer}</p>
-              </div>
-            ))}
+          <div className="max-w-3xl mx-auto">
+            <Accordion type="single" collapsible className="w-full">
+              {[
+                {
+                  question: "Does every deck in Sunriver require engineering?",
+                  answer: "No — not every deck requires engineering. Engineering is typically required when a deck exceeds certain height thresholds, includes complex structural elements, supports heavy loads (such as hot tubs or roof structures), or when required by Deschutes County building officials. We'll review your specific project and confirm whether engineering is needed before moving forward."
+                },
+                {
+                  question: "If engineering is required, who provides it?",
+                  answer: "When engineering is needed, we coordinate with a trusted local licensed engineering firm. Engineering services are provided directly by the engineer and are a separate cost from SROA design approval and permitting fees."
+                },
+                {
+                  question: "Are SROA approval, engineering, and permits separate fees?",
+                  answer: "Yes. These are separate components, and costs can vary depending on your project: SROA design & approval fee covers drawings, forms, and submission; Engineering fee (if required) is provided by a licensed engineer; Permit fees are set by Deschutes County. We clearly outline which items apply to your project before moving forward."
+                },
+                {
+                  question: "Can you tell me upfront if my project needs engineering?",
+                  answer: "In most cases, yes. During the design phase, we can usually determine whether engineering is required based on deck height, size and layout, site conditions, and county requirements. If engineering is needed, we'll explain why and outline next steps before proceeding."
+                },
+                {
+                  question: "What does Deschutes County permitting typically involve?",
+                  answer: "When required, Deschutes County permitting may include submitting construction plans and permit applications, providing material certifications and jobsite documentation, coordinating any required structural or mechanical permits, responding to plan review comments, and scheduling inspections. Permit requirements vary by project, and we'll guide you through what applies to yours."
+                },
+                {
+                  question: "Do you handle the entire process for me?",
+                  answer: "Yes. From initial design through SROA approval, permitting, and construction, we manage the process and coordinate with all required parties so you don't have to navigate it alone."
+                },
+                {
+                  question: "What's the typical timeline for SROA approval?",
+                  answer: "SROA review timelines vary depending on project complexity, submission completeness, and review cycles. We'll provide realistic timing expectations upfront and keep you informed throughout the approval process."
+                },
+              ].map((faq, index) => (
+                <AccordionItem key={index} value={`item-${index}`}>
+                  <AccordionTrigger className="text-left font-semibold">
+                    {faq.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
           </div>
         </div>
       </section>
