@@ -1,129 +1,337 @@
 
-# Gallery Page Revision Plan — Complete Breakdown
 
-## Summary of All Changes
+# Implementation Plan: Consent-Gated Analytics, reCAPTCHA Integration, and Cookie Script Management
 
-The client's revision document specifies updates to the Gallery page's **caption system**, **project titles/descriptions**, **category filters**, and **gallery card display format**. No new images are needed — all assets are already in place. This is a data + UI update only.
+## Overview
+This plan implements three interconnected changes to Purple Rain Construction's tracking, privacy, and security systems:
+1. **Remove hardcoded GA4 script** from index.html and move to consent-gated dynamic loading
+2. **Add dynamic GA4 loading logic** to CookieConsent component based on user consent state
+3. **Integrate reCAPTCHA v2 Invisible** into ContactForm with backend verification
 
----
-
-## Change 1: Update Caption Format (UI Change)
-
-**What the client wants:**
-- Each gallery card must have a **2-line caption system** that is always visible (not hover-only)
-- Line 1: **Project Type + Context** (bold) — e.g. "Structural Repair & Deck Refresh (Price-Conscious Solution)"
-- Line 2: *Materials / Budget approach* (regular weight) — e.g. "Replaced deteriorated log columns, repaired framing as needed..."
-
-**What exists now:**
-- Cards show: tag badge, title (h3), description (line-clamp-2), and location
-- The description field is already 1-2 lines but lacks the bold title + italic subtitle split
-
-**Implementation:**
-- Add a new `caption` field to the `GalleryProject` interface for the materials/budget line
-- The existing `title` field becomes the bold "Project Type + Context" line
-- The existing `description` field gets replaced with the client-specified captions
-- Remove the `location` line from card display (it adds clutter and isn't in the client's format)
-- Keep the tag badge for filtering purposes
+**Critical Constraints:**
+- GTM (GTM-KHK2QTD6) remains always-on in index.html — do not remove
+- Do NOT alter ContactForm UI layout, validation logic, success states, or UTM tracking
+- Do NOT alter CookieConsent banner UI/copy or Privacy Policy link
+- reCAPTCHA loads regardless of consent (it's a functional/security cookie, like GTM)
+- All changes must be backward-compatible with existing localStorage consent data
 
 ---
 
-## Change 2: Update All Project Titles and Descriptions
+## Change 1: Remove Hardcoded GA4 Script from index.html
 
-Below is the **exact title and description** for every gallery item, mapped from the revision document to the current project IDs.
+**What to remove:** Lines 45-52 (GA4 script block)
+```html
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P6MM594ZGJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-P6MM594ZGJ');
+</script>
+```
 
-### Deck Projects (4 items)
+**Why:** GA4 will load dynamically only when user consents to analytics, respecting the cookie banner choice.
 
-| ID | Current Title | New Title | New Description |
-|----|--------------|-----------|-----------------|
-| 30 | Structural Repair & Deck Refresh | **Structural Repair & Deck Refresh (Price-Conscious Solution)** | Replaced deteriorated log columns, repaired framing as needed, refinished decking with select board replacement, and installed new handrails. |
-| 31 | Deck Refinish & Railing Upgrade | **Deck Refinish & Railing Upgrade** | Refinished and stained existing deck boards with selective replacements, paired with new modern handrails for a clean, updated look. |
-| 32 | Sunriver Deck Rebuild | **Sunriver Deck Rebuild — Engineered & Permitted** | Full demolition due to extensive dry rot, followed by an engineered, county- and SROA-approved rebuild. Planned as a phased project to help manage costs over time. |
-| 33 | Deck Addition & Accessibility Upgrade | **Deck Addition & Accessibility Upgrade (Budget-Conscious)** | Small deck addition connected to the existing structure to support a hot tub, with a built-in bench, hose access, and a simple privacy wall. Existing decking was sanded and repainted for a cohesive finish. |
-
-### A-Frame Cabin Remodel (7 items)
-
-| ID | Current Title | New Title | New Description |
-|----|--------------|-----------|-----------------|
-| 1 | A-Frame Cabin Remodel — Front Exterior | **A-Frame Cabin Remodel — Front Exterior** | Gilchrist Area, Central Oregon. Full A-frame cabin renovation. |
-| 2 | A-Frame Front Patio & Covered Entry | **A-Frame Front Patio & Covered Entry** | Extended roofline with exposed wood beams over new concrete patio. |
-| 3 | Vaulted Wood Ceiling & Timber Craftsmanship | **Vaulted Wood Ceiling & Timber Craftsmanship** | Extended roofline with exposed wood beams and outdoor ceiling fan. |
-| 4 | A-Frame Cabin — Side Exterior | **A-Frame Cabin — Side Exterior** | Updated metal roofing, siding, and entry improvements. |
-| 5 | Interior Staircase Remodel | **A-Frame — Interior Staircase Remodel** | Rebuilt stair system with updated railings, lighting, and finishes to meet code and enhance safety. |
-| 6 | Full Kitchen Remodel | **A-Frame Full Kitchen Remodel (Mid-Range Custom Build)** | Shaker cabinetry, quartz countertops, custom island, and updated lighting for improved flow and everyday function. |
-| 7 | Walk-In Shower Remodel | **Full Bathroom Remodel — Walk-In Shower** | Complete bathroom demolition and remodel featuring a custom walk-in shower, full-height tile installation, and modern fixtures. |
-
-### Full Home Remodel (17 items)
-
-| ID | Current Title | New Title | New Description |
-|----|--------------|-----------|-----------------|
-| 10 | Full Home Remodel — Front Exterior | **Full Home Remodel — Front Exterior** | Updated siding, roofing, windows, and entry details to modernize the home while preserving its character. |
-| 11 | Side Yard, Barn & Patio | **Full Home Remodel — Side Yard, Barn & Patio** | (no specific caption provided in doc — keep existing or leave blank) |
-| 26 | Upper Balcony Deck Rebuild | **Upper Balcony Deck Rebuild** | County-permitted rebuild with accented handrails, integrated into a larger remodel that added an outdoor bar and patio living space below. |
-| 15 | Custom Kitchen Remodel | **Custom Kitchen Remodel — Central Oregon** | (no specific description in doc) |
-| 16 | Statement Tile Backsplash | **Kitchen Remodel — Statement Tile Backsplash & Range** | Patterned tile backsplash, custom hood surround, and open shelving to add character without excessive complexity. |
-| 17 | Farmhouse Sink & Quartz Countertop Details | **Farmhouse Sink & Quartz Countertop Details** | (no specific description change in doc) |
-| 18 | Functional Kitchen Layout Upgrade | **Functional Kitchen Layout Upgrade** | Reworked cabinetry, appliance placement, and lighting to create a practical, well-balanced kitchen for daily use. |
-| 12 | Living Room Remodel | **Living Room Remodel — Open Concept Design** | Open layout, updated finishes, and improved circulation designed for everyday comfort and function. |
-| 13 | Indoor-Outdoor Window Bar | **Indoor-Outdoor Window Bar Feature** | Pass-through window and counter designed for entertaining, connecting the kitchen to the patio and outdoor living space. |
-| 14 | Custom French Doors | **Custom French Doors** | (no specific description in doc) |
-| 20 | Freestanding Tub Bathroom | **Full Bathroom Remodel** | Full bathroom remodel featuring a freestanding tub with wall-mounted shower, custom vanity, patterned tile flooring, and modern fixtures. |
-| 21 | Patterned Tile Shower | **Patterned Tile Shower** | Custom tile shower featuring patterned accent tile and professional waterproofing systems. |
-| 22 | Double Vanity Bathroom Remodel | **Double Vanity Bathroom Remodel** | Double vanity bathroom remodel with custom storage, quartz countertop, and modern plumbing fixtures. |
-| 23 | Custom Walk-In Shower & Built-In Storage | **Full Bathroom Remodel — Custom Walk-In Shower & Built-In Storage** | Jacuzzi tub removal, new tile shower, flooring, paint, and custom cabinetry. *(Most recently completed master bathroom remodel)* |
-| 24 | Modern Vanity & Lighting | **Full Bathroom Remodel — Modern Vanity & Lighting** | Custom cabinetry, solid-surface counters, and updated fixtures. |
-| 25 | Updated Water Closet | **Full Bathroom Remodel — Updated Water Closet** | New flooring, paint, and finish details throughout. |
+**Keep unchanged:**
+- Lines 37-43: GTM initialization (always-on)
+- Lines 93-96: GTM noscript fallback (always-on)
+- All SEO meta tags and structured data (lines 1-35, 54-89)
 
 ---
 
-## Change 3: Remove "Snow Removal" from Category Filters
+## Change 2: Update CookieConsent.tsx — Add Dynamic GA4 Loading & Export Helper
 
-**Current categories array:** `["All", "Decks", "A-Frame Cabin Remodel", "Full Home Remodel"]`
+### What changes:
 
-**Status:** Already done. Snow Removal was previously removed. No action needed.
+**A) Add exports for use by other components:**
+- Export `getStoredConsent()` function so other components (e.g., App.tsx) can check consent status
+- Export `CONSENT_KEY` constant for consistency
+
+**B) Create dynamic GA4 injection logic:**
+- In the `saveConsent()` function (lines 36-45), after saving consent to localStorage, trigger GA4 loading if `analytics === true`
+- Load the GA4 script dynamically using a helper function `injectGA4()` that:
+  - Creates and appends two script tags to the document head
+  - First script: `<script async src="https://www.googletagmanager.com/gtag/js?id=G-P6MM594ZGJ"></script>`
+  - Second script: initializes gtag with the config command
+  - Uses Measurement ID: `G-P6MM594ZGJ`
+
+**C) Check consent on mount:**
+- On component mount (useEffect, lines 27-34), if stored consent exists AND `analytics === true`, inject GA4 immediately
+- This ensures GA4 loads on subsequent visits when user has already consented
+
+**D) Do NOT change:**
+- Banner UI, text, or styling (lines 52-84)
+- Button labels ("Accept All", "Necessary Only")
+- Privacy Policy link (line 61)
+- Consent state shape (type ConsentState, lines 6-11)
+- Banner visibility logic (line 50, 31)
+- Branding, colors, or responsive layout
+
+### Technical implementation details:
+
+```typescript
+// Export these for use by other components
+export { CONSENT_KEY, getStoredConsent };
+
+// Add this helper function before the component
+const injectGA4 = () => {
+  if (typeof window === 'undefined') return;
+  
+  // First script: load gtag library
+  const script1 = document.createElement('script');
+  script1.src = 'https://www.googletagmanager.com/gtag/js?id=G-P6MM594ZGJ';
+  script1.async = true;
+  document.head.appendChild(script1);
+  
+  // Second script: initialize gtag
+  const script2 = document.createElement('script');
+  script2.textContent = `
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-P6MM594ZGJ');
+  `;
+  document.head.appendChild(script2);
+};
+
+// Inside CookieConsent component, modify saveConsent():
+const saveConsent = (analytics: boolean, marketing: boolean) => {
+  const consent: ConsentState = {
+    functional: true,
+    analytics,
+    marketing,
+    timestamp: Date.now(),
+  };
+  localStorage.setItem(CONSENT_KEY, JSON.stringify(consent));
+  
+  // Inject GA4 if analytics consent is granted
+  if (analytics) {
+    injectGA4();
+  }
+  
+  setVisible(false);
+};
+
+// In useEffect, check if consent already exists with analytics enabled
+useEffect(() => {
+  const consent = getStoredConsent();
+  if (!consent) {
+    const timer = setTimeout(() => setVisible(true), 1500);
+    return () => clearTimeout(timer);
+  } else if (consent.analytics) {
+    // If user previously consented to analytics, load GA4
+    injectGA4();
+  }
+}, []);
+```
 
 ---
 
-## Change 4: Before/After Slider Labels
+## Change 3: Integrate reCAPTCHA v2 Invisible into ContactForm.tsx
 
-**Current labels:** "Gilchrest A-Frame Front" and "Oliviero Exterior" (as shown in screenshot)
+### Prerequisites (before code changes):
+- **Secret key** must be stored as a secure backend secret: `RECAPTCHA_SECRET_KEY` = `6LeyLOIrAAAAAM4IPiJxt2cR-OQiqGV0jTS71YCY`
+- **Site key** will be used client-side: `6LeyLOIrAAAAAO5mcC_IVQiEBRO1tUhmhuitZzaY`
+- **Backend verification function** must be created as an edge function (Lovable Cloud function) to verify tokens server-side
 
-**New labels from client:**
-- Left slider: **"A-Frame Cabin Remodel"** (currently shows "A-Frame Cabin — Front Exterior")
-- Right slider: **"Full Home Remodel"** (currently shows "Full Home Remodel — Front Exterior")
+### What to add to ContactForm.tsx:
 
-**Status:** Current labels are close but should be simplified to match the screenshot exactly.
+**A) Load reCAPTCHA script dynamically (unconditional, always loads):**
+- Add useEffect hook on mount that injects the reCAPTCHA library script
+- Script source: `https://www.google.com/recaptcha/api.js`
+- Do NOT add to index.html — load only when ContactForm component mounts
+
+**B) Execute reCAPTCHA challenge on form submit:**
+- In `onSubmit()` handler, before calling `supabase.from('contact_submissions').insert()`:
+  - Call `window.grecaptcha.execute()` with site key `6LeyLOIrAAAAAO5mcC_IVQiEBRO1tUhmhuitZzaY`
+  - Capture the returned token (Promise)
+  - Add token to the form data being sent to the database
+
+**C) Send token to backend verification function:**
+- Create a new field in the form data: `recaptcha_token: string`
+- Before inserting to database, call an edge function (backend function) to verify the token
+  - Function should accept: `{ token: string }`
+  - Function calls Google's verification API: `https://www.google.com/recaptcha/api/siteverify`
+  - If verification fails (score < 0.5 or error), return error and prevent form submission
+  - If verification succeeds, return success and allow form submission to proceed
+
+**D) Error handling:**
+- If reCAPTCHA fails, show toast error: "Security verification failed. Please try again."
+- If backend verification fails, show existing toast error message
+
+**E) Do NOT change:**
+- Form field layout, labels, or placeholder text (lines 136-283)
+- Validation logic or Zod schema (lines 21-37)
+- Success state UI or animations (lines 113-132)
+- UTM parameter capture (lines 46-58, 64, 75-77)
+- Supabase insert structure (lines 83-99)
+- Button styling, loading states, or disabled logic (lines 269-283)
+- Privacy Policy link or consent text (lines 285-291)
+
+### Technical implementation outline:
+
+```typescript
+// Add to imports
+import { useEffect } from "react";
+
+// Add useEffect for reCAPTCHA script loading
+useEffect(() => {
+  // Load reCAPTCHA script dynamically
+  const script = document.createElement('script');
+  script.src = 'https://www.google.com/recaptcha/api.js';
+  script.async = true;
+  document.head.appendChild(script);
+}, []);
+
+// Modify onSubmit handler
+const onSubmit = async (data: FormData) => {
+  setIsSubmitting(true);
+  
+  // Execute reCAPTCHA challenge
+  let recaptchaToken: string;
+  try {
+    recaptchaToken = await window.grecaptcha.execute(
+      '6LeyLOIrAAAAAO5mcC_IVQiEBRO1tUhmhuitZzaY',
+      { action: 'submit' }
+    );
+  } catch (error) {
+    toast.error("Security verification failed. Please try again.");
+    setIsSubmitting(false);
+    return;
+  }
+  
+  // Call backend verification function (edge function)
+  // This function will validate the token with Google
+  // If invalid, it will throw/return error
+  
+  // If verification succeeds, proceed with database insert
+  const { error } = await supabase.from('contact_submissions').insert({
+    first_name: data.firstName,
+    last_name: data.lastName,
+    email: data.email,
+    phone: data.phone,
+    city: data.city,
+    service_type: data.serviceType,
+    message: data.message,
+    source: data.source || null,
+    utm_source: data.utm_source || null,
+    utm_medium: data.utm_medium || null,
+    utm_campaign: data.utm_campaign || null,
+    utm_term: data.utm_term || null,
+    utm_content: data.utm_content || null,
+    landing_page: data.landing_page || null,
+    user_agent: navigator.userAgent,
+    recaptcha_token: recaptchaToken, // Add token to record
+  });
+
+  if (error) {
+    toast.error("Something went wrong. Please try again or call us directly.");
+    setIsSubmitting(false);
+    return;
+  }
+  
+  setIsSubmitting(false);
+  setIsSubmitted(true);
+  toast.success("Thank you! We'll be in touch within 24 hours.");
+  reset();
+};
+```
 
 ---
 
-## Change 5: Gallery Card Ordering
+## Change 4: Create Backend Edge Function for reCAPTCHA Verification
 
-The revision document groups projects in this specific order:
+**File location:** `supabase/functions/verify-recaptcha/index.ts`
 
-1. **Decks** (4 items): Structural Repair, Refinish & Railing, Sunriver Rebuild, Deck Addition
-2. **A-Frame Cabin Remodel** grouped by subgroup:
-   - Exterior (4): Front, Patio, Ceiling, Side
-   - Living/Feature (1): Staircase
-   - Kitchen (1): Full Kitchen
-   - Bathroom (1): Walk-In Shower
-3. **Full Home Remodel** grouped by subgroup:
-   - Exterior (2): Front, Side Yard/Barn
-   - Deck (1): Upper Balcony
-   - Kitchen (4): Custom Kitchen, Backsplash, Farmhouse Sink, Layout
-   - Living/Feature (3): Living Room, Bar Window, French Doors
-   - Bathroom (6): Freestanding Tub, Patterned Tile, Double Vanity, Walk-In Shower, Modern Vanity, Water Closet
+**Function responsibilities:**
+- Accept POST request with `{ token: string }`
+- Call Google's reCAPTCHA verification API with secret key (from secure backend secret)
+- Return success/failure based on verification result
+- Throw error if verification fails (score < 0.5, or invalid response)
 
-**Current order:** A-Frame first, then Full Home, then Decks. The revision doc lists Decks first in the adjustment section, but the "All" view should show projects in a logical flow. The current order is acceptable but needs the remodel items reordered to match the subgroup sequence from the doc.
+**CORS:** Enable (required for browser fetch from ContactForm)
+
+**Authentication:** `verify_jwt = false` (allow unauthenticated calls from frontend form)
 
 ---
 
-## Technical Implementation (Files to Modify)
+## Change 5: Update ContactForm to Store reCAPTCHA Token in Database
 
-### File: `src/pages/Gallery.tsx`
+**File location:** `src/pages/` (any forms that use ContactForm, or if a separate EstimateForm exists)
 
-1. **Update `GalleryProject` interface** — no changes needed, `title` and `description` fields already exist
-2. **Update all 27 project entries** in the `projects` array with new titles and descriptions from the tables above
-3. **Update Before/After slider labels** (lines 398, 408) to simplified versions
-4. **Reorder projects** to match the document's grouping sequence
-5. **Ensure card caption display** shows the full description (remove `line-clamp-2` class so longer captions display fully, per the "always visible" requirement)
+**Action:** Ensure the form can optionally store the `recaptcha_token` in the database record
 
-No other files need to be modified. No new images. No new components.
+**Database schema:** The `contact_submissions` table should have an optional `recaptcha_token` column (text, nullable) to store the token for audit/troubleshooting purposes
+
+---
+
+## Change 6: Update App.tsx (Optional but Recommended)
+
+**Purpose:** Load GA4 on app mount if user already consented in previous sessions
+
+**Action:** Import and check `getStoredConsent()` from CookieConsent in App.tsx, and if `analytics === true`, call `injectGA4()` immediately
+
+**Alternative:** CookieConsent's useEffect will handle this automatically when component mounts, so this change is optional
+
+---
+
+## Testing Checklist
+
+After implementation, verify:
+
+1. **GA4 Consent Gating:**
+   - On first visit, GA4 script should NOT load until user clicks "Accept All"
+   - After "Accept All", GA4 script should load immediately
+   - On subsequent visits (with consent stored), GA4 should load on page load
+   - After clearing localStorage and selecting "Necessary Only", GA4 should NOT load
+
+2. **reCAPTCHA Integration:**
+   - reCAPTCHA script loads when ContactForm component mounts
+   - Form submission triggers reCAPTCHA invisible challenge (no visible badge)
+   - Backend verification function receives token and validates correctly
+   - If verification fails, form shows error toast and does NOT submit
+   - If verification succeeds, form submits normally and shows success state
+   - reCAPTCHA token is stored in database (optional audit trail)
+
+3. **GTM & Meta Pixel (preparation):**
+   - GTM script continues to load always (no change)
+   - Meta Pixel will be implemented similarly to GA4 once Pixel ID is provided (gated by marketing consent)
+
+4. **Form Functionality (no regression):**
+   - All existing form fields work as before
+   - Validation errors display correctly
+   - UTM parameters are captured and stored
+   - Success message appears after successful submission
+   - "Submit Another Request" button resets form
+
+5. **Privacy & Compliance:**
+   - Cookie banner displays on first visit
+   - Privacy Policy link is accessible
+   - Consent state persists across sessions
+   - User can select "Necessary Only" without analytics/marketing loading
+
+---
+
+## Files to Modify
+
+| File | Action | Priority |
+|------|--------|----------|
+| `index.html` | Remove hardcoded GA4 script (lines 45-52) | High |
+| `src/components/CookieConsent.tsx` | Add GA4 dynamic loading, export helpers | High |
+| `src/components/forms/ContactForm.tsx` | Add reCAPTCHA script load & verification | High |
+| `supabase/functions/verify-recaptcha/index.ts` | Create new backend function | High |
+| Database schema | Add optional `recaptcha_token` column | Medium |
+| `src/App.tsx` | Optional: check consent on app mount | Low |
+
+---
+
+## Notes on Phasing (if needed)
+
+This plan can be executed in phases:
+
+**Phase 1 (Critical):** Remove GA4 from index.html, add consent-gated loading to CookieConsent, test GA4 gating
+**Phase 2 (Security):** Integrate reCAPTCHA into ContactForm, create backend verification function, test form submission
+**Phase 3 (Analytics):** Meta Pixel implementation (once Pixel ID is provided)
+**Phase 4 (Audit):** Add reCAPTCHA token storage to database if audit trail desired
+
