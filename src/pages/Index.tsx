@@ -12,6 +12,7 @@ import teamNicholasEd from "@/assets/brand/team-nicholas-ed.png";
 import heroPlowDawn from "@/assets/snow-removal/hero-plow-dawn.jpg";
 import deckStockPhoto from "@/assets/stock/deck-new-hero.jpg";
 import remodelExterior from "@/assets/stock/remodel-exterior-new.jpg";
+import sunriverSection5 from "@/assets/decks/sunriver-section-5.jpg";
 // JobTread portal images
 import jobtreadCommunications from "@/assets/jobtread/communications-new.png";
 import jobtreadDailyLogs from "@/assets/jobtread/daily-logs-new.png";
@@ -275,8 +276,8 @@ const Index = () => {
           <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
             <div className="order-2 lg:order-1">
               <img
-                src={deckStockPhoto}
-                alt="Composite deck with mountain views - built for Sunriver living"
+                src={sunriverSection5}
+                alt="Modern elevated deck with composite decking, mountain forest views, and glass railing - custom-built for Sunriver living"
                 className="rounded-2xl shadow-lg w-full"
                 loading="lazy"
               />
