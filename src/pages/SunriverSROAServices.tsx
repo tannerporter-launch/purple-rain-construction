@@ -30,9 +30,9 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import TrustBadge from "@/components/ui/TrustBadge";
 import project1After from "@/assets/decks/project-1-after.jpg";
 import project2After from "@/assets/decks/project-2-after.jpg";
-import sroaHeroHeader from "@/assets/sroa/sroa-hero-header.jpg";
-import sroaSection4 from "@/assets/sroa/sroa-section4.jpg";
-import sunriverRebuildEngineered from "@/assets/decks/sunriver-rebuild-engineered.jpg";
+import sroaHeroHeader from "@/assets/sroa/sroa-hero-new.jpg";
+import sroaSection4 from "@/assets/sroa/sroa-section4-new.jpg";
+import sunriverRebuildEngineered from "@/assets/decks/sunriver-rebuild-new.jpg";
 
 const SunriverSROAServices = () => {
   return (

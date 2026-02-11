@@ -22,11 +22,11 @@ import sunriverDeckRebuild from "@/assets/decks/sunriver-deck-rebuild.jpg";
 import deckAdditionHotTub from "@/assets/decks/deck-addition-hot-tub.jpg";
 import timbertechEnglishWalnut from "@/assets/decks/timbertech-english-walnut.jpg";
 // New downloaded images
-import sunriverSectionDeck from "@/assets/decks/sunriver-section-deck.jpg";
-import structuralRepairRefresh from "@/assets/decks/structural-repair-refresh.jpg";
+import sunriverSectionDeck from "@/assets/stock/deck-new-hero.jpg";
+import structuralRepairRefresh from "@/assets/decks/structural-repair-new.jpg";
 import deckRefinishRailing from "@/assets/decks/deck-refinish-railing.jpg";
-import sunriverRebuildEngineered from "@/assets/decks/sunriver-rebuild-engineered.jpg";
-import deckAdditionAccessibility from "@/assets/decks/deck-addition-accessibility.jpg";
+import sunriverRebuildEngineered from "@/assets/decks/sunriver-rebuild-new.jpg";
+import deckAdditionAccessibility from "@/assets/decks/deck-addition-new.jpg";
 
 const Decks = () => {
   // Updated FAQs - removed 3 as specified, reordered
