@@ -14,8 +14,7 @@ import olivieroKitchenFull2 from "@/assets/remodels/oliviero/kitchen-full-view-2
 import olivieroKitchenStove from "@/assets/remodels/oliviero/kitchen-stove-backsplash.jpg";
 import olivieroKitchenAfter from "@/assets/remodels/oliviero/3-kitchen-after.jpg";
 import gilchrestKitchenAfter from "@/assets/remodels/gilchrest-a-frame/5-kitchen-after.jpg";
-import olivieroKitchenIsland from "@/assets/remodels/oliviero/kitchen-island-view.jpg";
-import olivieroKitchenSink from "@/assets/remodels/oliviero/kitchen-farmhouse-sink.jpg";
+import olivieroBarExteriorFull from "@/assets/remodels/oliviero/bar-window-exterior-full.jpg";
 import olivieroKitchenPendant from "@/assets/remodels/oliviero/kitchen-pendant-sink.jpg";
 
 const KitchenRemodels = () => {
@@ -104,16 +103,6 @@ const KitchenRemodels = () => {
         </div>
       </section>
 
-      {/* Full-Width Kitchen Image Break - After Hero */}
-      <section className="relative h-64 md:h-80 lg:h-96">
-        <img
-          src={olivieroKitchenFull1}
-          alt="Modern kitchen with pendant lights and farmhouse styling"
-          className="w-full h-full object-cover"
-          loading="lazy"
-        />
-      </section>
-
       {/* Expert Kitchen Remodeling Section */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
@@ -191,17 +180,6 @@ const KitchenRemodels = () => {
         </div>
       </section>
 
-      {/* Full-Width Image Break */}
-      <section className="relative h-64 md:h-80 lg:h-96">
-        <img
-          src={olivieroKitchenSink}
-          alt="Beautiful kitchen remodel with farmhouse sink and window view"
-          className="w-full h-full object-cover"
-          loading="lazy"
-        />
-        <div className="absolute inset-0 bg-primary/30" />
-      </section>
-
       {/* Gallery */}
       <section className="py-20 bg-muted">
         <div className="container mx-auto px-4">
@@ -212,22 +190,25 @@ const KitchenRemodels = () => {
             title="Kitchen Project Gallery"
             subtitle="Examples of our kitchen remodeling work in Central Oregon"
           />
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
-              { src: olivieroKitchenFull1, alt: "Modern farmhouse kitchen with shiplap walls, white cabinetry, and patterned backsplash" },
-              { src: olivieroKitchenAfter, alt: "Modern kitchen remodel with black island, white cabinets, and patterned backsplash" },
-              { src: gilchrestKitchenAfter, alt: "Modern kitchen with live-edge counter and exposed beams – Gilchrest A-Frame Remodel" },
-              { src: olivieroKitchenStove, alt: "Professional range with patterned tile backsplash and wood-wrapped hood" },
-              { src: olivieroKitchenIsland, alt: "Kitchen island view with modern farmhouse styling" },
-              { src: olivieroKitchenSink, alt: "Farmhouse sink with window view in modern kitchen" },
+              { src: olivieroKitchenFull1, alt: "Full kitchen remodel with modern farmhouse styling", caption: "Full Kitchen Remodel (Mid-Range Custom Build)", description: "Complete kitchen renovation featuring custom cabinetry, patterned backsplash, and modern farmhouse finishes." },
+              { src: olivieroBarExteriorFull, alt: "Custom indoor-outdoor bar window feature", caption: "Custom Indoor-Outdoor Feature", description: "Custom fold-out bar window with mountain-scene metal art and black exterior accents — a unique indoor-outdoor connection." },
+              { src: olivieroKitchenStove, alt: "Professional range with patterned tile backsplash", caption: "Material & Finish Details", description: "Professional range with patterned tile backsplash and wood-wrapped hood — thoughtful material and finish selections." },
+              { src: olivieroKitchenAfter, alt: "Functional kitchen layout with island", caption: "Functional Kitchen Layout Upgrade", description: "Modern kitchen with black island, white cabinets, and patterned backsplash — designed for function and flow." },
             ].map((img, index) => (
-              <img
-                key={index}
-                src={img.src}
-                alt={img.alt}
-                className="rounded-xl aspect-video object-cover hover:scale-105 transition-transform duration-300"
-                loading="lazy"
-              />
+              <div key={index} className="bg-background rounded-2xl overflow-hidden border border-border">
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  className="w-full aspect-[4/3] object-cover"
+                  loading="lazy"
+                />
+                <div className="p-4">
+                  <h3 className="font-semibold text-foreground mb-1">{img.caption}</h3>
+                  <p className="text-sm text-muted-foreground">{img.description}</p>
+                </div>
+              </div>
             ))}
           </div>
           <div className="text-center mt-8">
