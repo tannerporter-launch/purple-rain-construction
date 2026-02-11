@@ -9,12 +9,12 @@ import {
 } from "@/components/ui/accordion";
 import Layout from "@/components/layout/Layout";
 import SectionHeading from "@/components/ui/SectionHeading";
-import olivieroKitchenFull1 from "@/assets/remodels/oliviero/kitchen-full-view-1.jpg";
+import olivieroKitchenFull1 from "@/assets/remodels/oliviero/kitchen-full-new.jpg";
 import olivieroKitchenFull2 from "@/assets/remodels/oliviero/kitchen-full-view-2.jpg";
 import olivieroKitchenStove from "@/assets/remodels/oliviero/kitchen-stove-backsplash.jpg";
-import olivieroKitchenAfter from "@/assets/remodels/oliviero/3-kitchen-after.jpg";
+import olivieroKitchenAfter from "@/assets/remodels/oliviero/kitchen-layout-new.jpg";
 import gilchrestKitchenAfter from "@/assets/remodels/gilchrest-a-frame/5-kitchen-after.jpg";
-import olivieroBarExteriorFull from "@/assets/remodels/oliviero/bar-window-exterior-full.jpg";
+import olivieroBarExteriorFull from "@/assets/remodels/oliviero/bar-window-new.jpg";
 import olivieroKitchenPendant from "@/assets/remodels/oliviero/kitchen-pendant-sink.jpg";
 
 const KitchenRemodels = () => {

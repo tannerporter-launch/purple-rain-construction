@@ -7,7 +7,7 @@ import TrustBadge from "@/components/ui/TrustBadge";
 import project2After from "@/assets/decks/project-2-after.jpg";
 import olivieroKitchenFull1 from "@/assets/remodels/oliviero/kitchen-full-view-1.jpg";
 import sunriverDrivewayClear from "@/assets/snow-removal/sunriver-driveway-cleared.jpg";
-import sunriverDeckRebuild from "@/assets/decks/sunriver-deck-rebuild.jpg";
+import sunriverDeckRebuild from "@/assets/decks/sunriver-rebuild-new.jpg";
 import sunriverHeroHeader from "@/assets/decks/sunriver-hero-header.jpg";
 import sunriverSection2 from "@/assets/decks/sunriver-section-2.jpg";
 const SunriverDeckBuilder = () => {

@@ -16,10 +16,10 @@ import olivieroKitchenFull1 from "@/assets/remodels/oliviero/kitchen-full-view-1
 import olivieroKitchenSink from "@/assets/remodels/oliviero/kitchen-farmhouse-sink.jpg";
 import olivieroLivingRoom from "@/assets/remodels/oliviero/living-room-farmhouse.jpg";
 // New bathroom images
-import walkInShower from "@/assets/remodels/bathroom/walk-in-shower.jpg";
-import patternedTileShower from "@/assets/remodels/bathroom/patterned-tile-shower.jpg";
-import doubleVanity from "@/assets/remodels/bathroom/double-vanity.jpg";
-import freestandingTub from "@/assets/remodels/bathroom/freestanding-tub.jpg";
+import walkInShower from "@/assets/remodels/bathroom/walk-in-shower-new.jpg";
+import patternedTileShower from "@/assets/remodels/bathroom/patterned-tile-new.jpg";
+import doubleVanity from "@/assets/remodels/bathroom/double-vanity-new.jpg";
+import freestandingTub from "@/assets/remodels/bathroom/freestanding-tub-new.jpg";
 
 const BathroomRemodels = () => {
   const bathroomFAQs = [

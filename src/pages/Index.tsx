@@ -10,13 +10,13 @@ import homepageHero from "@/assets/homepage-hero-old-mill.jpeg";
 import iconMonogramGradient from "@/assets/brand/icons/icon-monogram-gradient.png";
 import teamNicholasEd from "@/assets/brand/team-nicholas-ed.png";
 import heroPlowDawn from "@/assets/snow-removal/hero-plow-dawn.jpg";
-import deckStockPhoto from "@/assets/stock/timbertech-deck-forest.jpeg";
-import remodelExterior from "@/assets/stock/exterior-final-front.jpeg";
+import deckStockPhoto from "@/assets/stock/deck-new-hero.jpg";
+import remodelExterior from "@/assets/stock/remodel-exterior-new.jpg";
 // JobTread portal images
-import jobtreadCommunications from "@/assets/jobtread/communications.png";
-import jobtreadDailyLogs from "@/assets/jobtread/daily-logs.png";
-import jobtreadScheduling from "@/assets/jobtread/scheduling.png";
-import jobtreadProgressPhotos from "@/assets/jobtread/progress-photos.png";
+import jobtreadCommunications from "@/assets/jobtread/communications-new.png";
+import jobtreadDailyLogs from "@/assets/jobtread/daily-logs-new.png";
+import jobtreadScheduling from "@/assets/jobtread/scheduling-new.png";
+import jobtreadProgressPhotos from "@/assets/jobtread/progress-photos-new.png";
 
 const Index = () => {
   // Real Google Reviews only
