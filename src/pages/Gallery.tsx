@@ -5,526 +5,347 @@ import Layout from "@/components/layout/Layout";
 import SectionHeading from "@/components/ui/SectionHeading";
 import ImageLightbox from "@/components/ui/ImageLightbox";
 import BeforeAfterSlider from "@/components/ui/BeforeAfterSlider";
-import project1After from "@/assets/decks/project-1-after.jpg";
-import project1Before1 from "@/assets/decks/project-1-before-1.jpg";
-import project2After from "@/assets/decks/project-2-after.jpg";
-import project2Before from "@/assets/decks/project-2-before.jpg";
-import elkeFrenchDoorMain from "@/assets/remodels/elke-french-doors/main.webp";
-import elkeFrenchDoorOpen from "@/assets/remodels/elke-french-doors/open-view.jpeg";
-// Gilchrest A-Frame imports
+
+// Before & After slider images
 import gilchrestFrontAfter from "@/assets/remodels/gilchrest-a-frame/3-front-after.jpg";
 import gilchrestFrontBefore from "@/assets/remodels/gilchrest-a-frame/3-front-before.jpg";
-import gilchrestSideAfter from "@/assets/remodels/gilchrest-a-frame/2-side-exterior-after.jpg";
-import gilchrestSideBefore from "@/assets/remodels/gilchrest-a-frame/2-side-exterior-before.jpg";
-import gilchrestKitchenAfter from "@/assets/remodels/gilchrest-a-frame/5-kitchen-after.jpg";
-import gilchrestKitchenBefore from "@/assets/remodels/gilchrest-a-frame/5-kitchen-before.jpg";
-import gilchrestStairsAfter from "@/assets/remodels/gilchrest-a-frame/1-stairs-after.jpg";
-import gilchrestStairsBefore from "@/assets/remodels/gilchrest-a-frame/1-stairs-before.jpg";
-import gilchrestBackAfter from "@/assets/remodels/gilchrest-a-frame/4-back-after.jpg";
-import gilchrestBackBefore from "@/assets/remodels/gilchrest-a-frame/4-back-before.jpg";
-// Gilchrest A-Frame supplementary images
-import gilchrestPatioFinished from "@/assets/remodels/gilchrest-a-frame/front-patio-finished.jpg";
-import gilchrestDoorInstall from "@/assets/remodels/gilchrest-a-frame/process-door-install-1.jpg";
-import gilchrestExteriorWork from "@/assets/remodels/gilchrest-a-frame/process-exterior-work.jpg";
-import gilchrestCeilingFan from "@/assets/remodels/gilchrest-a-frame/ceiling-detail-fan.jpg";
-import gilchrestFrontSymmetrical from "@/assets/remodels/gilchrest-a-frame/front-symmetrical.png";
-// Oliviero Remodel imports
 import olivieroFrontBefore from "@/assets/remodels/oliviero/1-front-before.webp";
 import olivieroFrontAfter from "@/assets/remodels/oliviero/1-front-after.jpg";
-import olivieroSideBefore from "@/assets/remodels/oliviero/2-side-before.webp";
-import olivieroSideAfter from "@/assets/remodels/oliviero/2-side-after.jpg";
-import olivieroKitchenBefore from "@/assets/remodels/oliviero/3-kitchen-before.webp";
-import olivieroKitchenAfter from "@/assets/remodels/oliviero/3-kitchen-after.jpg";
-import olivieroBarWindow1 from "@/assets/remodels/oliviero/4-bar-window-1.jpg";
-import olivieroBarWindow2 from "@/assets/remodels/oliviero/4-bar-window-2.jpg";
-// Oliviero Kitchen Expanded Gallery imports
-import olivieroKitchenEntry from "@/assets/remodels/oliviero/kitchen-entry-view.jpg";
-import olivieroKitchenFull1 from "@/assets/remodels/oliviero/kitchen-full-view-1.jpg";
-import olivieroKitchenStove from "@/assets/remodels/oliviero/kitchen-stove-backsplash.jpg";
-import olivieroKitchenFarmhouseSink from "@/assets/remodels/oliviero/kitchen-farmhouse-sink.jpg";
-import olivieroBarWine from "@/assets/remodels/oliviero/bar-window-wine.jpg";
-import olivieroBarExteriorFull from "@/assets/remodels/oliviero/bar-window-exterior-full.jpg";
-// Oliviero Living Room & Additional Details
-import olivieroLivingRoom from "@/assets/remodels/oliviero/living-room-farmhouse.jpg";
-import olivieroSinkWindow from "@/assets/remodels/oliviero/kitchen-sink-window-view.jpg";
-import olivieroSinkDusk from "@/assets/remodels/oliviero/kitchen-sink-dusk.jpg";
-// Oliviero Exterior & Before/After images
-import olivieroExteriorHero from "@/assets/remodels/oliviero/exterior-hero-wide.jpg";
-import olivieroBarnAfter from "@/assets/remodels/oliviero/barn-detail-after.jpg";
-import olivieroWorkshopBefore from "@/assets/remodels/oliviero/workshop-before.webp";
-import olivieroBarnBefore from "@/assets/remodels/oliviero/barn-before.webp";
-import olivieroHayStorageBefore from "@/assets/remodels/oliviero/hay-storage-before.webp";
-// Oliviero Exterior Expanded Gallery
-import olivieroFrontPorch from "@/assets/remodels/oliviero/front-porch-entry.jpg";
-import olivieroPropertyFence from "@/assets/remodels/oliviero/property-fence-view.jpg";
-import olivieroSidePatio from "@/assets/remodels/oliviero/side-patio-seating.jpg";
-import olivieroBackPatio from "@/assets/remodels/oliviero/back-patio-deck.jpg";
-import olivieroBarnPortrait from "@/assets/remodels/oliviero/barn-doors-portrait.jpg";
-import olivieroBarnWide from "@/assets/remodels/oliviero/barn-doors-wide.jpg";
-import olivieroFrontDoor from "@/assets/remodels/oliviero/front-door-detail.jpg";
-// Oliviero Interior & Property Expanded
-import olivieroKitchenIsland from "@/assets/remodels/oliviero/kitchen-island-view.jpg";
-import olivieroLivingStove from "@/assets/remodels/oliviero/living-room-stove-wall.jpg";
-import olivieroPropertyWide from "@/assets/remodels/oliviero/property-wide-lawn.jpg";
-// Oliviero Exterior - Front Lawn View
-import olivieroExteriorFrontLawn from "@/assets/remodels/oliviero/exterior-front-lawn.jpg";
-import teamActionSaw from "@/assets/brand/team-action-saw.jpg";
-// New deck project images
-import upperBalconyRebuild from "@/assets/decks/upper-balcony-rebuild-after.jpg";
-import deckSurfaceCableRailing from "@/assets/decks/deck-surface-cable-railing.jpg";
-import sunriverDeckRebuild from "@/assets/decks/sunriver-deck-rebuild.jpg";
-import deckAdditionHotTub from "@/assets/decks/deck-addition-hot-tub.jpg";
 
-const categories = ["All", "Decks", "Remodels", "Sunriver"];
+// A-Frame Cabin Remodel — Exterior
+import aframeFrontExterior from "@/assets/remodels/gilchrest-a-frame/front-symmetrical.png";
+import aframeFrontPatio from "@/assets/remodels/gilchrest-a-frame/front-patio-angle-new.jpg";
+import aframeCeiling from "@/assets/remodels/gilchrest-a-frame/ceiling-detail-fan-new.jpg";
+import aframeSideExterior from "@/assets/remodels/gilchrest-a-frame/side-roof-angle-new.jpg";
 
-const projects = [
+// A-Frame Cabin Remodel — Living / Kitchen / Bathroom
+import aframeStaircase from "@/assets/remodels/gilchrest-a-frame/staircase-new.jpg";
+import aframeKitchen from "@/assets/remodels/gilchrest-a-frame/5-kitchen-after.jpg";
+import aframeBathroom from "@/assets/remodels/bathroom/walk-in-shower-new.jpg";
+
+// Full Home Remodel — Exterior
+import fullHomeExterior from "@/assets/stock/remodel-exterior-new.jpg";
+import fullHomeSideYard from "@/assets/remodels/oliviero/side-patio-seating.jpg";
+
+// Full Home Remodel — Deck
+import fullHomeDeck from "@/assets/decks/upper-balcony-rebuild-after.jpg";
+
+// Full Home Remodel — Kitchen
+import fullHomeKitchenCustom from "@/assets/remodels/oliviero/kitchen-full-new.jpg";
+import fullHomeKitchenBacksplash from "@/assets/remodels/oliviero/kitchen-stove-backsplash.jpg";
+import fullHomeFarmhouseSink from "@/assets/remodels/oliviero/kitchen-farmhouse-sink.jpg";
+import fullHomeKitchenLayout from "@/assets/remodels/oliviero/kitchen-layout-new.jpg";
+
+// Full Home Remodel — Living / Feature
+import fullHomeLivingRoom from "@/assets/remodels/oliviero/living-room-farmhouse.jpg";
+import fullHomeBarWindow from "@/assets/remodels/oliviero/bar-window-new.jpg";
+import fullHomeFrenchDoors from "@/assets/remodels/elke-french-doors/french-doors-new.jpg";
+
+// Full Home Remodel — Bathroom
+import fullHomeFreestandingTub from "@/assets/remodels/bathroom/freestanding-tub-new.jpg";
+import fullHomePatternedTile from "@/assets/remodels/bathroom/patterned-tile-new.jpg";
+import fullHomeDoubleVanity from "@/assets/remodels/bathroom/double-vanity-new.jpg";
+import fullHomeMasterShower from "@/assets/remodels/bathroom/master-shower-new.jpg";
+import fullHomeModernVanity from "@/assets/remodels/bathroom/modern-vanity-new.jpg";
+import fullHomeWaterCloset from "@/assets/remodels/bathroom/water-closet-new.jpg";
+
+// Deck Projects
+import deckStructuralRepair from "@/assets/decks/structural-repair-new.jpg";
+import deckRefinishRailing from "@/assets/decks/deck-refinish-railing-new.jpg";
+import deckSunriverRebuild from "@/assets/decks/sunriver-rebuild-new.jpg";
+import deckAddition from "@/assets/decks/deck-addition-new.jpg";
+
+const categories = ["All", "Decks", "A-Frame Cabin Remodel", "Full Home Remodel"];
+
+interface GalleryProject {
+  id: number;
+  title: string;
+  category: string;
+  location: string;
+  image: string;
+  tags: string[];
+  description: string;
+  subgroup?: string;
+}
+
+const projects: GalleryProject[] = [
+  // ── A-Frame Cabin Remodel — Exterior ──
   {
     id: 1,
-    title: "Elevated Deck Transformation",
-    category: "Decks",
-    location: "Central Oregon",
-    image: project1After,
-    beforeImage: project1Before1,
-    tags: ["Decks"]
+    title: "A-Frame Cabin Remodel — Front Exterior",
+    category: "A-Frame Cabin Remodel",
+    location: "Gilchrest Area, Central Oregon",
+    image: aframeFrontExterior,
+    tags: ["A-Frame Cabin Remodel"],
+    description: "Complete A-Frame renovation with black metal roof, cedar siding, and covered porch.",
+    subgroup: "Exterior",
   },
   {
     id: 2,
-    title: "Composite Deck & Railing Upgrade",
-    category: "Decks",
-    location: "Central Oregon",
-    image: project2After,
-    beforeImage: project2Before,
-    tags: ["Decks"]
-  },
-  {
-    id: 50,
-    title: "Upper Balcony Deck Rebuild",
-    category: "Decks",
-    location: "Central Oregon",
-    image: upperBalconyRebuild,
-    tags: ["Decks"],
-    description: "County-permitted rebuild with accented handrails, integrated into a larger remodel that added an outdoor bar and patio living space below."
-  },
-  {
-    id: 51,
-    title: "Deck Refinish & Railing Upgrade",
-    category: "Decks",
-    location: "Central Oregon",
-    image: deckSurfaceCableRailing,
-    tags: ["Decks"],
-    description: "Refinished and stained existing deck boards with selective replacements, paired with new modern handrails for a clean, updated look."
-  },
-  {
-    id: 52,
-    title: "Sunriver Deck Rebuild — Engineered & Permitted",
-    category: "Sunriver",
-    location: "Sunriver, Oregon",
-    image: sunriverDeckRebuild,
-    tags: ["Decks", "Sunriver"],
-    description: "Full demolition due to extensive dry rot, followed by an engineered, county- and SROA-approved rebuild. Planned as a phased project to help manage costs over time."
-  },
-  {
-    id: 53,
-    title: "Deck Addition & Accessibility Upgrade",
-    category: "Decks",
-    location: "Central Oregon",
-    image: deckAdditionHotTub,
-    tags: ["Decks"],
-    description: "Small deck addition connected to the existing structure to support a hot tub, with a built-in bench, hose access, and a simple privacy wall."
+    title: "A-Frame Front Patio & Covered Entry",
+    category: "A-Frame Cabin Remodel",
+    location: "Gilchrest Area, Central Oregon",
+    image: aframeFrontPatio,
+    tags: ["A-Frame Cabin Remodel"],
+    description: "Cedar ceiling patio with black beam detailing and welcoming covered entry.",
+    subgroup: "Exterior",
   },
   {
     id: 3,
-    title: "Interior French Doors Installation",
-    category: "Remodels",
-    location: "Central Oregon",
-    image: elkeFrenchDoorMain,
-    tags: ["Remodels"],
-    description: "Custom-painted French doors with duplicated trim work and hallway entry modification"
+    title: "Vaulted Wood Ceiling & Timber Craftsmanship",
+    category: "A-Frame Cabin Remodel",
+    location: "Gilchrest Area, Central Oregon",
+    image: aframeCeiling,
+    tags: ["A-Frame Cabin Remodel"],
+    description: "Detailed view of vaulted tongue-and-groove ceiling with exposed timber beams.",
+    subgroup: "Exterior",
   },
   {
     id: 4,
-    title: "French Doors Open View",
-    category: "Remodels",
-    location: "Central Oregon",
-    image: elkeFrenchDoorOpen,
-    tags: ["Remodels"],
-    description: "Interior French doors showing adjoining room by Purple Rain Construction"
+    title: "A-Frame Cabin — Side Exterior",
+    category: "A-Frame Cabin Remodel",
+    location: "Gilchrest Area, Central Oregon",
+    image: aframeSideExterior,
+    tags: ["A-Frame Cabin Remodel"],
+    description: "New cedar siding and black standing seam metal roof from the side angle.",
+    subgroup: "Exterior",
   },
-  // Gilchrest A-Frame Remodel entries
+  // ── A-Frame Cabin Remodel — Living/Feature ──
+  {
+    id: 5,
+    title: "Interior Staircase Remodel",
+    category: "A-Frame Cabin Remodel",
+    location: "Gilchrest Area, Central Oregon",
+    image: aframeStaircase,
+    tags: ["A-Frame Cabin Remodel"],
+    description: "Modern stairwell with dark beams, metal railing, and refinished treads.",
+    subgroup: "Living/Feature",
+  },
+  // ── A-Frame Cabin Remodel — Kitchen ──
   {
     id: 6,
-    title: "A-Frame Remodel",
-    category: "Remodels",
+    title: "Full Kitchen Remodel",
+    category: "A-Frame Cabin Remodel",
     location: "Gilchrest Area, Central Oregon",
-    image: gilchrestFrontSymmetrical,
-    beforeImage: gilchrestFrontBefore,
-    tags: ["Remodels"],
-    description: "Complete A-Frame renovation with black metal roof and covered porch – symmetrical front view"
+    image: aframeKitchen,
+    tags: ["A-Frame Cabin Remodel"],
+    description: "Modern kitchen with live-edge counter and exposed beams in A-Frame cabin.",
+    subgroup: "Kitchen",
   },
-  {
-    id: 100,
-    title: "A-Frame Front – Angle View",
-    category: "Remodels",
-    location: "Gilchrest Area, Central Oregon",
-    image: gilchrestFrontAfter,
-    tags: ["Remodels"],
-    description: "Complete A-Frame renovation with black metal roof and cedar siding – angled perspective"
-  },
+  // ── A-Frame Cabin Remodel — Bathroom ──
   {
     id: 7,
-    title: "A-Frame Side Exterior",
-    category: "Remodels",
+    title: "Walk-In Shower Remodel",
+    category: "A-Frame Cabin Remodel",
     location: "Gilchrest Area, Central Oregon",
-    image: gilchrestSideAfter,
-    beforeImage: gilchrestSideBefore,
-    tags: ["Remodels"],
-    description: "New cedar siding and black standing seam metal roof"
+    image: aframeBathroom,
+    tags: ["A-Frame Cabin Remodel"],
+    description: "Custom walk-in shower with built-in storage and modern tile work.",
+    subgroup: "Bathroom",
   },
-  {
-    id: 8,
-    title: "Modern Kitchen Build-Out",
-    category: "Remodels",
-    location: "Gilchrest Area, Central Oregon",
-    image: gilchrestKitchenAfter,
-    beforeImage: gilchrestKitchenBefore,
-    tags: ["Remodels"],
-    description: "Modern kitchen with live-edge counter and exposed beams"
-  },
-  {
-    id: 9,
-    title: "Interior Stair Transformation",
-    category: "Remodels",
-    location: "Gilchrest Area, Central Oregon",
-    image: gilchrestStairsAfter,
-    beforeImage: gilchrestStairsBefore,
-    tags: ["Remodels"],
-    description: "Modern stairwell with dark beams and metal railing"
-  },
+
+  // ── Full Home Remodel — Exterior ──
   {
     id: 10,
-    title: "A-Frame Rear Elevation",
-    category: "Remodels",
-    location: "Gilchrest Area, Central Oregon",
-    image: gilchrestBackAfter,
-    beforeImage: gilchrestBackBefore,
-    tags: ["Remodels"],
-    description: "Rear view showing new windows and cedar siding"
+    title: "Full Home Remodel — Front Exterior",
+    category: "Full Home Remodel",
+    location: "Central Oregon",
+    image: fullHomeExterior,
+    tags: ["Full Home Remodel"],
+    description: "Modern farmhouse with deep charcoal board-and-batten siding and natural wood door.",
+    subgroup: "Exterior",
   },
-  // Gilchrest A-Frame supplementary entries
   {
     id: 11,
-    title: "A-Frame Front Patio Complete",
-    category: "Remodels",
-    location: "Gilchrest Area, Central Oregon",
-    image: gilchrestPatioFinished,
-    tags: ["Remodels"],
-    description: "Cedar ceiling patio with black beam detailing"
+    title: "Side Yard, Barn & Patio",
+    category: "Full Home Remodel",
+    location: "Central Oregon",
+    image: fullHomeSideYard,
+    tags: ["Full Home Remodel"],
+    description: "Functional outdoor living space with durable metal roofing and comfortable seating.",
+    subgroup: "Exterior",
   },
+  // ── Full Home Remodel — Living/Feature ──
   {
     id: 12,
-    title: "Window & Door Installation Process",
-    category: "Remodels",
-    location: "Gilchrest Area, Central Oregon",
-    image: gilchrestDoorInstall,
-    tags: ["Remodels"],
-    description: "Team installing sliding glass doors at Gilchrest A-Frame"
+    title: "Living Room Remodel",
+    category: "Full Home Remodel",
+    location: "Central Oregon",
+    image: fullHomeLivingRoom,
+    tags: ["Full Home Remodel"],
+    description: "Open concept living area with shiplap walls, natural wood door, and cast iron stove.",
+    subgroup: "Living/Feature",
   },
   {
     id: 13,
-    title: "Exterior Finishing Work",
-    category: "Remodels",
-    location: "Gilchrest Area, Central Oregon",
-    image: gilchrestExteriorWork,
-    tags: ["Remodels"],
-    description: "Workers finishing exterior trim on A-Frame home"
+    title: "Indoor-Outdoor Window Bar",
+    category: "Full Home Remodel",
+    location: "Central Oregon",
+    image: fullHomeBarWindow,
+    tags: ["Full Home Remodel"],
+    description: "Custom fold-out bar window connecting kitchen to covered patio entertainment space.",
+    subgroup: "Living/Feature",
   },
   {
     id: 14,
-    title: "Vaulted Ceiling & Craftsmanship",
-    category: "Remodels",
-    location: "Gilchrest Area, Central Oregon",
-    image: gilchrestCeilingFan,
-    tags: ["Remodels"],
-    description: "Detailed view of vaulted ceiling and modern fan"
+    title: "Custom French Doors",
+    category: "Full Home Remodel",
+    location: "Central Oregon",
+    image: fullHomeFrenchDoors,
+    tags: ["Full Home Remodel"],
+    description: "Custom-painted French doors with duplicated trim work and hallway entry modification.",
+    subgroup: "Living/Feature",
   },
-  // Full Home Remodel (Oliviero) entries
+  // ── Full Home Remodel — Kitchen ──
   {
     id: 15,
-    title: "Full Home Remodel - Front Exterior",
-    category: "Remodels",
+    title: "Custom Kitchen Remodel",
+    category: "Full Home Remodel",
     location: "Central Oregon",
-    image: olivieroFrontAfter,
-    beforeImage: olivieroFrontBefore,
-    tags: ["Remodels"],
-    description: "Modern farmhouse with deep charcoal board-and-batten siding and natural wood door"
+    image: fullHomeKitchenCustom,
+    tags: ["Full Home Remodel"],
+    description: "Designer kitchen featuring quartz island, farmhouse sink, and glass pendant lighting.",
+    subgroup: "Kitchen",
   },
   {
     id: 16,
-    title: "Full Home Remodel - Side & Patio",
-    category: "Remodels",
+    title: "Statement Tile Backsplash",
+    category: "Full Home Remodel",
     location: "Central Oregon",
-    image: olivieroSideAfter,
-    beforeImage: olivieroSideBefore,
-    tags: ["Remodels"],
-    description: "New back deck, sunroom windows, and modern cable railing with fire pit area"
+    image: fullHomeKitchenBacksplash,
+    tags: ["Full Home Remodel"],
+    description: "Custom shiplap-wrapped range hood with floating wood shelves and designer tile.",
+    subgroup: "Kitchen",
   },
   {
     id: 17,
-    title: "Full Home Remodel - Kitchen",
-    category: "Remodels",
+    title: "Farmhouse Sink & Quartz Countertop Details",
+    category: "Full Home Remodel",
     location: "Central Oregon",
-    image: olivieroKitchenAfter,
-    beforeImage: olivieroKitchenBefore,
-    tags: ["Remodels"],
-    description: "Designer kitchen with shiplap walls, patterned tile backsplash, and bold navy island"
+    image: fullHomeFarmhouseSink,
+    tags: ["Full Home Remodel"],
+    description: "White farmhouse sink with industrial black faucet and marble-look quartz surfaces.",
+    subgroup: "Kitchen",
   },
   {
     id: 18,
-    title: "Outdoor Bar Pass-Through Window",
-    category: "Remodels",
+    title: "Functional Kitchen Layout Upgrade",
+    category: "Full Home Remodel",
     location: "Central Oregon",
-    image: olivieroBarWindow1,
-    tags: ["Remodels"],
-    description: "Custom pass-through window with mountain art and outdoor bar counter"
+    image: fullHomeKitchenLayout,
+    tags: ["Full Home Remodel"],
+    description: "Open floor plan showcasing quartz island, mint pendant lighting, and panoramic views.",
+    subgroup: "Kitchen",
   },
-  {
-    id: 19,
-    title: "Entertainment Bar Window",
-    category: "Remodels",
-    location: "Central Oregon",
-    image: olivieroBarWindow2,
-    tags: ["Remodels"],
-    description: "Full bar setup with metal stools and covered patio entertainment space"
-  },
-  // Full Home Remodel - Kitchen Expanded Gallery entries
+  // ── Full Home Remodel — Bathroom ──
   {
     id: 20,
-    title: "Full Home Remodel - Kitchen Entry View",
-    category: "Remodels",
+    title: "Freestanding Tub Bathroom",
+    category: "Full Home Remodel",
     location: "Central Oregon",
-    image: olivieroKitchenEntry,
-    tags: ["Remodels"],
-    description: "Open concept kitchen with shiplap walls and navy island visible from living room"
+    image: fullHomeFreestandingTub,
+    tags: ["Full Home Remodel"],
+    description: "Elegant freestanding tub installation with modern fixtures and updated finishes.",
+    subgroup: "Bathroom",
   },
   {
     id: 21,
-    title: "Full Home Remodel - Kitchen Overview",
-    category: "Remodels",
+    title: "Patterned Tile Shower",
+    category: "Full Home Remodel",
     location: "Central Oregon",
-    image: olivieroKitchenFull1,
-    tags: ["Remodels"],
-    description: "Designer kitchen featuring quartz island, farmhouse sink, and glass pendant lighting"
+    image: fullHomePatternedTile,
+    tags: ["Full Home Remodel"],
+    description: "Custom patterned tile shower surround with coordinated floor and accent tiles.",
+    subgroup: "Bathroom",
   },
   {
     id: 22,
-    title: "Stove & Patterned Tile Backsplash",
-    category: "Remodels",
+    title: "Double Vanity Bathroom Remodel",
+    category: "Full Home Remodel",
     location: "Central Oregon",
-    image: olivieroKitchenStove,
-    tags: ["Remodels"],
-    description: "Custom shiplap-wrapped range hood with floating wood shelves and designer tile"
+    image: fullHomeDoubleVanity,
+    tags: ["Full Home Remodel"],
+    description: "His-and-hers vanity with quartz countertops and modern lighting fixtures.",
+    subgroup: "Bathroom",
   },
   {
     id: 23,
-    title: "Farmhouse Sink & Counter Details",
-    category: "Remodels",
+    title: "Custom Walk-In Shower & Built-In Storage",
+    category: "Full Home Remodel",
     location: "Central Oregon",
-    image: olivieroKitchenFarmhouseSink,
-    tags: ["Remodels"],
-    description: "White farmhouse sink with industrial black faucet and marble-look quartz surfaces"
+    image: fullHomeMasterShower,
+    tags: ["Full Home Remodel"],
+    description: "Full master bathroom remodel with custom walk-in shower and built-in storage niches.",
+    subgroup: "Bathroom",
   },
   {
     id: 24,
-    title: "Bar Window – Interior Wine View",
-    category: "Remodels",
+    title: "Modern Vanity & Lighting",
+    category: "Full Home Remodel",
     location: "Central Oregon",
-    image: olivieroBarWine,
-    tags: ["Remodels"],
-    description: "Indoor-outdoor bar connection showcasing quartz counter and kitchen beyond"
+    image: fullHomeModernVanity,
+    tags: ["Full Home Remodel"],
+    description: "Updated vanity with contemporary lighting, framed mirror, and clean design.",
+    subgroup: "Bathroom",
   },
   {
     id: 25,
-    title: "Bar Window – Full Exterior Frame",
-    category: "Remodels",
+    title: "Updated Water Closet",
+    category: "Full Home Remodel",
     location: "Central Oregon",
-    image: olivieroBarExteriorFull,
-    tags: ["Remodels"],
-    description: "Custom fold-out bar window with mountain-scene metal art and black exterior accents"
+    image: fullHomeWaterCloset,
+    tags: ["Full Home Remodel"],
+    description: "Refreshed water closet with modern fixtures and updated finishes throughout.",
+    subgroup: "Bathroom",
   },
-  // Full Home Remodel - Living Room & Additional Details
+  // ── Full Home Remodel — Deck ──
   {
     id: 26,
-    title: "Full Home Remodel - Living Room",
-    category: "Remodels",
+    title: "Upper Balcony Deck Rebuild",
+    category: "Full Home Remodel",
     location: "Central Oregon",
-    image: olivieroLivingRoom,
-    tags: ["Remodels"],
-    description: "Open concept living area with shiplap walls, natural wood door, and cast iron stove"
+    image: fullHomeDeck,
+    tags: ["Full Home Remodel"],
+    description: "County-permitted rebuild with accented handrails, integrated into a larger remodel.",
+    subgroup: "Deck",
   },
-  {
-    id: 27,
-    title: "Kitchen Sink Window Detail",
-    category: "Remodels",
-    location: "Central Oregon",
-    image: olivieroSinkWindow,
-    tags: ["Remodels"],
-    description: "Counter-level perspective showcasing quartz surfaces and window garden view"
-  },
-  {
-    id: 28,
-    title: "Kitchen at Dusk – Sink Reflection",
-    category: "Remodels",
-    location: "Central Oregon",
-    image: olivieroSinkDusk,
-    tags: ["Remodels"],
-    description: "Evening ambiance with string lights visible through windows and polished counters"
-  },
-  // Full Home Remodel - Exterior & Before/After Gallery
-  {
-    id: 29,
-    title: "Full Home Remodel - Property View",
-    category: "Remodels",
-    location: "Central Oregon",
-    image: olivieroExteriorHero,
-    tags: ["Remodels"],
-    description: "Complete transformation showing main home, elevated deck, and matching barn structure"
-  },
+
+  // ── Deck Projects ──
   {
     id: 30,
-    title: "Renovated Barn – Rustic Door Detail",
-    category: "Remodels",
+    title: "Structural Repair & Deck Refresh",
+    category: "Decks",
     location: "Central Oregon",
-    image: olivieroBarnAfter,
-    tags: ["Remodels"],
-    description: "Outbuilding transformation with reclaimed wood barn doors and modern black exterior"
+    image: deckStructuralRepair,
+    tags: ["Decks"],
+    description: "Structural repairs and surface refinishing to restore safety and extend deck life.",
   },
   {
     id: 31,
-    title: "Barn Before Renovation",
-    category: "Remodels",
+    title: "Deck Refinish & Railing Upgrade",
+    category: "Decks",
     location: "Central Oregon",
-    image: olivieroBarnBefore,
-    tags: ["Remodels"],
-    description: "Original barn structure with dated brown siding before transformation"
+    image: deckRefinishRailing,
+    tags: ["Decks"],
+    description: "Refinished and stained existing deck boards with selective replacements and modern handrails.",
   },
   {
     id: 32,
-    title: "Hay Storage Before Renovation",
-    category: "Remodels",
-    location: "Central Oregon",
-    image: olivieroHayStorageBefore,
-    tags: ["Remodels"],
-    description: "Original hay storage lean-to structure before modern updates"
+    title: "Sunriver Deck Rebuild",
+    category: "Decks",
+    location: "Sunriver, Oregon",
+    image: deckSunriverRebuild,
+    tags: ["Decks"],
+    description: "Full demolition due to extensive dry rot, followed by an engineered, SROA-approved rebuild.",
   },
   {
     id: 33,
-    title: "Workshop Before Renovation",
-    category: "Remodels",
+    title: "Deck Addition & Accessibility Upgrade",
+    category: "Decks",
     location: "Central Oregon",
-    image: olivieroWorkshopBefore,
-    tags: ["Remodels"],
-    description: "Original workshop/shed before modern farmhouse transformation"
-  },
-  // Full Home Remodel - Exterior Expanded Gallery
-  {
-    id: 34,
-    title: "Full Home Remodel - Front Porch",
-    category: "Remodels",
-    location: "Central Oregon",
-    image: olivieroFrontPorch,
-    tags: ["Remodels"],
-    description: "Welcoming covered porch with craftsman door, pendant lighting, and American flag"
-  },
-  {
-    id: 35,
-    title: "Property View Through Split-Rail Fence",
-    category: "Remodels",
-    location: "Central Oregon",
-    image: olivieroPropertyFence,
-    tags: ["Remodels"],
-    description: "Artistic perspective of complete property transformation with main home and outbuildings"
-  },
-  {
-    id: 36,
-    title: "Side Exterior with Patio Seating",
-    category: "Remodels",
-    location: "Central Oregon",
-    image: olivieroSidePatio,
-    tags: ["Remodels"],
-    description: "Functional outdoor living space with durable metal roofing and comfortable seating"
-  },
-  {
-    id: 37,
-    title: "Full Home Remodel - Back Patio",
-    category: "Remodels",
-    location: "Central Oregon",
-    image: olivieroBackPatio,
-    tags: ["Remodels"],
-    description: "Stunning outdoor entertaining space with multi-level deck, fire pit, and spa area"
-  },
-  {
-    id: 38,
-    title: "Full Home Remodel - Barn Portrait",
-    category: "Remodels",
-    location: "Central Oregon",
-    image: olivieroBarnPortrait,
-    tags: ["Remodels"],
-    description: "Charming barn conversion with reclaimed wood doors and intimate outdoor seating"
-  },
-  {
-    id: 39,
-    title: "Full Home Remodel - Barn Wide",
-    category: "Remodels",
-    location: "Central Oregon",
-    image: olivieroBarnWide,
-    tags: ["Remodels"],
-    description: "Cohesive property design with matching dark siding and rustic wood accents"
-  },
-  {
-    id: 40,
-    title: "Full Home Remodel - Front Door Detail",
-    category: "Remodels",
-    location: "Central Oregon",
-    image: olivieroFrontDoor,
-    tags: ["Remodels"],
-    description: "Handcrafted entry door with knotty alder wood, glass panes, and industrial pendant fixture"
-  },
-  // Full Home Remodel - Interior & Property Expanded
-  {
-    id: 41,
-    title: "Full Home Remodel - Kitchen Island View",
-    category: "Remodels",
-    location: "Central Oregon",
-    image: olivieroKitchenIsland,
-    tags: ["Remodels"],
-    description: "Open floor plan showcasing quartz island, mint pendant lighting, and rustic dining area with panoramic property views"
-  },
-  {
-    id: 42,
-    title: "Full Home Remodel - Stove Wall",
-    category: "Remodels",
-    location: "Central Oregon",
-    image: olivieroLivingStove,
-    tags: ["Remodels"],
-    description: "Cozy farmhouse living space with cast iron stove, shiplap walls, and indoor-outdoor barn connection"
-  },
-  {
-    id: 43,
-    title: "Full Home Remodel - Property Wide View",
-    category: "Remodels",
-    location: "Central Oregon",
-    image: olivieroPropertyWide,
-    tags: ["Remodels"],
-    description: "Comprehensive property view showing complete transformation with coordinated exterior finishes and outdoor living spaces"
-  },
-  {
-    id: 44,
-    title: "Full Home Remodel - Front Lawn",
-    category: "Remodels",
-    location: "Central Oregon",
-    image: olivieroExteriorFrontLawn,
-    tags: ["Remodels"],
-    description: "Front approach view showing dark board and batten siding, welcoming covered porch, and integrated outdoor structures"
+    image: deckAddition,
+    tags: ["Decks"],
+    description: "Small deck addition for hot tub support with built-in bench, hose access, and privacy wall.",
   },
 ];
 
@@ -537,8 +358,7 @@ const Gallery = () => {
     ? projects
     : projects.filter(p => p.tags.includes(activeCategory));
 
-  // Prepare images for lightbox
-  const lightboxImages = useMemo(() => 
+  const lightboxImages = useMemo(() =>
     filteredProjects.map((project) => ({
       src: project.image,
       alt: `${project.title} by Purple Rain Construction in ${project.location}`,
@@ -561,7 +381,7 @@ const Gallery = () => {
             Project Gallery
           </h1>
           <p className="text-xl text-primary-foreground/90 max-w-2xl">
-            Browse recent decks, remodels, and Sunriver projects completed by Purple Rain Construction.
+            Browse recent decks, remodels, and custom projects completed by Purple Rain Construction across Central Oregon.
           </p>
         </div>
       </section>
@@ -575,22 +395,22 @@ const Gallery = () => {
           />
           <div className="grid md:grid-cols-2 gap-8">
             <div>
-              <h3 className="text-lg font-semibold mb-3">Gilchrest A-Frame Front</h3>
+              <h3 className="text-lg font-semibold mb-3">A-Frame Cabin — Front Exterior</h3>
               <BeforeAfterSlider
                 beforeImage={gilchrestFrontBefore}
                 afterImage={gilchrestFrontAfter}
-                beforeAlt="Gilchrest A-Frame before renovation"
-                afterAlt="Gilchrest A-Frame after renovation"
+                beforeAlt="A-Frame cabin before renovation"
+                afterAlt="A-Frame cabin after renovation"
                 className="aspect-[4/3]"
               />
             </div>
             <div>
-              <h3 className="text-lg font-semibold mb-3">Oliviero Exterior</h3>
+              <h3 className="text-lg font-semibold mb-3">Full Home Remodel — Front Exterior</h3>
               <BeforeAfterSlider
                 beforeImage={olivieroFrontBefore}
                 afterImage={olivieroFrontAfter}
-                beforeAlt="Oliviero home before renovation"
-                afterAlt="Oliviero home after renovation"
+                beforeAlt="Full home remodel before renovation"
+                afterAlt="Full home remodel after renovation"
                 className="aspect-[4/3]"
               />
             </div>
@@ -636,19 +456,22 @@ const Gallery = () => {
                     decoding="async"
                   />
                 </div>
-                <div className="p-6">
-                  <div className="flex flex-wrap gap-2 mb-3">
+                <div className="p-5">
+                  <div className="flex flex-wrap gap-2 mb-2">
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="px-2 py-1 bg-primary/10 text-primary text-xs font-medium rounded-full"
+                        className="px-2 py-0.5 bg-primary/10 text-primary text-xs font-medium rounded-full"
                       >
                         {tag}
                       </span>
                     ))}
                   </div>
-                  <h3 className="text-lg font-semibold mb-1">{project.title}</h3>
-                  <p className="text-sm text-muted-foreground">{project.location}</p>
+                  <h3 className="text-base font-semibold mb-1">{project.title}</h3>
+                  <p className="text-sm text-muted-foreground line-clamp-2 mb-1">
+                    {project.description}
+                  </p>
+                  <p className="text-xs text-muted-foreground/70">{project.location}</p>
                 </div>
               </div>
             ))}
