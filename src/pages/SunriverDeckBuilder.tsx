@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Phone, CheckCircle, TreePine, Shield, Hammer, Wrench, Home, Snowflake, Users, Star, ArrowRight, FileText } from "lucide-react";
+import { Phone, CheckCircle, TreePine, Shield, Hammer, Wrench, Home, Snowflake, Users, Star, ArrowRight, FileText, HelpCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import SectionHeading from "@/components/ui/SectionHeading";
@@ -384,6 +384,60 @@ const SunriverDeckBuilder = () => {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Sunriver SROA FAQ Section */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <SectionHeading
+            title="Frequently Asked Questions — Sunriver Decks & SROA"
+            subtitle="Common questions about building, permitting, and SROA compliance in Sunriver."
+          />
+          <div className="max-w-3xl mx-auto">
+            <div className="space-y-4">
+              {[
+                {
+                  question: "What is SROA and why does it matter for my deck?",
+                  answer: "SROA stands for Sunriver Owners Association. If you're building, replacing, or modifying a deck in Sunriver, your project must meet SROA design standards in addition to Deschutes County building codes. SROA reviews the visual and material aspects of your project — including colors, railing styles, and overall design compatibility with the community."
+                },
+                {
+                  question: "Do I need both SROA approval and a building permit?",
+                  answer: "Yes. SROA approval covers design aesthetics and community compliance. Deschutes County handles structural permitting and building code compliance. These are two separate processes, and both are required before construction can begin on most Sunriver deck projects."
+                },
+                {
+                  question: "How long does the SROA approval process take?",
+                  answer: "SROA review typically takes 1–2 weeks after a complete submission is made. However, the total timeline — including design, engineering, and preparing the required documents — can take several weeks before submission. We handle the full process on your behalf."
+                },
+                {
+                  question: "Can you handle the SROA submission for me?",
+                  answer: "Yes. We manage the entire SROA process — from preparing compliant design drawings and material selections to submitting the application and coordinating with the Design Committee. Learn more on our SROA Services page."
+                },
+                {
+                  question: "What materials does SROA allow for decks?",
+                  answer: "SROA has guidelines around acceptable decking materials, colors, and railing styles. Composite and PVC decking from brands like Trex and TimberTech are commonly approved. We help you select materials that meet both SROA standards and your personal preferences."
+                },
+                {
+                  question: "Why do Sunriver decks cost more than in Bend or Redmond?",
+                  answer: "Sunriver projects often require additional engineering for heavy snow loads, SROA-compliant design work, longer approval timelines, and elevated construction. These factors contribute to higher overall costs compared to standard deck builds in other Central Oregon communities."
+                },
+                {
+                  question: "What if my existing deck needs repairs — does that require SROA approval too?",
+                  answer: "It depends on the scope. Minor repairs like board replacements may not require SROA review, but anything that changes the deck's footprint, height, railing style, or appearance typically does. We'll assess your project and let you know what's required."
+                },
+              ].map((faq, index) => (
+                <details key={index} className="group bg-muted rounded-xl border border-border">
+                  <summary className="flex items-start gap-3 p-5 cursor-pointer list-none font-semibold text-foreground hover:text-primary transition-colors">
+                    <HelpCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span>{faq.question}</span>
+                  </summary>
+                  <div className="px-5 pb-5 pl-13 text-muted-foreground">
+                    {faq.answer}
+                  </div>
+                </details>
+              ))}
+            </div>
           </div>
         </div>
       </section>

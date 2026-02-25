@@ -16,13 +16,13 @@ import project2After from "@/assets/decks/project-2-after.jpg";
 import deckTwinLakes from "@/assets/stock/deck-twin-lakes.jpeg";
 // New deck project images
 import decksHeroHeader from "@/assets/decks/decks-hero-header.jpg";
-import upperBalconyRebuild from "@/assets/decks/upper-balcony-rebuild-after.jpg";
+import upperBalconyGallery from "@/assets/decks/upper-balcony-gallery-new.jpg";
 import deckSurfaceCableRailing from "@/assets/decks/deck-surface-cable-railing.jpg";
 import sunriverDeckRebuild from "@/assets/decks/sunriver-deck-rebuild.jpg";
 import deckAdditionHotTub from "@/assets/decks/deck-addition-hot-tub.jpg";
 import timbertechEnglishWalnut from "@/assets/decks/timbertech-english-walnut.jpg";
 // New downloaded images
-import sunriverSectionDeck from "@/assets/stock/deck-new-hero.jpg";
+import sunriverSectionDeck from "@/assets/decks/sunriver-section-deck.jpg";
 import structuralRepairRefresh from "@/assets/decks/structural-repair-new.jpg";
 import deckRefinishRailing from "@/assets/decks/deck-refinish-railing.jpg";
 import sunriverRebuildEngineered from "@/assets/decks/sunriver-rebuild-new.jpg";
@@ -135,7 +135,7 @@ const Decks = () => {
                 {[
                   "Built to handle Central Oregon's freeze-thaw cycles",
                   "High-strength framing and fasteners for heavy snow loads",
-                  "Composite decking options as a certified TimberTech and TrexPro builder",
+                  "PVC & Composite decking options as a certified TimberTech and TrexPro builder",
                   "Code-compliant and weather-tested designs",
                   "Premium flashing and waterproofing techniques",
                   "Proper ventilation to prevent moisture damage",
@@ -289,10 +289,13 @@ const Decks = () => {
                 Material choice matters — but in Sunriver, proper design and construction matter even more.
               </p>
               <p className="text-lg text-primary-foreground/90 mb-6">
-                Sunriver decks face unique challenges: heavy snow loads that can exceed 60 lbs per square foot, constant moisture from snow and rain, freeze-thaw cycles that stress materials, and shaded lots that stay damp longer than other areas in Central Oregon.
+                Decks in Sunriver are exposed to heavy snow loads, ongoing moisture from snow and rain, freeze-thaw cycles, and shaded lots that tend to stay damp longer than other areas in Central Oregon. These conditions place added stress on both materials and structure.
+              </p>
+              <p className="text-primary-foreground/90 mb-6">
+                We account for these factors in every Sunriver project, designing decks that meet SROA guidelines while prioritizing long-term performance and safety. To learn more about Sunriver-specific requirements, approvals, and construction considerations, visit our <Link to="/sunriver-deck-builder" className="underline hover:text-background transition-colors">Sunriver Deck Builder</Link> page.
               </p>
               <p className="text-primary-foreground/90 mb-8">
-                We account for these factors in every Sunriver project, designing decks that meet SROA guidelines while prioritizing long-term performance and safety. To learn more about Sunriver-specific requirements, approvals, and construction considerations, visit our <Link to="/sunriver-deck-builder" className="underline hover:text-background transition-colors">Sunriver Deck Builder</Link> page. Whether your deck needs to support a hot tub, outdoor kitchen, or regular rental traffic, our team builds with durability and longevity in mind.
+                Whether your deck needs to support a hot tub, outdoor kitchen, or regular rental traffic, our team builds with durability and longevity in mind.
               </p>
               <Button
                 asChild
@@ -376,7 +379,7 @@ const Decks = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
               { 
-                src: upperBalconyRebuild, 
+                src: upperBalconyGallery, 
                 alt: "Upper balcony deck rebuild in Central Oregon",
                 caption: "Upper Balcony Deck Rebuild",
                 description: "County-permitted rebuild with accented handrails, integrated into a larger remodel that added an outdoor bar and patio living space below."

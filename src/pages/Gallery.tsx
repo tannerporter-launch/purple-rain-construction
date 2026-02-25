@@ -248,7 +248,7 @@ const projects: GalleryProject[] = [
   },
   {
     id: 13,
-    title: "Indoor-Outdoor Window Bar Feature",
+    title: "Indoor–Outdoor Window Bar Feature",
     category: "Full Home Remodel",
     image: fullHomeBarWindow,
     tags: ["Full Home Remodel", "Living / Feature"],

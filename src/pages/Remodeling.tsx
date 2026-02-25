@@ -204,7 +204,7 @@ const Remodeling = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
               { src: olivieroExteriorHero, alt: "Full home remodel exterior transformation", caption: "Full Home Remodel (Exterior Transformation)", description: "Updated siding, roofing, windows, and entry details to modernize the home while preserving its character." },
-              { src: olivieroBackPatio, alt: "Integrated remodel and outdoor living space", caption: "Integrated Remodel & Outdoor Living", description: "Back patio with outdoor seating, fire pit, upper balcony, and hot tub — seamless indoor-outdoor living." },
+              { src: olivieroBackPatio, alt: "Integrated remodel and outdoor living space", caption: "Integrated Remodel & Outdoor Living", description: "Rear exterior improvements coordinated with deck and patio spaces for cohesive indoor-outdoor flow." },
               { src: olivieroLivingRoom, alt: "Main living area remodel with farmhouse styling", caption: "Main Living Area Remodel", description: "Open layout, updated finishes, and improved circulation designed for everyday comfort and function." },
               { src: staircaseNew, alt: "Structural and finish carpentry upgrade", caption: "Structural & Finish Carpentry Upgrade", description: "Rebuilt stair system with updated railings, lighting, and finishes to meet code and enhance safety." },
             ].map((img, index) => (
@@ -224,7 +224,7 @@ const Remodeling = () => {
           </div>
           <div className="text-center mt-8">
             <Button asChild variant="outline" size="lg">
-              <Link to="/gallery">View Full Gallery</Link>
+              <Link to="/gallery">View Remodeling Project Gallery</Link>
             </Button>
           </div>
         </div>

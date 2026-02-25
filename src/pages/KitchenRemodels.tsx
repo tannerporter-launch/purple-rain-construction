@@ -213,7 +213,7 @@ const KitchenRemodels = () => {
           </div>
           <div className="text-center mt-8">
             <Button asChild variant="outline" size="lg">
-              <Link to="/gallery">View Full Gallery</Link>
+              <Link to="/gallery">View Kitchen Remodel Gallery</Link>
             </Button>
           </div>
         </div>
