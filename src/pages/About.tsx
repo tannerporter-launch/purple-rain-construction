@@ -157,9 +157,9 @@ const About = () => {
                 </div>
                 <h3 className="text-lg font-semibold mb-1">{member.name}</h3>
                 <p className="text-primary font-medium text-sm mb-3">{member.role}</p>
-                <p className="text-xs text-muted-foreground mb-3">{member.bio}</p>
+                <p className="text-sm text-muted-foreground mb-3">{member.bio}</p>
                 {member.philosophy && (
-                  <p className="text-xs text-muted-foreground italic border-t border-border pt-3 mt-3">"{member.philosophy}"</p>
+                  <p className="text-sm text-muted-foreground italic border-t border-border pt-3 mt-3">"{member.philosophy}"</p>
                 )}
               </div>
             ))}

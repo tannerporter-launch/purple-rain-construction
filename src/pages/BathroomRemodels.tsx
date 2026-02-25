@@ -230,7 +230,7 @@ const BathroomRemodels = () => {
           </div>
           <div className="text-center mt-8">
             <Button asChild variant="outline" size="lg">
-              <Link to="/gallery">View Full Gallery</Link>
+              <Link to="/gallery">View Bathroom Remodel Gallery</Link>
             </Button>
           </div>
         </div>
