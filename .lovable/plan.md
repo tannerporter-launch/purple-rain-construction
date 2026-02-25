@@ -1,35 +1,45 @@
 
 
-## Replace Section 5 Sunriver Photo on Homepage
+# Implement Remaining Decks + Sunriver Page Image Replacements
 
-### What Changes
+## Overview
 
-Replace the current Sunriver deck image (Section 5: "Decks Built for Sunriver Living") on the homepage with the new image provided: `Decks_Built_for_Sunriver_Living.jpg`
+Three images from the revision document can be downloaded and implemented right now. These are the only remaining website edit specifications that are not blocked on client uploads or missing information.
 
-### Implementation Steps
+## Items to Implement
 
-**Step 1: Copy the image to the project**
-- Copy `user-uploads://Decks_Built_for_Sunriver_Living.jpg` to `src/assets/decks/sunriver-section-5.jpg`
-- This follows the existing naming convention (sunriver-section-*.jpg) and preserves the asset organization
+### 1. Decks Page Hero Image (Section 1)
+- **Source:** `https://storage.googleapis.com/msgsndr/XGURfeqIU4yoXltEk3OH/media/698ce9167f6dcf1d3024e602.jpg`
+- **Target:** `src/assets/decks/decks-hero-header.jpg` (replace existing)
+- **File:** `src/pages/Decks.tsx` line 90 — already references `decksHeroHeader`, so only the image file needs replacing
 
-**Step 2: Update Index.tsx**
-- Add new import at line 14 (after the existing stock photo imports):
-  ```typescript
-  import sunriverSection5 from "@/assets/decks/sunriver-section-5.jpg";
-  ```
-- Update line 278 in the Sunriver section to use the new image:
-  - Change: `src={deckStockPhoto}`
-  - To: `src={sunriverSection5}`
-- Update the alt text to be more descriptive of the new image content:
-  - Current: `"Composite deck with mountain views - built for Sunriver living"`
-  - New: `"Modern elevated deck with composite decking, mountain forest views, and glass railing - custom-built for Sunriver living"`
+### 2. Sunriver Page Hero Image (Section 1)
+- **Source:** Same URL as above OR the Sunriver-specific URL from the doc: `https://drive.usercontent.google.com/u/0/uc?id=1m5J7c20l5zN9JJmv6lHSveBat_N8yr3u&export=download`
+- **Target:** `src/assets/decks/sunriver-hero-header.jpg` (replace existing)
+- **File:** `src/pages/SunriverDeckBuilder.tsx` line 11/18 — already references `sunriverHeroHeader`
 
-### What Stays Unchanged
-- All other homepage sections (Hero, Trust Badges, Services, JobTread, Testimonials, etc.)
-- Section 5 layout, styling, text content, and buttons
-- Image styling (rounded-2xl shadow, lazy loading, responsive sizing)
-- All existing imports for other images
+### 3. Sunriver Page Section 2 Image (Why Specialized Construction)
+- **Source:** `https://storage.googleapis.com/msgsndr/XGURfeqIU4yoXltEk3OH/media/698cd5a33fdd0e0053bc22b8.jpg`
+- **Target:** `src/assets/decks/sunriver-section-2.jpg` (replace existing)
+- **File:** `src/pages/SunriverDeckBuilder.tsx` line 12 — already references `sunriverSection2`
 
-### Image Quality Notes
-The new image is a professional photograph of a composite deck with modern styling, mountain forest backdrop, and seating areas — perfect for the "Decks Built for Sunriver Living" section. It shows premium deck craftsmanship in a Sunriver setting.
+## Implementation Steps
+
+1. Fetch each image URL to verify accessibility
+2. Download and copy each image to the correct asset path (replacing existing files)
+3. No code changes needed in TSX files since the import paths already reference these filenames
+
+## What Stays Unchanged
+- All text content on Decks and Sunriver pages (already complete)
+- All other pages and sections
+- All import paths in components
+
+## Still Waiting (Not Part of This Plan)
+- Homepage service card photos (Deck + Remodel) — waiting on your uploads
+- Services page Deck photo — same as above
+- Meta Pixel ID — blank in client doc
+- Sunriver page S7 image — client getting new photo in a few weeks
+- Decks page S2 image — client sourcing photo of Cindy's deck
+- Contact form CRM/email integration — needs decision
+- About page brand logos — client commentary about wanting real entity logos
 
