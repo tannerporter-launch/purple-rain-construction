@@ -203,10 +203,10 @@ const Remodeling = () => {
           />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
-              { src: olivieroExteriorHero, alt: "Full home remodel exterior transformation", caption: "Full Home Remodel (Exterior Transformation)", description: "Complete exterior renovation with modern farmhouse styling, new siding, roofing, and renovated outbuilding." },
+              { src: olivieroExteriorHero, alt: "Full home remodel exterior transformation", caption: "Full Home Remodel (Exterior Transformation)", description: "Updated siding, roofing, windows, and entry details to modernize the home while preserving its character." },
               { src: olivieroBackPatio, alt: "Integrated remodel and outdoor living space", caption: "Integrated Remodel & Outdoor Living", description: "Back patio with outdoor seating, fire pit, upper balcony, and hot tub — seamless indoor-outdoor living." },
-              { src: olivieroLivingRoom, alt: "Main living area remodel with farmhouse styling", caption: "Main Living Area Remodel", description: "Modern farmhouse living room with leather furniture, wood stove, and ceiling fan — warm and functional." },
-              { src: staircaseNew, alt: "Structural and finish carpentry upgrade", caption: "Structural & Finish Carpentry Upgrade", description: "Modern stairwell with dark beams and metal railing — detailed structural and finish carpentry work." },
+              { src: olivieroLivingRoom, alt: "Main living area remodel with farmhouse styling", caption: "Main Living Area Remodel", description: "Open layout, updated finishes, and improved circulation designed for everyday comfort and function." },
+              { src: staircaseNew, alt: "Structural and finish carpentry upgrade", caption: "Structural & Finish Carpentry Upgrade", description: "Rebuilt stair system with updated railings, lighting, and finishes to meet code and enhance safety." },
             ].map((img, index) => (
               <div key={index} className="bg-background rounded-2xl overflow-hidden border border-border">
                 <img
