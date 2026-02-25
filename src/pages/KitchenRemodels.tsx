@@ -192,10 +192,10 @@ const KitchenRemodels = () => {
           />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
-              { src: olivieroKitchenFull1, alt: "Full kitchen remodel with modern farmhouse styling", caption: "Full Kitchen Remodel (Mid-Range Custom Build)", description: "Complete kitchen renovation featuring custom cabinetry, patterned backsplash, and modern farmhouse finishes." },
-              { src: olivieroBarExteriorFull, alt: "Custom indoor-outdoor bar window feature", caption: "Custom Indoor-Outdoor Feature", description: "Custom fold-out bar window with mountain-scene metal art and black exterior accents — a unique indoor-outdoor connection." },
-              { src: olivieroKitchenStove, alt: "Professional range with patterned tile backsplash", caption: "Material & Finish Details", description: "Professional range with patterned tile backsplash and wood-wrapped hood — thoughtful material and finish selections." },
-              { src: olivieroKitchenAfter, alt: "Functional kitchen layout with island", caption: "Functional Kitchen Layout Upgrade", description: "Modern kitchen with black island, white cabinets, and patterned backsplash — designed for function and flow." },
+              { src: olivieroKitchenFull1, alt: "Full kitchen remodel with modern farmhouse styling", caption: "Full Kitchen Remodel (Mid-Range Custom Build)", description: "Shaker cabinetry, quartz countertops, custom island, and updated lighting for improved flow and everyday function." },
+              { src: olivieroBarExteriorFull, alt: "Custom indoor-outdoor bar window feature", caption: "Custom Indoor–Outdoor Feature", description: "Pass-through window and counter designed for entertaining, connecting the kitchen to the patio and outdoor living space." },
+              { src: olivieroKitchenStove, alt: "Professional range with patterned tile backsplash", caption: "Material & Finish Details", description: "Patterned tile backsplash, custom hood surround, and open shelving to add character without excessive complexity." },
+              { src: olivieroKitchenAfter, alt: "Functional kitchen layout with island", caption: "Functional Kitchen Layout Upgrade", description: "Reworked cabinetry, appliance placement, and lighting to create a practical, well-balanced kitchen for daily use." },
             ].map((img, index) => (
               <div key={index} className="bg-background rounded-2xl overflow-hidden border border-border">
                 <img

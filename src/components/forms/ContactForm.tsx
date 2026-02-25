@@ -176,6 +176,20 @@ const ContactForm = ({ defaultService, className = "" }: ContactFormProps) => {
       return;
     }
 
+    // Step 4: Send email notification (non-blocking)
+    supabase.functions.invoke("send-contact-notification", {
+      body: {
+        firstName: data.firstName,
+        lastName: data.lastName,
+        email: data.email,
+        phone: data.phone,
+        city: data.city,
+        serviceType: data.serviceType,
+        message: data.message,
+        source: data.source || "",
+      },
+    }).catch((err) => console.error("Email notification failed:", err));
+
     setIsSubmitting(false);
     setIsSubmitted(true);
     toast.success("Thank you! We'll be in touch within 24 hours.");
