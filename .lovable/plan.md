@@ -1,183 +1,383 @@
 
 
-# Purple Rain Construction -- Remaining Website Corrections & Fixes
+# Purple Rain Construction -- Comprehensive Revision Audit & Implementation Plan
 
-This plan addresses 11 items. After thorough analysis, here's the status and implementation approach for each.
-
----
-
-## Item-by-Item Analysis
-
-### 1. KITCHEN PAGE -- Fix Gallery Images & Captions
-**Status: Partially done -- captions need updating, images need replacing**
-
-Current gallery (lines 194-198 of KitchenRemodels.tsx) has 4 photos with *similar but not exact* captions. Specifically:
-- Photo 1 caption says "Complete kitchen renovation featuring custom cabinetry, patterned backsplash, and modern farmhouse finishes." -- needs to change to "Shaker cabinetry, quartz countertops, custom island, and updated lighting for improved flow and everyday function."
-- Photo 2 caption says "Custom fold-out bar window with mountain-scene metal art..." -- needs to change to "Pass-through window and counter designed for entertaining, connecting the kitchen to the patio and outdoor living space."
-- Photo 3 caption says "Professional range with patterned tile backsplash and wood-wrapped hood..." -- needs to change to "Patterned tile backsplash, custom hood surround, and open shelving to add character without excessive complexity."
-- Photo 4 caption says "Modern kitchen with black island, white cabinets, and patterned backsplash..." -- needs to change to "Reworked cabinetry, appliance placement, and lighting to create a practical, well-balanced kitchen for daily use."
-
-The Google Drive image URLs provided cannot be directly downloaded by automated tools (they require browser interaction). The current images used are from the Oliviero project and appear to match the content described. I'll update captions to match exactly, and you'll need to upload the 4 replacement images if the current ones aren't the correct photos.
-
-**Changes:**
-- Update all 4 gallery caption descriptions in KitchenRemodels.tsx to match exactly
+This plan systematically compares the PDF/TXT revision documents against the current live website, page by page. Items are categorized as **DONE** (already matches), **NEEDS CHANGE**, **NEEDS CONFIRMATION**, or **BLOCKED** (waiting on client assets).
 
 ---
 
-### 2. REMODELING PAGE -- Fix Gallery Captions
-**Status: Partially done -- 3 captions need updating**
+## Page Mapping
 
-Current captions (lines 206-209 of Remodeling.tsx):
-- Photo 1: "Complete exterior renovation with modern farmhouse styling, new siding, roofing, and renovated outbuilding." -- needs to change to "Updated siding, roofing, windows, and entry details to modernize the home while preserving its character."
-- Photo 3: "Modern farmhouse living room with leather furniture, wood stove, and ceiling fan -- warm and functional." -- needs to change to "Open layout, updated finishes, and improved circulation designed for everyday comfort and function."
-- Photo 4: "Modern stairwell with dark beams and metal railing -- detailed structural and finish carpentry work." -- needs to change to "Rebuilt stair system with updated railings, lighting, and finishes to meet code and enhance safety."
-
-**Changes:**
-- Update 3 gallery caption descriptions in Remodeling.tsx
-
----
-
-### 3. KITCHEN PAGE -- Remove Filler Background Image
-**Status: Already done**
-
-Looking at KitchenRemodels.tsx, there is NO filler background image between "Why Choose Purple Rain Construction?" (line 157) and "Kitchen Project Gallery" (line 183). The transition is clean: bg-background section followed by bg-muted section. Same for BathroomRemodels.tsx -- clean transition from "Why Choose" (line 181) directly to "Gallery" (line 208). No action needed.
-
----
-
-### 4. SROA PAGE -- Fix Section 7 Text
-**Status: Already done**
-
-Line 377 reads: "Our team has worked in Sunriver for a combined 42 years and is registered with SROA Community Development." This matches exactly. No action needed.
+| Page | URL | Referenced in TXT Lines | PDF Pages |
+|------|-----|------------------------|-----------|
+| Home | `/` | 1-51 | 2-5 |
+| Decks | `/decks` | 52-178 | 6-11 |
+| Sunriver Deck Builder | `/sunriver-deck-builder` | 180-288 | 12-14 |
+| SROA Services | `/sunriver-sroa-services` | 217-288 | 15-18 |
+| About | `/about` | 291-338 | 19-22 |
+| Kitchen Remodels | `/kitchen-remodels` | 341-417 | 23-26 |
+| Bathroom Remodels | `/bathroom-remodels` | 421-489 | 27-30 |
+| Remodeling | `/remodeling` | 495-509 | 31-32 |
+| Services | `/services` | 515-523 | 33-34 |
+| Snow Removal | `/snow-removal` | 522 | 35-36 |
+| New Construction | `/new-construction` | 526 | 37-38 |
+| Privacy | `/privacy` | 528-600 | 39-42 |
+| Terms | `/terms` | 602-643 | 43-46 |
+| FAQ | `/faq` | 647-681 | 47-49 |
+| Gallery | `/gallery` | 759-871 | N/A |
+| Contact | `/contact` | 738-745 | N/A |
+| Tracking/Privacy Setup | N/A | 874-917 | N/A |
+| Gallery-Only New Assets | N/A | 918-945 | N/A |
 
 ---
 
-### 5. SROA PAGE -- Update Section 4 Image
-**Status: Needs implementation**
+## PAGE-BY-PAGE CHANGE LOG
 
-The SROA page Section 4 currently uses `sroaSection4` imported from `src/assets/sroa/sroa-section4-new.jpg` (line 34, used on line 211). The revision requests replacing this with a Google Drive image. The URL provided is a direct download link, so I can attempt to fetch and replace it.
+### 1. HOME PAGE (`/`) -- Index.tsx
 
-**Changes:**
-- Download image from provided URL and replace `src/assets/sroa/sroa-section4-new.jpg`
+| # | Section | Current | Required | Source | Status |
+|---|---------|---------|----------|--------|--------|
+| 1.1 | S1 Header Image | Old Mill stock photo | "Can you show us masked/unmasked version?" -- exploratory question, no definitive replacement specified | TXT:3-6 | Needs confirmation |
+| 1.2 | S2 Deck photo | `deck-new-hero.jpg` (already replaced) | Matches requested URL | TXT:9 | DONE |
+| 1.3 | S2 Remodel photo | `remodel-exterior-new.jpg` (already replaced) | Matches requested URL | TXT:10 | DONE |
+| 1.4 | S2 Remodeling description | "Bathroom and kitchen remodels, full home renovations, and select commercial projects." | Matches exactly | TXT:13 | DONE |
+| 1.5 | S3 checkmarks | "Clear, transparent communication" and "Proudly local--serving Central Oregon with care and integrity" | Matches exactly | TXT:16-17 | DONE |
+| 1.6 | S4 JobTread section | Uses portal screenshots with 4-card grid | Matches revision intent | TXT:19-30, PDF:3 | DONE |
+| 1.7 | S5 Sunriver photo | Uses `sunriver-section-5.jpg` | TXT:32 specifies a specific download URL | TXT:32 | NEEDS CHANGE |
+| 1.8 | S5 paragraph | Uses "SROA" (not "HOA") | Matches | TXT:33 | DONE |
+| 1.9 | S6 Testimonials | 3 real Google reviews (Arthur Diamond, D K, Cindy Kunz) | Matches exactly | TXT:37-49 | DONE |
+| 1.10 | Footer Bend Chamber | "Bend Chamber" badge in footer | Matches | TXT:51 | DONE |
 
----
-
-### 6. SROA PAGE -- Update Section 4 Text
-**Status: Already done**
-
-Line 169 matches exactly: "Many Sunriver homeowners are confused about the difference between SROA (Sunriver Owner Association) approval vs building permit requirements..."
-Line 179 matches exactly: "Sunriver Owner Association focuses on design aesthetics, materials, exterior appearance, and community compliance."
-No HOA instances found on this page. No action needed.
-
----
-
-### 7. SROA PAGE -- Replace Section 5 Timeline
-**Status: Already done**
-
-Lines 231-301 contain all 8 steps with exact matching text and the disclaimer note at the bottom. No action needed.
+**Changes needed:**
+- **1.7**: Replace Sunriver section photo. The TXT specifies the same URL as the Sunriver hero header image. Currently using `sunriver-section-5.jpg` -- needs to use the downloaded `sunriver-hero-header.jpg` image.
 
 ---
 
-### 8. CONTACT FORM -- Add Email Recipients
-**Status: Not implemented**
+### 2. DECKS PAGE (`/decks`) -- Decks.tsx
 
-Currently, the contact form (ContactForm.tsx) only inserts into the `contact_submissions` database table. There is no email notification system -- no edge function exists to send emails. This requires:
-1. Creating a new edge function to send notification emails
-2. Setting up a Resend API key (or similar email service) as a secret
-3. Triggering the email on form submission
+| # | Section | Current | Required | Source | Status |
+|---|---------|---------|----------|--------|--------|
+| 2.1 | S1 Hero image | `decks-hero-header.jpg` (replaced) | Matches | TXT:54 | DONE |
+| 2.2 | S2 Image | `project-2-after.jpg` | "Get photo of Cindy's deck w/ Kali to add here" | TXT:56 | BLOCKED -- waiting on client |
+| 2.3 | S2 Text | "certified TimberTech and TrexPro builder" | Matches | TXT:57 | DONE |
+| 2.4 | S2 Composite text | "PVC & Composite decking Options" mentioned | Current list says "Composite decking options as a certified TimberTech and TrexPro builder" -- close but doesn't say "PVC" | TXT:58 | NEEDS CHANGE |
+| 2.5 | S3 Railing upgrades | "Metal Railing, Cable Railing or upgrade to glass panels for improved views and durability." | Matches exactly | TXT:60 | DONE |
+| 2.6 | S4 Materials | Complete PVC & Composite vs Wood section | Matches revision content | TXT:61-88 | DONE |
+| 2.7 | S5 Sunriver section | Image uses `deck-new-hero.jpg`; text matches revision | Image should use the specified URL (TXT:90) which is a different image | TXT:89-97 | NEEDS CHANGE |
+| 2.8 | S5 Text | Current text closely matches but includes "60 lbs per sq ft" detail not in revision | Should match revision exactly | TXT:92-96 | NEEDS CHANGE |
+| 2.9 | S6 Pricing | Matches revision content | OK | TXT:98-117 | DONE |
+| 2.10 | S7 Gallery | 4 photos with captions, before photos removed | Matches | TXT:120-132 | DONE |
+| 2.11 | S7 Upper Balcony image | Uses `upperBalconyRebuild` from `upper-balcony-rebuild-after.jpg` | "The gallery image currently shown for Upper Balcony Deck Rebuild is incorrect" (EMAIL REVISION 2, TXT:717) | TXT:717 | NEEDS CHANGE |
+| 2.12 | S8 Testimonials | 2 real Google reviews | Matches | TXT:133-136 | DONE |
+| 2.13 | S10 FAQs | 7 FAQs, removed 3 as specified | Matches | TXT:141-178 | DONE |
+| 2.14 | S5 image | Different image specified via GCS URL | TXT:90 gives different URL than hero | TXT:90 | NEEDS CHANGE |
 
-This is a significant feature addition requiring an email service provider decision.
-
-**Changes:**
-- Create a `send-contact-notification` edge function
-- Add email sending logic to notify all 3 recipients
-- Requires an email service API key (Resend recommended)
-
----
-
-### 9. HOME PAGE -- Core Services Section Photos
-**Status: Not implemented**
-
-The homepage (Index.tsx lines 120-143) uses `deckStockPhoto` and `remodelExterior` for the Deck and Remodel service cards. The revision provides Google Drive download URLs for replacements. These are direct download links that I can attempt to fetch.
-
-**Changes:**
-- Download and replace the Deck card image
-- Download and replace the Remodel card image
-
----
-
-### 10. GALLERY PAGE -- Add More Categories & Photos
-**Status: Partially done**
-
-The gallery currently has categories: "All", "Decks", "A-Frame Cabin Remodel", "Full Home Remodel" (line 58). Many of the requested photos already exist in the gallery but are categorized under "Full Home Remodel" or "A-Frame Cabin Remodel" with subgroups.
-
-The request adds 3 new top-level categories: "Kitchen", "Bathroom", "Living / Feature". The photos listed in the request are *already present* in the gallery (they match existing entries like kitchen backsplash, bar window, French doors, all bathroom photos, living room, etc.) but they need to be additionally tagged/categorized under these new categories.
-
-**Changes:**
-- Add "Kitchen", "Bathroom", "Living / Feature" to the categories array
-- Add these category tags to existing gallery items so they appear when filtered
-- Ensure all captions match the revision exactly
+**Changes needed:**
+- **2.4**: Add "PVC &" before "Composite" in the S2 checklist item. Change to "PVC & Composite decking options as a certified TimberTech and TrexPro builder"
+- **2.7/2.14**: S5 Sunriver section image should use the specific URL from TXT:90 -- this is a different photo than what's currently used. Download from `https://storage.googleapis.com/msgsndr/XGURfeqIU4yoXltEk3OH/media/698ce9677f6dcfb2ae24f523.jpg`
+- **2.8**: Rewrite S5 text to match revision exactly -- remove "60 lbs per square foot" detail
+- **2.11**: Replace Upper Balcony gallery image with the correct one from `https://storage.googleapis.com/msgsndr/XGURfeqIU4yoXltEk3OH/media/698cd5a33fdd0e7d01bc22b5.jpg` (TXT line 924, "upper-balcony-gallery-new" -- this asset already exists at `src/assets/decks/upper-balcony-gallery-new.jpg` and is used in Gallery.tsx but NOT in Decks.tsx)
 
 ---
 
-### 11. SUNRIVER PAGE -- Update Section 2 Image
-**Status: Needs implementation**
+### 3. SUNRIVER DECK BUILDER (`/sunriver-deck-builder`) -- SunriverDeckBuilder.tsx
 
-The Sunriver page Section 2 (line 99) uses `sunriverSection2` from `src/assets/decks/sunriver-section-2.jpg`. The revision provides a new Google Drive download URL for a replacement image.
+| # | Section | Current | Required | Source | Status |
+|---|---------|---------|----------|--------|--------|
+| 3.1 | S1 Hero image | `sunriver-hero-header.jpg` (replaced) | Matches | TXT:182 | DONE |
+| 3.2 | S1 Badges | 4 badges matching spec | Matches | TXT:183-187 | DONE |
+| 3.3 | S2 Image | `sunriver-section-2.jpg` (replaced) | Matches | TXT:191 | DONE |
+| 3.4 | S2 Checkmarks | All 6 items match | Matches | TXT:192-198 | DONE |
+| 3.5 | S3 Services | "HOA" replaced with "SROA" | Matches | TXT:200-205 | DONE |
+| 3.6 | S7 Process steps | 5 steps matching revision | Matches | TXT:206-211 | DONE |
+| 3.7 | S8 Testimonials | 2 real Google reviews (D K, Arthur D.) | Matches | TXT:212-216 | DONE |
+| 3.8 | SROA FAQ section | Not present on Sunriver page | Revision adds FAQ section with 7 questions | TXT:256-284 | NEEDS CHANGE |
 
-**Changes:**
-- Download and replace `src/assets/decks/sunriver-section-2.jpg`
+**Changes needed:**
+- **3.8**: Add a Frequently Asked Questions section to the Sunriver page with 7 SROA-related FAQs (TXT:257-284). Use accordion style matching other pages.
 
 ---
 
-## Summary Table
+### 4. SROA SERVICES (`/sunriver-sroa-services`) -- SunriverSROAServices.tsx
 
-| # | Item | Status |
-|---|------|--------|
-| 1 | Kitchen gallery captions | Update captions (4 changes) |
-| 2 | Remodeling gallery captions | Update captions (3 changes) |
-| 3 | Kitchen filler image removal | Already done |
-| 4 | SROA Section 7 text | Already done |
-| 5 | SROA Section 4 image | Download and replace |
-| 6 | SROA Section 4 text | Already done |
-| 7 | SROA Section 5 timeline | Already done |
-| 8 | Contact form email | New feature -- needs email service |
-| 9 | Homepage service card photos | Download and replace (2 images) |
-| 10 | Gallery categories + photos | Add 3 categories, tag existing photos |
-| 11 | Sunriver Section 2 image | Download and replace |
+| # | Section | Current | Required | Source | Status |
+|---|---------|---------|----------|--------|--------|
+| 4.1 | S1 Hero image | `sroa-hero-new.jpg` | TXT:220 specifies a different image URL | TXT:220 | NEEDS CHANGE |
+| 4.2 | S2 Badges | No changes | Matches | TXT:221 | DONE |
+| 4.3 | S3 Services | No changes | Matches | TXT:222 | DONE |
+| 4.4 | S4 Image | `sroa-section4-new.jpg` (replaced) | Matches | TXT:224 | DONE |
+| 4.5 | S4 Text | Matches revision exactly | Matches | TXT:225-228 | DONE |
+| 4.6 | S5 Timeline | All 8 steps match with disclaimer | Matches | TXT:229-244 | DONE |
+| 4.7 | S6 No changes | OK | TXT:245 | DONE |
+| 4.8 | S7 Text | "42 years" and "registered with SROA Community Development" | Matches | TXT:250 | DONE |
+| 4.9 | S7 Image | Uses `sunriver-rebuild-new.jpg` | TXT:247-249 says "will get updated image in a few weeks" with two options | BLOCKED -- client getting new photo |
+| 4.10 | FAQ section | Uses accordion style | TXT line 689 (EMAIL REVISION 2): "Please update the FAQs on the SROA page to match the accordion-style FAQs used on the other pages" | TXT:689-690 | DONE (already accordion) |
+| 4.11 | S8 Resources | No changes | Matches | TXT:253 | DONE |
 
-## Implementation Plan
+**Changes needed:**
+- **4.1**: SROA hero image. TXT:220 specifies `https://drive.usercontent.google.com/u/0/uc?id=1LkmeaOOri0t7Yl8qKLEyjEFV68BHnwCv&export=download`. Attempt download and replace `sroa-hero-new.jpg`.
 
-### Phase 1: Text/Caption Fixes (no dependencies)
-1. Update 4 kitchen gallery captions in `KitchenRemodels.tsx`
-2. Update 3 remodeling gallery captions in `Remodeling.tsx`
+---
 
-### Phase 2: Gallery Category Expansion
-3. Add "Kitchen", "Bathroom", "Living / Feature" to `Gallery.tsx` categories
-4. Add additional category tags to existing gallery items so they appear under new filters
+### 5. ABOUT PAGE (`/about`) -- About.tsx
 
-### Phase 3: Image Downloads & Replacements
-5. Attempt to download and replace:
-   - SROA Section 4 image (`src/assets/sroa/sroa-section4-new.jpg`)
-   - Homepage Deck card image (new file, update import in Index.tsx)
-   - Homepage Remodel card image (new file, update import in Index.tsx)
-   - Sunriver Section 2 image (`src/assets/decks/sunriver-section-2.jpg`)
+| # | Section | Current | Required | Source | Status |
+|---|---------|---------|----------|--------|--------|
+| 5.1 | S1 Our Story | All 4 paragraphs match revision | Matches | TXT:292-298 | DONE |
+| 5.2 | S2 Quality Over Quantity | "We intentionally stay small so we can give every project the attention it deserves." | Matches | TXT:300-301 | DONE |
+| 5.3 | S3 Nicholas bio | Full bio matches revision | Matches | TXT:304-306 | DONE |
+| 5.4 | S3 Kole Stout | Added with correct bio and philosophy | Matches | TXT:308-311 | DONE |
+| 5.5 | S3 Team bios | TXT:693-694 (EMAIL REV 2): "Team bios are currently cut off mid-sentence. Clicking does not expand or reveal the full bio text." | Current code shows full bio in `text-xs` class -- may need visual check | TXT:693-694 | NEEDS CHANGE |
+| 5.6 | S4 Credentials | Lists 7 credentials including Bend Chamber | TXT:334 says "I would like the Icon for all of these individual entities with the boxes" -- wants real logos | TXT:312-334 | BLOCKED -- client wants real entity logos |
 
-Note: Google Drive URLs may fail automated download (10MB limit or auth walls). If any fail, you'll need to download manually and upload them here.
+**Changes needed:**
+- **5.5**: Team bios are displayed in `text-xs text-muted-foreground` which makes them very small. The revision says they're "cut off mid-sentence" and "clicking does not expand." Need to make full bios readable -- increase font size and/or add expand/collapse functionality.
 
-### Phase 4: Contact Form Email Notifications
-6. This requires choosing an email service provider. Resend is recommended (simple API, generous free tier). Steps:
-   - Create `supabase/functions/send-contact-notification/index.ts`
-   - Add RESEND_API_KEY as a secret
-   - Modify ContactForm.tsx to call the new function after successful DB insert
-   - Send formatted email to all 3 recipients
+---
+
+### 6. KITCHEN REMODELS (`/kitchen-remodels`) -- KitchenRemodels.tsx
+
+| # | Section | Current | Required | Source | Status |
+|---|---------|---------|----------|--------|--------|
+| 6.1 | S1 H1 | "Central Oregon Kitchen Remodelers You Can Trust" | Matches | TXT:347 | DONE |
+| 6.2 | S1 Subheader | Matches | Matches | TXT:348 | DONE |
+| 6.3 | S1 Paragraph | Matches | Matches | TXT:349 | DONE |
+| 6.4 | S2 Heading | "Expert Kitchen Remodeling Across Central Oregon" | Matches | TXT:351 | DONE |
+| 6.5 | S2 Paragraph | Matches | Matches | TXT:352 | DONE |
+| 6.6 | S3 Heading | "Kitchen Remodeling Services Across Central Oregon" | Matches | TXT:356 | DONE |
+| 6.7 | S3 Subheading | "Custom design, renovations, and full kitchen remodels tailored to your home" | Matches | TXT:357 | DONE |
+| 6.8 | S3 Card titles | Custom Kitchen Design / Kitchen Renovations / Full Remodels & Updates | Matches | TXT:359-361 | DONE |
+| 6.9 | S3 Card CTAs | Start Your Kitchen Design / Request a Renovation Quote / Get a Kitchen Remodel Estimate | Matches | TXT:363-368 | DONE |
+| 6.10 | S4 Why Choose | Checkmarks only, no badges | Matches | TXT:370-375 | DONE |
+| 6.11 | S5 Gallery captions | All 4 captions match revision | Matches | TXT:379-387 | DONE |
+| 6.12 | S5 Gallery images | Uses Oliviero project photos | TXT provides Google Drive URLs for 4 specific images | TXT:380-387 | Needs confirmation -- are current images correct? |
+| 6.13 | S5 Transition line | "See the quality and craftsmanship we bring to every kitchen project." | Matches revision intent for soft transition | TXT:377 | DONE |
+| 6.14 | S6 Cost & Timeline | Matches | Matches | TXT:388-390 | DONE |
+| 6.15 | S7 FAQs | 5 FAQs match revision, renamed Q2 | Matches | TXT:391-416 | DONE |
+| 6.16 | Background image | TXT:697-698 (EMAIL REV 2): "remove filler background images" | No filler background images between sections | TXT:697-698 | DONE |
+| 6.17 | Gallery CTA | "View Full Gallery" | Should say "View Kitchen Remodel Gallery" per TXT:710 | TXT:710 | NEEDS CHANGE |
+
+**Changes needed:**
+- **6.17**: Change gallery CTA from "View Full Gallery" to "View Kitchen Remodel Gallery"
+
+---
+
+### 7. BATHROOM REMODELS (`/bathroom-remodels`) -- BathroomRemodels.tsx
+
+| # | Section | Current | Required | Source | Status |
+|---|---------|---------|----------|--------|--------|
+| 7.1 | S1 H1 | "Bathroom Remodels in Central Oregon" | Matches | TXT:426 | DONE |
+| 7.2 | S1 Subheading | "Spa-like bathroom remodels built for everyday comfort and lasting performance" | Matches | TXT:427 | DONE |
+| 7.3 | S1 CTAs | "Request a Bathroom Remodel Quote" + Call button | Matches | TXT:429-430 | DONE |
+| 7.4 | S3 Service cards | 3 text-only cards matching revision | Matches | TXT:434-452 | DONE |
+| 7.5 | S4 Why Choose | Checkmarks with "Proven waterproofing standards" and "Coordination with trusted plumbing and electrical trade partners" | Matches | TXT:453-456 | DONE |
+| 7.6 | S5 Gallery | 4 photos with correct captions | Matches | TXT:458-462 | DONE |
+| 7.7 | S6 FAQs | 6 FAQs matching revision | Matches | TXT:463-488 | DONE |
+| 7.8 | Background image | No filler background images | Matches | TXT:697-698 | DONE |
+| 7.9 | Gallery CTA | "View Full Gallery" | Should say "View Bathroom Remodel Gallery" per TXT:711 | TXT:711 | NEEDS CHANGE |
+
+**Changes needed:**
+- **7.9**: Change gallery CTA from "View Full Gallery" to "View Bathroom Remodel Gallery"
+
+---
+
+### 8. REMODELING (`/remodeling`) -- Remodeling.tsx
+
+| # | Section | Current | Required | Source | Status |
+|---|---------|---------|----------|--------|--------|
+| 8.1 | S3 Our Approach image | Uses BeforeAfterSlider of A-Frame exterior | "Can you change the our remodeling approach picture to that before and after slide of the A-Frame exterior" | TXT:497 | DONE |
+| 8.2 | S5 Gallery | 4 photos with updated captions | Captions match revision | TXT:500-508 | DONE |
+| 8.3 | S5 Photo 2 | Uses `olivieroBackPatio` with description "Back patio with outdoor seating, fire pit, upper balcony, and hot tub -- seamless indoor-outdoor living." | Should be "Rear exterior improvements coordinated with deck and patio spaces for cohesive indoor-outdoor flow." (title: "Integrated Remodel & Outdoor Living") | TXT:503-504 | NEEDS CHANGE |
+| 8.4 | Gallery CTA | "View Full Gallery" | Should say "View Remodeling Project Gallery" per TXT:712 | TXT:712 | NEEDS CHANGE |
+| 8.5 | S5 Photo 2 image | Uses `olivieroBackPatio` (`back-patio-deck.jpg`) | TXT:504 specifies a Google Drive URL for a different image | TXT:504 | NEEDS CHANGE |
+
+**Changes needed:**
+- **8.3**: Update Photo 2 description to "Rear exterior improvements coordinated with deck and patio spaces for cohesive indoor-outdoor flow."
+- **8.4**: Change gallery CTA from "View Full Gallery" to "View Remodeling Project Gallery"
+- **8.5**: Photo 2 image needs replacement. The revision provides a Google Drive URL. This may be the same image as `olivieroBackPatio` or different -- attempt download.
+
+---
+
+### 9. SERVICES PAGE (`/services`) -- Services.tsx
+
+| # | Section | Current | Required | Source | Status |
+|---|---------|---------|----------|--------|--------|
+| 9.1 | Deck photo | Uses `deck-new-hero.jpg` (already updated) | "Change photo for Deck Building & Repairs" | TXT:517 | DONE |
+
+No other changes specified.
+
+---
+
+### 10. SNOW REMOVAL (`/snow-removal`) -- No changes
+TXT:522-523: "No Edits - looks good!" -- **DONE**
+
+### 11. NEW CONSTRUCTION (`/new-construction`) -- No changes
+TXT:526-527: "No Edits" -- **DONE**
+
+---
+
+### 12. PRIVACY POLICY (`/privacy`) -- Privacy.tsx
+
+| # | Section | Current | Required | Source | Status |
+|---|---------|---------|----------|--------|--------|
+| 12.1 | Full content | Matches revision exactly | Matches word for word | TXT:529-600 | DONE |
+
+---
+
+### 13. TERMS OF SERVICE (`/terms`) -- Terms.tsx
+
+| # | Section | Current | Required | Source | Status |
+|---|---------|---------|----------|--------|--------|
+| 13.1 | Full content | Matches revision exactly | Matches word for word | TXT:602-643 | DONE |
+
+---
+
+### 14. FAQ PAGE (`/faq`) -- FAQ.tsx
+
+| # | Section | Current | Required | Source | Status |
+|---|---------|---------|----------|--------|--------|
+| 14.1 | Cross-links | FAQ answers link to service page sections | Matches revision intent | TXT:651-680 | DONE |
+| 14.2 | FAQ content | 8 FAQs with correct answers and links | Matches | TXT:658-680 | DONE |
+| 14.3 | Keep existing FAQs | "What areas do you serve?", "How do I track my project?", "Are you licensed and insured?" | All present | TXT:680 | DONE |
+
+---
+
+### 15. GALLERY PAGE (`/gallery`) -- Gallery.tsx
+
+| # | Section | Current | Required | Source | Status |
+|---|---------|---------|----------|--------|--------|
+| 15.1 | Categories | "All", "Decks", "Kitchen", "Bathroom", "Living / Feature", "A-Frame Cabin Remodel", "Full Home Remodel" | Matches | TXT:805 | DONE |
+| 15.2 | Remove Snow Removal | No snow removal category exists | Matches | TXT:806 | DONE |
+| 15.3 | Captions | Always visible, not hover-only | Implemented with `p-5` div below images | TXT:766 | DONE |
+| 15.4 | Before/After sliders | Kept at top | Matches | TXT:760 | DONE |
+| 15.5 | Gallery photos | All photos organized by category with correct tags | Need to verify all titles/captions match exactly | TXT:812-871 | Mostly DONE |
+| 15.6 | Indoor-Outdoor title | "Indoor-Outdoor Window Bar Feature" | Should be "Indoor--Outdoor Window Bar Feature" (em dash) | TXT:860 | NEEDS CHANGE |
+
+**Changes needed:**
+- **15.6**: Minor -- update title from "Indoor-Outdoor" to "Indoor--Outdoor" to match revision (uses em dash)
+
+---
+
+### 16. CONTACT PAGE (`/contact`) -- Contact.tsx
+
+| # | Section | Current | Required | Source | Status |
+|---|---------|---------|----------|--------|--------|
+| 16.1 | Credentials sidebar | Lists CCB, TrexPro, TimberTech Pro, BBB, COBA, Bend Chamber | TXT:739 adds "Bend Chamber of Commerce Member and TimberTech Pro" -- both present | TXT:739 | DONE |
+| 16.2 | Email notifications | ContactForm.tsx calls `send-contact-notification` edge function | Edge function created but RESEND_API_KEY not configured | TXT:745 | BLOCKED -- deferred |
+| 16.3 | CRM integration | "Pull contact form fill through to JobTread CRM" | Not possible without JobTread API -- email fallback requested | TXT:742-745 | BLOCKED -- deferred |
+
+---
+
+### 17. TRACKING & PRIVACY SETUP
+
+| # | Item | Current | Required | Source | Status |
+|---|------|---------|----------|--------|--------|
+| 17.1 | GA4 | Not implemented | ID: G-P6MM594ZGJ | TXT:878 | NEEDS CHANGE |
+| 17.2 | GTM | Not implemented | ID: GTM-KHK2QTD6 | TXT:881-882 | NEEDS CHANGE |
+| 17.3 | Meta Pixel | Not implemented | ID: blank in doc | TXT:884 | BLOCKED -- no ID provided |
+| 17.4 | reCAPTCHA | Implemented with correct keys | Matches | TXT:888-913 | DONE |
+| 17.5 | Cookie consent | CookieConsent component exists | Needs to gate analytics/marketing scripts | TXT:894-902 | NEEDS CHANGE |
+
+**Changes needed:**
+- **17.1-17.2**: Implement GA4 (G-P6MM594ZGJ) and GTM (GTM-KHK2QTD6) on all pages
+- **17.5**: Update cookie consent to categorize and gate scripts
+
+---
+
+### 18. GALLERY-ONLY NEW ASSETS (TXT:918-945)
+
+These are GCS-hosted images that should replace or supplement existing gallery photos. Several have already been downloaded:
+
+| # | Asset | Current | Required | Status |
+|---|-------|---------|----------|--------|
+| 18.1 | A-Frame front symmetrical | `front-symmetrical-new.png` exists | From GCS URL | Check if same |
+| 18.2 | Side yard/barn | `side-yard-barn-new.jpg` exists | From GCS URL | Check if same |
+| 18.3 | Upper balcony gallery | `upper-balcony-gallery-new.jpg` exists | From GCS URL | Check if same |
+| 18.4 | Custom kitchen remodel | `kitchen-custom-gallery-new.jpg` exists | From GCS URL | Check if same |
+| 18.5 | Farmhouse sink detail | `farmhouse-sink-detail-new.jpg` exists | From GCS URL | Check if same |
+
+These appear to already exist. No action needed unless images don't match.
+
+---
+
+## SUMMARY OF CHANGES NEEDED
+
+### Implementable Now (Code Changes)
+
+1. **Home Page S5**: Replace Sunriver section image import to use `sunriverHeroHeader` instead of `sunriverSection5`
+2. **Decks S2**: Add "PVC &" to composite decking checklist item
+3. **Decks S5**: Rewrite Sunriver section text to match revision exactly (remove "60 lbs per sq ft")
+4. **Decks S5**: Download and replace Sunriver section image from GCS URL
+5. **Decks S7**: Fix Upper Balcony image -- use `upper-balcony-gallery-new.jpg` (already in project) instead of `upper-balcony-rebuild-after.jpg`
+6. **Sunriver page**: Add FAQ section with 7 questions
+7. **Kitchen page**: Change gallery CTA to "View Kitchen Remodel Gallery"
+8. **Bathroom page**: Change gallery CTA to "View Bathroom Remodel Gallery"
+9. **Remodeling page**: Update Photo 2 caption and change gallery CTA to "View Remodeling Project Gallery"
+10. **About page**: Fix team bio readability (increase font size or add expand/collapse)
+11. **Gallery page**: Fix "Indoor-Outdoor" to "Indoor--Outdoor" title
+12. **Implement GA4 and GTM**: Add tracking scripts to index.html
+
+### Requires Image Downloads
+
+13. **Decks S5 image**: Download from `https://storage.googleapis.com/msgsndr/XGURfeqIU4yoXltEk3OH/media/698ce9677f6dcfb2ae24f523.jpg`
+14. **SROA S1 hero image**: Download from Google Drive URL
+15. **Remodeling Photo 2**: Download from Google Drive URL (may fail)
+
+### Blocked / Deferred
+
+- Decks S2 image: "get photo of Cindy's deck w/ Kali" -- waiting on client
+- SROA S7 image: "will get an updated image in a few weeks"
+- About page credentials: Client wants real entity logos
+- Meta Pixel: No ID provided
+- Contact form email: RESEND_API_KEY not configured (deferred)
+- CRM integration: JobTread API not available
+
+### No Changes (Confirmed Done)
+
+Home S2-S6, Decks S1/S3/S4/S6/S8/S10, Sunriver S1-S3/S7-S8, SROA S2-S8, About S1-S4, Kitchen S1-S7, Bathroom S1-S7, Remodeling S3, Services, Snow Removal, New Construction, Privacy, Terms, FAQ, Gallery structure
+
+---
+
+## IMPLEMENTATION SEQUENCE
+
+### Phase 1: Text and Code Changes (no image dependencies)
+1. Home Index.tsx -- swap Sunriver image import
+2. Decks.tsx -- fix S2 text, rewrite S5 text, swap Upper Balcony image import
+3. SunriverDeckBuilder.tsx -- add FAQ section
+4. KitchenRemodels.tsx -- update gallery CTA text
+5. BathroomRemodels.tsx -- update gallery CTA text
+6. Remodeling.tsx -- update Photo 2 caption, update gallery CTA text
+7. About.tsx -- improve team bio readability
+8. Gallery.tsx -- fix Indoor-Outdoor title
+
+### Phase 2: Tracking Implementation
+9. index.html -- add GTM container snippet (head + body)
+10. CookieConsent.tsx -- update to categorize and gate scripts
+
+### Phase 3: Image Downloads
+11. Download Decks S5 image from GCS
+12. Attempt SROA hero image download
+13. Attempt Remodeling Photo 2 download
 
 ### Technical Details
 
-**KitchenRemodels.tsx** -- Lines 195-198: Update `description` fields for all 4 gallery items.
+**Index.tsx line 15**: Change `import sunriverSection5` to use `sunriverHeroHeader` from decks folder (already imported in SunriverDeckBuilder -- can reuse same asset path). Change line 279 `src={sunriverSection5}` to `src={sunriverHeroHeader}` where `sunriverHeroHeader` is imported from `@/assets/decks/sunriver-hero-header.jpg`.
 
-**Remodeling.tsx** -- Lines 206, 208, 209: Update `description` fields for photos 1, 3, and 4.
+**Decks.tsx line 138**: Change "Composite decking options as a certified TimberTech and TrexPro builder" to "PVC & Composite decking options as a certified TimberTech and TrexPro builder"
 
-**Gallery.tsx** -- Line 58: Change categories array to `["All", "Decks", "Kitchen", "Bathroom", "Living / Feature", "A-Frame Cabin Remodel", "Full Home Remodel"]`. Add secondary tags to existing items (e.g., kitchen items get both "Full Home Remodel" and "Kitchen" tags).
+**Decks.tsx lines 288-295**: Rewrite S5 paragraph to match revision exactly:
+- Line 1: "Material choice matters -- but in Sunriver, proper design and construction matter even more."
+- Line 2: "Decks in Sunriver are exposed to heavy snow loads, ongoing moisture from snow and rain, freeze-thaw cycles, and shaded lots that tend to stay damp longer than other areas in Central Oregon. These conditions place added stress on both materials and structure."
+- Line 3: "We account for these factors in every Sunriver project, designing decks that meet SROA guidelines while prioritizing long-term performance and safety. To learn more about Sunriver-specific requirements, approvals, and construction considerations, visit our sunriver-deck-builder page."
+- Line 4: "Whether your deck needs to support a hot tub, outdoor kitchen, or regular rental traffic, our team builds with durability and longevity in mind."
 
-**Edge Function** -- New `send-contact-notification/index.ts` using Resend API to POST formatted HTML emails to the 3 recipients upon form submission.
+**Decks.tsx line 379**: Change `src: upperBalconyRebuild` to reference the gallery version image `upper-balcony-gallery-new.jpg` (import needed).
+
+**SunriverDeckBuilder.tsx**: Add new FAQ section before the Final CTA section, with 7 accordion-style questions (TXT:257-284).
+
+**About.tsx line 160**: Change `text-xs` to `text-sm` for bio text to fix readability. Optionally add a collapsible/expandable pattern.
+
+**Gallery.tsx line 251**: Change "Indoor-Outdoor Window Bar Feature" to "Indoor--Outdoor Window Bar Feature"
+
+**index.html**: Add GTM snippet in head and noscript in body.
 
