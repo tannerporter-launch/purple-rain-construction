@@ -271,7 +271,7 @@ const projects: GalleryProject[] = [
     category: "Full Home Remodel",
     image: fullHomeFreestandingTub,
     tags: ["Full Home Remodel", "Bathroom"],
-    description: "Full bathroom remodel featuring a freestanding tub with wall-mounted shower, custom vanity, patterned tile flooring, and modern fixtures.",
+    description: "Freestanding tub with wall-mounted shower, custom vanity, patterned tile flooring, and modern fixtures.",
     subgroup: "Bathroom",
   },
   {
@@ -298,7 +298,7 @@ const projects: GalleryProject[] = [
     category: "Full Home Remodel",
     image: fullHomeMasterShower,
     tags: ["Full Home Remodel", "Bathroom"],
-    description: "Jacuzzi tub removal, new tile shower, flooring, paint, and custom cabinetry.",
+    description: "Jacuzzi tub removal, new tile shower, flooring, paint, and custom cabinetry (this is our most recently completed master bathroom remodel).",
     subgroup: "Bathroom",
   },
   {
@@ -440,7 +440,7 @@ const Gallery = () => {
                     ))}
                   </div>
                   <h3 className="text-base font-semibold mb-1">{project.title}</h3>
-                  <p className="text-sm text-muted-foreground mb-1">
+                  <p className="text-sm text-muted-foreground mb-1 line-clamp-2">
                     {project.description}
                   </p>
                 </div>
